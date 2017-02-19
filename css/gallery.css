@@ -22,7 +22,7 @@
 /* Width of images */
 @media only screen and (width: 768px) {
     #gallery img {
-        width: 300px;
-        height: 225px;
+        width: 240px;
+        height: 180px;
     }
 }

@@ -24,3 +24,17 @@
 	position: relative;
 	margin: 10px 10px 10px 10px;
 }
+
+/* Nexus */
+@media only screen and (width: 412px) and (device-aspect-ratio: 9/16) {
+	.watchface {
+		margin: 0 44.2px !important;
+	}
+}
+
+/* HTC 10 */
+@media only screen and (width: 360px) and (device-aspect-ratio: 9/16) {
+	.watchface {
+		margin: 0 26px !important;
+	}
+}
