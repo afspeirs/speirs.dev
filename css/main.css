@@ -2,15 +2,14 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-#container, .wrap {
+#container, .header-wrap {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	/*height: 100%;*/
 	width: 100%;
 }
 
-.wrap {
+.header-wrap {
     height: 55px;
 	background-color: #24A4fE;
 }
@@ -26,7 +25,7 @@ body {
 	margin: 0 auto;
 }
 #main {
-	clear: both;
+	margin-top: 65px;
 }
 #main p {
 	font-size: 16px;

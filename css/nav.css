@@ -14,6 +14,7 @@
 #nav ul {
 	list-style: none;
     padding: 0;
+	margin: 15px 0;
 }
 #nav li {
     display: inline;
@@ -42,7 +43,6 @@
 .expand {
 	display: block;
 	background-color: #24A4fE;
-	clear: both;
 	text-align: right;
 	position: absolute;
 	z-index: 10;
