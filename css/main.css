@@ -1,50 +1,27 @@
-#container {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 100%;
+body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-#header {
-	padding: 0 15%;	 /*This will change if the width of the header changes*/
+#container, .wrap {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	/*height: 100%;*/
+	width: 100%;
+}
+
+.wrap {
     height: 55px;
 	background-color: #24A4fE;
+}
+
+#header {
 	overflow: hidden;
 	font-family: 'Open Sans', sans-serif;
 	overflow: visible;
 }
 
-#menu-btn {
-	display: none;
-}
-#nav ul {
-	list-style: none;
-    padding: 0;
-}
-#nav li {
-    display: inline;
-	margin: 0;
-}
-#nav li:not(:last-child) {
-	margin: 0 15px 0 0;
-}
-#nav a {
-	color: #fff;
-	padding: 7px 0;
-	font-size: 22px;
-	text-decoration: none;
-	text-align: center;
-}
-#nav:not(:first-child) a:hover {
-	border-bottom-style: solid;
-}
-#nav a.active {
-	border-top-style: solid;
-}
-
-#header, #main { /* sets the width of the header and content */
+#header, #main, .expand ul { /* sets the width of the header and content */
 	width: 70%;
 	margin: 0 auto;
 }
@@ -59,4 +36,14 @@
 	clear: both;
 	padding: 10px 0;
 	text-align: center;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1190px) {
+	#header {
+		padding: 0 1em;
+	}
+	#header, #main { /* sets the width of the header and content */
+		width: 833px;
+	}
 }
