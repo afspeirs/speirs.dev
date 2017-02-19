@@ -1,0 +1,71 @@
+	
+/* Not convinced about the aspect ratio */
+@media only screen and (max-width: 710px), screen and (device-aspect-ratio: 9/16) {
+	/* For mobile phones: */
+	.nav-menu {
+		display: none;
+	}
+	#menu-btn {
+		display: block;
+		float: right;
+		padding: 15px 0;
+	}
+	#menu-btn span {
+		display: block;
+		width: 20px;
+		height: 3px;
+		margin: 4px 0;
+		background: white;
+	}
+   .expand {
+		display: block;
+		background-color: #24A4fE;
+		clear: both;
+		text-align: right;
+		position: absolute;
+		z-index: 10;
+		left: 0;
+		top: 55px;	/* height of #header*/
+		width: 100%;
+	}
+	/* sets the width of the header and content */
+	.expand ul {
+		width: 70%;
+		margin: 0 auto;
+	}    
+	.expand li {
+		display: block !important;
+		margin: initial !important;
+		padding: 10px 0;
+		position: relative;
+		left: 11px;
+	}
+	.expand a {
+		padding: 0 8px !important;
+		width: inherit;
+		border-right: 3px solid #24A4fE;
+		/*border-left: 3px solid #24A4fE;*/
+	}
+	.expand:not(:first-child) a:hover {
+		border-bottom-style: none !important;
+		border-left: 3px solid white;
+	}
+	.expand a.active {
+		border-top-style: none !important;
+		border-right: 3px solid white;
+	}
+}
+
+/* 1440p phone */
+@media only screen and (width: 412px) and (device-aspect-ratio: 9/16) {
+	.watchface {
+		margin: 0 44.2px !important;
+	}
+}
+
+/* HTC 10 */
+@media only screen and (width: 360px) and (device-aspect-ratio: 9/16) {
+	.watchface {
+		margin: 0 26px !important;
+	}
+}
