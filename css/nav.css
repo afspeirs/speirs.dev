@@ -8,7 +8,7 @@
 	#menu-btn {
 		display: block;
 		float: right;
-		padding: 15px 0;
+		margin: 15px 0;
 	}
 	#menu-btn span {
 		display: block;
@@ -39,6 +39,9 @@
 		padding: 10px 0;
 		position: relative;
 		left: 11px;
+	}
+	.expand li:first-child {
+		padding-top: 0
 	}
 	.expand a {
 		padding: 0 8px !important;
