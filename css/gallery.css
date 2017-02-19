@@ -10,3 +10,10 @@
     height: 300px;
 	padding-top: 20px;
 }
+
+/* Width of images */
+@media only screen and (max-width: 400px) {
+    #gallery img {
+        width: 100%;
+    }
+}
