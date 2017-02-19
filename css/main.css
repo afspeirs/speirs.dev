@@ -22,7 +22,7 @@ body {
 
 #header, #main, .expand ul { /* sets the width of the header and content */
 	width: 70%;
-	margin: 0 auto;
+	margin: 0 auto !important;
 }
 #main {
 	margin-top: 65px;
