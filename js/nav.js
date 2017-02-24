@@ -1,4 +1,4 @@
-window.onload = function() { 
+window.addEventListener('load', function (){
     const menubtn = document.querySelector('#menu-btn');
     const navmenu = document.querySelector('.nav-menu');
 
@@ -7,4 +7,4 @@ window.onload = function() {
         navmenu.classList.toggle('expand');
         menubtn.classList.toggle('open');
     });
-};
+});
