@@ -10,31 +10,20 @@ var gulp = require('gulp'),
 gulp.task('default', ['handlebar', 'styles', 'scripts', 'img']);
 
 // Exports html files to the build folder
-// gulp.task('handlebar', function() {
-// 	gulp.src('src/*.hbs')
-// 		.pipe(handlebar('html', {
-// 			partials: ['src/partials/*.hbs']
-// 		}))
-// 		.pipe(rename(function (path) {
-// 			path.extname = ".html";
-// 		}))
-// 		.pipe(gulp.dest('build'));
-// });
-
-
-
-
 gulp.task('handlebar', function () {
     var templateData = { },
     options = {
         batch : ['./src/partials'],
         helpers : {
+            log : function(something){
+  				console.log(something);
+			},
             ifEquals : function(a,b,options){
-			if (a === b) {
-				return options.fn(this);
+				if (a === b) {
+					return options.fn(this);
+				}
+				return options.inverse(this);
 			}
-
-			return options.inverse(this);            }
         }
     }
 
@@ -45,13 +34,6 @@ gulp.task('handlebar', function () {
 		}))
 		.pipe(gulp.dest('build'));
 });
-
-
-
-
-
-
-
 
 //Exports styles to the build folder
 gulp.task('styles', function () {

@@ -6,10 +6,10 @@
         <div id="menu-btn"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <div id="nav" class="nav-menu" style="float: right">
             <ul>
-                <li><a {{#ifEquals 'video' 'video'}} class="active" {{/ifEquals}} href="index.html">Home</a></li>
-                <li><a {{#if isCurrentPage}}class="active"{{/if}} href="projects.html">Projects</a></li>
-                <li><a {{#if isCurrentPage}}class="active"{{/if}} href="gallery.html">Gallery</a></li>
-                <li><a {{#if isCurrentPage}}class="active"{{/if}} href="#">About Me</a></li>
+                <li><a {{#ifEquals pageName 'index'}}class="active"{{/ifEquals}} href="index.html">Home</a></li>
+                <li><a {{log this}} href="projects.html">Projects</a></li>
+                <li><a {{log this}} href="gallery.html">Gallery</a></li>
+                <li><a {{log this}} href="#">About Me</a></li>
             </ul>
         </div>
     </div>

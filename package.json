@@ -1,6 +1,6 @@
 {
   "name": "afspeirs.uk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
@@ -16,6 +16,9 @@
     "gulp-handlebars": "~4.0.0",
     "gulp-compile-handlebars": "~0.6.1"
   },
+  "keywords": [
+    "handlebars-helper-isactive"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
