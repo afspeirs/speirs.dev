@@ -1,3 +1,92 @@
+/* ----------------------------------------------- */
+/* ---- Default Navigation ----------------------- */
+/* ----------------------------------------------- */
+
+#nav ul {
+	list-style: none;
+    padding: 0;
+	margin: 15px 0;
+}
+#nav li {
+    display: inline;
+	margin: 0;
+}
+#nav li:not(:last-child) {
+	margin-right:15px;
+}
+#nav a {
+	color: #fff;
+	padding: 7px 0;
+	font-size: 22px;
+	text-decoration: none;
+	text-align: center;
+}
+#nav:not(:first-child) a:hover {
+	border-bottom-style: solid;
+}
+#nav a.active {
+	border-top-style: solid;
+}
+
+
+/* ----------------------------------------------- */
+/* ---- Responsive Menu -------------------------- */
+/* ----------------------------------------------- */
+
+.nav-menu {
+	display: none;
+}
+.expand {
+	display: block;
+	background-color: #24A4fE;
+	text-align: right;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 56px;	/* height of #header*/
+	width: 100%;
+}
+.expand li {
+	display: block !important;
+	margin: initial !important;
+	padding: 10px 0;
+	position: relative;
+	left: 11px;
+}
+.expand li:first-child {
+	padding-top: 0
+}
+.expand a {
+	padding: 0 8px !important;
+	width: inherit;
+	border-right: 3px solid #24A4fE;
+	/*border-left: 3px solid #24A4fE;*/
+}
+.expand:not(:first-child) a:hover {
+	border-bottom-style: none !important;
+	border-left: 3px solid white;
+}
+.expand a.active {
+	border-top-style: none !important;
+	border-right: 3px solid white;
+}
+
+
+/* ----------------------------------------------- */
+/* ---- Media Queries ---------------------------- */
+/* ----------------------------------------------- */
+
+/* Hide Hamburger menu and show nav in header */
+@media only screen and (min-width: 710px) {
+	.nav-menu {
+		display: block;
+	}
+	#menu-btn {
+		display: none;
+	}
+}
+
+
 /* ------------------------------------------------- */
 /* ---- Menu Button and animation ------------------ */
 /* ------------------------------------------------- */
@@ -86,93 +175,4 @@
 #menu-btn.open span:nth-child(6) {
   left: calc(50% - 2px);
   top: 11px;
-}
-
-
-/* ----------------------------------------------- */
-/* ---- Default Navigation ----------------------- */
-/* ----------------------------------------------- */
-
-#nav ul {
-	list-style: none;
-    padding: 0;
-	margin: 15px 0;
-}
-#nav li {
-    display: inline;
-	margin: 0;
-}
-#nav li:not(:last-child) {
-	margin-right:15px;
-}
-#nav a {
-	color: #fff;
-	padding: 7px 0;
-	font-size: 22px;
-	text-decoration: none;
-	text-align: center;
-}
-#nav:not(:first-child) a:hover {
-	border-bottom-style: solid;
-}
-#nav a.active {
-	border-top-style: solid;
-}
-
-
-/* ----------------------------------------------- */
-/* ---- Responsive Menu -------------------------- */
-/* ----------------------------------------------- */
-
-.nav-menu {
-	display: none;
-}
-.expand {
-	display: block;
-	background-color: #24A4fE;
-	text-align: right;
-	position: absolute;
-	z-index: 10;
-	left: 0;
-	top: 56px;	/* height of #header*/
-	width: 100%;
-}
-.expand li {
-	display: block !important;
-	margin: initial !important;
-	padding: 10px 0;
-	position: relative;
-	left: 11px;
-}
-.expand li:first-child {
-	padding-top: 0
-}
-.expand a {
-	padding: 0 8px !important;
-	width: inherit;
-	border-right: 3px solid #24A4fE;
-	/*border-left: 3px solid #24A4fE;*/
-}
-.expand:not(:first-child) a:hover {
-	border-bottom-style: none !important;
-	border-left: 3px solid white;
-}
-.expand a.active {
-	border-top-style: none !important;
-	border-right: 3px solid white;
-}
-
-
-/* ----------------------------------------------- */
-/* ---- Media Queries ---------------------------- */
-/* ----------------------------------------------- */
-
-/* Hide Hamburger menu and show nav in header */
-@media only screen and (min-width: 710px) {
-	.nav-menu {
-		display: block;
-	}
-	#menu-btn {
-		display: none;
-	}
 }
