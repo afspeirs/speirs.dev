@@ -26,7 +26,7 @@ gulp.task('img', function () {
 });
 
 gulp.task('handlebar', function() {
-	gulp.src('src/pages/*.hbs')
+	gulp.src('src/*.hbs')
 		.pipe(handlebar('html', {
 			partials: ['src/partials/*.hbs']
 		}))
@@ -34,7 +34,7 @@ gulp.task('handlebar', function() {
 			// path.basename;
 			path.extname = ".html";
 		}))
-		.pipe(gulp.dest('build/pages'));
+		.pipe(gulp.dest('build'));
 });
 
 // Include watch function
