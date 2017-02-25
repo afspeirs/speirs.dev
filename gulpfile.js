@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
-    handlebar = require('gulp-handlebars-all'),
+    handlebars = require('gulp-compile-handlebars'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     del = require("del");
@@ -10,17 +10,48 @@ var gulp = require('gulp'),
 gulp.task('default', ['handlebar', 'styles', 'scripts', 'img']);
 
 // Exports html files to the build folder
-gulp.task('handlebar', function() {
-	gulp.src('src/*.hbs')
-		.pipe(handlebar('html', {
-			partials: ['src/partials/*.hbs']
-		}))
+// gulp.task('handlebar', function() {
+// 	gulp.src('src/*.hbs')
+// 		.pipe(handlebar('html', {
+// 			partials: ['src/partials/*.hbs']
+// 		}))
+// 		.pipe(rename(function (path) {
+// 			path.extname = ".html";
+// 		}))
+// 		.pipe(gulp.dest('build'));
+// });
+
+
+
+
+gulp.task('handlebar', function () {
+    var templateData = { },
+    options = {
+        batch : ['./src/partials'],
+        helpers : {
+            ifEquals : function(a,b,options){
+			if (a === b) {
+				return options.fn(this);
+			}
+
+			return options.inverse(this);            }
+        }
+    }
+
+	return gulp.src('src/*.hbs')
+		.pipe(handlebars(templateData, options))
 		.pipe(rename(function (path) {
-			// path.basename;
 			path.extname = ".html";
 		}))
 		.pipe(gulp.dest('build'));
 });
+
+
+
+
+
+
+
 
 //Exports styles to the build folder
 gulp.task('styles', function () {
