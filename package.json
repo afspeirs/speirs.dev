@@ -1,0 +1,29 @@
+{
+  "name": "afspeirs.uk",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.9.1",
+    "gulp-compile-handlebars": "~0.6.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-compile-handlebars": "~0.6.1",
+    "gulp-rename": "~1.2.2",
+    "gulp-build": "~0.5.3",
+    "gulp-uglify": "~2.0.1",
+    "gulp-concat": "~2.6.1",
+    "gulp-handlebars-all": "~0.1.1"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/AFSpeirs/afspeirs.uk.git"
+  },
+  "author": "afspeirs",
+  "license": "MIT"
+}
