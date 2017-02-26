@@ -1,16 +1,16 @@
 <div class="header-wrap">
-    <div id="header">
-        <div id="nav" style="float: left">
-            <ul><li><a href="index.html">AFSpeirs</a></li></ul>
-        </div>
-        <div id="menu-btn"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <div id="nav" class="nav-menu" style="float: right">
-            <ul>
-                <li><a {{#ifEquals pageName 'index'}}class="active"{{/ifEquals}} href="index.html">Home</a></li>
-                <li><a {{log this}} href="projects.html">Projects</a></li>
-                <li><a {{log this}} href="gallery.html">Gallery</a></li>
-                <li><a {{log this}} href="#">About Me</a></li>
-            </ul>
-        </div>
-    </div>
+	<div id="header">
+		<div id="nav" style="float: left">
+			<ul><li><a href="index.html">AFSpeirs</a></li></ul>
+		</div>
+		<div id="menu-btn"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+		<div id="nav" class="nav-menu" style="float: right">
+			<ul>
+				<li><a {{#ifEquals filename 'index.html'}}class="active"{{/ifEquals}} href="index.html">Home</a></li>
+				<li><a {{log this.filename}} href="projects.html">Projects</a></li>
+				<li><a {{log path.basename}} href="gallery.html">Gallery</a></li>
+				<li><a {{log this.basename}} href="#">About Me</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
