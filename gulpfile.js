@@ -1,9 +1,12 @@
 var gulp = require('gulp'),
-    concat = require('gulp-concat'),
-    handlebars = require('gulp-compile-handlebars'),
-    rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
-    del = require("del");
+	concat = require('gulp-concat'),
+	data = require('gulp-data'),
+	file = require('gulp-file'),
+	hb = require('gulp-hb'),
+	frontMatter = require('gulp-front-matter'),
+	rename = require('gulp-rename'),
+	uglify = require('gulp-uglify'),
+	del = require("del");
 
 // Default task
 // Compiles website 
@@ -11,29 +14,54 @@ gulp.task('default', ['handlebar', 'styles', 'scripts', 'img']);
 
 // Exports html files to the build folder
 gulp.task('handlebar', function () {
-    var templateData = { },
-    options = {
-        batch : ['./src/partials'],
-        helpers : {
-            log : function(something){
-  				console.log(something);
-			},
-            ifEquals : function(a,b,options){
-				if (a === b) {
-					return options.fn(this);
-				}
-				return options.inverse(this);
-			}
-        }
-    }
+    return gulp.src('src/*.hbs')
+        .pipe(hb({
+            partials: 'src/partials/*.hbs',
+			helpers : {
+				log : function(options){
+					console.log(options.fn(this));
+					return '';
+				},
+				ifActive : function(page, options){
+					console.log(this);
+					if (page === options.fn(this)) {
+						// return options.fn(this);
+						// console.log(options.fn(this));
+					}
+					// console.log(options.fn(this));
 
-	return gulp.src('src/*.hbs')
-		.pipe(handlebars(templateData, options))
+					return options.inverse(this);
+				},
+				ifEquals : function(a,b,options){
+					if (a === b) {
+						return options.fn(this);
+					}
+					return options.inverse(this);
+				}
+			},
+			data: 'src/json/*.js'
+        }))
 		.pipe(rename(function (path) {
 			path.extname = ".html";
 		}))
-		.pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'));
 });
+
+
+gulp.task('frontmatter-to-json', function(){
+	return gulp.src('src/*.hbs')
+		.pipe(frontMatter({property: 'meta'}))
+		.pipe(data(function(file){
+			file.contents = new Buffer(JSON.stringify(file.meta))
+		}))
+		.pipe(rename(function (path) {
+			path.extname = ".json";
+		}))
+		.pipe(gulp.dest('src/json'))
+})
+
+
+
 
 //Exports styles to the build folder
 gulp.task('styles', function () {
@@ -43,7 +71,7 @@ gulp.task('styles', function () {
 
 // Exports scripts to build folder
 gulp.task('scripts', function () {
-   	gulp.src('src/scripts/*.js')
+   	gulp.src('src/scripts/pages/*.js')
     	.pipe(gulp.dest('build/scripts'));
 });
 
