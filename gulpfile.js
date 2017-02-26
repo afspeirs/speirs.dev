@@ -2,20 +2,21 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	data = require('gulp-data'),
 	file = require('gulp-file'),
-	hb = require('gulp-hb'),
 	frontMatter = require('gulp-front-matter'),
+	hb = require('gulp-hb'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	del = require("del");
 
 // Default task
 // Compiles website 
-gulp.task('default', ['handlebar', 'styles', 'scripts', 'img']);
+gulp.task('default', ['handlebar', 'css', 'javascript', 'img']);
 
 // Exports html files to the build folder
 gulp.task('handlebar', function () {
     return gulp.src('src/pages/*.hbs')
         .pipe(hb({
+			data: 'src/json/*.js',
             partials: 'src/partials/*.hbs',
 			helpers : {
 				log : function(options){
@@ -38,8 +39,7 @@ gulp.task('handlebar', function () {
 					}
 					return options.inverse(this);
 				}
-			},
-			data: 'src/json/*.js'
+			}
         }))
 		.pipe(rename(function (path) {
 			path.extname = ".html";
@@ -64,15 +64,15 @@ gulp.task('frontmatter-to-json', function(){
 
 
 //Exports styles to the build folder
-gulp.task('styles', function () {
-   	gulp.src('src/styles/*.css')
-    	.pipe(gulp.dest('build/styles'));
+gulp.task('css', function () {
+   	gulp.src('src/css/*.css')
+    	.pipe(gulp.dest('build/css'));
 });
 
 // Exports scripts to build folder
-gulp.task('scripts', function () {
-   	gulp.src('src/scripts/pages/*.js')
-    	.pipe(gulp.dest('build/scripts'));
+gulp.task('javascript', function () {
+   	gulp.src('src/javascript/*.js')
+    	.pipe(gulp.dest('build/javascript'));
 });
 
 //Exports images to the build folder
