@@ -14,7 +14,7 @@ gulp.task('default', ['handlebar', 'styles', 'scripts', 'img']);
 
 // Exports html files to the build folder
 gulp.task('handlebar', function () {
-    return gulp.src('src/*.hbs')
+    return gulp.src('src/pages/*.hbs')
         .pipe(hb({
             partials: 'src/partials/*.hbs',
 			helpers : {
@@ -49,7 +49,7 @@ gulp.task('handlebar', function () {
 
 
 gulp.task('frontmatter-to-json', function(){
-	return gulp.src('src/*.hbs')
+	return gulp.src('src/pages/*.hbs')
 		.pipe(frontMatter({property: 'meta'}))
 		.pipe(data(function(file){
 			file.contents = new Buffer(JSON.stringify(file.meta))
