@@ -10,6 +10,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	handlebars = require('handlebars'),
 	layouts = require('handlebars-layouts'),
+    helpers = require('handlebars-helpers')(),
 	del = require("del");
 
 var paths = {
@@ -44,16 +45,32 @@ gulp.task('handlebar', ['files:moveAssets'], function () {
 
         // Helpers
         .helpers(require('handlebars-layouts'))
+        // .helpers(helpers)
         // .helpers('./helpers/**/*.js')
+        .helpers({
+            log : function(options){
+                console.log(options.fn(this));
+                return '';
+            },
+            ifEquals : function(a,b,options){
+                if (a === b) {
+                    return options.fn(this);
+                }
+                return options.inverse(this);
+            }
+        })
 
         // Decorators
         // .decorators('./decorators/**/*.js')
 
         // Data
-        // .data('./data/**/*.{js,json}')
+        // .data(paths.src + 'templates/data/*.json')
 
     return gulp
         .src(paths.src + 'templates/pages/*.hbs')
+        .pipe(frontMatter({
+            property: 'data'
+        }))
         .pipe(hbStream)
 		.pipe(extname())
         .pipe(gulp.dest(paths.build));

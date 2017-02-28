@@ -18,7 +18,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.1",
     "handlebars": "~4.0.6",
-    "handlebars-layouts": "~3.1.4"
+    "handlebars-layouts": "~3.1.4",
+    "handlebars-helpers": "~0.8.0"
   },
   "keywords": [
     "handlebars-helper-isactive"
