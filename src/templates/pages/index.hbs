@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html>
+{{#extend "layout"}}
 
-<head>
-	<meta charset="utf-8"/>
-	<title>AFSpeirs</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
-	<link rel="icon" type="image/ico" href="img/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/nav.css">
-	<script src="javascript/nav.js"></script>
-</head>
-
-<body>
-	<div id="container">
-		{{> nav pageName='index'}}
-		<div id="main">
-			<h2>Andy's Homepage</h2>
-			<p>I am not entirely sure what to put on this page</p>
-			<p>Make sure to check out my projects or my gallery</p>
-		</div>
-		{{> footer}}
-	</div>
-</body>
-
-</html>
+    {{#content "body"}}
+		<h2>Andy's Homepage</h2>
+		<p>I am not entirely sure what to put on this page</p>
+		<p>Make sure to check out my projects or my gallery</p>
+    {{/content}}
+ 
+{{/extend}}

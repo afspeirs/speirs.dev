@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
+    {{#block "head"}}
 	    <meta charset="utf-8"/>
-        <title></title>
+        <title>{{title}}</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
  
         <link rel="icon" type="image/ico" href="img/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/nav.css">
 	    <script src="js/nav.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/projects.css">
-		<script src="js/projects.js"></script>
+    {{/block}}
 </head>
 
 <body>
@@ -32,31 +32,16 @@
             </div>
         </div>
 		<div id="main">
-		<h2>Projects</h2>
-		<h2>Pebble Watchfaces:</h2>
-
-		<div class="watchface">
-			<h3>Simply Digital</h3>
-			<!--Add images for different pebbles to swap between (aplite/dorite, basalt, and chalk)-->
-			<div style="text-align: center;">
-				<button class="watch" data-watch="Aplite" data-screen="rect">Aplite</button>
-				<button class="watch" data-watch="Basalt" data-screen="rect">Basalt</button>
-				<button class="watch" data-watch="Chalk" data-screen="round">Chalk</button>
-			</div>
-			<img class="rect" data-screen src="img/pebble/SimplyDigital/Basalt_1.png">
-		</div>
-
-		<!--<div class="watchface">
-			<p>Simply Analog</p>
-		</div>
-		<div class="watchface">
-			<p>Sharingan</p>
-		</div>-->
+			{{#block "body"}}
+                <h2>{{title}}</h2>
+            {{/block}}
 		</div>
  
 		<div id="gallery"></div>
         <div id="footer">
+            {{#block "foot"}}
                 <p>© Andy Speirs 2017</p>
+            {{/block}}
         </div>
 	</div>
 </body>

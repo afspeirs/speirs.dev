@@ -76,7 +76,7 @@
 /* ----------------------------------------------- */
 
 /* Hide Hamburger menu and show nav in header */
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 590px) {
 	.nav-menu {
 		display: block;
 	}
