@@ -69,7 +69,8 @@ gulp.task('handlebar', ['files:moveAssets'], function () {
     return gulp
         .src(paths.src + 'templates/pages/*.hbs')
         .pipe(frontMatter({
-            property: 'data'
+            property: 'data',
+            remove:true
         }))
         .pipe(hbStream)
 		.pipe(extname())
