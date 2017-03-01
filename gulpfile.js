@@ -30,32 +30,34 @@ gulp.task('clean:build', function() {
 });
 
 gulp.task('files:moveAssets', ['clean:build'], function() {
-    return gulp.src([paths.src + 'assets/**/*.*'])
-        .pipe(gulp.dest(paths.build));
+    return gulp.src([paths.src + 'assets/**/*'])
+        .pipe(gulp.dest(paths.build + 'assets'));
 });
 
 gulp.task('handlebar', ['files:moveAssets'], function () {
     var hbStream = hb()
         // Partials
-        .partials(paths.src + 'templates/layout/*.{hbs,js}')
-
-        // .partials(paths.src + 'templates/partials/layout.hbs')
-        // .partials('./partials/layouts/**/*.{hbs,js}')
+        .partials(paths.src + 'templates/layout/*.hbs')
 
         // Helpers
         .helpers(require('handlebars-layouts'))
-        // .helpers(helpers)
-        // .helpers('./helpers/**/*.js')
         .helpers({
             log : function(options){
                 console.log(options.fn(this));
                 return '';
             },
-            ifEquals : function(a,b,options){
+            ifEquals : function(a, b, options){
                 if (a === b) {
                     return options.fn(this);
                 }
                 return options.inverse(this);
+            },
+            exists : function(variable, options) {
+                if (typeof variable !== 'undefined') {
+                    return options.fn(this);
+                } else {
+                    return options.inverse(this);
+                }
             }
         })
 

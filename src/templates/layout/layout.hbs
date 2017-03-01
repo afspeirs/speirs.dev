@@ -6,10 +6,12 @@
         <title>AFSpeirs</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
  
-        <link rel="icon" type="image/ico" href="img/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" type="text/css" href="css/nav.css">
-	    <script src="js/nav.js"></script>
+        <link rel="icon" type="image/ico" href="assets/img/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
+        {{#exists cssname}}<link rel="stylesheet" type="text/css" href="assets/css/{{cssname}}.css">{{/exists}}
+	    <script src="assets/js/nav.js"></script>
+		{{#exists cssname}}<script src="assets/js/{{jsname}}.js"></script>{{/exists}}
     {{/block}}
 </head>
 
