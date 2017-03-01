@@ -34,7 +34,7 @@ gulp.task('files:assets', ['clean:build'], function() {
         .pipe(gulp.dest(paths.build + 'assets'));
 });
 
-gulp.task('handlebar', function () {
+gulp.task('handlebar', ['files:assets'], function () {
     var hbStream = hb()
         // Partials
         .partials(paths.src + 'templates/layout/*.hbs')
@@ -79,7 +79,7 @@ gulp.task('handlebar', function () {
 });
 
 
-gulp.task('default', ['files:assets', 'handlebar']);
+gulp.task('default', ['handlebar']);
 
 gulp.task('watch', function() {
    gulp.watch(paths.src + 'assets/css/*.css', ['files:assets']); 
