@@ -29,12 +29,12 @@ gulp.task('clean:build', function() {
    return del(paths.build); 
 });
 
-gulp.task('files:moveAssets', ['clean:build'], function() {
+gulp.task('files:assets', ['clean:build'], function() {
     return gulp.src([paths.src + 'assets/**/*'])
         .pipe(gulp.dest(paths.build + 'assets'));
 });
 
-gulp.task('handlebar', ['files:moveAssets'], function () {
+gulp.task('handlebar', function () {
     var hbStream = hb()
         // Partials
         .partials(paths.src + 'templates/layout/*.hbs')
@@ -79,10 +79,12 @@ gulp.task('handlebar', ['files:moveAssets'], function () {
 });
 
 
-gulp.task('default', ['handlebar']);
+gulp.task('default', ['files:assets', 'handlebar']);
 
 gulp.task('watch', function() {
-   gulp.watch('src/**/*.css', ['clean:css', 'files:moveToBuild']); 
+   gulp.watch(paths.src + 'assets/css/*.css', ['files:assets']); 
+   gulp.watch(paths.src + 'assets/js/*.js', ['files:assets']); 
+   gulp.watch(paths.src + 'templates/**/*.hbs', ['handlebar']); 
 });
 
 // gulp.task('frontmatter-to-json', function(){
