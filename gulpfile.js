@@ -61,12 +61,6 @@ gulp.task('handlebar', ['files:assets'], function () {
             }
         })
 
-        // Decorators
-        // .decorators('./decorators/**/*.js')
-
-        // Data
-        // .data(paths.src + 'templates/data/*.json')
-
     return gulp
         .src(paths.src + 'templates/pages/*.hbs')
         .pipe(frontMatter({
@@ -81,20 +75,8 @@ gulp.task('handlebar', ['files:assets'], function () {
 
 gulp.task('default', ['handlebar']);
 
-gulp.task('watch', function() {
+gulp.task('server', function() {
    gulp.watch(paths.src + 'assets/css/*.css', ['files:assets']); 
    gulp.watch(paths.src + 'assets/js/*.js', ['files:assets']); 
    gulp.watch(paths.src + 'templates/**/*.hbs', ['handlebar']); 
 });
-
-// gulp.task('frontmatter-to-json', function(){
-// 	return gulp.src(paths.src + '/templates/pages/*.hbs')
-// 		.pipe(frontMatter({property: 'meta'}))
-// 		.pipe(data(function(file){
-// 			file.contents = new Buffer(JSON.stringify(file.meta))
-// 		}))
-// 		.pipe(rename(function (path) {
-// 			path.extname = ".json";
-// 		}))
-// 		.pipe(gulp.dest(paths.src + 'templates/json'))
-// })
