@@ -71,10 +71,7 @@ gulp.task('files:assets', ['clean:assets'], function() {
 // Compiles and moves Handlebar files
 gulp.task('files:hbs', ['clean:html'], function () {
 	var hbStream = hb()
-		// Partials
 		.partials(paths.src + 'templates/layout/*.hbs')
-
-		// Helpers
 		.helpers(require('handlebars-layouts'))
 		.helpers({
 			log : function(options){
@@ -104,12 +101,12 @@ gulp.task('files:hbs', ['clean:html'], function () {
 		.pipe(gulp.dest(paths.build));
 });
 
-
+// Removes html bfiles and everything from assets folder, then compiles to build folder
 gulp.task('default', ['files:assets', 'files:hbs']);
 
+// Watches css js and hbs files and compiles them to the build folder
 gulp.task('server', function() {
    gulp.watch(paths.src + 'assets/css/*.css', ['files:css']); 
    gulp.watch(paths.src + 'assets/js/*.js', ['files:js']); 
-   gulp.watch(paths.src + 'templates/**/*.hbs', ['files:hbs']);
-; 
+   gulp.watch(paths.src + 'templates/**/*.hbs', ['files:hbs']); 
 });
