@@ -1,16 +1,17 @@
-var gulp = require('gulp'),
-	concat = require('gulp-concat'),
-	data = require('gulp-data'),
-	extname = require('gulp-extname'),
+var gulp		= require('gulp'),
+	concat 		= require('gulp-concat'),
+	data 		= require('gulp-data'),
+	extname 	= require('gulp-extname'),
 	frontMatter = require('gulp-front-matter'),
-	hb = require('gulp-hb'),
-	htmlmin = require('gulp-htmlmin'),
-	rename = require('gulp-rename'),
-	uglify = require('gulp-uglify'),
-	handlebars = require('handlebars'),
-	layouts = require('handlebars-layouts'),
-	helpers = require('handlebars-helpers')(),
-	del = require("del");
+	hb 			= require('gulp-hb'),
+	htmlmin 	= require('gulp-htmlmin'),
+	rename 		= require('gulp-rename'),
+	uglify 		= require('gulp-uglify'),
+	handlebars 	= require('handlebars'),
+	layouts 	= require('handlebars-layouts'),
+	helpers 	= require('handlebars-helpers')(),
+	browserSync = require('browser-sync').create(),
+	del 		= require("del");
 
 var paths = {
 	src: './src/',
@@ -22,7 +23,7 @@ var paths = {
 };
 
 
-// Clean img folder
+// Cleans folder
 gulp.task('clean:img', function () {
    return del(paths.build + paths.img);
 });
@@ -42,7 +43,7 @@ gulp.task('clean:assets', function() {
 gulp.task('clean:build', function() { 
    return del(paths.build); 
 });
-// Clean html files
+// Clean html files from root of build
 gulp.task('clean:html', function() { 
    return del(paths.build + '*.html'); 
 });
@@ -69,7 +70,7 @@ gulp.task('files:assets', ['clean:assets'], function() {
 		.pipe(gulp.dest(paths.build + 'assets'));
 });
 // Compiles and moves Handlebar files
-gulp.task('files:hbs', ['clean:html'], function () {
+gulp.task('files:handlebar', ['clean:html'], function () {
 	var hbStream = hb()
 		.partials(paths.src + 'templates/layout/*.hbs')
 		.helpers(require('handlebars-layouts'))
@@ -101,12 +102,50 @@ gulp.task('files:hbs', ['clean:html'], function () {
 		.pipe(gulp.dest(paths.build));
 });
 
-// Removes html bfiles and everything from assets folder, then compiles to build folder
-gulp.task('default', ['files:assets', 'files:hbs']);
 
-// Watches css js and hbs files and compiles them to the build folder
-gulp.task('server', function() {
-   gulp.watch(paths.src + 'assets/css/*.css', ['files:css']); 
-   gulp.watch(paths.src + 'assets/js/*.js', ['files:js']); 
-   gulp.watch(paths.src + 'templates/**/*.hbs', ['files:hbs']); 
+// Ensures the `files:css` task is complete before reloading the browser
+gulp.task('watch:css', ['files:css'], function(done) {
+    browserSync.reload();
+    done();
 });
+// Ensures the `files:js` task is complete before reloading the browser
+gulp.task('watch:js', ['files:js'], function(done) {
+    browserSync.reload();
+    done();
+});
+// Ensures the `files:img` task is complete before reloading the browser
+gulp.task('watch:img', ['files:img'], function(done) {
+    browserSync.reload();
+    done();
+});
+// Ensures the `files:handlebar` task is complete before reloading the browser
+gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
+    browserSync.reload();
+    done();
+});
+
+// Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
+gulp.task('server', ['files:assets', 'files:handlebar'], function () {
+
+    // Serve files from the root of this project
+    browserSync.init({
+        server: {
+            baseDir: paths.build,
+		    index: "index.html"
+        },
+		notify: false
+    });
+
+    // add browserSync.reload to the tasks array to make
+    // all browsers reload after tasks are complete.
+    gulp.watch(paths.src + paths.css + "*.css", ['watch:css']);
+    gulp.watch(paths.src + paths.js + "*.js", ['watch:js']);
+    gulp.watch(paths.src + paths.img + paths.contents, ['watch:img']);
+	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
+});
+
+// Removes html files and everything from assets folder, then compiles to build folder
+gulp.task('build', ['files:assets', 'files:handlebar']);
+
+// Runs the server task by default
+gulp.task('default', ['server']);

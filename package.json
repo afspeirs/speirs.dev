@@ -7,6 +7,7 @@
     "gulp": "~3.9.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -21,9 +22,6 @@
     "handlebars-helpers": "^0.8.0",
     "handlebars-layouts": "^3.1.4"
   },
-  "keywords": [
-    "handlebars-helper-isactive"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
