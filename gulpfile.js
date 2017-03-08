@@ -133,7 +133,10 @@ gulp.task('server', ['files:assets', 'files:handlebar'], function () {
             baseDir: paths.build,
 		    index: "index.html"
         },
-		notify: false
+		// Don't show any notifications in the browser.
+		notify: false,
+		// Wait 2 seconds after a reload event before allowing more.
+		reloadDebounce: 2000
     });
 
     // add browserSync.reload to the tasks array to make
