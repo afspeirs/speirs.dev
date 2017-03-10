@@ -1,49 +1,49 @@
 <!doctype html>
 <html>
 <head>
-    {{#block "head"}}
-	    <meta charset="utf-8"/>
-        <title>AFSpeirs</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+	{{#block "head"}}
+		<meta charset="utf-8">
+		<title>AFSpeirs</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
  
-        <link rel="icon" type="image/ico" href="assets/img/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-        {{#exists cssname}}<link rel="stylesheet" type="text/css" href="assets/css/{{cssname}}.css">{{/exists}}
-	    <script src="assets/js/nav.js"></script>
+		<link rel="icon" type="image/ico" href="assets/img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		{{#exists cssname}}<link rel="stylesheet" type="text/css" href="assets/css/{{cssname}}.css">{{/exists}}
+		<script src="assets/js/nav.js"></script>
 		{{#exists cssname}}<script src="assets/js/{{jsname}}.js"></script>{{/exists}}
-    {{/block}}
+	{{/block}}
 </head>
 
 <body>
 	<div id="container">
 		<div class="header-wrap">
-            <div id="header">
-                <div id="nav" style="float: left">
-                    <ul><li><a href="index.html">AFSpeirs</a></li></ul>
-                </div>
-                <div id="menu-btn"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <div id="nav" class="nav-menu" style="float: right">
-                    <ul>
-                        <li><a {{#ifEquals title 'index'}}class="active"{{/ifEquals}} href="index.html">Home</a></li>
-                        <li><a {{#ifEquals title 'projects'}}class="active"{{/ifEquals}} href="projects.html">Projects</a></li>
-                        <li><a {{#ifEquals title 'gallery'}}class="active"{{/ifEquals}} href="gallery.html">Gallery</a></li>
-                        <li><a {{#ifEquals title 'about us'}}class="active"{{/ifEquals}} href="#">About Me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+			<div id="header">
+				<div id="nav" style="float: left">
+					<ul><li><a href="index.html">AFSpeirs</a></li></ul>
+				</div>
+				<div id="menu-btn"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+				<div id="nav" class="nav-menu" style="float: right">
+					<ul>
+						<li><a {{#ifEquals title 'index'}}class="active"{{/ifEquals}} href="index.html">Home</a></li>
+						<li><a {{#ifEquals title 'projects'}}class="active"{{/ifEquals}} href="projects.html">Projects</a></li>
+						<li><a {{#ifEquals title 'gallery'}}class="active"{{/ifEquals}} href="gallery.html">Gallery</a></li>
+						<li><a {{#ifEquals title 'about us'}}class="active"{{/ifEquals}} href="#">About Me</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div id="main">
 			{{#block "body"}}
-                <h2>{{title}}</h2>
-            {{/block}}
+				<h2>{{title}}</h2>
+			{{/block}}
 		</div>
  
 		<div id="gallery"></div>
-        <div id="footer">
-            {{#block "foot"}}
-                <p>© Andy Speirs 2017</p>
-            {{/block}}
-        </div>
+		<div id="footer">
+			{{#block "foot"}}
+				<p>© Andy Speirs 2017</p>
+			{{/block}}
+		</div>
 	</div>
 </body>
 </html>

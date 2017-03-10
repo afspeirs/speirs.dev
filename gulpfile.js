@@ -99,6 +99,7 @@ gulp.task('files:handlebar', ['clean:html'], function () {
 		.pipe(frontMatter({ property: 'data' }))
 		.pipe(hbStream)
 		.pipe(extname())
+		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(gulp.dest(paths.build));
 });
 
