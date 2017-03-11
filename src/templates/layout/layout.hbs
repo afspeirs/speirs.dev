@@ -7,10 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
 		<link rel="icon" type="image/ico" href="assets/img/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-		{{#exists cssname}}<link rel="stylesheet" type="text/css" href="assets/css/{{cssname}}.css">{{/exists}}
+		{{!--<link rel="stylesheet" type="text/css" href="assets/css/main.css">--}}
+		<link rel="stylesheet" type="text/css" href="assets/css/pages/{{title}}.css">
 		<script src="assets/js/nav.js"></script>
-		{{#exists cssname}}<script src="assets/js/{{jsname}}.js"></script>{{/exists}}
+		{{#exists jsname}}<script src="assets/js/{{jsname}}.js"></script>{{/exists}}
 	{{/block}}
 </head>
 
