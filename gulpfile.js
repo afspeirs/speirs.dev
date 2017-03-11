@@ -61,17 +61,16 @@ gulp.task('files:js', ['clean:js'], function() {
 	return gulp.src([paths.src + paths.js + paths.contents])
 		.pipe(gulp.dest(paths.build + paths.js));
 });
-// Compiles and moves scss files to css
+// Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
 	return gulp.src(paths.src + paths.css + '*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix())
-		// .pipe(gulp.dest(paths.build + paths.css))
 		.pipe(cleanCSS())
 		.pipe(rename({ extname: '.css' }))
 		.pipe(gulp.dest(paths.build + paths.css));
 });
-// Compiles and moves Handlebar files
+// Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:html'], function () {
 	var hbStream = hb()
 		.partials(paths.src + 'templates/layout/*.hbs')
