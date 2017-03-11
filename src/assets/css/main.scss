@@ -1,3 +1,4 @@
+@import 'variables.scss';
 @import 'nav.scss';
 
 body {
@@ -12,8 +13,8 @@ body {
 }
 
 .header-wrap {
-    height: 56px;
-	background-color: #24A4fE;
+	background-color: $header-colour;
+    height: $header-height;
 }
 
 #header {
@@ -28,9 +29,10 @@ body {
 }
 #main {
 	margin-top: 70px !important;
-}
-#main p {
-	font-size: 16px;
+	
+	p {
+		font-size: 16px;
+	}
 }
 
 #footer {

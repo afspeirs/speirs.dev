@@ -49,8 +49,6 @@ gulp.task('clean:build', function() {
 gulp.task('clean:html', function() { 
 	return del(paths.build + '*.html'); 
 });
-
-
 // Move img folder contents
 gulp.task('files:img', ['clean:img'], function() {
 	return gulp.src([paths.src + paths.img + paths.contents])
