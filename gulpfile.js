@@ -9,9 +9,6 @@ var gulp		= require('gulp'),
 	sass 		= require('gulp-sass'),
 	uglify 		= require('gulp-uglify'),
 	browserSync = require('browser-sync').create(),
-	handlebars 	= require('handlebars'),
-	layouts 	= require('handlebars-layouts'),
-	helpers 	= require('handlebars-helpers')(),
 	del 		= require("del");
 
 
