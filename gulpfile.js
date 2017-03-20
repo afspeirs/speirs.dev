@@ -1,15 +1,15 @@
-var gulp		= require('gulp'),
-	prefix		= require('gulp-autoprefixer'),
-	cleanCSS	= require('gulp-clean-css'),
-	extname 	= require('gulp-extname'),
-	frontMatter = require('gulp-front-matter'),
-	hb 			= require('gulp-hb'),
-	htmlmin 	= require('gulp-htmlmin'),
-	rename		= require('gulp-rename')
-	sass 		= require('gulp-sass'),
-	uglify 		= require('gulp-uglify'),
-	browserSync = require('browser-sync').create(),
-	del 		= require("del");
+var gulp		= require('gulp'),						// https://www.npmjs.com/package/gulp
+	prefix		= require('gulp-autoprefixer'),			// https://www.npmjs.com/package/gulp-autoprefixer
+	cleanCSS	= require('gulp-clean-css'),			// https://www.npmjs.com/package/gulp-clean-css
+	extname 	= require('gulp-extname'),				// https://www.npmjs.com/package/gulp-extname
+	frontMatter = require('gulp-front-matter'),			// https://www.npmjs.com/package/gulp-front-matter
+	hb 			= require('gulp-hb'),					// https://www.npmjs.com/package/gulp-hb
+	htmlmin 	= require('gulp-htmlmin'),				// https://www.npmjs.com/package/gulp-htmlmin
+	rename		= require('gulp-rename'),				// https://www.npmjs.com/package/gulp-rename
+	sass 		= require('gulp-sass'),					// https://www.npmjs.com/package/gulp-sass
+	uglify 		= require('gulp-uglify'),				// https://www.npmjs.com/package/gulp-uglify
+	browserSync = require('browser-sync').create(),		// https://www.npmjs.com/package/browser-sync
+	del 		= require("del");						// https://www.npmjs.com/package/del
 
 
 var paths = {
@@ -46,6 +46,8 @@ gulp.task('clean:build', function() {
 gulp.task('clean:html', function() { 
 	return del(paths.build + '*.html'); 
 });
+
+
 // Move img folder contents
 gulp.task('files:img', ['clean:img'], function() {
 	return gulp.src([paths.src + paths.img + paths.contents])
@@ -121,6 +123,7 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 	done();
 });
 
+
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
 gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], function () {
 
@@ -144,8 +147,10 @@ gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], f
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
 });
 
+
 // Removes html files and everything from assets folder, then compiles to build folder
 gulp.task('build', ['files:img', 'files:js', 'files:css', 'files:handlebar']);
+
 
 // Runs the server task by default
 gulp.task('default', ['server']);
