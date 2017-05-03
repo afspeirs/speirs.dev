@@ -1,15 +1,15 @@
-var gulp		= require('gulp'),						// https://www.npmjs.com/package/gulp
-	prefix		= require('gulp-autoprefixer'),			// https://www.npmjs.com/package/gulp-autoprefixer
-	cleanCSS	= require('gulp-clean-css'),			// https://www.npmjs.com/package/gulp-clean-css
-	// extname 	= require('gulp-extname'),				// https://www.npmjs.com/package/gulp-extname
-	frontMatter = require('gulp-front-matter'),			// https://www.npmjs.com/package/gulp-front-matter
-	hb 			= require('gulp-hb'),					// https://www.npmjs.com/package/gulp-hb
-	htmlmin 	= require('gulp-htmlmin'),				// https://www.npmjs.com/package/gulp-htmlmin
-	rename		= require('gulp-rename'),				// https://www.npmjs.com/package/gulp-rename
-	sass 		= require('gulp-sass'),					// https://www.npmjs.com/package/gulp-sass
-	// uglify 	= require('gulp-uglify'),				// https://www.npmjs.com/package/gulp-uglify
-	browserSync = require('browser-sync').create(),		// https://www.npmjs.com/package/browser-sync
-	del 		= require("del");						// https://www.npmjs.com/package/del
+var gulp         = require('gulp'),                     // https://npmjs.com/package/gulp
+    prefix       = require('gulp-autoprefixer'),        // https://npmjs.com/package/gulp-autoprefixer
+    cleanCSS     = require('gulp-clean-css'),           // https://npmjs.com/package/gulp-clean-css
+    // extname      = require('gulp-extname'),             // https://npmjs.com/package/gulp-extname
+    frontMatter  = require('gulp-front-matter'),        // https://npmjs.com/package/gulp-front-matter
+    hb           = require('gulp-hb'),                  // https://npmjs.com/package/gulp-hb
+    htmlmin      = require('gulp-htmlmin'),             // https://npmjs.com/package/gulp-htmlmin
+    rename       = require('gulp-rename'),              // https://npmjs.com/package/gulp-rename
+    sass         = require('gulp-sass'),                // https://npmjs.com/package/gulp-sass
+    // uglify       = require('gulp-uglify'),              // https://npmjs.com/package/gulp-uglify
+    browserSync  = require('browser-sync').create(),    // https://npmjs.com/package/browser-sync
+    del          = require("del");                      // https://npmjs.com/package/del
 
 
 var paths = {
