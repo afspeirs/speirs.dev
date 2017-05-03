@@ -15,12 +15,15 @@ var gulp		= require('gulp'),
 var paths = {
 	src: './src/',
 	build: './build/',
-	css: 'assets/css/pages/',
+	css: 'assets/css/',
 	js: 'assets/js/',
 	img: 'assets/img/',
-	contents: '**/*'
 };
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Clean  ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Cleans folder
 gulp.task('clean:img', function () {
@@ -46,19 +49,25 @@ gulp.task('clean:build', function() {
 gulp.task('clean:html', function() { 
 	return del(paths.build + '*.html'); 
 });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Files  ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // Move img folder contents
 gulp.task('files:img', ['clean:img'], function() {
-	return gulp.src([paths.src + paths.img + paths.contents])
+	return gulp.src([paths.src + paths.img + '**/*'])
 		.pipe(gulp.dest(paths.build + paths.img));
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
-	return gulp.src([paths.src + paths.js + paths.contents])
+	return gulp.src([paths.src + paths.js + '**/*'])
 		.pipe(gulp.dest(paths.build + paths.js));
 });
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
-	return gulp.src(paths.src + paths.css + '*.scss')
+	return gulp.src(paths.src + paths.css + '**/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix())
 		.pipe(cleanCSS())
@@ -100,6 +109,10 @@ gulp.task('files:handlebar', ['clean:html'], function () {
 });
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Watch  ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // Ensures the `files:css` task is complete before reloading the browser
 gulp.task('watch:css', ['files:css'], function(done) {
 	browserSync.reload();
@@ -121,6 +134,11 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 	done();
 });
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Server  ///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
 gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], function () {
 
@@ -138,14 +156,24 @@ gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], f
 
 	// add browserSync.reload to the tasks array to make
 	// all browsers reload after tasks are complete.
-	gulp.watch(paths.src + paths.css + paths.contents, ['watch:css']);
-	gulp.watch(paths.src + paths.js + paths.contents, ['watch:js']);
-	gulp.watch(paths.src + paths.img + paths.contents, ['watch:img']);
+	gulp.watch(paths.src + paths.css + '**/*', ['watch:css']);
+	gulp.watch(paths.src + paths.js + '**/*', ['watch:js']);
+	gulp.watch(paths.src + paths.img + '**/*', ['watch:img']);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
 });
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Buid  /////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // Removes html files and everything from assets folder, then compiles to build folder
 gulp.task('build', ['files:img', 'files:js', 'files:css', 'files:handlebar']);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Default  //////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Runs the server task by default
 gulp.task('default', ['server']);
