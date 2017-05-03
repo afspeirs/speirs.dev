@@ -1,19 +1,15 @@
 @import '../helpers/main.scss';
 
 .watchface {
-	float: left;
 	width: 200px;
-	margin-right: 20px;
+	margin: 0 20px 20px 0;
 	background-color: lightgrey;
 	
 	h3 {
-		margin: 10px 0;
+		margin: 0;
+		padding: 10px 0;
 		text-align: center;
 		width: 100%;
-	}
-	
-	p {
-		font-size: 20px;
 	}
 	
 	.rect {
