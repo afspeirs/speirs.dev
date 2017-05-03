@@ -1,9 +1,13 @@
 ---
 title: gallery
-jsname: gallery
+images: 4
 ---
 {{#extend "layout"}}
 	{{#content "body"}}
-		<div id="flex"></div>
+		<div id="flex">
+			{{#times images}}
+				<a class="img-wrap" href="assets/img/gallery/large/img_{{this}}.jpg"><img src="assets/img/gallery/img_{{this}}.jpg"></img></a>
+			{{/times}}
+		</div>
 	{{/content}}
 {{/extend}}

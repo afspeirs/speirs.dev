@@ -96,6 +96,12 @@ gulp.task('files:handlebar', ['clean:html'], function () {
 				} else {
 					return options.inverse(this);
 				}
+			},
+			times : function(n, options) {
+				var times = '';
+				for(var i = 1; i <= n; ++i)
+					times += options.fn(i);
+				return times;
 			}
 		})
 
