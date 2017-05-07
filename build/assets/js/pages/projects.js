@@ -18,8 +18,6 @@ window.addEventListener('load', function () {
 		array[1] = this.dataset.watch;
 		array[3] = 1;
 
-		console.log(array);
-
 		screen.setAttribute("src", array.join(''));
 
 		if(this.dataset.screen != screen.classList) {
