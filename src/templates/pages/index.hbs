@@ -2,9 +2,11 @@
 title: index
 ---
 {{#extend "layout"}}
-	{{#content "title"}}Andy's Homepage{{/content}}
 	{{#content "body"}}
-		<p>I am not entirely sure what to put on this page</p>
-		<p>Make sure to check out my projects or my gallery</p>
+		{{>section sectionTitle="andy's homepage"}}
+		<div id="content">
+			<p>I am not entirely sure what to put on this page</p>
+			<p>Make sure to check out my projects or my gallery</p>
+		</div>
 	{{/content}}
 {{/extend}}

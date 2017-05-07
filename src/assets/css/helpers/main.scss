@@ -23,7 +23,7 @@ body {
 	height: $header-height;
 }
 
-#title {
+#section {
     height: $title-height;
 	overflow: hidden;
 	background: darkblue;
@@ -50,11 +50,11 @@ body {
 	}
 }
 
-#header, #main, .expand ul { /* sets the width of the header and content */
+#header, #content, .expand ul { /* sets the width of the header and content */
 	width: 85%;
 	margin: 0 auto !important;
 }
-#main {
+#content {
 	p {
 		font-size: 16px;
 	}
@@ -73,7 +73,7 @@ body {
 
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1040px) {
-	#header, #main { /* sets the width of the header and content */
+	#header, #content { /* sets the width of the header and content */
 		width: 884px;
 	}
 }

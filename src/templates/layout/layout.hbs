@@ -23,18 +23,11 @@
 			</div>
 		</div>
 		<div id="header-height"></div>
-		
-			<div id="title">
-				<h1>{{#block "title"}}{{title}}{{/block}}</h1>
-				{{#exists imgtitle}}<img src="assets/img/{{title}}/title.png" alt="" />{{/exists}}
-			</div>
-		<div id="main">
-			{{#block "body"}}
+		{{#block "body"}}
+			<div id="content">
 				<h1>{{title}}</h1>
-			{{/block}}
-		</div>
-
-		<div id="gallery"></div>
+			</div>
+		{{/block}}
 		<div id="footer">
 			{{#block "foot"}}
 				<p>© Andy Speirs 2017</p>
