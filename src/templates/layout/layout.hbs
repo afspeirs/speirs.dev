@@ -22,9 +22,15 @@
 				{{> navigation}}
 			</div>
 		</div>
+		<div id="header-height"></div>
+		
+			<div id="title">
+				<h1>{{#block "title"}}{{title}}{{/block}}</h1>
+				{{#exists imgtitle}}<img src="assets/img/{{title}}/title.png" alt="" />{{/exists}}
+			</div>
 		<div id="main">
 			{{#block "body"}}
-				<h2>{{title}}</h2>
+				<h1>{{title}}</h1>
 			{{/block}}
 		</div>
 
