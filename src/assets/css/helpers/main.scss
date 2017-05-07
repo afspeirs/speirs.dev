@@ -30,9 +30,9 @@ body {
 	
 	img {
 		position: relative;
-		bottom: (($header-height*2)/100)*102;
+		bottom: (($header-height*2)/100)*104;
 		left: -2%;
-		min-height: $header-height*2;
+		min-height: (($header-height*2)/100)*104;
 		width: 104%;
 		filter: blur(5px);
 	}
