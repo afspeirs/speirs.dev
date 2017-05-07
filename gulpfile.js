@@ -77,6 +77,7 @@ gulp.task('files:css', ['clean:css'], function() {
 gulp.task('files:handlebar', ['clean:html'], function () {
 	var hbStream = hb()
 		.partials(paths.src + 'templates/layout/*.hbs')
+		.partials(paths.src + 'templates/partials/*.hbs')
 		.helpers(require('handlebars-layouts'))
 		.helpers({
 			log : function(options){
