@@ -1,10 +1,1 @@
-window.addEventListener('load', function () {
-	const menubtn = document.querySelector('#menu-btn');
-	const navmenu = document.querySelector('.nav-menu');
-
-	// Toggle Mobile navigation menu on click
-	menubtn.addEventListener('click', function(e) {
-		navmenu.classList.toggle('expand');
-		menubtn.classList.toggle('open');
-	});
-});
+window.addEventListener("load",function(){const e=document.querySelector("#menu-btn"),n=document.querySelector(".nav-menu");e.addEventListener("click",function(){e.classList.toggle("open"),n.classList.toggle("expand")})});

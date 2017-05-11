@@ -7,7 +7,7 @@ var gulp         = require('gulp'),                     // https://www.npmjs.com
     htmlmin      = require('gulp-htmlmin'),             // https://www.npmjs.com/package/gulp-htmlmin
     rename       = require('gulp-rename'),              // https://www.npmjs.com/package/gulp-rename
     sass         = require('gulp-sass'),                // https://www.npmjs.com/package/gulp-sass
-	// uglify       = require('gulp-uglify'),              // https://www.npmjs.com/package/gulp-uglify
+	uglify       = require('gulp-uglify'),              // https://www.npmjs.com/package/gulp-uglify
     browserSync  = require('browser-sync').create(),    // https://www.npmjs.com/package/browser-sync
     del          = require("del");                      // https://www.npmjs.com/package/del
 
@@ -62,6 +62,7 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	return gulp.src([paths.src + paths.js + '**/*'])
+		.pipe(uglify())
 		.pipe(gulp.dest(paths.build + paths.js));
 });
 // Compiles scss files
