@@ -4,11 +4,13 @@ images: 4
 ---
 {{#extend "layout"}}
 	{{#content "body"}}
-		<h1>{{title}}</h1>
-		<div id="flex">
-			{{#times images}}
-				<a class="img-wrap" href="assets/img/gallery/large/img_{{this}}.jpg"><img src="assets/img/gallery/img_{{this}}.jpg"></img></a>
-			{{/times}}
+		{{>section}}
+		<div id="content">
+			<div id="flex">
+				{{#times images}}
+					<a class="img-wrap" href="assets/img/gallery/large/img_{{this}}.jpg"><img src="assets/img/gallery/img_{{this}}.jpg"></img></a>
+				{{/times}}
+			</div>
 		</div>
 	{{/content}}
 {{/extend}}

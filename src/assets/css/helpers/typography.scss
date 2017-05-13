@@ -5,19 +5,3 @@ body {
 	color: $font-colour;
 	font-size: 16px;
 }
-
-h1 {
-	display: table;
-	position: relative;
-	left: -13px;
-	border-left: 3px solid $font-colour;
-	border-bottom: 3px solid $font-colour;
-	text-transform: capitalize;
-
-	&:before, &:after {
-		display: inline-block;
-		width: 10px;
-		content: "?";
-		color: transparent;
-	}
-}

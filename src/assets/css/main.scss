@@ -17,13 +17,16 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+#header-height {
+	height: $header-height;
+}
+
 #header, .expand ul { /* sets the width of the header and content */
 	width: 85%;
 	margin: 0 auto !important;
 }
 
 #content {
-	padding-top: $header-height;
 	width: 85%;
 	margin: 0 auto;
 }
@@ -34,6 +37,34 @@
 		margin: 0;
 		line-height: $footer-height;
 		text-align: center;
+	}
+}
+
+#section {
+    height: $title-height;
+	overflow: hidden;
+	background: slategray;
+	text-align: center;
+	
+	img {
+		position: relative;
+		bottom: (($title-height)/100)*104;
+		left: -2%;
+		min-height: (($title-height)/100)*104;
+		width: 104%;
+		filter: blur(5px);
+	}
+
+	span {
+		position: relative;
+		top: 0;
+		margin: 0;
+		width: 100%;
+		text-transform: capitalize;
+		line-height: $title-height;
+		color: $background-colour;
+		font-size: 2em;
+		z-index: 1;
 	}
 }
 
