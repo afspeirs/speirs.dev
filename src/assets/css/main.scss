@@ -15,24 +15,30 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-#header-height {
-	height: $header-height;
-}
-
-#header, #content, .expand ul { /* sets the width of the header and content */
+#header, .expand ul { /* sets the width of the header and content */
 	width: 85%;
 	margin: 0 auto !important;
 }
+
+#content {
+	padding-top: $header-height;
+	width: 85%;
+	margin: 0 auto;
+}
+#footer {
+	p {
+		position: relative;
+		top: 0;
+		margin: 0;
+		line-height: $footer-height;
+		text-align: center;
+	}
+}
+
 #flex {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-
-#footer {
-	clear: both;
-	padding: 10px 0;
-	text-align: center;
 }
 
 /* Desktops and laptops ----------- */
