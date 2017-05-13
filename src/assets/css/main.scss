@@ -23,30 +23,19 @@ body {
 	height: $header-height;
 }
 
-#section {
-    height: $title-height;
-	overflow: hidden;
-	background: darkblue;
-	
-	img {
-		position: relative;
-		bottom: (($title-height)/100)*104;
-		left: -2%;
-		min-height: (($title-height)/100)*104;
-		width: 104%;
-		filter: blur(5px);
-	}
+h1 {
+	display: table;
+	position: relative;
+	left: -13px;
+	border-left: 3px solid #000;
+	border-bottom: 3px solid #000;
+	text-transform: capitalize;
 
-	h1 {
-		position: relative;
-		top: 0;
-		margin: 0;
-		line-height: $title-height;
-		color: white;
-		text-align: center;
-		font-family: Courier New, Courier, monospace;
-		text-transform: capitalize;
-		z-index: 1;
+	&:before, &:after {
+		display: inline-block;
+		width: 10px;
+		content: "?";
+		color: transparent;
 	}
 }
 
