@@ -30,4 +30,13 @@ window.addEventListener('load', function() {
 	for(i = 0; i < watch.length; i++) {
 		watch[i].addEventListener('click', swapWatch);
 	}
+
+	const flipButton = document.querySelectorAll('#flip-button');
+
+	flipButton.forEach(function(e) {
+		e.addEventListener('click', function() {
+			// console.log(this.parentNode.parentNode.parentNode);
+			this.parentNode.parentNode.parentNode.classList.toggle('flip')
+		});
+	})
 });
