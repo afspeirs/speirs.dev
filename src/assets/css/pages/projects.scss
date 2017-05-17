@@ -16,6 +16,12 @@
 	.rect {
 		height: 168px;
 		width: 144px;
+		
+		&:after {
+			width: 10px;
+			height: 10px;
+			background: red;
+		}
 	}
 	
 	.round {
