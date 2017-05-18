@@ -11,6 +11,8 @@ watchface:
    basalt: true
  - title: Sharingan
    basalt: true
+ - title: LynxLife
+   basalt: true
 ---
 {{#extend "layout"}}
 	{{#content "body"}}
@@ -18,7 +20,14 @@ watchface:
 		<div id="content">
 			<h2>Pebble Watchfaces:</h2>
 			<div id="flex">
+				{{!--SimplyDigital--}}
 				{{>watchface this.watchface.[0]}}
+				{{!--SimplyAnalog--}}
+				{{>watchface this.watchface.[1]}}
+				{{!--Sharingan--}}
+				{{>watchface this.watchface.[2]}}
+				{{!--LynxLife--}}
+				{{>watchface this.watchface.[3]}}
 			</div>
 		</div>
 	{{/content}}

@@ -1,42 +1,47 @@
 window.addEventListener('load', function() {
-	const screen = document.querySelector('img[data-screen]'),
-	      watch = Array.from(document.querySelectorAll('.watch'));
-	var array = screen.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
+	const screen = document.querySelectorAll('img[data-screen]'),
+	      watch = document.querySelectorAll('.watch'),
+	      flipButton = document.querySelectorAll('#flip-button');
 
-	function incrementScreenshot(e) {
-		if (this.classList.contains('rect') && array[3] == 5 || this.classList.contains('round') && array[3] == 4) {
-			array[3] = 1;
-		} else {
-			array[3]++;
-		}
+	function incrementScreenshot() {
+		var array = this.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
+		array[3]++;
 		this.setAttribute('src', array.join(''));
+
+		this.onerror = function() {
+			array[3] = 1
+			this.setAttribute('src', array.join(''));
+		}
 	}
 
 	function swapWatch() {
+		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
+		var array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
+
 		array[1] = this.dataset.watch;
 		array[3] = 1;
 
-		screen.setAttribute('src', array.join(''));
+		img.setAttribute('src', array.join(''));
 
-		if(this.dataset.screen != screen.classList) {
-			screen.classList.remove(screen.classList);
-			screen.classList.add(this.dataset.screen);
+		if(img.dataset.screen != img.classList) {
+			img.classList.remove(img.classList);
+			img.classList.add(this.dataset.screen);
 		}
 	}
 
-	screen.addEventListener('click', incrementScreenshot);
 
-	for(i = 0; i < watch.length; i++) {
-		watch[i].addEventListener('click', swapWatch);
-	}
+	screen.forEach(function(e) {
+		e.addEventListener('click', incrementScreenshot);
+	});
 
-	const flipButton = document.querySelectorAll('#flip-button');
+	watch.forEach(function(e) {
+		e.addEventListener('click', swapWatch);
+	});
 
 	flipButton.forEach(function(e) {
 		e.addEventListener('click', function() {
-			// console.log(this.parentNode.parentNode.parentNode);
 			this.parentNode.parentNode.parentNode.classList.toggle('flip')
 		});
-	})
+	});
 });
