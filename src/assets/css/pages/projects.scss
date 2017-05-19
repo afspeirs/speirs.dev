@@ -4,7 +4,7 @@
 	margin-bottom: 20px;
 
 	h3 {
-		margin: 40px 0 10px 0;
+		margin: 15px 0 10px 0;
 		text-align: center;
 		width: 100%;
 	}
@@ -28,28 +28,19 @@
 		left:-19px;
 	}
 
-	button {
-		width: 56px;
+	.watchface-button {
+		text-align: center;
+
+		button {
+			margin: 5px;
+			width: 56px;
+		}
 	}
 }
 
-// /* Nexus */
-// @media only screen and (width: 412px) and (device-aspect-ratio: 9 / 16) {
-// 	.watchface {
-// 		margin: 0 44.2px !important;
-// 	}
-// }
-
-// /* HTC 10 */
-// @media only screen and (width: 360px) and (device-aspect-ratio: 9 / 16) {
-// 	.watchface {
-// 		margin: 0 26px !important;
-// 	}
-// }
-
 #flip-button {
 	position: absolute;
-	top: 10px;
+	bottom: 10px;
 	right: 10px;
 	height: 20px;
 	width: 20px;
@@ -131,27 +122,6 @@
 	&:hover #img-left, &:hover #img-right {
 		display: block;
 	}
-
-
-
-
-	// &:before, &:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	bottom: 40%;
-	// 	width: 5%;
-	// 	border-top: 12px solid transparent;
-	// 	border-bottom: 12px solid transparent;
-	// 	display: none;
-	// }
-	// &:before {
-	// 	border-right: 24px solid lightgrey;
-	// }
-	// &:after {
-	// 	right: 0;
-	// 	border-left: 24px solid lightgrey;
-	// }
-
 
 	#flip-button {
 		display: none;
