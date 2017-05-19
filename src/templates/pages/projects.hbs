@@ -9,6 +9,10 @@ watchface:
  - title: SimplyAnalog
    aplite: true
    basalt: true
+ - title: Sharingan
+   basalt: true
+ - title: LynxLife
+   aplite: true
 ---
 {{#extend "layout"}}
 	{{#content "body"}}
@@ -20,6 +24,10 @@ watchface:
 				{{>watchface this.watchface.[0]}}
 				{{!--SimplyAnalog--}}
 				{{>watchface this.watchface.[1]}}
+				{{!--Sharingan--}}
+				{{>watchface this.watchface.[2]}}
+				{{!--LynxLife--}}
+				{{>watchface this.watchface.[3]}}
 			</div>
 		</div>
 	{{/content}}
