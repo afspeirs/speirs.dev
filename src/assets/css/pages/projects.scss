@@ -83,22 +83,83 @@
 	left: 0;
 	background: lightgrey;
 	overflow: hidden;
-
-	// &:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 10px;
-	// 	right: 10px;
-	// 	height: 20px;
-	// 	width: 20px;
-	// 	background: gray;
-	// }
 }
 
 // front pane, placed above back
 .front {
 	z-index: 2;
 	transform: rotateY(0deg);
+
+	#img-left, #img-right {
+		position: absolute;
+		top: 60px;
+		height: 48px;
+		width: 34px;
+		background: lightgrey;
+		opacity: 0.95;
+		display: none;
+		
+		&:hover {
+			background:gray;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 12px;
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+		}
+		
+	}
+	#img-left {
+		left: 0;
+
+		&:before {
+			left: 6px;
+			border-right: 20px solid dimgrey;
+		}
+	}
+	#img-right {
+		right: 0;
+
+		&:before {
+			right: 6px;
+			border-left: 20px solid dimgrey;
+		}
+	}
+	&:hover #img-left, &:hover #img-right {
+		display: block;
+	}
+
+
+
+
+	// &:before, &:after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	bottom: 40%;
+	// 	width: 5%;
+	// 	border-top: 12px solid transparent;
+	// 	border-bottom: 12px solid transparent;
+	// 	display: none;
+	// }
+	// &:before {
+	// 	border-right: 24px solid lightgrey;
+	// }
+	// &:after {
+	// 	right: 0;
+	// 	border-left: 24px solid lightgrey;
+	// }
+
+
+	#flip-button {
+		display: none;
+	}
+
+	&:hover #flip-button {
+		display: block;
+	}
 }
 
 // back, initially hidden pane

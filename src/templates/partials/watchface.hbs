@@ -2,7 +2,13 @@
 	<div class="flipper">
 		<div class="front">
 			{{!--Add images for different pebbles to swap between (aplite/dorite, basalt, and chalk)--}}
-			<img class="{{#if basalt}}rect{{else if chalk}}round{{else}}rect{{/if}}" data-screen src="assets/img/projects/pebble/{{title}}/{{#if basalt}}Basalt{{else if chalk}}Chalk{{else}}Aplite{{/if}}_1.png">
+			<img
+				class="{{#if basalt}}rect{{else if chalk}}round{{else}}rect{{/if}}"
+				data-screen="{{#if basalt}}Basalt{{else if chalk}}Chalk{{else}}Aplite{{/if}}"
+				{{#if aplite}}data-aplite="{{aplite}}"{{/if}}{{#if basalt}}data-basalt="{{basalt}}"{{/if}}{{#if chalk}}data-chalk="{{chalk}}"{{/if}}
+				src="assets/img/projects/pebble/{{title}}/{{#if basalt}}Basalt{{else if chalk}}Chalk{{else}}Aplite{{/if}}_1.png">
+			<div id="img-left"></div>
+			<div id="img-right"></div>
 			<button id="flip-button"></button>
 		</div>
 		<div class="back">
