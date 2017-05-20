@@ -4,7 +4,7 @@
 	margin-bottom: 20px;
 
 	h3 {
-		margin: 15px 0 10px 0;
+		margin: 10px 0;
 		text-align: center;
 		width: 100%;
 	}
@@ -12,12 +12,6 @@
 	.rect {
 		height: 168px;
 		width: 144px;
-		
-		&:after {
-			width: 10px;
-			height: 10px;
-			background: red;
-		}
 	}
 	
 	.round {
@@ -32,8 +26,29 @@
 		text-align: center;
 
 		button {
-			margin: 5px;
+			margin: 5px 0;
 			width: 56px;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.links {
+		position: absolute;
+		bottom: 0;
+		margin: 10px;
+
+		a {
+			line-height: 20px;
+
+			&:first-of-type {
+				margin-right: 3px;
+			}
 		}
 	}
 }
