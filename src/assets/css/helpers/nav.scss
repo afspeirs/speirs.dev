@@ -54,7 +54,7 @@
 	left: 0;
 	top: $header-height;
 	width: 100%;
-	
+
 	li {
 		display: block !important;
 		margin: initial !important;
@@ -66,12 +66,12 @@
 			padding-top: 0;
 		}
 	}
-	
+
 	a {
 		padding: 0 8px !important;
 		width: inherit;
 		border-right: 3px solid hidden;
-		
+
 		&.active {
 			border-top-style: none !important;
 			border-right: 3px solid white;
@@ -93,7 +93,7 @@
 	.nav-menu {
 		display: block;
 	}
-	
+
 	#menu-btn {
 		display: none;
 	}
@@ -176,7 +176,7 @@
 			left: 2px;
 			top: 11px;
 		}
-		
+
 		&:nth-child(6) {
 			left: calc(50% - 2px);
 			top: 11px;
