@@ -41,13 +41,17 @@
 	.links {
 		position: absolute;
 		bottom: 0;
+		height: 25px;
 		margin: 10px;
 
 		a {
-			line-height: 20px;
+			margin-right: 10px;
 
-			&:first-of-type {
-				margin-right: 3px;
+			svg {
+				display:inline-block;
+				&:hover {
+					fill: darkslateblue;
+				}
 			}
 		}
 	}

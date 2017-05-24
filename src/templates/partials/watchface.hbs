@@ -19,8 +19,16 @@
 				{{#if chalk}}<button class="watch" data-watch="Chalk" data-screen="round">Chalk</button><br>{{/if}}
 			</div>
 			<div class="links">
-				{{#if store}}<a href="{{store}}" target="_blank">Store</a>{{/if}}
-				{{#if source}}<a href="{{source}}" target="_blank">Source</a>{{/if}}
+				{{#if store}}
+					<a href="{{store}}" target="_blank">
+						<img src="assets/img/global/store.svg" alt="store"></img>
+					</a>
+				{{/if}}
+				{{#if source}}
+					<a href="{{source}}" target="_blank">
+						<img src="assets/img/global/github.svg" alt="github"></img>
+					</a>
+				{{/if}}
 			</div>
 
 			<img id="flip-button" src="assets/img/global/settings.svg" alt="Settings"></img>
