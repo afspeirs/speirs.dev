@@ -57,6 +57,9 @@ window.addEventListener('load', function() {
 		}
 	}
 
+	function flip() {
+		this.parentNode.classList.toggle('flip');	// settings button
+	}
 
 	imgLeft.forEach(function(e) {
 		e.addEventListener('click', decrementScreenshot);
@@ -71,8 +74,6 @@ window.addEventListener('load', function() {
 	});
 
 	flipButton.forEach(function(e) {
-		e.addEventListener('click', function() {
-			this.parentNode.parentNode.parentNode.classList.toggle('flip')
-		});
+		e.addEventListener('click', flip);
 	});
 });

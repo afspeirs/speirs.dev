@@ -2,6 +2,20 @@
 
 .watchface {
 	margin-bottom: 20px;
+	background-color: #171717;
+	border: 7px outset #eee;
+	border-radius: 20px;
+	padding: 25px;
+	
+	#flip-button {
+		position: absolute;
+		bottom: 7px;
+		right: 7px;
+		display: none;
+	}
+	&:hover #flip-button {
+		display: block;
+	}
 
 	h3 {
 		margin: 10px 0;
@@ -58,11 +72,6 @@
 	}
 }
 
-#flip-button {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-}
 
 // entire container, keeps perspective
 .flip-container {
