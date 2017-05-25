@@ -55,11 +55,11 @@ window.addEventListener('load', function() {
 			img.classList.remove(img.classList);
 			img.classList.add(this.dataset.screen);
 		}
+
+		// Flip back to watchface
+		this.parentNode.parentNode.parentNode.parentNode.classList.toggle('flip');
 	}
 
-	function flip() {
-		this.parentNode.classList.toggle('flip');	// settings button
-	}
 
 	imgLeft.forEach(function(e) {
 		e.addEventListener('click', decrementScreenshot);
@@ -74,6 +74,8 @@ window.addEventListener('load', function() {
 	});
 
 	flipButton.forEach(function(e) {
-		e.addEventListener('click', flip);
+		e.addEventListener('click', function() {
+			this.parentNode.classList.toggle('flip');	// Settings
+		});
 	});
 });
