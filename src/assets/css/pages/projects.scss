@@ -9,8 +9,8 @@
 	
 	#flip-button {
 		position: absolute;
-		bottom: 7px;
-		right: 7px;
+		top: 8px;
+		right: 8px;
 		display: none;
 	}
 	&:hover #flip-button {
@@ -76,6 +76,82 @@
 // entire container, keeps perspective
 .flip-container {
 	perspective: 1000px;
+
+	// flip speed goes here
+	.flipper {
+		transition: 0.4s;
+		transform-style: preserve-3d;
+		position: relative;
+
+		.front, .back {
+			backface-visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: lightgrey;
+			overflow: hidden;
+		}
+
+		// front pane, placed above back
+		.front {
+			z-index: 2;
+			transform: rotateY(0deg);
+
+			#img-left, #img-right {
+				position: absolute;
+				top: 60px;
+				height: 48px;
+				width: 34px;
+				background: lightgrey;
+				opacity: 0.95;
+				display: none;
+
+				&:hover {
+					background:gray;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 12px;
+					border-top: 12px solid transparent;
+					border-bottom: 12px solid transparent;
+				}
+			}
+			#img-left {
+				left: 0;
+
+				&:before {
+					left: 6px;
+					border-right: 20px solid dimgrey;
+				}
+			}
+			#img-right {
+				right: 0;
+
+				&:before {
+					right: 6px;
+					border-left: 20px solid dimgrey;
+				}
+			}
+			&:hover #img-left, &:hover #img-right {
+				display: block;
+			}
+
+			#flip-button {
+				display: none;
+			}
+
+			&:hover #flip-button {
+				display: block;
+			}
+		}
+
+		// back, initially hidden pane
+		.back {
+			transform: rotateY(180deg);
+		}
+	}
 }
 
 .flip-container, .front, .back {
@@ -84,81 +160,5 @@
 }
 
 .flip-container.flip .flipper {
-	transform: rotateY(180deg);
-}
-
-// flip speed goes here
-.flipper {
-	transition: 0.4s;
-	transform-style: preserve-3d;
-	position: relative;
-}
-
-.front, .back {
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: lightgrey;
-	overflow: hidden;
-}
-
-// front pane, placed above back
-.front {
-	z-index: 2;
-	transform: rotateY(0deg);
-
-	#img-left, #img-right {
-		position: absolute;
-		top: 60px;
-		height: 48px;
-		width: 34px;
-		background: lightgrey;
-		opacity: 0.95;
-		display: none;
-
-		&:hover {
-			background:gray;
-		}
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: 12px;
-			border-top: 12px solid transparent;
-			border-bottom: 12px solid transparent;
-		}
-	}
-	#img-left {
-		left: 0;
-
-		&:before {
-			left: 6px;
-			border-right: 20px solid dimgrey;
-		}
-	}
-	#img-right {
-		right: 0;
-
-		&:before {
-			right: 6px;
-			border-left: 20px solid dimgrey;
-		}
-	}
-	&:hover #img-left, &:hover #img-right {
-		display: block;
-	}
-
-	#flip-button {
-		display: none;
-	}
-
-	&:hover #flip-button {
-		display: block;
-	}
-}
-
-// back, initially hidden pane
-.back {
 	transform: rotateY(180deg);
 }
