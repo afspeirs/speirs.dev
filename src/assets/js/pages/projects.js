@@ -42,22 +42,22 @@ window.addEventListener('load', function() {
 	}
 
 	function swapWatch() {
-		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
+		const flipper = this.parentNode.parentNode.parentNode,
+		      img = this.parentNode.parentNode.parentNode.firstChild.firstChild,
+		      watch = this.dataset.watch;
 		var array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
-		array[1] = this.dataset.watch;
+		array[1] = watch;
 		array[3] = 1;
 
-		img.dataset.screen = this.dataset.watch;
+		img.id = watch.toLowerCase();
+		flipper.id = watch.toLowerCase();
+		flipper.firstChild.id = watch.toLowerCase();
+		flipper.lastChild.id = watch.toLowerCase();
 		img.setAttribute('src', array.join(''));
 
-		if(img.dataset.screen != img.classList) {
-			img.classList.remove(img.classList);
-			img.classList.add(this.dataset.screen);
-		}
-
 		// Flip back to watchface
-		this.parentNode.parentNode.parentNode.parentNode.classList.toggle('flip');
+		flipper.parentNode.classList.toggle('flip');
 	}
 
 

@@ -1,11 +1,12 @@
 @import '../main.scss';
 
 .watchface {
+	width: 144px;
 	margin-bottom: 20px;
 	background-color: #171717;
 	border: 7px outset #eee;
 	border-radius: 20px;
-	padding: 25px;
+	padding: 26px;
 	
 	#flip-button {
 		position: absolute;
@@ -23,17 +24,22 @@
 		width: 100%;
 	}
 
-	.rect {
+	#aplite,
+	#basalt {
 		height: 168px;
 		width: 144px;
 	}
 
-	.round {
+	#chalk {
 		height: 180px;
 		width: 180px;
-		position: relative;
-		top:-5px;
-		left:-19px;
+
+		&.flipper {
+			margin: -6px -18px;
+		}
+		&.front {
+			background-color: #171717;
+		}
 	}
 
 	.watchface-button {
@@ -89,7 +95,6 @@
 			top: 0;
 			left: 0;
 			background: lightgrey;
-			overflow: hidden;
 		}
 
 		// front pane, placed above back
@@ -154,10 +159,10 @@
 	}
 }
 
-.flip-container, .front, .back {
-	width: 144px;
-	height: 168px;
-}
+// .flip-container, .front, .back {
+// 	width: 144px;
+// 	height: 168px;
+// }
 
 .flip-container.flip .flipper {
 	transform: rotateY(180deg);
