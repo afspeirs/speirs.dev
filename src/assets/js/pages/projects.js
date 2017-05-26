@@ -10,13 +10,13 @@ window.addEventListener('load', function() {
 		var array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
 		if(array[3] == 1) {
-			if(img.dataset.screen === "Aplite") {
+			if(img.id === "aplite") {
 				array[3] = img.dataset.aplite;
 			}
-			if(img.dataset.screen === "Basalt") {
+			if(img.id === "basalt") {
 				array[3] = img.dataset.basalt;
 			}
-			if(img.dataset.screen === "Chalk") {
+			if(img.id === "chalk") {
 				array[3] = img.dataset.chalk;
 			}
 		} else {
@@ -30,9 +30,9 @@ window.addEventListener('load', function() {
 		var img = this.parentNode.firstChild;
 		var array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
-		if((img.dataset.screen === "Aplite" && array[3] === img.dataset.aplite) ||
-		   (img.dataset.screen === "Basalt" && array[3] === img.dataset.basalt) ||
-		   (img.dataset.screen === "Chalk" && array[3] === img.dataset.chalk)) {
+		if((img.id === "aplite" && array[3] === img.dataset.aplite) ||
+		   (img.id === "basalt" && array[3] === img.dataset.basalt) ||
+		   (img.id === "chalk"  && array[3] === img.dataset.chalk)) {
 			array[3] = 1
 		} else {
 			array[3]++;
