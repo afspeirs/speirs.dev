@@ -1,6 +1,8 @@
 @import '../main.scss';
 
 .watchface {
+	perspective: 1000px;
+	user-select: none;
 	width: 144px;
 	margin-bottom: 20px;
 	background-color: #171717;
@@ -76,12 +78,6 @@
 			}
 		}
 	}
-}
-
-
-// entire container, keeps perspective
-.flip-container {
-	perspective: 1000px;
 
 	// flip speed goes here
 	.flipper {
@@ -103,6 +99,7 @@
 			transform: rotateY(0deg);
 
 			#img-left, #img-right {
+				cursor: pointer;
 				position: absolute;
 				top: 60px;
 				height: 48px;
@@ -159,11 +156,6 @@
 	}
 }
 
-// .flip-container, .front, .back {
-// 	width: 144px;
-// 	height: 168px;
-// }
-
-.flip-container.flip .flipper {
+.watchface.flip .flipper {
 	transform: rotateY(180deg);
 }
