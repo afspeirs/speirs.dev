@@ -101,39 +101,41 @@
 			#img-left, #img-right {
 				cursor: pointer;
 				position: absolute;
-				top: 60px;
-				height: 48px;
-				width: 34px;
-				background: dimgrey;
-				opacity: 0.9;
+				top: 62px;
+				height: 46px;
+				width: 30px;
+				background: #171717;
+				opacity: 0.95;
 				display: none;
 
 				&:hover {
-					background:black;
+					background:#333333;
 				}
 
 				&:before {
 					content: "";
 					position: absolute;
-					top: 12px;
-					border-top: 12px solid transparent;
-					border-bottom: 12px solid transparent;
+					top: 14px;
+					display: inline-block;
+					padding: 6px;
+					border: solid lightgrey;
+					border-width: 0 6px 6px 0;
 				}
 			}
 			#img-left {
 				left: 0;
 
 				&:before {
-					left: 6px;
-					border-right: 20px solid lightgrey;
+					left: 9px;
+					transform: rotate(135deg);
 				}
 			}
 			#img-right {
 				right: 0;
 
 				&:before {
-					right: 6px;
-					border-left: 20px solid lightgrey;
+					right: 9px;
+					transform: rotate(-45deg);
 				}
 			}
 			&:hover #img-left, &:hover #img-right {
