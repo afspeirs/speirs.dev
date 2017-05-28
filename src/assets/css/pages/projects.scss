@@ -104,12 +104,12 @@
 				top: 60px;
 				height: 48px;
 				width: 34px;
-				background: lightgrey;
-				opacity: 0.95;
+				background: dimgrey;
+				opacity: 0.9;
 				display: none;
 
 				&:hover {
-					background:gray;
+					background:black;
 				}
 
 				&:before {
@@ -125,7 +125,7 @@
 
 				&:before {
 					left: 6px;
-					border-right: 20px solid dimgrey;
+					border-right: 20px solid lightgrey;
 				}
 			}
 			#img-right {
@@ -133,7 +133,7 @@
 
 				&:before {
 					right: 6px;
-					border-left: 20px solid dimgrey;
+					border-left: 20px solid lightgrey;
 				}
 			}
 			&:hover #img-left, &:hover #img-right {
