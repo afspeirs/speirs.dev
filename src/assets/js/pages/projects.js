@@ -1,5 +1,4 @@
 window.addEventListener('load', function() {
-	// const screen = document.querySelectorAll('img[data-screen]');
 	const imgLeft = document.querySelectorAll('#img-left');
 	const imgRight = document.querySelectorAll('#img-right');
 	const watch = document.querySelectorAll('.watch');
@@ -42,7 +41,6 @@ window.addEventListener('load', function() {
 	}
 
 	function swapWatch() {
-		console.log(this);
 		const flipper = this.parentNode.parentNode.parentNode;
 		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
 		const dataWatch = this.dataset.watch;
@@ -76,7 +74,7 @@ window.addEventListener('load', function() {
 
 	flipButton.forEach((e) => {
 		e.addEventListener('click', () => {
-			this.parentNode.classList.toggle('flip');	// Settings
+			e.parentNode.classList.toggle('flip');	// Settings
 		});
 	});
 });
