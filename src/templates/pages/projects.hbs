@@ -21,14 +21,14 @@ watchface:
    aplite: 2
 ---
 {{#extend "layout"}}
-  {{#content "body"}}
-    {{> section sectionTitle="Pebble Watchfaces" image="title"}}
-    <div id="content">
-      <div id="flex">
-        {{#each watchface}}
-          {{> watchface}}
-        {{/each}}
-      </div>
-    </div>
-  {{/content}}
+{{#content "body"}}
+	{{> section sectionTitle="Pebble Watchfaces" image="title"}}
+	<div id="content">
+	  <div id="flex">
+		{{#each watchface}}
+			{{> watchface}}
+		{{/each}}
+	  </div>
+	</div>
+{{/content}}
 {{/extend}}
