@@ -1,15 +1,16 @@
-var gulp         = require('gulp'),                     // https://www.npmjs.com/package/gulp
-    prefix       = require('gulp-autoprefixer'),        // https://www.npmjs.com/package/gulp-autoprefixer
-    cleanCSS     = require('gulp-clean-css'),           // https://www.npmjs.com/package/gulp-clean-css
-    frontMatter  = require('gulp-front-matter'),        // https://www.npmjs.com/package/gulp-front-matter
-    hb           = require('gulp-hb'),                  // https://www.npmjs.com/package/gulp-hb
-    hbHelper     = require('handlebars-layouts')        // https://www.npmjs.com/package/handlebars-layouts
-    htmlmin      = require('gulp-htmlmin'),             // https://www.npmjs.com/package/gulp-htmlmin
-    rename       = require('gulp-rename'),              // https://www.npmjs.com/package/gulp-rename
-    sass         = require('gulp-sass'),                // https://www.npmjs.com/package/gulp-sass
-    uglify       = require('gulp-uglify'),              // https://www.npmjs.com/package/gulp-uglify
-    browserSync  = require('browser-sync').create(),    // https://www.npmjs.com/package/browser-sync
-    del          = require("del");                      // https://www.npmjs.com/package/del
+var gulp         = require('gulp');                     // https://www.npmjs.com/package/gulp
+var babel        = require('gulp-babel');               // https://www.npmjs.com/package/gulp-babel
+var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
+var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
+var del          = require('del');                      // https://www.npmjs.com/package/del
+var frontMatter  = require('gulp-front-matter');        // https://www.npmjs.com/package/gulp-front-matter
+var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
+var hbHelper     = require('handlebars-layouts');        // https://www.npmjs.com/package/handlebars-layouts
+var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
+var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
+var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
+var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
+var uglify       = require('gulp-uglify');              // https://www.npmjs.com/package/gulp-uglify
 
 var paths = {
 	src: './src/',
@@ -25,28 +26,28 @@ var paths = {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Cleans folder
-gulp.task('clean:img', function () {
+gulp.task('clean:img', function() {
 	return del(paths.build + paths.img);
 });
 // Clean js folder
-gulp.task('clean:js', function () {
+gulp.task('clean:js', function() {
 	return del(paths.build + paths.js);
 });
 // Clean css folder
-gulp.task('clean:css', function () {
+gulp.task('clean:css', function() {
 	return del(paths.build + paths.css);
 });
 // Clean assets folder
-gulp.task('clean:assets', function() { 
-	return del(paths.build + 'assets'); 
+gulp.task('clean:assets', function() {
+	return del(paths.build + 'assets');
 });
 // Clean build folder
-gulp.task('clean:build', function() { 
-	return del(paths.build); 
+gulp.task('clean:build', function() {
+	return del(paths.build);
 });
 // Clean html files from root of build
-gulp.task('clean:html', function() { 
-	return del(paths.build + '*.html'); 
+gulp.task('clean:html', function() {
+	return del(paths.build + '*.html');
 });
 
 
@@ -62,6 +63,9 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	return gulp.src([paths.src + paths.js + '**/*'])
+		.pipe(babel({
+			presets: ['es2015']
+		}))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.build + paths.js));
 });
@@ -75,42 +79,42 @@ gulp.task('files:css', ['clean:css'], function() {
 		.pipe(gulp.dest(paths.build + paths.css));
 });
 // Compiles Handlebar files
-gulp.task('files:handlebar', ['clean:html'], function () {
+gulp.task('files:handlebar', ['clean:html'], function() {
 	var hbStream = hb()
 		.partials(paths.src + 'templates/layout/*.hbs')
 		.partials(paths.src + 'templates/partials/*.hbs')
 		.helpers(hbHelper)
 		.helpers({
-			log : function(options){
+			log: function(options) {
 				console.log(options.fn(this));
 				return '';
 			},
-			ifEquals : function(a, b, options){
+			ifEquals: function(a, b, options) {
 				if (a === b) {
 					return options.fn(this);
 				}
 				return options.inverse(this);
 			},
-			exists : function(variable, options) {
+			exists: function(variable, options) {
 				if (typeof variable !== 'undefined') {
 					return options.fn(this);
 				} else {
 					return options.inverse(this);
 				}
 			},
-			times : function(n, options) {
+			times: function(n, options) {
 				var times = '';
-				for(var i = 1; i <= n; ++i)
+				for (var i = 1; i <= n; i++)
 					times += options.fn(i);
 				return times;
 			}
-		})
+		});
 
 	return gulp.src(paths.src + 'templates/pages/*.hbs')
 		.pipe(frontMatter({ property: 'data' }))
 		.pipe(hbStream)
 		.pipe(rename({ extname: '.html' }))
-		.pipe(htmlmin({collapseWhitespace: true}))
+		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest(paths.build));
 });
 
@@ -146,13 +150,12 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
-gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], function () {
-
+gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], function() {
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
 			baseDir: paths.build,
-			index: "index.html"
+			index: 'index.html'
 		},
 		// Don't show any notifications in the browser.
 		notify: false,
