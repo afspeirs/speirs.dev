@@ -63,9 +63,7 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	return gulp.src([paths.src + paths.js + '**/*'])
-		.pipe(babel({
-			presets: ['es2015']
-		}))
+		.pipe(babel({ presets: ['es2015'] }))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.build + paths.js));
 });
