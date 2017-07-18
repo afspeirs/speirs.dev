@@ -8,6 +8,7 @@ var fs           = require('fs');                       // https://www.npmjs.com
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
+var jsonModify   = require('gulp-json-modify');         // https://www.npmjs.com/package/gulp-json-modify
 var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
 var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
@@ -184,10 +185,14 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 
 // Sets the  the `files:handlebar` task is complete before reloading the browser
 gulp.task('set-dev', function() {
-	config.dev = true;
+  return gulp.src('./config.json')
+    .pipe(jsonModify({ key: 'dev', value: true }))
+    .pipe(gulp.dest('./'));
 });
 gulp.task('set-prod', function() {
-	config.dev = false;
+  return gulp.src('./config.json')
+    .pipe(jsonModify({ key: 'dev', value: false }))
+    .pipe(gulp.dest('./'));
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
