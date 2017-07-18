@@ -4,6 +4,7 @@ var browserSync  = require('browser-sync').create();    // https://www.npmjs.com
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
 var frontMatter  = require('gulp-front-matter');        // https://www.npmjs.com/package/gulp-front-matter
+var fs           = require('fs');                       // https://www.npmjs.com/package/file-system
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
@@ -16,16 +17,28 @@ var paths = {
 	src: './src/',
 	build: './build/',
 	css: 'assets/css/',
+	data: 'assets/data/',
 	js: 'assets/js/',
 	img: 'assets/img/',
 };
+var config = JSON.parse(fs.readFileSync('config.json'));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//  Tests  ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Cleans folder
+gulp.task('config', function() {
+	console.log(config);
+});
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //  Clean  ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-// Cleans folder
+// Cleans img folder
 gulp.task('clean:img', function() {
 	return del(paths.build + paths.img);
 });
@@ -36,6 +49,10 @@ gulp.task('clean:js', function() {
 // Clean css folder
 gulp.task('clean:css', function() {
 	return del(paths.build + paths.css);
+});
+// Clean css folder
+gulp.task('clean:data', function() {
+	return del(paths.build + paths.data);
 });
 // Clean assets folder
 gulp.task('clean:assets', function() {
@@ -62,10 +79,15 @@ gulp.task('files:img', ['clean:img'], function() {
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
-	return gulp.src([paths.src + paths.js + '**/*'])
-		.pipe(babel({ presets: ['es2015'] }))
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.build + paths.js));
+	if (config.dev) {
+		return gulp.src([paths.src + paths.js + '**/*'])
+			.pipe(gulp.dest(paths.build + paths.js));
+	} else {
+		return gulp.src([paths.src + paths.js + '**/*'])
+			.pipe(babel({ presets: ['es2015'] }))
+			.pipe(uglify())
+			.pipe(gulp.dest(paths.build + paths.js));
+	}
 });
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
@@ -75,6 +97,11 @@ gulp.task('files:css', ['clean:css'], function() {
 		.pipe(cleanCSS())
 		.pipe(rename({ extname: '.css' }))
 		.pipe(gulp.dest(paths.build + paths.css));
+});
+// Moves data folder
+gulp.task('files:data', ['clean:data'], function() {
+	return gulp.src([paths.src + paths.data + '**/*'])
+		.pipe(gulp.dest(paths.build + paths.data));
 });
 // Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:html'], function() {
@@ -102,11 +129,14 @@ gulp.task('files:handlebar', ['clean:html'], function() {
 			},
 			times: function(n, options) {
 				var times = '';
-				for (var i = 1; i <= n; i++)
+				for (var i = 1; i <= n; i++) {
 					times += options.fn(i);
+				}
 				return times;
 			}
-		});
+		})
+		// .data(paths.src + 'assets/data/**/*.{js,json}')
+		.data('config.json');
 
 	return gulp.src(paths.src + 'templates/pages/*.hbs')
 		.pipe(frontMatter({ property: 'data' }))
@@ -121,8 +151,8 @@ gulp.task('files:handlebar', ['clean:html'], function() {
 //  Watch  ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-// Ensures the `files:css` task is complete before reloading the browser
-gulp.task('watch:css', ['files:css'], function(done) {
+// Ensures the `files:img` task is complete before reloading the browser
+gulp.task('watch:img', ['files:img'], function(done) {
 	browserSync.reload();
 	done();
 });
@@ -131,8 +161,13 @@ gulp.task('watch:js', ['files:js'], function(done) {
 	browserSync.reload();
 	done();
 });
-// Ensures the `files:img` task is complete before reloading the browser
-gulp.task('watch:img', ['files:img'], function(done) {
+// Ensures the `files:css` task is complete before reloading the browser
+gulp.task('watch:css', ['files:css'], function(done) {
+	browserSync.reload();
+	done();
+});
+// Ensures the `files:data` task is complete before reloading the browser
+gulp.task('watch:data', ['files:data', "files:handlebar"], function(done) {
 	browserSync.reload();
 	done();
 });
@@ -144,11 +179,23 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
+//  Environment  //////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Sets the  the `files:handlebar` task is complete before reloading the browser
+gulp.task('set-dev', function() {
+	config.dev = true;
+});
+gulp.task('set-prod', function() {
+	config.dev = false;
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 //  Server  ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
-gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], function() {
+gulp.task('server', ['set-dev', 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar'], function() {
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
@@ -163,9 +210,10 @@ gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], f
 
 	// add browserSync.reload to the tasks array to make
 	// all browsers reload after tasks are complete.
-	gulp.watch(paths.src + paths.css + '**/*', ['watch:css']);
-	gulp.watch(paths.src + paths.js + '**/*', ['watch:js']);
 	gulp.watch(paths.src + paths.img + '**/*', ['watch:img']);
+	gulp.watch(paths.src + paths.js + '**/*', ['watch:js']);
+	gulp.watch(paths.src + paths.css + '**/*', ['watch:css']);
+	gulp.watch(paths.src + paths.data + '**/*', ['watch:data']);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
 });
 
@@ -175,7 +223,7 @@ gulp.task('server', ['files:img', 'files:js', 'files:css', 'files:handlebar'], f
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Removes html files and everything from assets folder, then compiles to build folder
-gulp.task('build', ['files:img', 'files:js', 'files:css', 'files:handlebar']);
+gulp.task('build', ['set-prod', 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar']);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
