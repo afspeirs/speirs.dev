@@ -21,7 +21,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.0.1",
-    "handlebars-layouts": "^3.1.4"
+    "handlebars-layouts": "^3.1.4",
+    "run-sequence": "^2.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

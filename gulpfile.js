@@ -11,6 +11,7 @@ var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com
 var jsonModify   = require('gulp-json-modify');         // https://www.npmjs.com/package/gulp-json-modify
 var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
+var runSequence  = require('run-sequence');             // https://www.npmjs.com/package/run-sequence
 var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
 var uglify       = require('gulp-uglify');              // https://www.npmjs.com/package/gulp-uglify
 
@@ -25,9 +26,9 @@ var paths = {
 var config = JSON.parse(fs.readFileSync('config.json'));
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Tests  ////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Tasks  =============================================================================
+// ==========================================================================================
 
 // Cleans folder
 gulp.task('config', function() {
@@ -35,9 +36,9 @@ gulp.task('config', function() {
 });
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Clean  ////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Clean  =============================================================================
+// ==========================================================================================
 
 // Cleans img folder
 gulp.task('clean:img', function() {
@@ -51,7 +52,7 @@ gulp.task('clean:js', function() {
 gulp.task('clean:css', function() {
 	return del(paths.build + paths.css);
 });
-// Clean css folder
+// Clean data folder
 gulp.task('clean:data', function() {
 	return del(paths.build + paths.data);
 });
@@ -59,19 +60,19 @@ gulp.task('clean:data', function() {
 gulp.task('clean:assets', function() {
 	return del(paths.build + 'assets');
 });
-// Clean build folder
-gulp.task('clean:build', function() {
-	return del(paths.build);
-});
 // Clean html files from root of build
 gulp.task('clean:html', function() {
 	return del(paths.build + '*.html');
 });
+// Clean build folder
+gulp.task('clean:build', function() {
+	return del(paths.build);
+});
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Files  ////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Files  =============================================================================
+// ==========================================================================================
 
 // Move img folder contents
 gulp.task('files:img', ['clean:img'], function() {
@@ -148,9 +149,9 @@ gulp.task('files:handlebar', ['clean:html'], function() {
 });
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Watch  ////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Watch  =============================================================================
+// ==========================================================================================
 
 // Ensures the `files:img` task is complete before reloading the browser
 gulp.task('watch:img', ['files:img'], function(done) {
@@ -168,7 +169,7 @@ gulp.task('watch:css', ['files:css'], function(done) {
 	done();
 });
 // Ensures the `files:data` task is complete before reloading the browser
-gulp.task('watch:data', ['files:data', "files:handlebar"], function(done) {
+gulp.task('watch:data', ['files:data', 'files:data'], function(done) {
 	browserSync.reload();
 	done();
 });
@@ -179,28 +180,35 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 });
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Environment  //////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Environment  =======================================================================
+// ==========================================================================================
 
-// Sets the  the `files:handlebar` task is complete before reloading the browser
+// Sets the `files:handlebar` task is complete before reloading the browser
 gulp.task('set-dev', function() {
-  return gulp.src('./config.json')
-    .pipe(jsonModify({ key: 'dev', value: true }))
-    .pipe(gulp.dest('./'));
+	if (!config.dev) {
+		return gulp.src('./config.json')
+			.pipe(jsonModify({ key: 'dev', value: true }))
+			.pipe(gulp.dest('./'));
+	}
 });
 gulp.task('set-prod', function() {
-  return gulp.src('./config.json')
-    .pipe(jsonModify({ key: 'dev', value: false }))
-    .pipe(gulp.dest('./'));
+	if (config.dev) {
+		return gulp.src('./config.json')
+			.pipe(jsonModify({ key: 'dev', value: false }))
+			.pipe(gulp.dest('./'));
+	}
 });
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Server  ///////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+
+// ==========================================================================================
+// ====  Server  ============================================================================
+// ==========================================================================================
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
-gulp.task('server', ['set-dev', 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar'], function() {
+gulp.task('server', function() {
+	runSequence(['set-dev'], 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar');
+
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
@@ -223,17 +231,19 @@ gulp.task('server', ['set-dev', 'files:img', 'files:js', 'files:css', 'files:dat
 });
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Buid  /////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Build  =============================================================================
+// ==========================================================================================
 
 // Removes html files and everything from assets folder, then compiles to build folder
-gulp.task('build', ['set-prod', 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar']);
+gulp.task('build', function() {
+	runSequence(['set-prod'], 'files:img', 'files:js', 'files:css', 'files:data', 'files:handlebar');
+});
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//  Default  //////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+// ==========================================================================================
+// ====  Default  ===========================================================================
+// ==========================================================================================
 
 // Runs the server task by default
 gulp.task('default', ['server']);
