@@ -55,10 +55,6 @@ gulp.task('clean:js', function() {
 gulp.task('clean:css', function() {
 	return del(paths.build + paths.css);
 });
-// Clean data folder
-gulp.task('clean:data', function() {
-	return del(paths.build + paths.data);
-});
 // Cleans files from root of build
 gulp.task('clean:root', function() {
 	del([paths.build + '*.*', '!' + paths.build + '*.html']);
@@ -108,11 +104,6 @@ gulp.task('files:css', ['clean:css'], function() {
 		.pipe(rename({ extname: '.min.css' }))
 		.pipe(gulp.dest(paths.build + paths.css));
 });
-// Moves data folder
-gulp.task('files:data', ['clean:data'], function() {
-	return gulp.src(paths.src + paths.data + '**/*')
-		.pipe(gulp.dest(paths.build + paths.data));
-});
 // Moves root files file
 gulp.task('files:root', ['clean:root'], function() {
 	return gulp.src([paths.src + '*.*'])
@@ -150,7 +141,7 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 				return times;
 			}
 		})
-		// .data(paths.src + 'assets/data/**/*.{js,json}')
+		.data(paths.src + paths.data + '/**/*.json')
 		.data('config.json');
 
 	return gulp.src(paths.src + paths.pages + '*.hbs')
@@ -178,11 +169,6 @@ gulp.task('watch:js', ['files:js'], function(done) {
 });
 // Ensures the `files:css` task is complete before reloading the browser
 gulp.task('watch:css', ['files:css'], function(done) {
-	browserSync.reload();
-	done();
-});
-// Ensures the `files:data` task is complete before reloading the browser
-gulp.task('watch:data', ['files:data'], function(done) {
 	browserSync.reload();
 	done();
 });
@@ -225,7 +211,7 @@ gulp.task('set-prod', function() {
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
 gulp.task('server', function() {
-	runSequence(['set-dev'], 'files:img', 'files:js', 'files:css', 'files:data', 'files:root', 'files:handlebar');
+	runSequence(['set-dev'], 'files:img', 'files:js', 'files:css', 'files:root', 'files:handlebar');
 	
 	// Serve files from the root of this project
 	browserSync.init({
@@ -244,9 +230,9 @@ gulp.task('server', function() {
 	gulp.watch(paths.src + paths.img + '**/*', ['watch:img']);
 	gulp.watch(paths.src + paths.js + '**/*', ['watch:js']);
 	gulp.watch(paths.src + paths.css + '**/*', ['watch:css']);
-	gulp.watch(paths.src + paths.data + '**/*', ['watch:data']);
-	gulp.watch(paths.src + '*.*', ['watch:root']);	
+	gulp.watch(paths.src + paths.data + '**/*', ['watch:handlebar']);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
+	gulp.watch(paths.src + '*.*', ['watch:root']);
 });
 
 
@@ -256,7 +242,7 @@ gulp.task('server', function() {
 
 // Removes html files and everything from assets folder, then compiles to build folder
 gulp.task('build', function() {
-	runSequence(['set-prod'], 'files:img', 'files:js', 'files:css', 'files:data', 'files:root', 'files:handlebar');
+	runSequence(['set-prod'], 'files:img', 'files:js', 'files:css', 'files:root', 'files:handlebar');
 });
 
 
