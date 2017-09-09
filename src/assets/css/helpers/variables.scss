@@ -1,9 +1,16 @@
-$header-colour: #188FFE;
+$background-colour: #f5f5f5;
 $font-colour: #333;
-$background-colour: #FDFDFD;
 
-$header-height: 56px;
-$title-height: $header-height*2;
+
+$navbar-height: 65px;
+$navbar-background-colour: #188FFE;
+$navbar-collapse-breakpoint: 768px;
+
+$navbar-item-font-size: 16px;
+$navbar-item-border-width: 4px;
+$navbar-item-active-border: $background-colour;
+
+$title-height: $navbar-height * 2;
 $footer-height: 40px;
 
 $nav-width: 240px;

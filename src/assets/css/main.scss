@@ -1,29 +1,31 @@
 @import 'helpers/variables.scss';
-@import 'helpers/typography.scss';
 @import 'helpers/nav.scss';
 
-#container, .header-wrap {
+*, *:before, *:after { box-sizing: border-box; }
+body { background-color: $background-colour; color: $font-colour; font-family: Verdana, Arial, sans-serif; line-height: 20px; }
+a { text-decoration: none; transition: all 0.3s linear 0s; }
+
+#container, .navbar-wrap {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	background-color: $background-colour;
 }
 
-.header-wrap {
+.navbar-wrap {
 	position: fixed;
-	background-color: $header-colour;
-	height: $header-height;
+	background-color: $navbar-background-colour;
+	height: $navbar-height;
 	font-family: 'Open Sans', sans-serif;
 	z-index: 10;
 }
 
-#header-height {
-	height: $header-height;
+#navbar-height {
+	height: $navbar-height;
 }
 
-#header, .expand ul { /* sets the width of the header and content */
+.navbar, .expand a { /* sets the width of the navbar and content */
 	width: 85%;
 	margin: 0 auto !important;
 }
@@ -82,7 +84,7 @@
 // ==========================================================================================
 
 @media only screen  and (min-width : 1040px) {
-	#header, #content { /* sets the width of the header and content */
+	#navbar, #content { /* sets the width of the navbar and content */
 		width: 884px;
 	}
 }

@@ -4,36 +4,75 @@
 // ====  Default Navigation  ================================================================
 // ==========================================================================================
 
-#nav {
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 15px 0;
-	}
-
-	li {
-		display: inline;
-		margin: 0;
-
-		&:not(:last-child) {
-			margin-right: 15px;
-		}
-	}
-
-	a {
-		color: $background-colour;
-		padding: 7px 0;
+.navbar-wrap {
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		// align-items: stretch;
 		font-size: 22px;
-		text-decoration: none;
-		text-align: center;
-		
-		&.active {
-			border-top-style: solid;
-		}
-	}
 
-	&:not(:first-child) a:hover {
-		border-bottom-style: solid;
+		.brand {
+			display: block;
+			color: $background-colour;
+			line-height: $navbar-height;
+		}
+
+		.nav-menu {
+			display: none;
+			flex-flow: row nowrap;
+			align-content: center;
+			white-space: nowrap;
+
+			a {
+				display: block;
+				flex-shrink: 0;
+				height: $navbar-height;
+				line-height: $navbar-height - $navbar-item-border-width;
+				font-size: $navbar-item-font-size;
+				text-transform: uppercase;
+				color: $background-colour;
+				padding-left: round(($navbar-height - 20) / 2);
+				padding-right: round(($navbar-height - 20) / 2);
+				border-bottom: $navbar-item-border-width solid transparent;
+				text-decoration: none;
+
+				&.active,
+				&:hover,
+				&:focus {
+					border-bottom-color: $navbar-item-active-border;
+				}
+			}
+
+			@media (min-width: $navbar-collapse-breakpoint) {
+				display: flex;
+			}
+			@media (max-width: $navbar-collapse-breakpoint) {
+				&.expand {
+					background-color: $navbar-background-colour;
+					text-align: right;
+					position: absolute;
+					top: $navbar-height;
+					left: 0;
+					width: 100%;
+					padding-bottom: $navbar-height / 5;
+					z-index: 10;
+					
+					a {
+						height: $navbar-height / 1.2;
+						// width: inherit;
+						border-right: $navbar-item-border-width solid transparent;
+						border-bottom: none !important;
+
+						&.active,
+						&:hover {
+							border-right: $navbar-item-border-width solid $background-colour;
+							// background: darken($navbar-background-colour, 10%);
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -42,73 +81,19 @@
 // ====  Responsive Menu  ===================================================================
 // ==========================================================================================
 
-.nav-menu {
-	display: none;
-}
-
 .expand {
-	display: block;
-	background-color: $header-colour;
-	text-align: right;
-	position: absolute;
-	z-index: 10;
-	left: 0;
-	top: $header-height;
-	width: 100%;
-
-	li {
-		display: block !important;
-		margin: initial !important;
-		padding: 10px 0;
-		position: relative;
-		left: 11px;
-
-		&:first-child {
-			padding-top: 0;
-		}
-	}
-
-	a {
-		padding: 0 8px !important;
-		width: inherit;
-		border-right: 3px solid hidden;
-
-		&.active {
-			border-top-style: none !important;
-			border-right: 3px solid white;
-		}
-	}
-
-	&:not(:first-child) a:hover {
-		border-bottom-style: none !important;
-		border-left: 3px solid white;
-	}
+	display: block !important;
 }
 
-// ==========================================================================================
-// ====  Media Queries  =====================================================================
-// ==========================================================================================
-
-/* Hide Hamburger menu and show nav in header */
-@media only screen and (min-width: 300+$nav-width) {
-	.nav-menu {
-		display: block;
-	}
-
-	#menu-btn {
-		display: none;
-	}
-}
 
 // ==========================================================================================
-// ====  Menu Button and Animation  =========================================================
+// ====  Menu Button And Animation  =========================================================
 // ==========================================================================================
 
 #menu-btn {
-	float: right;
 	width: 20px;
 	height: 20px;
-	margin-top: 20px;
+	margin-top: 24px;
 	transform: rotate(0deg);
 	transition: .5s ease-in-out;
 	cursor: pointer;
@@ -182,5 +167,9 @@
 			left: calc(50% - 2px);
 			top: 11px;
 		}
+	}
+	
+	@media (min-width: $navbar-collapse-breakpoint) {
+		display: none;
 	}
 }
