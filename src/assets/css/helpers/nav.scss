@@ -93,6 +93,7 @@
 	cursor: pointer;
 	position: relative;
 	width: 40px;
+	height: 35px;
 	margin-top: 14px;
 
 	span {
@@ -101,8 +102,9 @@
 		height: 7px;
 		width: 100%;
 		background-color: #fff;
-		transition: .55s;
-		
+		transition: .3s;
+		border-radius: 5px;
+
 		&:nth-child(1) {
 			top: 0;
 		}
@@ -119,7 +121,6 @@
 			top: 14px;
 			transform: rotate(50deg);
 		}
-		
 		:nth-child(2) {
 			opacity: 0;
 		}
