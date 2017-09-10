@@ -9,7 +9,6 @@
 		display: flex;
 		justify-content: space-between;
 		flex-flow: row wrap;
-		// align-items: stretch;
 		font-size: 22px;
 
 		.brand {
@@ -91,84 +90,45 @@
 // ==========================================================================================
 
 #menu-btn {
-	width: 20px;
-	height: 20px;
-	margin-top: 24px;
-	transform: rotate(0deg);
-	transition: .5s ease-in-out;
 	cursor: pointer;
+	position: relative;
+	width: 40px;
+	margin-top: 14px;
 
 	span {
-		display: block;
 		position: absolute;
-		height: 3px;
-		width: 50%;
-		background: white;
-		opacity: 1;
-		transform: rotate(0deg);
-		transition: .25s ease-in-out;
-
-		&:nth-child(even) {
-			left: 50%;
+		left: 0;
+		height: 7px;
+		width: 100%;
+		background-color: #fff;
+		transition: .55s;
+		
+		&:nth-child(1) {
+			top: 0;
 		}
-
-		&:nth-child(odd) {
-			left: 0px;
-		}
-
-		&:nth-child(1), &:nth-child(2) {
-			top: 0px;
-		}
-
-		&:nth-child(3), &:nth-child(4) {
-			top: 7px;
-		}
-
-		&:nth-child(5), &:nth-child(6) {
+		&:nth-child(2) {
 			top: 14px;
 		}
-	}
-
-	&.open span {
-		&:nth-child(1), &:nth-child(6) {
-			transform: rotate(45deg);
-		}
-
-		&:nth-child(2), &:nth-child(5) {
-			transform: rotate(-45deg);
-		}
-
-		&:nth-child(1) {
-			left: 2px;
-			top: 4px;
-		}
-
-		&:nth-child(2) {
-			left: calc(50% - 2px);
-			top: 4px;
-		}
-
 		&:nth-child(3) {
-			left: -50%;
-			opacity: 0;
-		}
-
-		&:nth-child(4) {
-			left: 100%;
-			opacity: 0;
-		}
-
-		&:nth-child(5) {
-			left: 2px;
-			top: 11px;
-		}
-
-		&:nth-child(6) {
-			left: calc(50% - 2px);
-			top: 11px;
+			top: 28px;
 		}
 	}
-	
+
+	&.open {
+		:nth-child(1) {
+			top: 14px;
+			transform: rotate(50deg);
+		}
+		
+		:nth-child(2) {
+			opacity: 0;
+		}
+		:nth-child(3) {
+			top: 14px;
+			transform: rotate(-50deg);
+		}
+	}
+
 	@media (min-width: $navbar-collapse-breakpoint) {
 		display: none;
 	}
