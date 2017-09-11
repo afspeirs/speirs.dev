@@ -92,14 +92,14 @@
 #menu-btn {
 	cursor: pointer;
 	position: relative;
-	width: 40px;
-	height: 35px;
-	margin-top: 14px;
+	width: 32px;
+	height: 22px;
+	margin-top: 21px;
 
 	span {
 		position: absolute;
 		left: 0;
-		height: 7px;
+		height: 4px;
 		width: 100%;
 		background-color: #fff;
 		transition: .3s;
@@ -109,23 +109,23 @@
 			top: 0;
 		}
 		&:nth-child(2) {
-			top: 14px;
+			top: 9px;
 		}
 		&:nth-child(3) {
-			top: 28px;
+			top: 18px;
 		}
 	}
 
 	&.open {
 		:nth-child(1) {
-			top: 14px;
+			top: 9px;
 			transform: rotate(50deg);
 		}
 		:nth-child(2) {
 			opacity: 0;
 		}
 		:nth-child(3) {
-			top: 14px;
+			top: 9px;
 			transform: rotate(-50deg);
 		}
 	}
