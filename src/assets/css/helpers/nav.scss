@@ -9,12 +9,12 @@
 		display: flex;
 		justify-content: space-between;
 		flex-flow: row wrap;
-		font-size: 22px;
+		font-size: calc(var(--scale) * 22px);
 
 		.brand {
 			display: block;
 			color: $background-colour;
-			line-height: $navbar-height;
+			line-height: calc(var(--scale) * #{$navbar-height});
 		}
 
 		.nav-menu {
@@ -26,9 +26,9 @@
 			a {
 				display: block;
 				flex-shrink: 0;
-				height: $navbar-height;
-				line-height: $navbar-height - $navbar-item-border-width;
-				font-size: $navbar-item-font-size;
+				height: calc(var(--scale) * #{$navbar-height});
+				line-height: calc(var(--scale) * (#{$navbar-height} - #{$navbar-item-border-width}));
+				font-size: calc(var(--scale) * #{$navbar-item-font-size});
 				text-transform: uppercase;
 				color: $background-colour;
 				padding-left: round(($navbar-height - 20) / 2);
@@ -83,11 +83,6 @@
 .expand {
 	display: block !important;
 }
-
-
-// ==========================================================================================
-// ====  Menu Button And Animation  =========================================================
-// ==========================================================================================
 
 #menu-btn {
 	cursor: pointer;

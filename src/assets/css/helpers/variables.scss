@@ -11,3 +11,37 @@ $navbar-item-active-border: $background-colour;
 
 $title-height: $navbar-height * 2;
 $footer-height: 40px;
+
+
+// Breakpoints
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+
+:root {
+	--scale: 1;
+	
+	@media #{$mq-medium} {
+		--scale: 1.2;
+	}
+	@media #{$mq-large} {
+		--scale: 1.3;
+	}
+	@media #{$mq-xlarge} {
+		--scale: 1.4;
+	}
+	@media #{$mq-xxlarge} {
+		--scale: 1.6;
+	}
+}
