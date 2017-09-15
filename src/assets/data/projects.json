@@ -1,7 +1,7 @@
 {
 	"watchface": {
 		"SimplyDigital": {
-			"title": "SimplyDigital",
+			"title": "Simply Digital",
 			"store": "https://apps.getpebble.com/en_US/application/56f3e4233ae8cc8e3400003e",
 			"source": "https://github.com/afspeirs/SimplyDigital",
 			"aplite": 5,
@@ -9,7 +9,7 @@
 			"chalk": 4
 		},
 		"SimplyAnalog": {
-			"title": "SimplyAnalog",
+			"title": "Simply Analog",
 			"store": "https://apps.getpebble.com/en_US/application/57b82c80bb85ed9aa5000943",
 			"source": "https://github.com/afspeirs/SimplyAnalog",
 			"aplite": 2,

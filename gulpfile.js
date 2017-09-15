@@ -139,6 +139,9 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 					times += options.fn(i);
 				}
 				return times;
+			},
+			trim: function(n, options) {
+				return n.replace(/ /g, '');
 			}
 		})
 		.data(paths.src + paths.data + '/**/*.json')

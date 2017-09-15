@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
 	const imgLeft = document.querySelectorAll('#img-left');
 	const imgRight = document.querySelectorAll('#img-right');
 	const watch = document.querySelectorAll('.watch');
-	const flipButton = document.querySelectorAll('#flip-button');
+	const flipButton = document.querySelectorAll('.flip-button');
 
 	function decrementScreenshot() {
 		const img = this.parentNode.firstChild;

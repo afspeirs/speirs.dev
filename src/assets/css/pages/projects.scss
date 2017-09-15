@@ -8,20 +8,11 @@
 	border: 7px outset #eee;
 	border-radius: 20px;
 	padding: 36px;
-	
-	#flip-button {
-		position: absolute;
-		top: 8px;
-		right: 8px;
-		display: none;
-	}
-	&:hover #flip-button {
-		display: block;
-	}
 
 	h3 {
 		margin: 10px 0;
 		text-align: center;
+		line-height: calc(var(--scale) * 1.2em);
 		width: 100%;
 	}
 
@@ -61,16 +52,18 @@
 
 	.links {
 		position: absolute;
+		right: 0;
 		bottom: 0;
 		height: 25px;
 		margin: 10px;
 
 		a {
-			margin-right: 10px;
-			text-decoration:none;
+			margin-left: 10px;
+			text-decoration: none;
 
 			svg {
-				display:inline-block;
+				display: inline-block;
+
 				&:hover {
 					fill: darkslateblue;
 				}
@@ -154,6 +147,16 @@
 		.back {
 			transform: rotateY(180deg);
 		}
+	}
+
+	.flip-button {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		display: none;
+	}
+	&:hover .flip-button {
+		display: block;
 	}
 }
 
