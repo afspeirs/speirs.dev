@@ -52,7 +52,7 @@ a {
 	z-index: 10;
 }
 
-#navbar-wrap, #navbar-height {
+#navbar-wrap, .navbar-height {
 	height: calc(var(--scale) * #{$navbar-height});
 }
 
@@ -71,7 +71,7 @@ a {
 	}
 }
 
-#section {
+.section {
 	height: calc(var(--scale) * #{$title-height});
 	overflow: hidden;
 	background: slategray;
