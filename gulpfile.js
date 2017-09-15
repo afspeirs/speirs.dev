@@ -91,7 +91,7 @@ gulp.task('files:js', ['clean:js'], function() {
 		return gulp.src(paths.src + paths.js + '**/*')
 			.pipe(babel({ presets: ['es2015'] }))
 			.pipe(uglify())
-			// .pipe(rename({ extname: '.min.js' }))
+			.pipe(rename({ extname: '.min.js' }))
 			.pipe(gulp.dest(paths.build + paths.js));
 	}
 });
