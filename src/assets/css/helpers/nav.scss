@@ -27,7 +27,7 @@
 				display: block;
 				flex-shrink: 0;
 				height: calc(var(--scale) * #{$navbar-height});
-				line-height: calc(var(--scale) * (#{$navbar-height} - #{$navbar-item-border-width}));
+				line-height: calc(var(--scale) * #{$navbar-height});
 				font-size: calc(var(--scale) * #{$navbar-item-font-size});
 				text-transform: uppercase;
 				color: $background-colour;
@@ -59,6 +59,7 @@
 					
 					a {
 						height: $navbar-height / 1.2;
+						line-height: $navbar-height / 1.2;
 						// width: inherit;
 						border-right: $navbar-item-border-width solid transparent;
 						border-bottom: none !important;
