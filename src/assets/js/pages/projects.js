@@ -50,9 +50,9 @@ window.addEventListener('load', function() {
 		array[3] = 1;
 
 		img.id = dataWatch.toLowerCase();
-		flipper.id = dataWatch.toLowerCase();
-		flipper.firstChild.id = dataWatch.toLowerCase();
-		flipper.lastChild.id = dataWatch.toLowerCase();
+		// flipper.id = dataWatch.toLowerCase();
+		// flipper.firstChild.id = dataWatch.toLowerCase();
+		// flipper.lastChild.id = dataWatch.toLowerCase();
 		img.setAttribute('src', array.join(''));
 
 		// Flip back to watchface
