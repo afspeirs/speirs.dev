@@ -194,6 +194,8 @@ gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
 // Sets the `files:handlebar` task is complete before reloading the browser
 gulp.task('set-dev', function() {
 	if (!config.dev) {
+		config.dev = true;
+
 		return gulp.src('./config.json')
 			.pipe(jsonModify({ key: 'dev', value: true }))
 			.pipe(gulp.dest('./'));
@@ -201,6 +203,8 @@ gulp.task('set-dev', function() {
 });
 gulp.task('set-prod', function() {
 	if (config.dev) {
+		config.dev = false;
+
 		return gulp.src('./config.json')
 			.pipe(jsonModify({ key: 'dev', value: false }))
 			.pipe(gulp.dest('./'));
