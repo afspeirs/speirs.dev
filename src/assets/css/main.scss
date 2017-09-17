@@ -61,7 +61,7 @@ a {
 	margin: 0 auto !important;
 }
 
-#footer {
+footer {
 	p {
 		position: relative;
 		top: 0;
@@ -71,7 +71,7 @@ a {
 	}
 }
 
-.section {
+.section-header {
 	height: calc(var(--scale) * #{$title-height});
 	overflow: hidden;
 	background: slategray;
