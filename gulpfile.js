@@ -142,6 +142,9 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 			},
 			trim: function(n, options) {
 				return n.replace(/ /g, '');
+			},
+			year: function(options) {
+				return new Date().getFullYear();
 			}
 		})
 		.data(paths.src + paths.data + '/**/*.json')
