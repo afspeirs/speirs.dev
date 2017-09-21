@@ -5,10 +5,12 @@
 	width: 400px;
 	height: 300px;
 	overflow: hidden;
-
+	
 	img {
 		width: 100%;
 		height: 100%;
+		vertical-align: middle;
+		transition: transform 200ms ease-in-out;
 	}
 }
 
@@ -21,11 +23,9 @@
 	}
 }
 @media only screen and (min-width: 490px) {
-	.img-wrap img:hover {
-		position: relative;
-		top: -5%;
-		left: -5%;
-		width: 110%;
-		height: 110%;
+	.img-wrap {
+		img:hover {
+			transform: scale(1.05);
+		}
 	}
 }
