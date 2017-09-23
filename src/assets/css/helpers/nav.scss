@@ -24,7 +24,6 @@
 			overflow: hidden;
 
 			a {
-				display: none;
 				flex-shrink: 0;
 				height: calc(var(--scale) * #{$navbar-height});
 				line-height: calc(var(--scale) * #{$navbar-height});
@@ -75,6 +74,10 @@
 				max-height: 0;
 				width: 100%;
 				// transition: max-height 1s;
+
+				a {
+					display: none;
+				}
 			}
 		}
 	}
