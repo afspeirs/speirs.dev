@@ -12,9 +12,13 @@
 		font-size: calc(var(--scale) * 22px);
 
 		.brand {
-			display: block;
 			color: $background-colour;
 			line-height: calc(var(--scale) * #{$navbar-height});
+
+			img {
+				height: calc(var(--scale) * #{$navbar-height*2/3});
+				margin-top: calc(var(--scale) * (#{$navbar-height} - #{$navbar-height*2/3}) / 2);
+			}
 		}
 
 		.nav-menu {
