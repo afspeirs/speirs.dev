@@ -97,7 +97,7 @@ gulp.task('files:js', ['clean:js'], function() {
 });
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
-	return gulp.src(paths.src + paths.css + '**/*.scss')
+	return gulp.src(paths.src + paths.css + 'pages/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix())
 		.pipe(cleanCSS())
