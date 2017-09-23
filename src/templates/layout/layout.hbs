@@ -15,8 +15,12 @@
 <body>
 	<div id="container" {{#ifEquals config.dev true}}class="debug"{{/ifEquals}}>
 		{{> navigation}}
+		
+		<div id="content">
+			<div class="navbar-height"></div>
 
-		{{{block "body"}}}
+			{{{block "body"}}}
+		</div>
 
 		<footer>
 			{{#block "foot"}}

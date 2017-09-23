@@ -5,12 +5,12 @@ jsname: projects
 {{#extend "layout"}}
 {{#content "body"}}
 	{{> section-header sectionTitle="Pebble Watchfaces" image="title"}}
-	<div id="content">
+	<section>
 		<div class="flex">
 			{{#each projects.watchface}}
 				{{> watchface}}
 			{{/each}}
 		</div>
-	</div>
+	</section>
 {{/content}}
 {{/extend}}

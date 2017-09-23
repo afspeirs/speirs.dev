@@ -56,15 +56,22 @@ a {
 	height: calc(var(--scale) * #{$navbar-height});
 }
 
-#navbar, .expand a, #content { /* sets the width of the navbar and content */
+#navbar, .expand a, section { /* sets the width of the navbar and content */
 	width: 85%;
-	margin: 0 auto !important;
+	margin: 0 auto;
+}
+
+#content {
+	min-height: calc(100% - #{$footer-height});
+
+	p {
+		margin: 0;
+		padding-top: 1em;
+	}
 }
 
 footer {
 	p {
-		position: relative;
-		top: 0;
 		margin: 0;
 		line-height: $footer-height;
 		text-align: center;
@@ -111,7 +118,7 @@ footer {
 // ==========================================================================================
 
 @media only screen  and (min-width : 1040px) {
-	#navbar, #content { /* sets the width of the navbar and content */
+	#navbar, section { /* sets the width of the navbar and content */
 		width: 884px;
 	}
 }
