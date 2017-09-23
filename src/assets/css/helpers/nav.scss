@@ -18,13 +18,13 @@
 		}
 
 		.nav-menu {
-			display: none;
 			flex-flow: row nowrap;
 			align-content: center;
 			white-space: nowrap;
+			overflow: hidden;
 
 			a {
-				display: block;
+				display: none;
 				flex-shrink: 0;
 				height: calc(var(--scale) * #{$navbar-height});
 				line-height: calc(var(--scale) * #{$navbar-height});
@@ -48,15 +48,13 @@
 			}
 			@media (max-width: $navbar-collapse-breakpoint) {
 				&.expand {
+					max-height: 1000px;
+					padding-bottom: $navbar-height / 5;
 					background-color: $navbar-background-colour;
 					text-align: right;
-					position: absolute;
-					top: $navbar-height;
-					left: 0;
-					width: 100%;
-					padding-bottom: $navbar-height / 5;
 
 					a {
+						display: block;
 						height: $navbar-height / 1.2;
 						line-height: $navbar-height / 1.2;
 						// width: inherit;
@@ -70,6 +68,13 @@
 						}
 					}
 				}
+
+				position: absolute;
+				top: $navbar-height;
+				left: 0;
+				max-height: 0;
+				width: 100%;
+				// transition: max-height 1s;
 			}
 		}
 	}
@@ -79,10 +84,6 @@
 // ==========================================================================================
 // ====  Responsive Menu  ===================================================================
 // ==========================================================================================
-
-.expand {
-	display: block !important;
-}
 
 #menu-btn {
 	cursor: pointer;
