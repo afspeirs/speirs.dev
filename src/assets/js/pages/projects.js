@@ -9,15 +9,9 @@ window.addEventListener('load', function() {
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
 		if (array[3] === '1') {
-			if (img.id === 'aplite') {
-				array[3] = img.dataset.aplite;
-			}
-			if (img.id === 'basalt') {
-				array[3] = img.dataset.basalt;
-			}
-			if (img.id === 'chalk') {
-				array[3] = img.dataset.chalk;
-			}
+			if (img.id === 'aplite') { array[3] = img.dataset.aplite; }
+			if (img.id === 'basalt') { array[3] = img.dataset.basalt; }
+			if (img.id === 'chalk') { array[3] = img.dataset.chalk; }
 		} else {
 			array[3]--;
 		}
@@ -50,9 +44,6 @@ window.addEventListener('load', function() {
 		array[3] = 1;
 
 		img.id = dataWatch.toLowerCase();
-		// flipper.id = dataWatch.toLowerCase();
-		// flipper.firstChild.id = dataWatch.toLowerCase();
-		// flipper.lastChild.id = dataWatch.toLowerCase();
 		img.setAttribute('src', array.join(''));
 
 		// Flip back to watchface
