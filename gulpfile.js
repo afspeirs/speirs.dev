@@ -85,10 +85,10 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	if (config.dev) {
-		return gulp.src(paths.src + paths.js + '**/*.js')
+		return gulp.src(paths.src + paths.js + '**/*.*')
 			.pipe(gulp.dest(paths.build + paths.js));
 	} else {
-		return gulp.src(paths.src + paths.js + '**/*.js')
+		return gulp.src(paths.src + paths.js + '**/*.*')
 			.pipe(babel({ presets: ['es2015'] }))
 			.pipe(uglify())
 			.pipe(rename({ extname: '.min.js' }))
