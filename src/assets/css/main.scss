@@ -6,6 +6,9 @@
 *:after {
 	box-sizing: border-box;
 }
+a, div {
+	-webkit-tap-highlight-color: transparent;	
+}
 
 :root {
 	--scale: 1;
