@@ -17,7 +17,7 @@ var uglify       = require('gulp-uglify');              // https://www.npmjs.com
 
 var paths = {
 	src: './src/',
-	build: './build/',
+	build: './public/',
 	css: 'assets/css/',
 	data: 'assets/data/',
 	js: 'assets/js/',
