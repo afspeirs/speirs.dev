@@ -10,6 +10,8 @@
 	<title>AFSpeirs</title>
 	<link rel="icon" type="image/ico" href="assets/img/global/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="assets/css/{{title}}.min.css">
+	<script src="assets/js/modules/nav.{{#ifEquals config.dev false}}min.{{/ifEquals}}js" defer></script>
+	{{#exists jsname}}<script src="assets/js/pages/{{jsname}}.{{#ifEquals config.dev false}}min.{{/ifEquals}}js" defer></script>{{/exists}}
 </head>
 
 <body>
@@ -28,11 +30,6 @@
 			{{/block}}
 		</footer>
 	</div>
-
-	<script src="assets/js/modules/nav.{{#ifEquals config.dev false}}min.{{/ifEquals}}js"></script>
-	{{#exists jsname}}
-		<script src="assets/js/pages/{{jsname}}.{{#ifEquals config.dev false}}min.{{/ifEquals}}js"></script>
-	{{/exists}}
 </body>
 
 </html>
