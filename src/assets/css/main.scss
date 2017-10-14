@@ -40,23 +40,12 @@ a {
 	transition: border 0.3s linear 0s;
 }
 
-#container, #navbar-wrap {
+#container {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 100%;
-}
-
-#navbar-wrap {
-	position: fixed;
-	background-color: $navbar-background-colour;
-	font-family: 'Open Sans', sans-serif;
-	z-index: 10;
-}
-
-#navbar-wrap, .navbar-height {
-	height: calc(var(--scale) * #{$navbar-height});
 }
 
 #navbar, .expand a, section { /* sets the width of the navbar and content */

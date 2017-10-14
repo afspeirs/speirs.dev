@@ -4,7 +4,16 @@
 // ====  Default Navigation  ================================================================
 // ==========================================================================================
 
+#navbar-wrap, .navbar-height {
+	height: calc(var(--scale) * #{$navbar-height});
+}
+
 #navbar-wrap {
+	// position: fixed;
+	background-color: $navbar-background-colour;
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+
 	#navbar {
 		display: flex;
 		justify-content: space-between;
@@ -26,6 +35,7 @@
 			align-content: center;
 			white-space: nowrap;
 			overflow: hidden;
+			z-index: 10;
 
 			a {
 				flex-shrink: 0;
