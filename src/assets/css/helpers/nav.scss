@@ -4,15 +4,11 @@
 // ====  Default Navigation  ================================================================
 // ==========================================================================================
 
-#navbar-wrap, .navbar-height {
-	height: calc(var(--scale) * #{$navbar-height});
-}
-
 #navbar-wrap {
-	// position: fixed;
 	background-color: $navbar-background-colour;
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;
+	height: calc(var(--scale) * #{$navbar-height});
 
 	#navbar {
 		display: flex;
