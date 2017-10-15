@@ -160,37 +160,6 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 
 
 // ==========================================================================================
-// ====  Watch  =============================================================================
-// ==========================================================================================
-
-// Ensures the `files:img` task is complete before reloading the browser
-gulp.task('watch:img', ['files:img'], function(done) {
-	browserSync.reload();
-	done();
-});
-// Ensures the `files:js` task is complete before reloading the browser
-gulp.task('watch:js', ['files:js'], function(done) {
-	browserSync.reload();
-	done();
-});
-// Ensures the `files:css` task is complete before reloading the browser
-gulp.task('watch:css', ['files:css'], function(done) {
-	browserSync.reload();
-	done();
-});
-// Ensures the `files:root` task is complete before reloading the browser
-gulp.task('watch:root', ['files:root'], function(done) {
-	browserSync.reload();
-	done();
-});
-// Ensures the `files:handlebar` task is complete before reloading the browser
-gulp.task('watch:handlebar', ['files:handlebar'], function(done) {
-	browserSync.reload();
-	done();
-});
-
-
-// ==========================================================================================
 // ====  Environment  =======================================================================
 // ==========================================================================================
 
@@ -237,12 +206,12 @@ gulp.task('server', function() {
 
 	// add browserSync.reload to the tasks array to make
 	// all browsers reload after tasks are complete.
-	gulp.watch(paths.src + paths.img + '**/*', ['watch:img']);
-	gulp.watch(paths.src + paths.js + '**/*', ['watch:js']);
-	gulp.watch(paths.src + paths.css + '**/*', ['watch:css']);
-	gulp.watch(paths.src + paths.data + '**/*', ['watch:handlebar']);
-	gulp.watch(paths.src + 'templates/**/*.hbs', ['watch:handlebar']);
-	gulp.watch(paths.src + '*.*', ['watch:root']);
+	gulp.watch(paths.src + paths.img + '**/*', ['files:img']).on('change', browserSync.reload);
+	gulp.watch(paths.src + paths.js + '**/*', ['files:js']).on('change', browserSync.reload);
+	gulp.watch(paths.src + paths.css + '**/*', ['files:css']).on('change', browserSync.reload);
+	gulp.watch(paths.src + paths.data + '**/*', ['files:handlebar']).on('change', browserSync.reload);
+	gulp.watch(paths.src + 'templates/**/*.hbs', ['files:handlebar']).on('change', browserSync.reload);
+	gulp.watch(paths.src + '*.*', ['files:root']).on('change', browserSync.reload);
 });
 
 
