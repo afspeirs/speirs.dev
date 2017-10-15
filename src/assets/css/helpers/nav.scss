@@ -20,12 +20,12 @@
 			color: $background-colour;
 			line-height: calc(var(--scale) * #{$navbar-height});
 			z-index: 6;
-			
+
 			svg {
 				height: calc(var(--scale) * #{$navbar-height * 4/7});
 				margin-top: calc(var(--scale) * (#{$navbar-height} - #{$navbar-height * 4/7}) / 2);
 				fill: $background-colour;
-				
+
 				&:hover {
 					fill: #3A3A3A;
 				}
@@ -37,7 +37,22 @@
 			align-content: center;
 			white-space: nowrap;
 			overflow: hidden;
-			flex-shrink: 0;
+			border-bottom: $navbar-item-border-width solid transparent;
+
+			a {
+				padding-left: round($navbar-height / 2);
+				padding-right: round($navbar-height / 2);
+				border-bottom: $navbar-item-border-width solid transparent;
+				
+				&.active,
+				&:hover,
+				&:focus {
+					border-bottom-color: $navbar-item-active-border;
+					// background: $background-colour;
+					// background: darken($navbar-background-colour, 25%);
+					// color: $navbar-background-colour;
+				}
+			}
 
 			@media (max-width: $navbar-collapse-breakpoint) {
 				display: none;
@@ -53,15 +68,7 @@
 		font-size: calc(var(--scale) * #{$navbar-item-font-size});
 		text-transform: uppercase;
 		color: $background-colour;
-		padding-left: round($navbar-height / 2);
-		padding-right: round($navbar-height / 2);
-		border-bottom: $navbar-item-border-width solid transparent;
-
-		&.active,
-		&:hover,
-		&:focus {
-			border-bottom-color: $navbar-item-active-border;
-		}
+		transition: background 0.2s linear 0s;
 	}
 }
 
@@ -70,26 +77,23 @@
 	position: relative;
 	top: calc(var(--scale) * -#{$navbar-height});
 	padding-top: calc(var(--scale) * #{$navbar-height});
-	padding-bottom: $navbar-height / 5;
-	text-align: right;
-	z-index: 5;
+	padding-bottom: $navbar-height / 10;
 	font-family: 'Open Sans', sans-serif;
+	text-align: center;
 	background-color: $navbar-background-colour;
-	
+	z-index: 5;
+
 	a {
 		display: block;
-		height: $navbar-height / 1.2;
-		line-height: $navbar-height / 1.2;
-		// width: inherit;
-		// border-left: $navbar-item-border-width solid transparent;
-		border-right: $navbar-item-border-width solid transparent;
-		border-bottom: none !important;
+		height: $navbar-height;
+		line-height: $navbar-height;
+		font-size: $navbar-height / 2.5;
 
 		&.active,
 		&:hover {
-			// border-left: $navbar-item-border-width solid $background-colour;
-			border-right: $navbar-item-border-width solid $background-colour;
-			// background: darken($navbar-background-colour, 3%);
+			// background: $background-colour;
+			background: darken($navbar-background-colour, 25%);
+			// color: $navbar-background-colour;
 		}
 	}
 	

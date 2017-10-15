@@ -37,7 +37,6 @@ body {
 
 a {
 	text-decoration: none;
-	transition: border 0.3s linear 0s;
 }
 
 #container {
@@ -48,7 +47,7 @@ a {
 	height: 100%;
 }
 
-#navbar, .expand a, section { /* sets the width of the navbar and content */
+#navbar, section { /* sets the width of the content */
 	width: 85%;
 	margin: 0 auto;
 }
