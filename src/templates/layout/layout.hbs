@@ -23,11 +23,18 @@
 					{{!-- {{> svg-logo}} --}}
 				</a>
 
-				{{> navigation}}
+				<nav class="nav-menu">
+					{{> navigation}}
+				</nav>
 
 				<div id="menu-btn"><span></span><span></span><span></span></div>
 			</div>
+
+			<nav class="mobile-nav-menu">
+				{{> navigation}}
+			</nav>
 		</div>
+
 		
 		<div id="content">
 			{{{block "body"}}}

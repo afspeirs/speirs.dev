@@ -54,7 +54,7 @@ a {
 }
 
 #content {
-	min-height: calc(100% - #{$footer-height});
+	min-height: calc(100% - (var(--scale) * #{$navbar-height}) - (var(--scale) * #{$footer-height}));
 
 	p {
 		margin: 0;
