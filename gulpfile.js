@@ -79,7 +79,7 @@ gulp.task('clean:build', function() {
 
 // Move img folder contents
 gulp.task('files:img', ['clean:img'], function() {
-	return gulp.src(paths.src + paths.img + '**/*.{png,gif,jpg,ico}')
+	return gulp.src([paths.src + paths.img + '**/*', '!' + paths.src + paths.img + '**/*.{ai,psd}'])
 		.pipe(gulp.dest(paths.build + paths.img));
 });
 // Move js folder contents
