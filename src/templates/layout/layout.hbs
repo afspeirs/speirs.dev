@@ -16,7 +16,18 @@
 
 <body>
 	<div id="container" {{#ifEquals config.dev true}}class="debug"{{/ifEquals}}>
-		{{> navigation}}
+		<div id="navbar-wrap">
+			<div id="navbar">
+				<a href="index.html" class="brand">
+					AFSpeirs
+					{{!-- <img src="assets/img/global/logo.png" /> --}}
+				</a>
+
+				{{> navigation}}
+
+				<div id="menu-btn"><span></span><span></span><span></span></div>
+			</div>
+		</div>
 		
 		<div id="content">
 			{{{block "body"}}}
