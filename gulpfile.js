@@ -185,11 +185,11 @@ gulp.task('set-prod', function() {
 
 
 // ==========================================================================================
-// ====  Server  ============================================================================
+// ====  serve  ============================================================================
 // ==========================================================================================
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
-gulp.task('server', function() {
+gulp.task('serve', function() {
 	runSequence(['set-dev'], 'files:img', 'files:js', 'files:css', 'files:root', 'files:handlebar');
 	
 	// Serve files from the root of this project
@@ -229,5 +229,5 @@ gulp.task('build', function() {
 // ====  Default  ===========================================================================
 // ==========================================================================================
 
-// Runs the server task by default
-gulp.task('default', ['server']);
+// Runs the serve task by default
+gulp.task('default', ['serve']);
