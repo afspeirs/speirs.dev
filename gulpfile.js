@@ -9,12 +9,14 @@ var hb           = require('gulp-hb');                  // https://www.npmjs.com
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
 var jsonModify   = require('gulp-json-modify');         // https://www.npmjs.com/package/gulp-json-modify
+var nop          = require('gulp-nop');                 // https://www.npmjs.com/package/gulp-nop
 var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
 var runSequence  = require('run-sequence');             // https://www.npmjs.com/package/run-sequence
 var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
 var uglify       = require('gulp-uglify');              // https://www.npmjs.com/package/gulp-uglify
 
+var env = process.env.NODE_ENV;
 var paths = {
 	src: './src/',
 	build: './public/',
@@ -26,17 +28,6 @@ var paths = {
 	pages: 'templates/pages/',
 	partials: 'templates/partials/'
 };
-var config = JSON.parse(fs.readFileSync('config.json'));
-
-
-// ==========================================================================================
-// ====  Tasks  =============================================================================
-// ==========================================================================================
-
-// Cleans folder
-gulp.task('config', function() {
-	console.log(config);
-});
 
 
 // ==========================================================================================
@@ -57,7 +48,7 @@ gulp.task('clean:css', function() {
 });
 // Cleans files from root of build
 gulp.task('clean:root', function() {
-	del([paths.build + '*.*', '!' + paths.build + '*.html']);
+	return del([paths.build + '*.*', '!' + paths.build + '*.html']);
 });
 // Clean assets folder
 gulp.task('clean:assets', function() {
@@ -84,16 +75,11 @@ gulp.task('files:img', ['clean:img'], function() {
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
-	if (config.dev) {
-		return gulp.src(paths.src + paths.js + '**/*.*')
-			.pipe(gulp.dest(paths.build + paths.js));
-	} else {
-		return gulp.src(paths.src + paths.js + '**/*.*')
-			.pipe(babel({ presets: ['es2015'] }))
-			.pipe(uglify())
-			.pipe(rename({ extname: '.min.js' }))
-			.pipe(gulp.dest(paths.build + paths.js));
-	}
+	return gulp.src(paths.src + paths.js + '**/*.*')
+		.pipe(env === 'prod' ? babel({ presets: ['es2015'] }) : nop())
+		.pipe(env === 'prod' ? uglify() : nop())
+		.pipe(rename({ extname: '.min.js' }))
+		.pipe(gulp.dest(paths.build + paths.js));
 });
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
@@ -111,48 +97,46 @@ gulp.task('files:root', ['clean:root'], function() {
 });
 // Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:pages'], function() {
-	var hbStream = hb()
-		.partials(paths.src + paths.layout + '*.hbs')
-		.partials(paths.src + paths.partials + '*.hbs')
-		.helpers(hbHelper)
-		.helpers({
-			log: function(options) {
-				console.log(options.fn(this));
-				return '';
-			},
-			ifEquals: function(a, b, options) {
-				if (a === b) {
-					return options.fn(this);
-				}
-				return options.inverse(this);
-			},
-			exists: function(variable, options) {
-				if (typeof variable !== 'undefined') {
-					return options.fn(this);
-				} else {
-					return options.inverse(this);
-				}
-			},
-			times: function(n, options) {
-				var times = '';
-				for (var i = 1; i <= n; i++) {
-					times += options.fn(i);
-				}
-				return times;
-			},
-			trim: function(n, options) {
-				return n.replace(/ /g, '');
-			},
-			year: function(options) {
-				return new Date().getFullYear();
-			}
-		})
-		.data(paths.src + paths.data + '/**/*.json')
-		.data('config.json');
-
 	return gulp.src(paths.src + paths.pages + '*.hbs')
 		.pipe(frontMatter({ property: 'data' }))
-		.pipe(hbStream)
+		.pipe(hb()
+			.partials(paths.src + paths.layout + '*.hbs')
+			.partials(paths.src + paths.partials + '*.hbs')
+			.helpers(hbHelper)
+			.helpers({
+				log: function(options) {
+					console.log(options.fn(this));
+					return '';
+				},
+				ifEquals: function(a, b, options) {
+					if (a === b) {
+						return options.fn(this);
+					}
+					return options.inverse(this);
+				},
+				exists: function(variable, options) {
+					if (typeof variable !== 'undefined') {
+						return options.fn(this);
+					} else {
+						return options.inverse(this);
+					}
+				},
+				times: function(n, options) {
+					var times = '';
+					for (var i = 1; i <= n; i++) {
+						times += options.fn(i);
+					}
+					return times;
+				},
+				trim: function(n, options) {
+					return n.replace(/ /g, '');
+				},
+				year: function(options) {
+					return new Date().getFullYear();
+				}
+			})
+			.data(paths.src + paths.data + '/**/*.json')
+			.data({ debug: env === 'dev' ? true : false }))
 		.pipe(rename({ extname: '.html' }))
 		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest(paths.build));
@@ -165,27 +149,15 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 
 // Sets the `files:handlebar` task is complete before reloading the browser
 gulp.task('set-dev', function() {
-	if (!config.dev) {
-		config.dev = true;
-
-		return gulp.src('./config.json')
-			.pipe(jsonModify({ key: 'dev', value: true }))
-			.pipe(gulp.dest('./'));
-	}
+	return env = 'dev';
 });
 gulp.task('set-prod', function() {
-	if (config.dev) {
-		config.dev = false;
-
-		return gulp.src('./config.json')
-			.pipe(jsonModify({ key: 'dev', value: false }))
-			.pipe(gulp.dest('./'));
-	}
+	return env = 'prod';
 });
 
 
 // ==========================================================================================
-// ====  serve  ============================================================================
+// ====  Serve  ============================================================================
 // ==========================================================================================
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
