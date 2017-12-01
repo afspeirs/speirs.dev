@@ -108,12 +108,17 @@ footer {
 	justify-content: space-around;
 }
 
+p {
+	.small {
+		font-size: 12px;
+	}
+}
 
 // ==========================================================================================
 // ====  Media Queries  =====================================================================
 // ==========================================================================================
 
-@media only screen  and (min-width : 1040px) {
+@media only screen and (min-width : 1040px) {
 	#navbar, section { /* sets the width of the navbar and content */
 		width: 884px;
 	}
