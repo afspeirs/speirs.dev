@@ -96,8 +96,9 @@ footer {
 		text-transform: capitalize;
 		line-height: calc(var(--scale) * #{$title-height});
 		color: $background-colour;
-		font-size: 2em;
+		font-size: 3em;
 		z-index: 1;
+		-webkit-text-stroke: 1px black;
 	}
 }
 
