@@ -4,7 +4,19 @@ jsname: projects
 ---
 {{#extend "layout"}}
 {{#content "body"}}
-	{{> section-header sectionTitle="Pebble Watchfaces" image="title"}}
+	{{> section-header sectionTitle="RouteMe" image="routeme"}}
+	<section>
+		<p>
+			RouteMe is a Progressive Web App that path finds through themeparks, showing you the quickest route to take from A -> B.
+		</p>
+		{{!-- <p>
+			This project began as a Microsoft Windows application, written in C#, and has evolved to a Progressive Web App.
+		</p> --}}
+		<p>
+			To view the app, visit <a href="https://routeme.afspeirs.uk">routeme.afspeirs.uk</a>.
+		</p>
+	</section>
+	{{> section-header sectionTitle="Pebble Watchfaces" image="pebble"}}
 	<section>
 		<div class="flex">
 			{{#each projects.watchface}}

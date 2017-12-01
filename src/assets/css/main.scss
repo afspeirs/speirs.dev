@@ -74,6 +74,10 @@ footer {
 	overflow: hidden;
 	background: slategray;
 	text-align: center;
+
+	&:not(:first-of-type) {
+		margin-top: 5%;
+	}
 	
 	img {
 		position: relative;
