@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
 			if (img.id === 'aplite') { array[3] = img.dataset.aplite; }
 			if (img.id === 'basalt') { array[3] = img.dataset.basalt; }
 			if (img.id === 'chalk') { array[3] = img.dataset.chalk; }
+			if (img.dataset.imgcount) { array[3] = img.dataset.imgcount; }
 		} else {
 			array[3]--;
 		}
@@ -25,7 +26,8 @@ window.addEventListener('load', function() {
 
 		if ((img.id === 'aplite' && array[3] === img.dataset.aplite) ||
 			(img.id === 'basalt' && array[3] === img.dataset.basalt) ||
-			(img.id === 'chalk' && array[3] === img.dataset.chalk)) {
+			(img.id === 'chalk' && array[3] === img.dataset.chalk) ||
+			(img.dataset.imgcount && array[3] === img.dataset.imgcount)) {
 			array[3] = 1;
 		} else {
 			array[3]++;

@@ -1,5 +1,27 @@
 @import '../main.scss';
 
+$routemeImageScale: 0.5;
+
+.routeme {
+	margin: 10px 0;
+	position: relative;
+	width: calc(#{$routemeImageScale} * 500px);
+	height: calc(#{$routemeImageScale} * 899px);
+	
+	&:hover {
+		.img-left, .img-right {
+			display: block;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+
 .watchface {
 	perspective: 1000px;
 	user-select: none;
@@ -41,48 +63,10 @@
 			transform: rotateY(0deg);
 			z-index: 2;
 
-			.img-left, .img-right {
-				cursor: pointer;
-				position: absolute;
-				top: 97px;
-				height: 46px;
-				width: 30px;
-				background: #171717;
-				opacity: 0.95;
-				display: none;
-
-				&:hover {
-					background:#333333;
+			&:hover {
+				.img-left, .img-right {
+					display: block;
 				}
-
-				&:before {
-					content: "";
-					position: absolute;
-					top: 14px;
-					display: inline-block;
-					padding: 6px;
-					border: solid lightgrey;
-					border-width: 0 6px 6px 0;
-				}
-			}
-			.img-left {
-				left: 0;
-
-				&:before {
-					left: 9px;
-					transform: rotate(135deg);
-				}
-			}
-			.img-right {
-				right: 0;
-
-				&:before {
-					right: 9px;
-					transform: rotate(-45deg);
-				}
-			}
-			&:hover .img-left, &:hover .img-right {
-				display: block;
 			}
 
 			.flip-button {
@@ -156,4 +140,45 @@
 
 .watchface.flip .flipper {
 	transform: rotateY(180deg);
+}
+
+.img-left, .img-right {
+	cursor: pointer;
+	position: absolute;
+	top: 97px;
+	height: 46px;
+	width: 30px;
+	background: #171717;
+	opacity: 0.95;
+	display: none;
+
+	&:hover {
+		background:#333333;
+	}
+
+	&:before {
+		content: "";
+		position: relative;
+		top: 14px;
+		display: inline-block;
+		padding: 6px;
+		border: solid lightgrey;
+		border-width: 0 6px 6px 0;
+	}
+}
+.img-left {
+	left: 0;
+
+	&:before {
+		left: 10px;
+		transform: rotate(135deg);
+	}
+}
+.img-right {
+	right: 0;
+
+	&:before {
+		right: -3px;
+		transform: rotate(-45deg);
+	}
 }
