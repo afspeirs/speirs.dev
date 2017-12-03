@@ -8,11 +8,8 @@ window.addEventListener('load', function() {
 		const img = this.parentNode.firstChild;
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
-		if (array[3] === '1') {
-			array[3] = img.dataset.imgcount;
-		} else {
-			array[3]--;
-		}
+		// Decrement the current image number by one unless it is the first one
+		array[3] === '1' ? array[3] = img.dataset.imgcount : array[3]--;
 
 		img.setAttribute('src', array.join(''));
 	}
@@ -21,11 +18,8 @@ window.addEventListener('load', function() {
 		const img = this.parentNode.firstChild;
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
-		if (img.dataset.imgcount && array[3] === img.dataset.imgcount) {
-			array[3] = 1;
-		} else {
-			array[3]++;
-		}
+		// Increment the current image number by one unless it is the last one
+		array[3] === img.dataset.imgcount ? array[3] = 1 : array[3]++;
 
 		img.setAttribute('src', array.join(''));
 	}
@@ -36,15 +30,20 @@ window.addEventListener('load', function() {
 		const dataWatch = this.dataset.watch;
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
+		// Change the watch type
 		array[1] = dataWatch;
+		// Reset current image number to 1
 		array[3] = 1;
 
 		img.setAttribute('src', array.join(''));
 
+		// Set the class of the image to the watch type
 		img.classList = dataWatch.toLowerCase();
-		if (img.classList.value === 'aplite') { img.dataset.imgcount = img.dataset.aplite; }
-		else if (img.classList.value === 'basalt') { img.dataset.imgcount = img.dataset.basalt; }
-		else if (img.classList.value === 'chalk') { img.dataset.imgcount = img.dataset.chalk; }
+
+		// Set the image count based on the watch type
+		if (dataWatch.toLowerCase() === 'aplite') { img.dataset.imgcount = img.dataset.aplite; }
+		else if (dataWatch.toLowerCase() === 'basalt') { img.dataset.imgcount = img.dataset.basalt; }
+		else if (dataWatch.toLowerCase() === 'chalk') { img.dataset.imgcount = img.dataset.chalk; }
 
 		// Flip back to watchface
 		flipper.parentNode.classList.toggle('flip');
