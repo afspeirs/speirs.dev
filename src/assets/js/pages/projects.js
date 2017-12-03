@@ -9,10 +9,7 @@ window.addEventListener('load', function() {
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
 		if (array[3] === '1') {
-			if (img.id === 'aplite') { array[3] = img.dataset.aplite; }
-			if (img.id === 'basalt') { array[3] = img.dataset.basalt; }
-			if (img.id === 'chalk') { array[3] = img.dataset.chalk; }
-			if (img.dataset.imgcount) { array[3] = img.dataset.imgcount; }
+			array[3] = img.dataset.imgcount;
 		} else {
 			array[3]--;
 		}
@@ -24,10 +21,7 @@ window.addEventListener('load', function() {
 		const img = this.parentNode.firstChild;
 		const array = img.src.replace(/\/([^\/]*)$/,'\/,'+'$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',\.'+'$1').split(',');
 
-		if ((img.id === 'aplite' && array[3] === img.dataset.aplite) ||
-			(img.id === 'basalt' && array[3] === img.dataset.basalt) ||
-			(img.id === 'chalk' && array[3] === img.dataset.chalk) ||
-			(img.dataset.imgcount && array[3] === img.dataset.imgcount)) {
+		if (img.dataset.imgcount && array[3] === img.dataset.imgcount) {
 			array[3] = 1;
 		} else {
 			array[3]++;
@@ -45,8 +39,12 @@ window.addEventListener('load', function() {
 		array[1] = dataWatch;
 		array[3] = 1;
 
-		img.id = dataWatch.toLowerCase();
 		img.setAttribute('src', array.join(''));
+
+		img.classList = dataWatch.toLowerCase();
+		if (img.classList.value === 'aplite') { img.dataset.imgcount = img.dataset.aplite; }
+		else if (img.classList.value === 'basalt') { img.dataset.imgcount = img.dataset.basalt; }
+		else if (img.classList.value === 'chalk') { img.dataset.imgcount = img.dataset.chalk; }
 
 		// Flip back to watchface
 		flipper.parentNode.classList.toggle('flip');
