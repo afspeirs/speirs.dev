@@ -23,6 +23,7 @@ var paths = {
 	css: 'assets/css/',
 	data: 'assets/data/',
 	js: 'assets/js/',
+	helpers: 'assets/js/helpers/',
 	img: 'assets/img/',
 	layout: 'templates/layout/',
 	pages: 'templates/pages/',
@@ -103,38 +104,7 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 			.partials(paths.src + paths.layout + '*.hbs')
 			.partials(paths.src + paths.partials + '*.hbs')
 			.helpers(hbHelper)
-			.helpers({
-				log: function(options) {
-					console.log(options.fn(this));
-					return '';
-				},
-				ifEquals: function(a, b, options) {
-					if (a === b) {
-						return options.fn(this);
-					}
-					return options.inverse(this);
-				},
-				exists: function(variable, options) {
-					if (typeof variable !== 'undefined') {
-						return options.fn(this);
-					} else {
-						return options.inverse(this);
-					}
-				},
-				times: function(n, options) {
-					var times = '';
-					for (var i = 1; i <= n; i++) {
-						times += options.fn(i);
-					}
-					return times;
-				},
-				trim: function(n, options) {
-					return n.replace(/ /g, '');
-				},
-				year: function(options) {
-					return new Date().getFullYear();
-				}
-			})
+			.helpers(paths.src + paths.helpers + '**/*.js')
 			.data(paths.src + paths.data + '/**/*.json')
 			.data({ debug: env === 'dev' ? true : false }))
 		.pipe(rename({ extname: '.html' }))
@@ -180,6 +150,7 @@ gulp.task('serve', function() {
 	// all browsers reload after tasks are complete.
 	gulp.watch(paths.src + paths.img + '**/*', ['files:img']).on('change', browserSync.reload);
 	gulp.watch(paths.src + paths.js + '**/*', ['files:js']).on('change', browserSync.reload);
+	gulp.watch(paths.src + paths.helpers + '**/*.js', ['files:handlebar']).on('change', browserSync.reload);	
 	gulp.watch(paths.src + paths.css + '**/*', ['files:css']).on('change', browserSync.reload);
 	gulp.watch(paths.src + paths.data + '**/*', ['files:handlebar']).on('change', browserSync.reload);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['files:handlebar']).on('change', browserSync.reload);

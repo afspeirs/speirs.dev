@@ -11,7 +11,7 @@
 	<link rel="icon" type="image/ico" href="assets/img/global/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="assets/css/{{title}}.min.css">
 	<script src="assets/js/modules/nav.min.js" defer></script>
-	{{#exists jsname}}<script src="assets/js/pages/{{jsname}}.min.js" defer></script>{{/exists}}
+	{{#if jsname}}<script src="assets/js/pages/{{jsname}}.min.js" defer></script>{{/if}}
 </head>
 
 <body>
