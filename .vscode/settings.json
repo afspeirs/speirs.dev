@@ -1,5 +1,6 @@
 {
     "files.exclude": {
-        "**/public": true
+        "**/public": true,
+        ".gitlab-ci.yml": true
     }
 }
