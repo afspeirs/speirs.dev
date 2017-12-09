@@ -2,4 +2,11 @@ Install Node Modules to the project folder
 ```
 npm i
 ```
-<!--npm i -D gulp gulp-extname gulp-front-matter gulp-hb gulp-htmlmin gulp-uglify handlebars handlebars-layouts handlebars-helpers browser-sync del-->
+Serve files to port 3000
+```
+npm run serve
+```
+Build the files
+```
+npm run build
+```

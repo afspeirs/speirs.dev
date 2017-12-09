@@ -26,7 +26,8 @@
     "run-sequence": "^2.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "gulp serve",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
