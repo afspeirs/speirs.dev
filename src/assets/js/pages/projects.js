@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 
 		// Increment the current image number by one unless it is the last one
 		array[3] === img.dataset.imgcount ? array[3] = 1 : array[3]++;
-
+		
 		img.setAttribute('src', array.join(''));
 	}
 
@@ -49,6 +49,14 @@ window.addEventListener('load', function() {
 		flipper.parentNode.classList.toggle('flip');
 	}
 
+	// const scrollToTop = _ => {
+	// 	const c = document.documentElement.scrollTop || document.body.scrollTop;
+	// 	if (c > 0) {
+	// 		window.requestAnimationFrame(scrollToTop);
+	// 		window.scrollTo(0, c - c/8);
+	// 	}
+	// }
+	// scrollToTop();
 
 	imgLeft.forEach((e) => {
 		e.addEventListener('click', decrementScreenshot);
