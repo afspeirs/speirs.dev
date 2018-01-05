@@ -20,10 +20,10 @@ var env = process.env.NODE_ENV;
 var paths = {
 	src: './src/',
 	build: './public/',
+	helpers: './helpers/',
 	css: 'assets/css/',
 	data: 'assets/data/',
 	js: 'assets/js/',
-	helpers: 'assets/js/helpers/',
 	img: 'assets/img/',
 	layout: 'templates/layout/',
 	pages: 'templates/pages/',
@@ -104,7 +104,7 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 			.partials(paths.src + paths.layout + '*.hbs')
 			.partials(paths.src + paths.partials + '*.hbs')
 			.helpers(hbHelper)
-			.helpers(paths.src + paths.helpers + '**/*.js')
+			.helpers(paths.helpers + '**/*.js')
 			.data(paths.src + paths.data + '/**/*.json')
 			.data({ debug: env === 'dev' ? true : false }))
 		.pipe(rename({ extname: '.html' }))
@@ -150,11 +150,11 @@ gulp.task('serve', function() {
 	// all browsers reload after tasks are complete.
 	gulp.watch(paths.src + paths.img + '**/*', ['files:img']).on('change', browserSync.reload);
 	gulp.watch(paths.src + paths.js + '**/*', ['files:js']).on('change', browserSync.reload);
-	gulp.watch(paths.src + paths.helpers + '**/*.js', ['files:handlebar']).on('change', browserSync.reload);	
 	gulp.watch(paths.src + paths.css + '**/*', ['files:css']).on('change', browserSync.reload);
 	gulp.watch(paths.src + paths.data + '**/*', ['files:handlebar']).on('change', browserSync.reload);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['files:handlebar']).on('change', browserSync.reload);
 	gulp.watch(paths.src + '*.*', ['files:root']).on('change', browserSync.reload);
+	gulp.watch(paths.helpers + '**/*.js', ['files:handlebar']).on('change', browserSync.reload);	
 });
 
 
