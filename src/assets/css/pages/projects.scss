@@ -7,9 +7,10 @@ $routemeImageScale: 0.5;
 	position: relative;
 	width: calc(#{$routemeImageScale} * 500px);
 	height: calc(#{$routemeImageScale} * 899px);
-	
+
 	&:hover {
-		.img-left, .img-right {
+		.img-left,
+		.img-right {
 			display: block;
 		}
 	}
@@ -37,7 +38,8 @@ $routemeImageScale: 0.5;
 		transition: 0.4s;
 		transform-style: preserve-3d;
 
-		.front, .back {
+		.front,
+		.back {
 			backface-visibility: hidden;
 			position: absolute;
 			top: 0;
@@ -56,14 +58,15 @@ $routemeImageScale: 0.5;
 			}
 		}
 
-		// front pane, placed above back
+		// front pane: placed above back
 		.front {
 			background-color: #171717;
 			transform: rotateY(0deg);
 			z-index: 2;
 
 			&:hover {
-				.img-left, .img-right {
+				.img-left,
+				.img-right {
 					display: block;
 				}
 			}
@@ -77,7 +80,7 @@ $routemeImageScale: 0.5;
 			}
 		}
 
-		// back, initially hidden pane
+		// back: initially hidden pane
 		.back {
 			transform: rotateY(180deg);
 
@@ -141,7 +144,8 @@ $routemeImageScale: 0.5;
 	transform: rotateY(180deg);
 }
 
-.img-left, .img-right {
+.img-left,
+.img-right {
 	cursor: pointer;
 	position: absolute;
 	top: 41%;
