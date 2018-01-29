@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 
 		// Increment the current image number by one unless it is the last one
 		array[3] === img.dataset.imgcount ? array[3] = 1 : array[3]++;
-		
+
 		img.setAttribute('src', array.join(''));
 	}
 

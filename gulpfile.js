@@ -133,7 +133,7 @@ gulp.task('set-prod', function() {
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
 gulp.task('serve', function() {
 	runSequence(['set-dev'], 'files:img', 'files:js', 'files:css', 'files:root', 'files:handlebar');
-	
+
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
@@ -154,7 +154,7 @@ gulp.task('serve', function() {
 	gulp.watch(paths.src + paths.data + '**/*', ['files:handlebar']).on('change', browserSync.reload);
 	gulp.watch(paths.src + 'templates/**/*.hbs', ['files:handlebar']).on('change', browserSync.reload);
 	gulp.watch(paths.src + '*.*', ['files:root']).on('change', browserSync.reload);
-	gulp.watch(paths.helpers + '**/*.js', ['files:handlebar']).on('change', browserSync.reload);	
+	gulp.watch(paths.helpers + '**/*.js', ['files:handlebar']).on('change', browserSync.reload);
 });
 
 
