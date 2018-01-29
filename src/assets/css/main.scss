@@ -6,7 +6,8 @@
 *:after {
 	box-sizing: border-box;
 }
-a, div {
+a,
+div {
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -47,7 +48,8 @@ a {
 	height: 100%;
 }
 
-#navbar, section { /* sets the width of the content */
+#navbar,
+section { /* sets the width of the content */
 	width: 85%;
 	margin: 0 auto;
 }
@@ -104,7 +106,8 @@ hr {
 // ==========================================================================================
 
 @media only screen and (min-width : 1040px) {
-	#navbar, section { /* sets the width of the navbar and content */
+	#navbar,
+	section { /* sets the width of the navbar and content */
 		width: 884px;
 	}
 }
