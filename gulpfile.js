@@ -18,8 +18,8 @@ var uglify       = require('gulp-uglify');              // https://www.npmjs.com
 
 var env = process.env.NODE_ENV;
 var paths = {
-	src: './src/',
-	build: './public/',
+	src: 'src/',
+	build: 'public/',
 	helpers: './helpers/',
 	css: 'assets/css/',
 	data: 'assets/data/',
