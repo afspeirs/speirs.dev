@@ -8,7 +8,6 @@ var fs           = require('fs');                       // https://www.npmjs.com
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
-var jsonModify   = require('gulp-json-modify');         // https://www.npmjs.com/package/gulp-json-modify
 var nop          = require('gulp-nop');                 // https://www.npmjs.com/package/gulp-nop
 var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
