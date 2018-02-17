@@ -1,6 +1,7 @@
 {
 	"name": "AFSpeirs",
 	"short_name": "AFSpeirs",
+	"description": "A website to showcase my projects etc",
 	"icons": [
 		{
 			"src": "/icon-192x192.png",
