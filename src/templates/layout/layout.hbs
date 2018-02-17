@@ -3,12 +3,16 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="{{config.colour}}">
-	<meta name="msapplication-navbutton-color" content="{{config.colour}}">
-	<meta name="apple-mobile-web-app-status-bar-style" content="{{config.colour}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AFSpeirs</title>
-	<link rel="icon" type="image/ico" href="assets/img/global/favicon.ico" />
+	<title>{{manifest.name}}</title>
+	<meta name="theme-color" content="{{manifest.theme_color}}">
+	<meta name="msapplication-TileColor" content="{{manifest.theme_color}}">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/ico" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{manifest.theme_color}}">
+	<link rel="manifest" href="/manifest.json">
 	<link rel="stylesheet" type="text/css" href="assets/css/{{title}}.min.css">
 	<script src="assets/js/modules/nav.min.js" defer></script>
 	{{#if jsname}}<script src="assets/js/pages/{{jsname}}.min.js" defer></script>{{/if}}

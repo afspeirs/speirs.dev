@@ -105,7 +105,8 @@ gulp.task('files:handlebar', ['clean:pages'], function() {
 			.helpers(hbHelper)
 			.helpers(paths.helpers + '**/*.js')
 			.data(paths.src + paths.data + '/**/*.json')
-			.data({ debug: env === 'dev' ? true : false }))
+			.data({ debug: env === 'dev' ? true : false })
+			.data(paths.src + 'manifest.json'))
 		.pipe(rename({ extname: '.html' }))
 		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest(paths.build));
