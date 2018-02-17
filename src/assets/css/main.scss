@@ -34,6 +34,7 @@ body {
 	font-family: Verdana, Arial, sans-serif;
 	line-height: calc(var(--scale) * 1em);
 	font-size: calc(var(--scale) * 1em);
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
