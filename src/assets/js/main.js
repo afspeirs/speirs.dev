@@ -58,17 +58,11 @@ window.addEventListener('load', function() {
 	// }
 	// scrollToTop();
 
-	imgLeft.forEach((e) => {
-		e.addEventListener('click', decrementScreenshot);
-	});
+	imgLeft.forEach((e) => e.addEventListener('click', decrementScreenshot));
 
-	imgRight.forEach((e) => {
-		e.addEventListener('click', incrementScreenshot);
-	});
+	imgRight.forEach((e) => e.addEventListener('click', incrementScreenshot));
 
-	watch.forEach((e) => {
-		e.addEventListener('click', swapWatch);
-	});
+	watch.forEach((e) => e.addEventListener('click', swapWatch));
 
 	flipButton.forEach((e) => {
 		e.addEventListener('click', () => {
