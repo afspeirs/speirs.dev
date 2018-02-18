@@ -60,13 +60,12 @@ section { /* sets the width of the content */
 }
 
 .content {
+	min-height: calc(100% - (var(--scale) * #{$navbar-height}));
 	padding-top: $navbar-height;
+
 	p {
 		margin: 0;
 		padding-top: 1em;
-	}
-	&:not(:last-of-type) {
-		margin-bottom: 10em;
 	}
 }
 
