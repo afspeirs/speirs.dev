@@ -5,10 +5,12 @@
 // ==========================================================================================
 
 #navbar-wrap {
-	background-color: $navbar-background-colour;
-	font-family: 'Open Sans', sans-serif;
+	position: fixed;
 	width: 100%;
 	height: calc(var(--scale) * #{$navbar-height});
+	background-color: $navbar-background-colour;
+	font-family: 'Open Sans', sans-serif;
+	z-index: 100;
 
 	#navbar {
 		display: flex;
