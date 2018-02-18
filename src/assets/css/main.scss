@@ -60,12 +60,34 @@ section { /* sets the width of the content */
 }
 
 .content {
-	min-height: calc(100% - (var(--scale) * #{$navbar-height}));
-	padding-top: $navbar-height;
+	min-height: 100%;
+	padding: 10vh 0;
 
 	p {
 		margin: 0;
 		padding-top: 1em;
+	}
+}
+
+#home {
+	// background: linear-gradient(
+	// 	to bottom,
+	// 	$navbar-background-colour,
+	// 	rgba($navbar-background-colour, 0)
+	// );
+
+	#logo {
+		display: block;
+		margin: 15px auto;
+		width: 50%;
+		// fill: $background-colour;
+		fill: $font-colour;
+		transition: .3s;
+
+
+		&:hover {
+			transform: rotate(5deg);
+		}
 	}
 }
 
