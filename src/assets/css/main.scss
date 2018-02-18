@@ -15,6 +15,7 @@ div {
 
 :root {
 	--scale: 1;
+	--logo-tilt-degree: 5deg;
 
 	// @media #{$mq-medium} {
 	// 	--scale: 1.2;
@@ -78,7 +79,7 @@ section { /* sets the width of the content */
 
 	#logo {
 		display: block;
-		margin: 15px auto;
+		margin: 30px auto;
 		width: 50%;
 		// fill: $background-colour;
 		fill: $font-colour;
@@ -86,7 +87,7 @@ section { /* sets the width of the content */
 
 
 		&:hover {
-			transform: rotate(5deg);
+			transform: rotate(var(--logo-tilt-degree));
 		}
 	}
 }
