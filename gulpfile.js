@@ -3,7 +3,6 @@ var babel        = require('gulp-babel');               // https://www.npmjs.com
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
-var frontMatter  = require('gulp-front-matter');        // https://www.npmjs.com/package/gulp-front-matter
 var fs           = require('fs');                       // https://www.npmjs.com/package/file-system
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
@@ -83,7 +82,7 @@ gulp.task('files:js', ['clean:js'], function() {
 });
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
-	return gulp.src(paths.src + paths.css + 'pages/**/*.scss')
+	return gulp.src(paths.src + paths.css + '*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix())
 		.pipe(cleanCSS())
@@ -97,10 +96,9 @@ gulp.task('files:root', ['clean:root'], function() {
 });
 // Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:pages'], function() {
-	return gulp.src(paths.src + paths.pages + '*.hbs')
-		.pipe(frontMatter({ property: 'data' }))
+	return gulp.src(paths.src + paths.layout + '*.hbs')
 		.pipe(hb()
-			.partials(paths.src + paths.layout + '*.hbs')
+			.partials(paths.src + paths.pages + '*.hbs')
 			.partials(paths.src + paths.partials + '*.hbs')
 			.helpers(hbHelper)
 			.helpers(paths.helpers + '**/*.js')

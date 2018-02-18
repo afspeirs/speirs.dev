@@ -1,7 +1,7 @@
 {
 	"name": "AFSpeirs",
 	"short_name": "AFSpeirs",
-	"description": "A website to showcase my projects etc",
+	"description": "A website to showcase my current projects and some images",
 	"icons": [
 		{
 			"src": "/icon-192x192.png",
@@ -14,6 +14,6 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#188FFE",
-	"background_color": "#188FFE"
+	"theme_color": "#188ffe",
+	"background_color": "#188ffe"
 }

@@ -1,16 +1,8 @@
----
-title: gallery
-images: 7
----
-{{#extend "layout"}}
-{{#content "body"}}
-	<section>
-		<header>Gallery</header>
-	</section>
-	<div class="flex">
-		{{#times images}}
-			<a class="img-wrap" href="assets/img/pages/gallery/large/img_{{this}}.jpg"><img src="assets/img/pages/gallery/img_{{this}}.jpg" alt="Photo {{this}}" /></a>
-		{{/times}}
-	</div>
-{{/content}}
-{{/extend}}
+<section>
+	<header id="gallery">Gallery</header>
+</section>
+<div class="flex">
+	{{#times 7}}
+		<a class="img-wrap" href="assets/img/pages/gallery/large/img_{{this}}.jpg"><img src="assets/img/pages/gallery/img_{{this}}.jpg" alt="Photo {{this}}" /></a>
+	{{/times}}
+</div>

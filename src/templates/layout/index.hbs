@@ -13,16 +13,16 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{manifest.theme_color}}">
 	<link rel="manifest" href="/manifest.json">
-	<link rel="stylesheet" type="text/css" href="assets/css/{{title}}.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
 	<script src="assets/js/modules/nav.min.js" defer></script>
-	{{#if jsname}}<script src="assets/js/pages/{{jsname}}.min.js" defer></script>{{/if}}
+	<script src="assets/js/main.min.js" defer></script>
 </head>
 
 <body>
 	<div id="container"{{#ifEquals debug true}} class="debug"{{/ifEquals}}>
 		<div id="navbar-wrap">
 			<div id="navbar">
-				<a href="index.html" class="brand">
+				<a href="#home" class="brand">
 					AFSpeirs
 					{{!-- {{> svg-logo}} --}}
 				</a>
@@ -40,13 +40,13 @@
 		</div>
 
 		<div id="content">
-			{{{block "body"}}}
+			{{> home}}
+			{{> projects}}
+			{{> gallery}}
 		</div>
 
 		<footer>
-			{{#block "foot"}}
-				<p>&copy; Andy Speirs {{year}}</p>
-			{{/block}}
+			<p>&copy; Andy Speirs {{year}}</p>
 		</footer>
 	</div>
 </body>
