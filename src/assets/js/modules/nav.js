@@ -27,10 +27,10 @@ window.addEventListener('load', () => {
 		navA.forEach(a => {
 			const id = a.href.substr(a.href.lastIndexOf('#') + 1);
 			// console.log(id);
-			a.classList.remove('active')
+			a.classList.remove('active');
 			if (compare === id) {
 				// console.log(id);
-				a.classList.add('active')
+				a.classList.add('active');
 			}
 		});
 	}
@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 		for (let i = 0; i < content.length; i++) {
 			if ((i !== content.length - 1 && content[i].offsetTop < y && content[i + 1].offsetTop > y) ||
 			(i === content.length - 1 && content[i].offsetTop < y)) {
-				activeNavSection(content[i].id)
+				activeNavSection(content[i].id);
 			};
 		}
 	}
@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
 	});
 
 	// Run on page load to show which section the user is at
-	activeNavSection(window.location.hash.substr(1))
+	activeNavSection(window.location.hash.substr(1) || content[0].id)
 
 	// Check for scroll event and add active to navigation
 	container.addEventListener('scroll', debounce(scrollMe));
