@@ -36,8 +36,9 @@ window.addEventListener('load', () => {
 	}
 
 	// Based on scroll position set the current section as active
-	function scrollMe() {
-		const y = container.scrollTop + 1;
+	function onScroll() {
+		// const y = container.scrollTop + 1;
+		const y = window.scrollY + 1;
 
 		for (let i = 0; i < content.length; i++) {
 			if ((i !== content.length - 1 && content[i].offsetTop < y && content[i + 1].offsetTop > y) ||
@@ -61,6 +62,6 @@ window.addEventListener('load', () => {
 	activeNavSection(window.location.hash.substr(1) || content[0].id)
 
 	// Check for scroll event and add active to navigation
-	container.addEventListener('scroll', debounce(scrollMe));
+	document.addEventListener('scroll', debounce(onScroll));
 });
 
