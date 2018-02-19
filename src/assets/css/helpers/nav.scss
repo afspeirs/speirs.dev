@@ -8,7 +8,7 @@
 	position: fixed;
 	width: 100%;
 	height: calc(var(--scale) * #{$navbar-height});
-	background-color: $navbar-background-colour;
+	background-color: $main-colour;
 	font-family: 'Open Sans', sans-serif;
 	z-index: 100;
 
@@ -51,8 +51,8 @@
 				&:focus {
 					border-bottom-color: $navbar-item-active-border;
 					// background: $background-colour;
-					// background: darken($navbar-background-colour, 25%);
-					// color: $navbar-background-colour;
+					// background: darken($main-colour, 25%);
+					// color: $main-colour;
 				}
 			}
 
@@ -81,7 +81,7 @@
 	padding-top: calc(var(--scale) * #{$navbar-height});
 	padding-bottom: $navbar-height / 10;
 	text-align: center;
-	background-color: $navbar-background-colour;
+	background-color: $main-colour;
 	z-index: 5;
 
 	a {
@@ -93,8 +93,8 @@
 		&.active,
 		&:hover {
 			// background: $background-colour;
-			background: darken($navbar-background-colour, 20%);
-			// color: $navbar-background-colour;
+			background: darken($main-colour, 20%);
+			// color: $main-colour;
 		}
 	}
 
