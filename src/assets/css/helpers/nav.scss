@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 // ==========================================================================================
 // ====  Default Navigation  ================================================================
@@ -9,7 +9,7 @@
 	width: 100%;
 	height: calc(var(--scale) * #{$navbar-height});
 	background-color: $main-colour;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	z-index: 100;
 
 	#navbar {
@@ -29,7 +29,7 @@
 				fill: $background-colour;
 
 				&:hover {
-					fill: #3A3A3A;
+					fill: #3a3a3a;
 				}
 			}
 		}
@@ -63,7 +63,8 @@
 	}
 }
 
-.nav-menu, .mobile-nav-menu {
+.nav-menu,
+.mobile-nav-menu {
 	a {
 		height: calc(var(--scale) * #{$navbar-height});
 		line-height: calc(var(--scale) * #{$navbar-height});
@@ -124,7 +125,7 @@
 		height: 4px;
 		width: 100%;
 		background-color: #fff;
-		transition: .3s;
+		transition: 0.3s;
 		border-radius: 5px;
 
 		&:nth-child(1) {

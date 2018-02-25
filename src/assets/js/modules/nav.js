@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 			timeout = setTimeout(later, wait);
 			if (callNow) func.apply(context, args);
 		};
-	};
+	}
 
 	// Sets the current section active
 	function activeNavSection(compare) {
@@ -42,9 +42,9 @@ window.addEventListener('load', () => {
 
 		for (let i = 0; i < content.length; i++) {
 			if ((i !== content.length - 1 && content[i].offsetTop < y && content[i + 1].offsetTop > y) ||
-			(i === content.length - 1 && content[i].offsetTop < y)) {
+				(i === content.length - 1 && content[i].offsetTop < y)) {
 				activeNavSection(content[i].id);
-			};
+			}
 		}
 	}
 
@@ -59,9 +59,8 @@ window.addEventListener('load', () => {
 	});
 
 	// Run on page load to show which section the user is at
-	activeNavSection(window.location.hash.substr(1) || content[0].id)
+	activeNavSection(window.location.hash.substr(1) || content[0].id);
 
 	// Check for scroll event and add active to navigation
 	document.addEventListener('scroll', debounce(onScroll));
 });
-

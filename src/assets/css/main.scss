@@ -1,7 +1,7 @@
-@import 'helpers/variables.scss';
-@import 'helpers/nav.scss';
-@import 'pages/gallery.scss';
-@import 'pages/projects.scss';
+@import "helpers/variables.scss";
+@import "helpers/nav.scss";
+@import "pages/gallery.scss";
+@import "pages/projects.scss";
 
 *,
 *:before,
@@ -88,8 +88,7 @@ section { /* sets the width of the content */
 		max-width: 250px;
 		// fill: $background-colour;
 		fill: $font-colour;
-		transition: .3s;
-
+		transition: 0.3s;
 
 		&:hover {
 			transform: rotate(var(--logo-tilt-degree));
