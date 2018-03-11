@@ -1,6 +1,13 @@
+image: node:8.9.3
+
 pages:
+  cache:
+    paths:
+    - node_modules/
   stage: deploy
   script:
+  - npm install
+  - npm run build
   - mkdir .public
   - cp -r * .public
   - mv .public public
