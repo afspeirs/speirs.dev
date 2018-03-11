@@ -88,7 +88,7 @@
 		display: block;
 		height: $navbar-height;
 		line-height: $navbar-height;
-		font-size: $navbar-height / 2.5;
+		font-size: round($navbar-height / 2.5);
 		transition: background 0.2s linear 0s;
 
 		&.active,
