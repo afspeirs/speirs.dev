@@ -39,12 +39,12 @@
 			align-content: center;
 			white-space: nowrap;
 			overflow: hidden;
-			border-bottom: $navbar-item-border-width solid transparent;
 
 			a {
 				padding-left: round($navbar-height / 2);
 				padding-right: round($navbar-height / 2);
 				border-bottom: $navbar-item-border-width solid transparent;
+				transition: border-bottom 0.2s linear 0s;
 
 				&.active,
 				&:hover,
@@ -71,7 +71,6 @@
 		font-size: calc(var(--scale) * #{$navbar-item-font-size});
 		text-transform: uppercase;
 		color: $background-colour;
-		transition: background 0.2s linear 0s;
 	}
 }
 
@@ -90,6 +89,7 @@
 		height: $navbar-height;
 		line-height: $navbar-height;
 		font-size: $navbar-height / 2.5;
+		transition: background 0.2s linear 0s;
 
 		&.active,
 		&:hover {
