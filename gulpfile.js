@@ -75,7 +75,7 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	var argBabel = process.argv.includes('--babel');
-	// console.log(argBabel);
+	argBabel ? console.log('Serving with babel preset') : nop();
 
 	return gulp.src(paths.src + paths.js + '**/*.*')
 		.pipe(env === 'prod' || argBabel ? babel() : nop())
