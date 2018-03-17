@@ -74,9 +74,12 @@ gulp.task('files:img', ['clean:img'], function() {
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
+	var argBabel = process.argv.includes('--babel');
+	// console.log(argBabel);
+
 	return gulp.src(paths.src + paths.js + '**/*.*')
-		.pipe(env === 'prod' ? babel() : nop())
-		.pipe(env === 'prod' ? uglify() : nop())
+		.pipe(env === 'prod' || argBabel ? babel() : nop())
+		.pipe(env === 'prod' || argBabel ? uglify() : nop())
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest(paths.build + paths.js));
 });
