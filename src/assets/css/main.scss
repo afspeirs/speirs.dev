@@ -59,6 +59,10 @@ section { /* sets the width of the content */
 	width: 90%;
 	max-width: 900px;
 	margin: 0 auto;
+
+	&.small {
+		max-width: 500px;
+	}
 }
 
 .content {
@@ -104,10 +108,8 @@ footer {
 	}
 }
 
-header {
+.header {
 	padding: 0.2em 0;
-	// text-align: center;
-	font-size: 2.5em;
 	line-height: initial;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.7);
 }
@@ -118,6 +120,13 @@ header {
 	justify-content: space-around;
 }
 
+
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 2em;
+}
 p {
 	.small {
 		font-size: 12px;
