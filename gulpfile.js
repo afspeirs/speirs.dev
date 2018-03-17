@@ -75,7 +75,7 @@ gulp.task('files:img', ['clean:img'], function() {
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], function() {
 	return gulp.src(paths.src + paths.js + '**/*.*')
-		.pipe(env === 'prod' ? babel({ presets: ['es2015'] }) : nop())
+		.pipe(env === 'prod' ? babel() : nop())
 		.pipe(env === 'prod' ? uglify() : nop())
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest(paths.build + paths.js));
