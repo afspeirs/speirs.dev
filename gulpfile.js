@@ -1,9 +1,11 @@
 var gulp         = require('gulp');                     // https://www.npmjs.com/package/gulp
 var babel        = require('gulp-babel');               // https://www.npmjs.com/package/gulp-babel
+var browserify   = require('browserify')                // https://www.npmjs.com/package/browserify
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
 var fs           = require('fs');                       // https://www.npmjs.com/package/file-system
+var glob         = require('glob');                     // https://www.npmjs.com/package/glob
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
@@ -12,6 +14,7 @@ var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
 var runSequence  = require('run-sequence');             // https://www.npmjs.com/package/run-sequence
 var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
+var source       = require('vinyl-source-stream');      // https://www.npmjs.com/package/vinyl-source-stream
 var uglify       = require('gulp-uglify');              // https://www.npmjs.com/package/gulp-uglify
 
 var env = process.env.NODE_ENV;
@@ -73,13 +76,20 @@ gulp.task('files:img', ['clean:img'], function() {
 		.pipe(gulp.dest(paths.build + paths.img));
 });
 // Move js folder contents
-gulp.task('files:js', ['clean:js'], function() {
-	var argBabel = process.argv.includes('--babel');
-	argBabel ? console.log('Serving with babel preset') : nop();
+// gulp.task('files:js', ['clean:js'], function() {
+// 	var argBabel = process.argv.includes('--babel');
+// 	argBabel ? console.log('Serving with babel preset') : nop();
 
-	return gulp.src(paths.src + paths.js + '**/*.*')
-		.pipe(env === 'prod' || argBabel ? babel() : nop())
-		.pipe(env === 'prod' || argBabel ? uglify() : nop())
+// 	return gulp.src(paths.src + paths.js + '**/*.*')
+// 		.pipe(env === 'prod' || argBabel ? babel() : nop())
+// 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
+// 		.pipe(rename({ extname: '.min.js' }))
+// 		.pipe(gulp.dest(paths.build + paths.js));
+// });
+gulp.task('files:js', ['clean:js'], function() {
+	return browserify(paths.src + paths.js + 'main.js')
+		.bundle()
+		.pipe(source('main.js'))
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest(paths.build + paths.js));
 });
