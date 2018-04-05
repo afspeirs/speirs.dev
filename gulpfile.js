@@ -1,5 +1,6 @@
 var gulp         = require('gulp');                     // https://www.npmjs.com/package/gulp
 var babel        = require('gulp-babel');               // https://www.npmjs.com/package/gulp-babel
+var babelify     = require('babelify');                 // https://www.npmjs.com/package/babelify
 var browserify   = require('browserify')                // https://www.npmjs.com/package/browserify
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
@@ -88,6 +89,9 @@ gulp.task('files:img', ['clean:img'], function() {
 // });
 gulp.task('files:js', ['clean:js'], function() {
 	return browserify(paths.src + paths.js + 'main.js')
+		.transform([
+			"babelify", { presets: ["es2015"] }
+		])
 		.bundle()
 		.pipe(source('main.js'))
 		.pipe(rename({ extname: '.min.js' }))
