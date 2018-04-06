@@ -1,12 +1,11 @@
 var gulp         = require('gulp');                     // https://www.npmjs.com/package/gulp
 var babel        = require('gulp-babel');               // https://www.npmjs.com/package/gulp-babel
 var babelify     = require('babelify');                 // https://www.npmjs.com/package/babelify
-var browserify   = require('browserify')                // https://www.npmjs.com/package/browserify
+var browserify   = require('browserify');               // https://www.npmjs.com/package/browserify
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
 var fs           = require('fs');                       // https://www.npmjs.com/package/file-system
-var glob         = require('glob');                     // https://www.npmjs.com/package/glob
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
