@@ -1,7 +1,7 @@
 import Nav from './modules/nav';
 
 window.addEventListener('load', function() {
-	new Nav();
+	Nav.init();
 	const imgLeft = document.querySelectorAll('.img-left');
 	const imgRight = document.querySelectorAll('.img-right');
 	const watch = document.querySelectorAll('.watch');

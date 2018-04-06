@@ -1,5 +1,5 @@
-export default class Nav {
-	constructor() {
+var Nav = {
+	init: function() {
 		const menubtn = document.querySelector('#menu-btn');
 		const navmenu = document.querySelector('.mobile-nav-menu');
 
@@ -64,6 +64,7 @@ export default class Nav {
 
 		// Check for scroll event and add active to navigation
 		document.addEventListener('scroll', debounce(onScroll));
-
 	}
-}
+};
+
+export default Nav;
