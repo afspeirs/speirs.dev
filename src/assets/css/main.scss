@@ -136,3 +136,11 @@ p {
 hr {
 	border-width: 2px;
 }
+
+img {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+img[data-src] {
+	opacity: 0;
+}

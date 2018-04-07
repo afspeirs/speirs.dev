@@ -9,9 +9,10 @@
 	</p>
 	<div class="flex">
 		<div class="routeme">
-			<img src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" />
-			<div class="img-left"></div>
-			<div class="img-right"></div>
+			<img class="jsonly" data-src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" />
+			<noscript><img src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" /></noscript>
+			<div class="img-left jsonly"></div>
+			<div class="img-right jsonly"></div>
 		</div>
 	</div>
 	<p>
@@ -22,7 +23,7 @@
 	<h2 class="header">Pebble Watchfaces</h2>
 	<p>
 		I have created several watchfaces for Pebble devices:<br>
-		<span class="small">Hover over each watchface for more</span>
+		<span class="small jsonly">Hover over each watchface for more</span>
 	</p>
 	<div class="flex">
 		{{#each projects.watchface}}
