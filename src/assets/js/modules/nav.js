@@ -64,7 +64,7 @@ const Nav = {
 		// Randomly tilt logo
 		const tileAngle = 25;
 		document.documentElement.style.setProperty(`--logo-tilt-degree`, `${Math.floor(Math.random() * (tileAngle - -tileAngle)) + -tileAngle}deg`);
-	},
+	}
 };
 
 export default Nav;
