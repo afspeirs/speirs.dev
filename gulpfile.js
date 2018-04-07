@@ -3,6 +3,7 @@ var babel        = require('gulp-babel');               // https://www.npmjs.com
 var babelify     = require('babelify');                 // https://www.npmjs.com/package/babelify
 var browserify   = require('browserify');               // https://www.npmjs.com/package/browserify
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
+var buffer       = require("vinyl-buffer");             // https://www.npmjs.com/package/vinyl-buffer
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
 var fs           = require('fs');                       // https://www.npmjs.com/package/file-system
@@ -76,23 +77,18 @@ gulp.task('files:img', ['clean:img'], function() {
 		.pipe(gulp.dest(paths.build + paths.img));
 });
 // Move js folder contents
-// gulp.task('files:js', ['clean:js'], function() {
-// 	var argBabel = process.argv.includes('--babel');
-// 	argBabel ? console.log('Serving with babel preset') : nop();
-
-// 	return gulp.src(paths.src + paths.js + '**/*.*')
-// 		.pipe(env === 'prod' || argBabel ? babel() : nop())
-// 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
-// 		.pipe(rename({ extname: '.min.js' }))
-// 		.pipe(gulp.dest(paths.build + paths.js));
-// });
 gulp.task('files:js', ['clean:js'], function() {
+	var argBabel = process.argv.includes('--babel');
+	argBabel ? console.log('Serving with babel preset') : nop();
+
 	return browserify(paths.src + paths.js + 'main.js')
 		.transform([
 			"babelify", { presets: ["es2015"] }
 		])
 		.bundle()
 		.pipe(source('main.js'))
+		.pipe(buffer())
+		.pipe(env === 'prod' || argBabel ? uglify() : nop())
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest(paths.build + paths.js));
 });
