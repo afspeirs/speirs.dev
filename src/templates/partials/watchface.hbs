@@ -5,7 +5,7 @@
 				class="{{#if basalt}}basalt{{else if chalk}}chalk{{else}}aplite{{/if}}"
 				data-imgcount="{{#if basalt}}{{basalt}}{{else if chalk}}{{chalk}}{{else}}{{aplite}}{{/if}}"
 				{{#if aplite}}data-aplite="{{aplite}}"{{/if}}{{#if basalt}}data-basalt="{{basalt}}"{{/if}}{{#if chalk}}data-chalk="{{chalk}}"{{/if}}
-				src="assets/img/pages/projects/pebble/{{#simplify title}}{{/simplify}}/{{#if basalt}}basalt{{else if chalk}}chalk{{else}}aplite{{/if}}_1.png" alt="{{title}}">
+				data-src="assets/img/pages/projects/pebble/{{#simplify title}}{{/simplify}}/{{#if basalt}}basalt{{else if chalk}}chalk{{else}}aplite{{/if}}_1.png" alt="{{title}}">
 			<div class="img-left"></div>
 			<div class="img-right"></div>
 		</div>
@@ -18,12 +18,12 @@
 			</div>
 			<div class="links">
 				{{#if store}}
-					<a href="{{store}}" target="_blank" title="Store">
+					<a href="{{store}}" target="_blank" title="Store" rel="noopener">
 						{{> svg-store}}
 					</a>
 				{{/if}}
 				{{#if github}}
-					<a href="{{github}}" target="_blank" title="Github">
+					<a href="{{github}}" target="_blank" title="Github" rel="noopener">
 						{{> svg-github}}
 					</a>
 				{{/if}}
