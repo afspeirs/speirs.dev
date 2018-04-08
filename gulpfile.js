@@ -83,7 +83,7 @@ gulp.task('files:js', ['clean:js'], function() {
 
 	return browserify(paths.src + paths.js + 'main.js')
 		.transform([
-			"babelify", { presets: ["es2015"] }
+			"babelify", { presets: ["env"] }
 		])
 		.bundle()
 		.pipe(source('main.js'))
