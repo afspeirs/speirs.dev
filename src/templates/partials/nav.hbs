@@ -1,4 +1,17 @@
-<a {{#ifEquals title 'home'}}class="active"{{/ifEquals}} href="#home">Home</a>
-<a {{#ifEquals title 'projects'}}class="active"{{/ifEquals}} href="#projects">Projects</a></li>
-<a {{#ifEquals title 'gallery'}}class="active"{{/ifEquals}} href="#gallery">Gallery</a>
-{{!-- <a {{#ifEquals title 'about us'}}class="active"{{/ifEquals}} href="#">About Me</a> --}}
+<div id="nav-wrap">
+	<nav>
+		<a href="#home" class="brand">
+			AFSpeirs
+			{{!-- {{> svg-logo}} --}}
+		</a>
+
+		<div id="nav-menu">
+			<a {{#ifEquals title 'home'}}class="active"{{/ifEquals}} href="#home">Home</a>
+			<a {{#ifEquals title 'projects'}}class="active"{{/ifEquals}} href="#projects">Projects</a></li>
+			<a {{#ifEquals title 'gallery'}}class="active"{{/ifEquals}} href="#gallery">Gallery</a>
+			{{!-- <a {{#ifEquals title 'about us'}}class="active"{{/ifEquals}} href="#">About Me</a> --}}
+		</div>
+
+		<div id="nav-toggle"><span></span><span></span><span></span></div>
+	</nav>
+</div>

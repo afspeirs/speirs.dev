@@ -1,6 +1,5 @@
 const Nav = {
-	menubtn: document.querySelector('#menu-btn'),
-	navmenu: document.querySelector('.mobile-nav-menu'),
+	menubtn: document.querySelector('#nav-toggle'),
 	container: document.querySelector('#container'),
 	content: [...document.querySelectorAll('.content')],
 	navA: document.querySelectorAll('#navbar-wrap a'),
@@ -8,8 +7,7 @@ const Nav = {
 	init: function() {
 		// Toggle Mobile navigation menu on click
 		Nav.menubtn.addEventListener('click', () => {
-			Nav.menubtn.classList.toggle('open');
-			Nav.navmenu.classList.toggle('expand');
+			Nav.menubtn.parentNode.classList.toggle('open');
 		});
 
 		Nav.tiltLogo();
