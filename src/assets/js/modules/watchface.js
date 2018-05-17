@@ -2,7 +2,7 @@ const Watchface = {
 	watch: document.querySelectorAll('.watch'),
 	flipButton: document.querySelectorAll('.flip-button'),
 
-	init: function() {
+	init: function () {
 		Watchface.watch.forEach(e => e.addEventListener('click', Watchface.swapWatch));
 
 		Watchface.flipButton.forEach(e => {
@@ -11,7 +11,7 @@ const Watchface = {
 			});
 		});
 	},
-	swapWatch: function() {
+	swapWatch: function () {
 		const flipper = this.parentNode.parentNode.parentNode;
 		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
 		const dataWatch = this.dataset.watch;
