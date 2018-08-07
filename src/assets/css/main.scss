@@ -66,11 +66,17 @@ section { /* sets the width of the content */
 }
 
 .content {
-	min-height: 100%;
 	padding: $navbar-height 0;
 
+	&.fullscreen {
+		min-height: 100%;
+	}
+
+	// &:nth-child(odd) {
+	// 	background: lightgrey;
+	// }
+
 	p {
-		margin: 0;
 		padding-top: 1em;
 	}
 }

@@ -1,6 +1,7 @@
 import Nav from './modules/nav';
 import Screenshot from './modules/screenshot';
 import Watchface from './modules/watchface';
+import Tab from './modules/tab';
 
 window.addEventListener('load', function () {
 	// Lazy load images
@@ -17,6 +18,7 @@ window.addEventListener('load', function () {
 
 	Nav.init();
 	Screenshot.init();
+	Tab.init();
 	Watchface.init();
 
 	// const scrollToTop = _ => {
