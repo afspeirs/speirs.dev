@@ -29,7 +29,8 @@ var paths = {
 	img: 'assets/img/',
 	layout: 'templates/layout/',
 	pages: 'templates/pages/',
-	partials: 'templates/partials/'
+	partials: 'templates/partials/',
+	sections: 'templates/sections/'
 };
 
 
@@ -108,14 +109,15 @@ gulp.task('files:root', ['clean:root'], function() {
 });
 // Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:pages'], function() {
-	return gulp.src(paths.src + paths.layout + '*.hbs')
+	return gulp.src(paths.src + paths.pages + '*.hbs')
 		.pipe(hb()
-			.partials(paths.src + paths.pages + '*.hbs')
+			.partials(paths.src + paths.layout + '*.hbs')
 			.partials(paths.src + paths.partials + '*.hbs')
+			.partials(paths.src + paths.sections + '*.hbs')
 			.helpers(hbHelper)
 			.helpers(paths.helpers + '**/*.js')
 			.data(paths.src + paths.data + '/**/*.json')
-			.data({ debug: env === 'dev' ? true : false })
+			.data({ debug: env === 'dev' })
 			.data(paths.src + 'manifest.json'))
 		.pipe(rename({ extname: '.html' }))
 		.pipe(htmlmin({ collapseWhitespace: true }))
