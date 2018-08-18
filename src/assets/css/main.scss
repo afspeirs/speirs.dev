@@ -1,6 +1,7 @@
 @import "helpers/variables.scss";
 @import "helpers/nav.scss";
 @import "pages/gallery.scss";
+@import "pages/home.scss";
 @import "pages/projects.scss";
 
 *,
@@ -70,54 +71,12 @@ section { /* sets the width of the content */
 
 	&.fullscreen {
 		min-height: 100%;
+		max-height: 900px;
 	}
 
 	// &:nth-child(odd) {
 	// 	background: lightgrey;
 	// }
-
-	p {
-		padding-top: 1em;
-	}
-}
-
-#home {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	// background: linear-gradient(
-	// 	to bottom,
-	// 	$main-colour,
-	// 	rgba($main-colour, 0)
-	// );
-
-	#logo {
-		display: block;
-		margin: 30px auto;
-		width: 50%;
-		max-width: 250px;
-		// fill: $background-colour;
-		fill: $font-colour;
-		transition: 0.3s;
-
-		&:hover {
-			transform: rotate(var(--logo-tilt-degree));
-		}
-	}
-}
-
-footer {
-	p {
-		margin: 0;
-		line-height: $footer-height;
-		text-align: center;
-	}
-}
-
-.header {
-	padding: 0.2em 0;
-	line-height: initial;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.7);
 }
 
 .flex {
@@ -126,21 +85,19 @@ footer {
 	justify-content: space-around;
 }
 
-
 h1 {
 	font-size: 2.5em;
 }
 h2 {
 	font-size: 2em;
 }
+h3 {
+	font-size: 1.5em;
+}
 p {
 	.small {
 		font-size: 12px;
 	}
-}
-
-hr {
-	border-width: 2px;
 }
 
 img {
@@ -149,4 +106,12 @@ img {
 }
 img[data-src] {
 	opacity: 0;
+}
+
+footer {
+	p {
+		margin: 0;
+		line-height: $footer-height;
+		text-align: center;
+	}
 }

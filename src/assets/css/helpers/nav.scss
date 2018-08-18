@@ -23,14 +23,15 @@ nav {
 		color: $background-colour;
 		line-height: calc(var(--scale) * #{$navbar-height});
 		z-index: 5;
+		display: flex;
 
-		svg {
+		.logo {
 			height: calc(var(--scale) * #{$navbar-height * 4/7});
-			margin-top: calc(var(--scale) * (#{$navbar-height} - #{$navbar-height * 4/7}) / 2);
 			fill: $background-colour;
+			transition: 0.3s;
 
 			&:hover {
-				fill: #3a3a3a;
+				transform: rotate(var(--logo-tilt-degree));
 			}
 		}
 	}

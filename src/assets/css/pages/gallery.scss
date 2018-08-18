@@ -1,16 +1,22 @@
-.img-wrap {
-	margin: 10px 0;
-	width: calc(var(--scale) * 400px);
-	height: auto;
-	overflow: hidden;
+#gallery {
+	.img-wrap {
+		margin: 10px 0;
+		width: 400px;
+		height: 300px;
+		overflow: hidden;
 
-	img {
-		width: 100%;
-		vertical-align: middle;
-		transition: transform 200ms ease-in-out;
+		img {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			width: inherit;
+			vertical-align: middle;
+			transition: transform 200ms ease-in-out;
 
-		&:hover {
-			transform: scale(1.05);
+			&:hover {
+				z-index: 1;
+				transform: translateY(-50%) scale(1.05);
+			}
 		}
 	}
 }
