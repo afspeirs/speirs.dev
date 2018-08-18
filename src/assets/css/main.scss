@@ -124,3 +124,20 @@ footer {
 		text-align: center;
 	}
 }
+
+.downarrow {
+	animation: MoveUpDown 3s ease-in-out infinite;
+	position: relative;
+	bottom: 0;
+	width: 20%;
+  }
+
+@keyframes MoveUpDown {
+	0%,
+	100% {
+		bottom: 0;
+	}
+	50% {
+		bottom: -10px;
+	}
+}
