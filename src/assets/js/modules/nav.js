@@ -4,7 +4,7 @@ const Nav = {
 	menubtn: document.querySelector('#nav-toggle'),
 	container: document.querySelector('#container'),
 	content: [...document.querySelectorAll('.content')],
-	navLinks: document.querySelectorAll('#navbar-wrap a'),
+	navLinks: document.querySelectorAll('#nav-wrap a'),
 
 	init: function () {
 		// Toggle Mobile navigation menu on click
@@ -16,7 +16,7 @@ const Nav = {
 		Nav.activeNavSection(window.location.hash.substr(1) || Nav.content[0].id);
 
 		// Check for scroll event and add active to navigation
-		document.addEventListener('scroll', debounce(Nav.onScroll));
+		window.addEventListener('scroll', debounce(Nav.onScroll));
 	},
 	// Sets the current section active
 	activeNavSection: function (compare) {
@@ -32,8 +32,7 @@ const Nav = {
 	},
 	// Based on scroll position set the current section as active
 	onScroll: function () {
-		// const y = container.scrollTop + 1;
-		const y = window.scrollY + 1;
+		const y = window.scrollY + 5;
 
 		for (let i = 0; i < Nav.content.length; i++) {
 			if ((i !== Nav.content.length - 1 && Nav.content[i].offsetTop < y && Nav.content[i + 1].offsetTop > y) ||

@@ -32,6 +32,9 @@ div {
 	// }
 }
 
+html {
+	scroll-behavior: smooth;
+}
 body {
 	background-color: $background-colour;
 	color: $font-colour;
