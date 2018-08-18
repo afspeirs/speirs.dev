@@ -36,8 +36,8 @@ body {
 	background-color: $background-colour;
 	color: $font-colour;
 	font-family: Verdana, Arial, sans-serif;
-	line-height: calc(var(--scale) * 1em);
-	font-size: calc(var(--scale) * 1em);
+	line-height: 1em;
+	font-size: 1em;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -63,6 +63,7 @@ section { /* sets the width of the content */
 
 	&.small {
 		max-width: 500px;
+		text-align: center;
 	}
 }
 
@@ -85,6 +86,11 @@ section { /* sets the width of the content */
 	justify-content: space-around;
 }
 
+h1,
+h2,
+h3 {
+	line-height: 1em;
+}
 h1 {
 	font-size: 2.5em;
 }
