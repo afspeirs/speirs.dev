@@ -1,4 +1,3 @@
-
 module.exports.register = (handlebars) => {
 	// Returns the options n number of times
 	handlebars.registerHelper('times', (n, options) => {
