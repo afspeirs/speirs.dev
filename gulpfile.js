@@ -11,6 +11,8 @@ var hb           = require('gulp-hb');                  // https://www.npmjs.com
 var hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 var htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
 var nop          = require('gulp-nop');                 // https://www.npmjs.com/package/gulp-nop
+var notify       = require('gulp-notify');              // https://www.npmjs.com/gulp-notify
+var plumber      = require('gulp-plumber');             // https://www.npmjs.com/package/gulp-plumber
 var prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
 var rename       = require('gulp-rename');              // https://www.npmjs.com/package/gulp-rename
 var runSequence  = require('run-sequence');             // https://www.npmjs.com/package/run-sequence
@@ -32,6 +34,19 @@ var paths = {
 	partials: 'templates/partials/',
 	sections: 'templates/sections/'
 };
+
+// ==========================================================================================
+// ====  Error Handling  ====================================================================
+// ==========================================================================================
+
+function errHandle(err) {
+	notify.onError({
+		title: `Error found in ${err.plugin || 'a file'}`,
+		message: err.message.toString()
+	})(err);
+	console.log(err);
+	this.emit('end');
+}
 
 
 // ==========================================================================================
@@ -83,10 +98,9 @@ gulp.task('files:js', ['clean:js'], function() {
 	argBabel ? console.log('Serving with babel preset') : nop();
 
 	return browserify(paths.src + paths.js + 'main.js')
-		.transform([
-			"babelify", { presets: ["env"] }
-		])
+		.transform(["babelify", { presets: ['env'] }])
 		.bundle()
+		.on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
@@ -96,7 +110,8 @@ gulp.task('files:js', ['clean:js'], function() {
 // Compiles scss files
 gulp.task('files:css', ['clean:css'], function() {
 	return gulp.src(paths.src + paths.css + '*.scss')
-		.pipe(sass().on('error', sass.logError))
+		.pipe(plumber({ errorHandler: errHandle }))
+		.pipe(sass())
 		.pipe(prefix())
 		.pipe(cleanCSS())
 		.pipe(rename({ extname: '.min.css' }))
@@ -110,6 +125,7 @@ gulp.task('files:root', ['clean:root'], function() {
 // Compiles Handlebar files
 gulp.task('files:handlebar', ['clean:pages'], function() {
 	return gulp.src(paths.src + paths.pages + '*.hbs')
+		.pipe(plumber({ errorHandler: errHandle }))
 		.pipe(hb()
 			.partials(paths.src + paths.layout + '*.hbs')
 			.partials(paths.src + paths.partials + '*.hbs')

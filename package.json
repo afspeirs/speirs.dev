@@ -4,7 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "~3.9.1"
+    "gulp": "~3.9.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
