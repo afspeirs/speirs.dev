@@ -1,7 +1,7 @@
 var gulp         = require('gulp');                     // https://www.npmjs.com/package/gulp
 var browserify   = require('browserify');               // https://www.npmjs.com/package/browserify
 var browserSync  = require('browser-sync').create();    // https://www.npmjs.com/package/browser-sync
-var buffer       = require("vinyl-buffer");             // https://www.npmjs.com/package/vinyl-buffer
+var buffer       = require('vinyl-buffer');             // https://www.npmjs.com/package/vinyl-buffer
 var cleanCSS     = require('gulp-clean-css');           // https://www.npmjs.com/package/gulp-clean-css
 var del          = require('del');                      // https://www.npmjs.com/package/del
 var hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
@@ -15,6 +15,7 @@ var rename       = require('gulp-rename');              // https://www.npmjs.com
 var runSequence  = require('run-sequence');             // https://www.npmjs.com/package/run-sequence
 var sass         = require('gulp-sass');                // https://www.npmjs.com/package/gulp-sass
 var source       = require('vinyl-source-stream');      // https://www.npmjs.com/package/vinyl-source-stream
+var sourcemaps   = require('gulp-sourcemaps');          //https://www.npmjs.com/package/gulp-sourcemaps
 var uglify       = require('gulp-uglify');              // https://www.npmjs.com/package/gulp-uglify
 
 var env = process.env.NODE_ENV;
@@ -94,13 +95,14 @@ gulp.task('files:js', ['clean:js'], function() {
 	var argBabel = process.argv.includes('--babel');
 	argBabel ? console.log('Serving with babel preset') : nop();
 
-	return browserify(paths.src + paths.js + 'main.js')
-		.transform(["babelify", { presets: ['env'] }])
+	return browserify(paths.src + paths.js + 'main.js', { debug: env === 'dev' })
+		.transform(['babelify', { presets: ['env'], sourceMaps: true }])
 		.bundle()
 		.on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
+		.pipe(sourcemaps.write())
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest(paths.build + paths.js));
 });
@@ -108,9 +110,11 @@ gulp.task('files:js', ['clean:js'], function() {
 gulp.task('files:css', ['clean:css'], function() {
 	return gulp.src(paths.src + paths.css + '*.scss')
 		.pipe(plumber({ errorHandler: errHandle }))
+		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(prefix())
 		.pipe(cleanCSS())
+		.pipe(sourcemaps.write())
 		.pipe(rename({ extname: '.min.css' }))
 		.pipe(gulp.dest(paths.build + paths.css));
 });
