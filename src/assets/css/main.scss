@@ -125,20 +125,24 @@ footer {
 	}
 }
 
-.downarrow {
-	animation: MoveUpDown 3s ease-in-out infinite;
-	position: relative;
-	bottom: 0;
-	width: 20%;
-	// fill: var(--svg-fill-colour);
+.svg-arrow {
+	width: 3em;
 }
 
-@keyframes MoveUpDown {
-	0%,
-	100% {
+// -----------------------------
+// Animations
+// -----------------------------
+
+.move-down-up,
+.move-down-up-hover:hover {
+	animation: move-down-up 2s ease-in-out infinite;
+	position: relative;
+}
+@keyframes move-down-up {
+	0%, 100% {
 		bottom: 0;
 	}
 	50% {
-		bottom: -10px;
+		bottom: -1vw;
 	}
 }
