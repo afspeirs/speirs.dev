@@ -127,6 +127,10 @@ footer {
 
 .svg-arrow {
 	width: 3em;
+
+	&.down {
+		padding-top: 1em;
+	}
 }
 
 // -----------------------------
