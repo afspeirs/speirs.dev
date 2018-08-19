@@ -115,24 +115,26 @@ nav {
 	height: 22px;
 	z-index: 5;
 
-	span {
+	span,
+	&:before,
+	&:after {
+		content: ' ';
 		position: absolute;
 		left: 0;
 		height: 4px;
 		width: 100%;
-		background-color: #fff;
+		background-color: $background-colour;
 		transition: 0.3s;
 		border-radius: 5px;
-
-		&:nth-child(1) {
-			top: 0;
-		}
-		&:nth-child(2) {
-			top: 9px;
-		}
-		&:nth-child(3) {
-			top: 18px;
-		}
+	}
+	&:before {
+		top: 0px;
+	}
+	span {
+		top: 9px;
+	}
+	&:after {
+		top: 18px;
 	}
 
 	@media (min-width: $navbar-collapse-breakpoint) {
@@ -141,14 +143,14 @@ nav {
 }
 
 nav.open #nav-toggle {
-	:nth-child(1) {
+	&:before {
 		top: 9px;
 		transform: rotate(50deg);
 	}
-	:nth-child(2) {
+	span {
 		opacity: 0;
 	}
-	:nth-child(3) {
+	&:after {
 		top: 9px;
 		transform: rotate(-50deg);
 	}
