@@ -2,10 +2,10 @@
 	<h2 class="header">Gallery</h2 class="header">
 </section>
 <div class="gallery-wrap flex">
-	{{#times 8}}
-		<a class="img-wrap" href="assets/img/pages/gallery/large/img_{{this}}.jpg" rel="noopener">
-			<img class="jsonly" data-src="assets/img/pages/gallery/img_{{this}}.jpg" alt="Photo {{this}}" />
-			<noscript><img src="assets/img/pages/gallery/img_{{this}}.jpg" alt="Photo {{this}}" /></noscript>
+	{{#each gallery.images}}
+		<a class="img-wrap" href="assets/img/pages/gallery/large/{{this.image}}" rel="noopener">
+			<img class="jsonly" data-src="assets/img/pages/gallery/{{this.image}}" alt="{{this.name}}" />
+			<noscript><img src="assets/img/pages/gallery/{{this.image}}" alt="{{this.name}}" /></noscript>
 		</a>
-	{{/times}}
+	{{/each}}
 </div>
