@@ -1,6 +1,6 @@
 const Screenshot = {
-	imgLeft: document.querySelectorAll('.img-left'),
-	imgRight: document.querySelectorAll('.img-right'),
+	imgLeft: document.querySelectorAll('.screenshot .img-left'),
+	imgRight: document.querySelectorAll('.screenshot .img-right'),
 
 	init: function () {
 		Screenshot.imgLeft.forEach(e => e.addEventListener('click', Screenshot.decrementScreenshot));

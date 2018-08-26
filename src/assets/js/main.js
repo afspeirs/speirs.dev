@@ -1,4 +1,5 @@
 import Nav from './modules/nav';
+import Gallery from './modules/gallery';
 import Screenshot from './modules/screenshot';
 import Watchface from './modules/watchface';
 import Tab from './modules/tab';
@@ -18,6 +19,7 @@ window.addEventListener('load', function () {
 
 	// Module Init
 	Nav.init();
+	Gallery.init();
 	Screenshot.init();
 	Tab.init();
 	Watchface.init();

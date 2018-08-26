@@ -1,11 +1,27 @@
 <section>
 	<h2 class="header">Gallery</h2>
+	<div class="gallery-wrap flex">
+		<div class="gallery-main img-wrap gallery-arrows">
+			<img
+				src="assets/img/pages/gallery/big-ben.jpg"
+				data-index="0"
+			/>
+			<div class="img-left jsonly"></div>
+			<div class="img-right jsonly"></div>
+		</div>
+		<div class="gallery-secondary scroll">
+			{{#each gallery.images}}
+				<div class="img-wrap">
+					<img
+						src="assets/img/pages/gallery/{{this.image}}"
+						alt="{{this.name}}"
+						data-index="{{@index}}"
+						data-image="{{this.image}}"
+						data-name="{{this.name}}"
+					/>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+
 </section>
-<div class="gallery-wrap flex">
-	{{#each gallery.images}}
-		<a class="img-wrap" href="assets/img/pages/gallery/large/{{this.image}}" rel="noopener">
-			<img class="jsonly" data-src="assets/img/pages/gallery/{{this.image}}" alt="{{this.name}}" />
-			<noscript><img src="assets/img/pages/gallery/{{this.image}}" alt="{{this.name}}" /></noscript>
-		</a>
-	{{/each}}
-</div>

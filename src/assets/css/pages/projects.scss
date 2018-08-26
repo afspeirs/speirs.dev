@@ -40,13 +40,6 @@ $routemeImageScale: 0.5;
 	width: calc(#{$routemeImageScale} * 500px);
 	height: calc(#{$routemeImageScale} * 899px);
 
-	&:hover {
-		.img-left,
-		.img-right {
-			display: block;
-		}
-	}
-
 	img {
 		width: 100%;
 		height: auto;
@@ -94,13 +87,6 @@ $routemeImageScale: 0.5;
 			background-color: #171717;
 			transform: rotateY(0deg);
 			z-index: 2;
-
-			&:hover {
-				.img-left,
-				.img-right {
-					display: block;
-				}
-			}
 
 			.flip-button {
 				display: none;
@@ -173,6 +159,16 @@ $routemeImageScale: 0.5;
 
 .watchface.flip .flipper {
 	transform: rotateY(180deg);
+}
+
+.screenshot,
+.gallery-arrows {
+	&:hover {
+		.img-left,
+		.img-right {
+			display: block;
+		}
+	}
 }
 
 .img-left,
