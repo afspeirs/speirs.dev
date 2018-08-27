@@ -32,7 +32,7 @@ nav {
 			transition: 0.3s;
 
 			&:hover {
-				transform: rotate(var(--logo-tilt-degree));
+				transform: rotate(var(--logo-tilt-degree)) scale(1.1);
 			}
 		}
 	}
