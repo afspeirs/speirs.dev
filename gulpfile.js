@@ -97,8 +97,7 @@ gulp.task('files:js', ['clean:js'], function() {
 
 	return browserify(paths.src + paths.js + 'main.js', { debug: env === 'dev' })
 		.transform(['babelify', { presets: ['env'], sourceMaps: true }])
-		.bundle()
-		.on('error', errHandle)
+		.bundle().on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
