@@ -15,7 +15,7 @@ const Watchface = {
 		const flipper = this.parentNode.parentNode.parentNode;
 		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
 		const dataWatch = this.dataset.watch;
-		const array = img.src.replace(/\/([^\/]*)$/, '/,' + '$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',.' + '$1').split(',');
+		const array = img.src.replace(/\/([^/]*)$/, '/,$1').replace(/_/g, ',_,').replace(/\.([^.]*)$/, ',.$1').split(',');
 
 		// Change the watch type
 		array[1] = dataWatch;

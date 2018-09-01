@@ -9,7 +9,7 @@ const Gallery = {
 		this.imgRight.addEventListener('click', this.nextImage);
 	},
 	imageSelect() {
-		const array = Gallery.imgMain.src.replace(/\/([^\/]*)$/, '/,' + '$1').split(',');
+		const array = Gallery.imgMain.src.replace(/\/([^/]*)$/, '/,$1').split(',');
 		array[1] = this.dataset.image;
 		Gallery.imgMain.setAttribute('src', array.join(''));
 		Gallery.imgMain.alt = this.dataset.name;
@@ -20,7 +20,8 @@ const Gallery = {
 		if (currentIndex === 0) {
 			currentIndex = Gallery.imgSecondary.length;
 		}
-		const newImage = Gallery.imgSecondary.filter(image => parseInt(image.dataset.index, 10) === currentIndex - 1)[0];
+		const newImage = Gallery.imgSecondary
+			.filter(image => parseInt(image.dataset.index, 10) === currentIndex - 1)[0];
 		Gallery.imgMain.src = newImage.src;
 		Gallery.imgMain.alt = newImage.dataset.name;
 		Gallery.imgMain.dataset.index = newImage.dataset.index;
@@ -30,7 +31,8 @@ const Gallery = {
 		if (currentIndex === Gallery.imgSecondary.length - 1) {
 			currentIndex = -1;
 		}
-		const newImage = Gallery.imgSecondary.filter(image => parseInt(image.dataset.index, 10) === currentIndex + 1)[0];
+		const newImage = Gallery.imgSecondary
+			.filter(image => parseInt(image.dataset.index, 10) === currentIndex + 1)[0];
 		Gallery.imgMain.src = newImage.src;
 		Gallery.imgMain.alt = newImage.dataset.name;
 		Gallery.imgMain.dataset.index = newImage.dataset.index;
