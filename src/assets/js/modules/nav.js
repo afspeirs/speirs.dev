@@ -1,4 +1,4 @@
-import debounce from "./debounce";
+import debounce from './debounce';
 
 const Nav = {
 	menubtn: document.querySelector('#nav-toggle'),
@@ -6,7 +6,7 @@ const Nav = {
 	content: [...document.querySelectorAll('.content')],
 	navLinks: document.querySelectorAll('#nav-wrap a'),
 
-	init: function () {
+	init() {
 		// Toggle Mobile navigation menu on click
 		Nav.menubtn.addEventListener('click', () => {
 			Nav.menubtn.parentNode.classList.toggle('open');
@@ -19,8 +19,8 @@ const Nav = {
 		window.addEventListener('scroll', debounce(Nav.onScroll));
 	},
 	// Sets the current section active
-	activeNavSection: function (compare) {
-		Nav.navLinks.forEach(a => {
+	activeNavSection(compare) {
+		Nav.navLinks.forEach((a) => {
 			const id = a.href.substr(a.href.lastIndexOf('#') + 1);
 			// console.log(id);
 			a.classList.remove('active');
@@ -31,16 +31,16 @@ const Nav = {
 		});
 	},
 	// Based on scroll position set the current section as active
-	onScroll: function () {
+	onScroll() {
 		const y = window.scrollY + 5;
 
 		for (let i = 0; i < Nav.content.length; i++) {
-			if ((i !== Nav.content.length - 1 && Nav.content[i].offsetTop < y && Nav.content[i + 1].offsetTop > y) ||
-				(i === Nav.content.length - 1 && Nav.content[i].offsetTop < y)) {
+			if ((i !== Nav.content.length - 1 && Nav.content[i].offsetTop < y && Nav.content[i + 1].offsetTop > y)
+				|| (i === Nav.content.length - 1 && Nav.content[i].offsetTop < y)) {
 				Nav.activeNavSection(Nav.content[i].id);
 			}
 		}
-	}
+	},
 };
 
 export default Nav;

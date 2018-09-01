@@ -2,11 +2,11 @@ const Screenshot = {
 	imgLeft: document.querySelectorAll('.screenshot .img-left'),
 	imgRight: document.querySelectorAll('.screenshot .img-right'),
 
-	init: function () {
+	init() {
 		Screenshot.imgLeft.forEach(e => e.addEventListener('click', Screenshot.decrementScreenshot));
 		Screenshot.imgRight.forEach(e => e.addEventListener('click', Screenshot.incrementScreenshot));
 	},
-	decrementScreenshot: function () {
+	decrementScreenshot() {
 		const img = this.parentNode.firstChild;
 		const array = img.src.replace(/\/([^\/]*)$/, '/,' + '$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',.' + '$1').split(',');
 
@@ -15,7 +15,7 @@ const Screenshot = {
 
 		img.setAttribute('src', array.join(''));
 	},
-	incrementScreenshot: function () {
+	incrementScreenshot() {
 		const img = this.parentNode.firstChild;
 		const array = img.src.replace(/\/([^\/]*)$/, '/,' + '$1').replace(/_/g, ',_,').replace(/\.([^\.]*)$/, ',.' + '$1').split(',');
 
@@ -23,7 +23,7 @@ const Screenshot = {
 		array[3] === img.dataset.imgcount ? (array[3] = 1) : array[3]++;
 
 		img.setAttribute('src', array.join(''));
-	}
+	},
 };
 
 export default Screenshot;

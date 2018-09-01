@@ -2,16 +2,16 @@ const Watchface = {
 	watch: document.querySelectorAll('.watch'),
 	flipButton: document.querySelectorAll('.flip-button'),
 
-	init: function () {
+	init() {
 		Watchface.watch.forEach(e => e.addEventListener('click', Watchface.swapWatch));
 
-		Watchface.flipButton.forEach(e => {
+		Watchface.flipButton.forEach((e) => {
 			e.addEventListener('click', () => {
 				e.parentNode.classList.toggle('flip'); // Settings
 			});
 		});
 	},
-	swapWatch: function () {
+	swapWatch() {
 		const flipper = this.parentNode.parentNode.parentNode;
 		const img = this.parentNode.parentNode.parentNode.firstChild.firstChild;
 		const dataWatch = this.dataset.watch;
@@ -38,7 +38,7 @@ const Watchface = {
 
 		// Flip back to watchface
 		flipper.parentNode.classList.toggle('flip');
-	}
+	},
 };
 
 export default Watchface;
