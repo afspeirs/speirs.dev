@@ -1,52 +1,51 @@
 {
-  "name": "afspeirs.uk",
-  "version": "0.0.1",
-  "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "~3.9.1",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sourcemaps": "^2.6.4"
-  },
-  "devDependencies": {
-    "babel-preset-env": "^1.6.1",
-    "babelify": "^8.0.0",
-    "browser-sync": "^2.18.8",
-    "browserify": "^16.1.1",
-    "del": "^2.2.2",
-    "eslint": "^5.5.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-clean-css": "^3.0.3",
-    "gulp-hb": "^6.0.2",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-nop": "0.0.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.1",
-    "handlebars-layouts": "^3.1.4",
-    "run-sequence": "^2.1.0",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "scripts": {
-    "serve": "gulp serve",
-    "build": "gulp build",
-    "clean": "gulp clean:build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/AFSpeirs/afspeirs.gitlab.io"
-  },
-  "author": "afspeirs",
-  "license": "MIT",
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  }
+	"name": "afspeirs.uk",
+	"version": "0.0.1",
+	"description": "",
+	"main": "gulpfile.js",
+	"dependencies": {
+		"babel-preset-env": "^1.6.1",
+		"babelify": "^8.0.0",
+		"browser-sync": "^2.18.8",
+		"browserify": "^16.1.1",
+		"del": "^2.2.2",
+		"gulp-autoprefixer": "^3.1.1",
+		"gulp-babel": "^6.1.2",
+		"gulp-clean-css": "^3.0.3",
+		"gulp-hb": "^6.0.2",
+		"gulp-htmlmin": "^3.0.0",
+		"gulp-nop": "0.0.3",
+		"gulp-notify": "^3.2.0",
+		"gulp-plumber": "^1.2.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-sourcemaps": "^2.6.4",
+		"gulp-uglify": "^2.0.1",
+		"gulp": "~3.9.1",
+		"handlebars-layouts": "^3.1.4",
+		"run-sequence": "^2.1.0",
+		"vinyl-buffer": "^1.0.1",
+		"vinyl-source-stream": "^2.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^5.5.0",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-plugin-import": "^2.14.0"
+	},
+	"scripts": {
+		"serve": "gulp serve",
+		"build": "gulp build",
+		"clean": "gulp clean:build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/AFSpeirs/afspeirs.gitlab.io"
+	},
+	"author": "afspeirs",
+	"license": "MIT",
+	"babel": {
+		"presets": [
+			"env"
+		]
+	}
 }
