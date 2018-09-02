@@ -8,19 +8,15 @@ const Gallery = {
 		this.imgLeft.addEventListener('click', this.prevImage);
 		this.imgRight.addEventListener('click', this.nextImage);
 	},
-	imageSelect() {
-		const array = Gallery.imgMain.src.replace(/\/([^/]*)$/, '/,$1').split(',');
-		array[1] = this.dataset.image;
-		Gallery.imgMain.setAttribute('src', array.join(''));
-		Gallery.imgMain.alt = this.dataset.name;
-		Gallery.imgMain.dataset.index = this.dataset.index;
-	},
 	updateImageFromIndex(currentIndex) {
 		const newImage = Gallery.imgSecondary
 			.filter(image => parseInt(image.dataset.index, 10) === currentIndex + 1)[0];
 		Gallery.imgMain.src = newImage.src;
 		Gallery.imgMain.alt = newImage.dataset.name;
 		Gallery.imgMain.dataset.index = newImage.dataset.index;
+	},
+	imageSelect() {
+		Gallery.updateImageFromIndex(parseInt(this.dataset.index, 10));
 	},
 	prevImage() {
 		let currentIndex = parseInt(Gallery.imgMain.dataset.index, 10);
