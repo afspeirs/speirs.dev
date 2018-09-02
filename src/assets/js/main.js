@@ -12,6 +12,14 @@ window.addEventListener('load', () => {
 	Tab.init();
 	Watchface.init();
 
+	// Lazy load images
+	[].forEach.call(document.querySelectorAll('img[data-src]'), (image) => {
+		image.setAttribute('src', image.getAttribute('data-src'));
+		image.onload = () => {
+			image.removeAttribute('data-src');
+		};
+	});
+
 	// Set a random title angle for the logo
 	const tileAngle = 25;
 	document.documentElement.style.setProperty('--logo-tilt-degree', `${Math.floor(Math.random() * (tileAngle - -tileAngle)) + -tileAngle}deg`);
