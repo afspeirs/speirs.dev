@@ -14,7 +14,7 @@ const Screenshot = {
 		if (array[3] === '1') {
 			array[3] = img.dataset.imgcount;
 		} else {
-			array[3] -= 1;
+			array[3]--;
 		}
 
 		img.setAttribute('src', array.join(''));
@@ -27,7 +27,7 @@ const Screenshot = {
 		if (array[3] === img.dataset.imgcount) {
 			array[3] = 1;
 		} else {
-			array[3] += 1;
+			array[3]++;
 		}
 
 		img.setAttribute('src', array.join(''));
