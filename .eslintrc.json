@@ -7,9 +7,9 @@
 		"indent": ["error", "tab", {
 			"SwitchCase": 1
 		}],
+		"no-plusplus": "off",
 		"no-tabs": "off",
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"],
-		"no-plusplus": "off"
+		"semi": ["error", "always"]
 	}
 }
