@@ -10,7 +10,7 @@ const Gallery = {
 	},
 	updateImageFromIndex(currentIndex) {
 		const newImage = Gallery.imgSecondary
-			.filter(image => parseInt(image.dataset.index, 10) === currentIndex + 1)[0];
+			.filter(image => parseInt(image.dataset.index, 10) === currentIndex)[0];
 		Gallery.imgMain.src = newImage.src;
 		Gallery.imgMain.alt = newImage.dataset.name;
 		Gallery.imgMain.dataset.index = newImage.dataset.index;
@@ -23,14 +23,14 @@ const Gallery = {
 		if (currentIndex === 0) {
 			currentIndex = Gallery.imgSecondary.length;
 		}
-		Gallery.updateImageFromIndex(currentIndex);
+		Gallery.updateImageFromIndex(currentIndex - 1);
 	},
 	nextImage() {
 		let currentIndex = parseInt(Gallery.imgMain.dataset.index, 10);
 		if (currentIndex === Gallery.imgSecondary.length - 1) {
 			currentIndex = -1;
 		}
-		Gallery.updateImageFromIndex(currentIndex);
+		Gallery.updateImageFromIndex(currentIndex + 1);
 	},
 };
 
