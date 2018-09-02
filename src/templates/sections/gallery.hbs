@@ -1,9 +1,12 @@
 <section>
 	<h2 class="header">Gallery</h2>
+	<noscript>For the best experience enable javascript</noscript>
 	<div class="gallery-wrap flex">
 		<div class="gallery-main img-wrap gallery-arrows">
 			<img
-				src="assets/img/pages/gallery/big-ben.jpg"
+				src="assets/img/pages/gallery/{{gallery.images.big-ben.image}}"
+				alt="{{gallery.images.big-ben.name}}"
+				data-modal="fullscreen-image"
 				data-index="0"
 			/>
 			<div class="img-left jsonly"></div>
@@ -23,5 +26,15 @@
 			{{/each}}
 		</div>
 	</div>
-
 </section>
+
+<div id="modal-fullscreen-image" class="modal fullscreen-close modal-gallery">
+	<img
+		id="modal-gallery-image"
+		src="assets/img/pages/gallery/large/{{gallery.images.big-ben.image}}"
+		alt="{{gallery.images.big-ben.name}}"
+	/>
+	<div class="modal-gallery-metadata">
+		<h1 id="modal-gallery-title">{{gallery.images.big-ben.name}}</h1>
+	</div>
+</div>

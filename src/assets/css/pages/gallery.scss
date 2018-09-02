@@ -32,6 +32,7 @@
 
 		.img-wrap {
 			flex: 0 0 auto;
+			cursor: pointer;
 
 			&:not(:last-child) {
 				margin-right: 10px;

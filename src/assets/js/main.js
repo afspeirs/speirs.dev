@@ -1,13 +1,15 @@
 import Nav from './modules/nav';
 import Gallery from './modules/gallery';
+import Modal from './modules/modal';
 import Screenshot from './modules/screenshot';
-import Watchface from './modules/watchface';
 import Tab from './modules/tab';
+import Watchface from './modules/watchface';
 
 window.addEventListener('load', () => {
 	// Module Init
 	Nav.init();
 	Gallery.init();
+	Modal.init();
 	Screenshot.init();
 	Tab.init();
 	Watchface.init();
