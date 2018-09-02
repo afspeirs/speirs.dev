@@ -1,83 +1,76 @@
 <section>
 	<h2 class="header">Projects</h2>
-
-	<p>
-		Below are some of the projects I have created:
-	</p>
+	<p>Below are some of the projects I have created:</p>
 
 	<div class="tab-buttons">
-		<div data-tab="tab-countme">Count Me</div>
+		<div data-tab="tab-routeme" class="active">Route Me</div>
 		<div data-tab="tab-noteme">Note Me</div>
-		<div data-tab="tab-routeme">Route Me</div>
+		<div data-tab="tab-countme">Count Me</div>
 		<div data-tab="tab-pebble">Pebble Watchfaces</div>
 		<div data-tab="tab-simplepanel">SimplePanel</div>
 		<div data-tab="tab-userchrome">userchrome</div>
 	</div>
-</section>
-
-<section class="tab-content" id="tab-noteme">
-	<h3 class="header">Note Me</h3>
-	<p>
-		Note Me is a Progressive Web App
-		<br><br>
-		To view the app, visit <a href="https://noteme.afspeirs.uk" rel="noopener">noteme.afspeirs.uk</a>.
-	</p>
-</section>
-
-<section class="tab-content" id="tab-countme">
-	<h3 class="header">Count Me</h3>
-	<p>
-		Note Me is a Progressive Web App
-		<br><br>
-		To view the app, visit <a href="https://countme.afspeirs.uk" rel="noopener">countme.afspeirs.uk</a>.
-	</p>
-</section>
-
-<section class="tab-content" id="tab-routeme">
-	<h3 class="header">Route Me</h3>
-	<p>
-		Route Me is a Progressive Web App that path finds through themeparks, showing you the quickest route to take from A &rightarrow; B.
-		<br><br>
-		This project began as a Microsoft Windows application, written in C#, and has evolved to a Progressive Web App.
-		<br><br>
-		Below are several screenshots of the app:
-	</p>
-	<div class="flex">
-		<div class="routeme screenshot">
-			<img class="jsonly" data-src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" />
-			<noscript><img src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" /></noscript>
-			<div class="img-left jsonly"></div>
-			<div class="img-right jsonly"></div>
+	<div class="tab-container">
+		<div class="tab-content active" id="tab-routeme">
+			<h3 class="header">Route Me</h3>
+			<p>
+				Route Me is a Progressive Web App that path finds through themeparks, showing you the quickest route to take from A &rightarrow; B.
+				<br><br>
+				This project began as a Microsoft Windows application, written in C#, and has evolved to a Progressive Web App.
+				<br><br>
+				Below are several screenshots of the app:
+			</p>
+			<div class="flex">
+				<div class="routeme screenshot">
+					<img class="jsonly" data-src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" />
+					<noscript><img src="assets/img/pages/projects/routeme/routeme_1.png" data-imgcount="{{projects.routeme.images}}" alt="RouteMe Screenshot" /></noscript>
+					<div class="img-left jsonly"></div>
+					<div class="img-right jsonly"></div>
+				</div>
+			</div>
+			<p>
+				To view the app, visit <a href="https://routeme.afspeirs.uk" rel="noopener">routeme.afspeirs.uk</a>.
+			</p>
+		</div>
+		<div class="tab-content" id="tab-noteme">
+			<h3 class="header">Note Me</h3>
+			<p>
+				Note Me is a Progressive Web App
+				<br><br>
+				To view the app, visit <a href="https://noteme.afspeirs.uk" rel="noopener">noteme.afspeirs.uk</a>.
+			</p>
+		</div>
+		<div class="tab-content active" id="tab-countme">
+			<h3 class="header">Count Me</h3>
+			<p>
+				Note Me is a Progressive Web App
+				<br><br>
+				To view the app, visit <a href="https://countme.afspeirs.uk" rel="noopener">countme.afspeirs.uk</a>.
+			</p>
+		</div>
+		<div class="tab-content" id="tab-pebble">
+			<h3 class="header">Pebble Watchfaces</h3>
+			<p>
+				I have created several watchfaces for Pebble devices:<br>
+				<span class="small jsonly">Hover over each watchface for more</span>
+			</p>
+			<div class="flex">
+				{{#each projects.watchface}}
+					{{> watchface}}
+				{{/each}}
+			</div>
+		</div>
+		<div class="tab-content" id="tab-simplepanel">
+			<h3 class="header">SimplePanel</h3>
+			<p>
+				I have created a rainmeter skin
+			</p>
+		</div>
+		<div class="tab-content" id="tab-userchrome">
+			<h3 class="header">userChrome</h3>
+			<p>
+				I have created a custom firefox user chrome css
+			</p>
 		</div>
 	</div>
-	<p>
-		To view the app, visit <a href="https://routeme.afspeirs.uk" rel="noopener">routeme.afspeirs.uk</a>.
-	</p>
-</section>
-
-<section class="tab-content" id="tab-pebble">
-	<h3 class="header">Pebble Watchfaces</h3>
-	<p>
-		I have created several watchfaces for Pebble devices:<br>
-		<span class="small jsonly">Hover over each watchface for more</span>
-	</p>
-	<div class="flex">
-		{{#each projects.watchface}}
-			{{> watchface}}
-		{{/each}}
-	</div>
-</section>
-
-<section class="tab-content" id="tab-simplepanel">
-	<h3 class="header">SimplePanel</h3>
-	<p>
-		I have created a rainmeter skin
-	</p>
-</section>
-
-<section class="tab-content" id="tab-userchrome">
-	<h3 class="header">userChrome</h3>
-	<p>
-		I have created a custom firefox user chrome css
-	</p>
 </section>

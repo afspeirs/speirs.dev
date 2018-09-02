@@ -4,7 +4,7 @@ $routemeImageScale: 0.5;
 
 .tab-buttons {
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: row;
 	justify-content: space-around;
 
 	div {
@@ -12,10 +12,10 @@ $routemeImageScale: 0.5;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 10px;
-		width: 45vw;
-		height: 45vw;
-		max-width: 125px;
-		max-height: 125px;
+		width: 14vw;
+		height: 14vw;
+		max-width: 140px;
+		max-height: 140px;
 		text-align: center;
 		background: darkgrey;
 		cursor: pointer;
