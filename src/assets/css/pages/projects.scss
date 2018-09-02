@@ -34,11 +34,20 @@ $routemeImageScale: 0.5;
 	}
 }
 
-.routeme {
-	margin: 10px 0;
+.content-text-image {
+	display: flex;
+
+	@media (max-width: $navbar-collapse-breakpoint) {
+		flex-direction: column;
+	}
+}
+
+.screenshot.device {
+	margin: 10px;
 	position: relative;
-	width: calc(#{$routemeImageScale} * 500px);
-	height: calc(#{$routemeImageScale} * 899px);
+	width: 250px;
+	align-self: center;
+	flex-shrink: 0;
 
 	img {
 		width: 100%;
