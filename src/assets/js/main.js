@@ -17,9 +17,7 @@ window.addEventListener('load', () => {
 	// Lazy load images
 	[].forEach.call(document.querySelectorAll('img[data-src]'), (image) => {
 		image.setAttribute('src', image.getAttribute('data-src'));
-		image.onload = () => {
-			image.removeAttribute('data-src');
-		};
+		image.removeAttribute('data-src');
 	});
 
 	// Set a random title angle for the logo
