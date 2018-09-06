@@ -34,24 +34,6 @@
 		visibility: visible;
 	}
 
-	&-gallery {
-		display: flex;
-		flex-direction: column;
-		align-self: center;
-		justify-content: center;
-		background: transparent;
-
-		&-metadata {
-			margin: 0 auto;
-			color: $background-colour;
-		}
-
-		img {
-			max-height: 90%;
-			max-width: 100%;
-			align-self: center;
-		}
-	}
 }
 
 .modal-inner {
