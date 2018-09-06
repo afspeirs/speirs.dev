@@ -83,17 +83,12 @@ gulp.task('files:img', ['clean:img'], () => {
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], () => {
-	const argBabel = process.argv.includes('--babel');
-	if (argBabel) {
-		console.log('Serving with babel preset');
-	}
-
 	return browserify(`${paths.src + paths.js}main.js`, { debug: env === 'dev' })
 		.transform(['babelify', { presets: ['env'], sourceMaps: true }])
 		.bundle().on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
-		.pipe(env === 'prod' || argBabel ? uglify() : nop())
+		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(env === 'prod' ? rename({ extname: '.min.js' }) : nop())
 		.pipe(gulp.dest(paths.build + paths.js));

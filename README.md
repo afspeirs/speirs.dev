@@ -15,11 +15,6 @@ or
 gulp serve
 ```
 
-### Serve site with the babel preset active
-```
-gulp --babel
-```
-
 ### Build the files
 ```
 gulp build
