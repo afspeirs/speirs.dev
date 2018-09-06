@@ -95,7 +95,7 @@ gulp.task('files:js', ['clean:js'], () => {
 		.pipe(buffer())
 		.pipe(env === 'prod' || argBabel ? uglify() : nop())
 		.pipe(sourcemaps.write())
-		.pipe(rename({ extname: '.min.js' }))
+		.pipe(env === 'prod' ? rename({ extname: '.min.js' }) : nop())
 		.pipe(gulp.dest(paths.build + paths.js));
 });
 // Compiles scss files
