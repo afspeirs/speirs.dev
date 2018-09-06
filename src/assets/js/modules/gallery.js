@@ -7,8 +7,6 @@ const Gallery = {
 	modalGalleryImage: document.querySelector('#modal-gallery-image'),
 	init() {
 		this.imgSecondary.forEach(image => image.addEventListener('click', this.imageSelect));
-		this.imgLeft.addEventListener('click', this.prevImage);
-		this.imgRight.addEventListener('click', this.nextImage);
 	},
 	updateModalImageFromIndex(currentIndex) {
 		const newImage = Gallery.imgSecondary
@@ -29,20 +27,6 @@ const Gallery = {
 	},
 	imageSelect() {
 		Gallery.updateImageFromIndex(parseInt(this.dataset.index, 10));
-	},
-	prevImage() {
-		let currentIndex = parseInt(Gallery.imgMain.dataset.index, 10);
-		if (currentIndex === 0) {
-			currentIndex = Gallery.imgSecondary.length;
-		}
-		Gallery.updateImageFromIndex(currentIndex - 1);
-	},
-	nextImage() {
-		let currentIndex = parseInt(Gallery.imgMain.dataset.index, 10);
-		if (currentIndex === Gallery.imgSecondary.length - 1) {
-			currentIndex = -1;
-		}
-		Gallery.updateImageFromIndex(currentIndex + 1);
 	},
 };
 
