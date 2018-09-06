@@ -152,6 +152,8 @@ gulp.task('serve', () => {
 			baseDir: paths.build,
 			index: 'index.html',
 		},
+		// Clicks, Scrolls & Form inputs on any device will be mirrored to all others.
+		ghostMode: false,
 		// Don't show any notifications in the browser.
 		notify: false,
 		// Wait 2 seconds after a reload event before allowing more.
