@@ -72,7 +72,7 @@ section { /* sets the width of the content */
 }
 
 .content {
-	padding: $navbar-height 0;
+	padding-top: $navbar-height;
 
 	&.fullscreen {
 		height: 100%;
