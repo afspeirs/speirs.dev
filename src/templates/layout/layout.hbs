@@ -14,12 +14,14 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{manifest.theme_color}}">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+	{{#if debug}}<link rel="stylesheet" type="text/css" href="assets/css/debug.min.css">{{/if}}
 	<noscript><style> .jsonly { display: none !important } </style></noscript>
 	<script src="assets/js/main{{#unless debug}}.min{{/unless}}.js" defer></script>
+	{{#if debug}}<script src="assets/js/debug.js" defer></script>{{/if}}
 </head>
 
 <body>
-	<div id="container"{{#ifEquals debug true}} class="debug"{{/ifEquals}}>
+	<div id="container">
 		{{> nav}}
 
 		{{{block "body"}}}

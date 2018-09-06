@@ -83,6 +83,11 @@ gulp.task('files:img', ['clean:img'], () => {
 });
 // Move js folder contents
 gulp.task('files:js', ['clean:js'], () => {
+	if (env === 'dev') {
+		gulp.src(`${paths.src + paths.js}/modules/debug.js`)
+			.pipe(gulp.dest(paths.build + paths.js));
+	}
+
 	return browserify(`${paths.src + paths.js}main.js`, { debug: env === 'dev' })
 		.transform(['babelify', { presets: ['env'], sourceMaps: true }])
 		.bundle().on('error', errHandle)
