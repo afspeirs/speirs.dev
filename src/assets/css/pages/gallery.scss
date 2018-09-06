@@ -13,6 +13,10 @@
 		}
 	}
 
+	.gallery-wrap {
+		position: relative;
+	}
+
 	.gallery-main {
 		position: relative;
 		width: 90vw;
@@ -41,9 +45,8 @@
 	}
 }
 
-
-
 .scroll {
+	position: relative;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: auto;
@@ -54,4 +57,13 @@
 	&::-webkit-scrollbar {
 		display: none;
 	}
+	// &-fade {
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	right: -2px;
+	// 	width: 25px;
+	// 	height: 75px;
+	// 	background: linear-gradient(to right, rgba(255, 255, 255, 0.001), $background-colour);
+	// 	pointer-events: none;
+	// }
 }
