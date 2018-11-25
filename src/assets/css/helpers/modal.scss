@@ -33,7 +33,23 @@
 		opacity: 1;
 		visibility: visible;
 	}
+	button.modal-close {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		width: 3em;
+		height: 3em;
+		border: 0;
+		background: 0;
+		cursor: pointer;
 
+		&:before {
+			content: '\00d7';
+			color: $main-colour;
+			line-height: 1em;
+			font-size: 3em;
+		}
+	}
 }
 
 .modal-inner {
