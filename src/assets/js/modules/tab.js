@@ -5,12 +5,12 @@ const Tab = {
 	init() {
 		this.tabButtons.forEach((e) => {
 			e.addEventListener('click', () => {
-				// Toggle tab content
+				// Toggle tab content if the clicked tab is not active
 				if (!e.classList.contains('active')) {
-					// Set tab button active
-					this.tabButtons.map(tab => (tab === e && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
-					// Set tab content active
-					this.tabContent.map(tab => (tab.id === e.dataset.tab && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
+					// Set clicked tab as active
+					// Remove active from the other tabs
+					this.tabButtons.map(tab => (tab === e ? tab.classList.add('active') : tab.classList.remove('active')));
+					this.tabContent.map(tab => (tab.id === e.dataset.tab ? tab.classList.add('active') : tab.classList.remove('active')));
 				}
 			});
 		});
