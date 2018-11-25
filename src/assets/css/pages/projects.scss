@@ -37,13 +37,23 @@ $routemeImageScale: 0.5;
 .content-text-image {
 	display: flex;
 
+	p {
+		margin: 0;
+	}
+	*:not(:last-child) {
+		margin-right: 10px;
+	}
+
 	@media (max-width: $navbar-collapse-breakpoint) {
 		flex-direction: column;
+
+		*:not(:last-child) {
+			margin-bottom: 10px;
+		}
 	}
 }
 
 .screenshot.device {
-	margin: 10px;
 	position: relative;
 	width: 250px;
 	align-self: center;
