@@ -161,6 +161,8 @@ gulp.task('serve', () => {
 		ghostMode: false,
 		// Don't show any notifications in the browser.
 		notify: false,
+		// Change the port from the default
+		port: 3000,
 		// Wait 2 seconds after a reload event before allowing more.
 		reloadDebounce: 2000,
 	});
