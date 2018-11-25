@@ -6,11 +6,12 @@ const Tab = {
 		this.tabButtons.forEach((e) => {
 			e.addEventListener('click', () => {
 				// Toggle tab content
-				const thisTab = e.dataset.tab;
-				this.tabContent.map(tab => (tab.id === thisTab && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
-
-				// Set tab button active
-				this.tabButtons.map(tab => (tab === e && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
+				if (!e.classList.contains('active')) {
+					// Set tab button active
+					this.tabButtons.map(tab => (tab === e && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
+					// Set tab content active
+					this.tabContent.map(tab => (tab.id === e.dataset.tab && !tab.classList.contains('active')) ? tab.classList.add('active') : tab.classList.remove('active'));
+				}
 			});
 		});
 	},
