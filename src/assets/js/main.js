@@ -1,16 +1,18 @@
+import Tab from '@afspeirs/tab';
 import Nav from './modules/nav';
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
 import Screenshot from './modules/screenshot';
-import Tab from './modules/tab';
 import Watchface from './modules/watchface';
 
-// Module Init
+// npm modules
+Tab.init();
+
+// local modules
 Nav.init();
 Gallery.init();
 Modal.init();
 Screenshot.init();
-Tab.init();
 Watchface.init();
 
 // Lazy load images
