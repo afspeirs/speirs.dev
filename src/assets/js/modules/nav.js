@@ -1,26 +1,14 @@
 import debounce from './debounce';
 
-const Nav = {
-	menubtn: document.querySelector('#nav-toggle'),
-	container: document.querySelector('#container'),
-	content: [...document.querySelectorAll('.content')],
-	navLinks: document.querySelectorAll('#nav-wrap a'),
+const Nav = function() {
+	const menubtn = document.querySelector('#nav-toggle');
+	const container = document.querySelector('#container');
+	const content = [...document.querySelectorAll('.content')];
+	const navLinks = document.querySelectorAll('#nav-wrap a');
 
-	init() {
-		// Toggle Mobile navigation menu on click
-		Nav.menubtn.addEventListener('click', () => {
-			Nav.menubtn.parentNode.classList.toggle('open');
-		});
-
-		// Run on page load to show which section the user is at
-		Nav.activeNavSection(window.location.hash.substr(1) || Nav.content[0].id);
-
-		// Check for scroll event and add active to navigation
-		window.addEventListener('scroll', debounce(Nav.onScroll));
-	},
 	// Sets the current section active
-	activeNavSection(compare) {
-		Nav.navLinks.forEach((a) => {
+	function activeNavSection(compare) {
+		navLinks.forEach((a) => {
 			const id = a.href.substr(a.href.lastIndexOf('#') + 1);
 			// console.log(id);
 			a.classList.remove('active');
@@ -29,18 +17,32 @@ const Nav = {
 				a.classList.add('active');
 			}
 		});
-	},
+	}
 	// Based on scroll position set the current section as active
-	onScroll() {
+	function onScroll() {
 		const y = window.scrollY + 5;
 
-		for (let i = 0; i < Nav.content.length; i++) {
-			if ((i !== Nav.content.length - 1 && Nav.content[i].offsetTop < y && Nav.content[i + 1].offsetTop > y)
-				|| (i === Nav.content.length - 1 && Nav.content[i].offsetTop < y)) {
-				Nav.activeNavSection(Nav.content[i].id);
+		for (let i = 0; i < content.length; i++) {
+			if ((i !== content.length - 1 && content[i].offsetTop < y && content[i + 1].offsetTop > y)
+				|| (i === content.length - 1 && content[i].offsetTop < y)) {
+				activeNavSection(content[i].id);
 			}
 		}
-	},
-};
+	}
+	function init() {
+		// Toggle Mobile navigation menu on click
+		menubtn.addEventListener('click', () => {
+			menubtn.parentNode.classList.toggle('open');
+		});
+
+		// Run on page load to show which section the user is at
+		activeNavSection(window.location.hash.substr(1) || content[0].id);
+
+		// Check for scroll event and add active to navigation
+		window.addEventListener('scroll', debounce(onScroll));
+	}
+
+	return { init };
+}();
 
 export default Nav;

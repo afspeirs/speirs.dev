@@ -1,7 +1,8 @@
 import Tab from '@afspeirs/tab';
-import Nav from './modules/nav';
+
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
+import Nav from './modules/nav';
 import Screenshot from './modules/screenshot';
 import Watchface from './modules/watchface';
 
@@ -9,9 +10,9 @@ import Watchface from './modules/watchface';
 Tab.init();
 
 // local modules
-Nav.init();
 Gallery.init();
 Modal.init();
+Nav.init();
 Screenshot.init();
 Watchface.init();
 
