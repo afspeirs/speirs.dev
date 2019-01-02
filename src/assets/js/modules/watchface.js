@@ -1,4 +1,4 @@
-const Watchface = function() {
+const Watchface = (function Watchface() {
 	const watch = document.querySelectorAll('.watch');
 	const flipButton = document.querySelectorAll('.flip-button');
 
@@ -41,6 +41,6 @@ const Watchface = function() {
 	}
 
 	return { init };
-}();
+}());
 
 export default Watchface;

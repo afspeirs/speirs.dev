@@ -1,8 +1,6 @@
-const Gallery = function() {
+const Gallery = (function Gallery() {
 	const imgMain = document.querySelector('.gallery-main img');
 	const imgSecondary = [...document.querySelectorAll('.gallery-secondary .img-wrap img')];
-	const imgLeft = document.querySelector('.gallery-arrows .img-left');
-	const imgRight = document.querySelector('.gallery-arrows .img-right');
 	const modalGalleryTitle = document.querySelector('#modal-gallery-title');
 	const modalGalleryImage = document.querySelector('#modal-gallery-image');
 
@@ -31,6 +29,6 @@ const Gallery = function() {
 	}
 
 	return { init };
-}();
+}());
 
 export default Gallery;

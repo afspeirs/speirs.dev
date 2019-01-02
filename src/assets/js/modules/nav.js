@@ -1,8 +1,7 @@
 import debounce from './debounce';
 
-const Nav = function() {
+const Nav = (function Nav() {
 	const menubtn = document.querySelector('#nav-toggle');
-	const container = document.querySelector('#container');
 	const content = [...document.querySelectorAll('.content')];
 	const navLinks = document.querySelectorAll('#nav-wrap a');
 
@@ -43,6 +42,6 @@ const Nav = function() {
 	}
 
 	return { init };
-}();
+}());
 
 export default Nav;

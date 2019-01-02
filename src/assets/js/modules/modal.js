@@ -1,9 +1,9 @@
-const Modal = function() {
+const Modal = (function Modal() {
 	const modalBackground = document.querySelector('#modal-background');
 	const modalFullscreenClose = document.querySelector('.modal.fullscreen-close');
 	const dataModal = [...document.querySelectorAll('[data-modal]')];
 	const allModals = [...document.querySelectorAll('.modal')];
-	let openModals = [];
+	const openModals = [];
 
 	function getModalFromId(idModal) {
 		return allModals.filter(modal => modal.id === `modal-${idModal}`)[0];
@@ -36,6 +36,6 @@ const Modal = function() {
 	}
 
 	return { init };
-}();
+}());
 
 export default Modal;
