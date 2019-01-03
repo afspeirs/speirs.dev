@@ -1,18 +1,23 @@
 const Modal = (function Modal() {
 	const modalBackground = document.querySelector('#modal-background');
 	const modalFullscreenClose = document.querySelector('.modal.fullscreen-close');
+	const modalClose = [...document.querySelectorAll('.modal-close')];
 	const dataModal = [...document.querySelectorAll('[data-modal]')];
 	const allModals = [...document.querySelectorAll('.modal')];
 	const openModals = [];
 
-	function getModalFromId(idModal) {
-		return allModals.filter(modal => modal.id === `modal-${idModal}`)[0];
-	}
+	const getModalFromId = idModal => allModals.filter(modal => modal.id === `modal-${idModal}`)[0];
+
 	function openModal(idModal) {
 		const foundModal = getModalFromId(idModal);
-		foundModal.classList.add('active');
-		modalBackground.classList.add('active');
-		openModals.push(idModal);
+
+		if (foundModal) {
+			foundModal.classList.add('active');
+			modalBackground.classList.add('active');
+			openModals.push(idModal);
+		} else {
+			console.error('modal not found');
+		}
 	}
 	function closeModal() {
 		const latestModal = openModals[openModals.length - 1];
@@ -31,11 +36,16 @@ const Modal = (function Modal() {
 		// Close modal and background on click of the modal background
 		if (modalBackground) modalBackground.addEventListener('click', closeModal, false);
 		if (modalFullscreenClose) modalFullscreenClose.addEventListener('click', closeModal, false);
+		if (modalClose) modalClose.forEach(modal => modal.addEventListener('click', closeModal, false));
 		// Close modal on keydown of esc key
 		document.addEventListener('keydown', keyPress, false);
 	}
 
-	return { init };
+	return {
+		init,
+		openModal,
+		closeModal,
+	};
 }());
 
 export default Modal;
