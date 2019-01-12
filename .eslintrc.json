@@ -4,9 +4,8 @@
 	},
 	"extends": "airbnb-base",
 	"rules": {
-		"indent": ["error", "tab", {
-			"SwitchCase": 1
-		}],
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"linebreak-style": "off",
 		"no-plusplus": "off",
 		"no-tabs": "off",
 		"quotes": ["error", "single"],
