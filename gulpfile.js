@@ -12,7 +12,6 @@ const del          = require('del');                      // https://www.npmjs.c
 const hb           = require('gulp-hb');                  // https://www.npmjs.com/package/gulp-hb
 const hbHelper     = require('handlebars-layouts');       // https://www.npmjs.com/package/handlebars-layouts
 const htmlmin      = require('gulp-htmlmin');             // https://www.npmjs.com/package/gulp-htmlmin
-const nop          = require('gulp-nop');                 // https://www.npmjs.com/package/gulp-nop
 const notify       = require('gulp-notify');              // https://www.npmjs.com/gulp-notify
 const plumber      = require('gulp-plumber');             // https://www.npmjs.com/package/gulp-plumber
 const prefix       = require('gulp-autoprefixer');        // https://www.npmjs.com/package/gulp-autoprefixer
@@ -93,7 +92,8 @@ gulp.task('files:js', ['clean:js'], () => {
 		.bundle().on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
-		.pipe(env === 'prod' ? uglify() : nop())
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(rename({ extname: `${env === 'prod' ? '.min' : ''}.js` }))
 		.pipe(gulp.dest(paths.build + paths.js));
