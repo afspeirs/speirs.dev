@@ -5,7 +5,13 @@ const { paths } = require('../config');
 
 // Watches css, js and handlebar files (using Browsersync) then compiles them to the build folder
 gulp.task('serve', () => {
-	runSequence('files:img', 'files:js', 'files:css', 'files:root', 'files:handlebar');
+	runSequence(
+		'files:img',
+		'files:js',
+		'files:css',
+		'files:root',
+		'files:handlebar',
+	);
 
 	// Serve files from the root of this project
 	browserSync.init({
