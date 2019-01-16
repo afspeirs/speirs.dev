@@ -55,33 +55,32 @@ a {
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	// overflow-y: scroll;
-	// scroll-behavior: smooth;
 }
 
 nav,
-section { /* sets the width of the content */
-	width: 90%;
+section {
 	max-width: 900px;
 	margin: 0 auto;
+}
+
+nav {
+	width: 90%;
+}
+section {
+	width: 100%;
+	background: white;
+	padding: 16px;
+	box-shadow: 0 2px 2px 0 rgba(black, 0.14),
+				0 3px 1px -2px rgba(black, 0.2),
+				0 1px 5px 0 rgba(black, 0.12);
 
 	&.small {
-		max-width: 500px;
 		text-align: center;
 	}
 }
 
 .content {
-	padding-top: $navbar-height;
-
-	&.fullscreen {
-		height: 100%;
-		max-height: 640px;
-	}
-
-	// &:nth-child(odd) {
-	// 	background: lightgrey;
-	// }
+	padding-top: $navbar-height + ($navbar-height / 3);
 }
 
 .flex {
