@@ -92,10 +92,6 @@ section {
 
 .content {
 	padding-top: $navbar-height;
-
-	&:not(:first) {
-		padding-top: $navbar-height + ($navbar-height / 3);
-	}
 }
 
 .logo {
