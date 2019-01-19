@@ -54,7 +54,18 @@ a {
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: 100%;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	padding: 3rem 0 16em;
+	margin-bottom: -14em;
+	background-color: $main-colour;
+
+	.logo {
+		width: 100px;
+	}
 }
 
 nav,
@@ -80,7 +91,20 @@ section {
 }
 
 .content {
-	padding-top: $navbar-height + ($navbar-height / 3);
+	padding-top: $navbar-height;
+
+	&:not(:first) {
+		padding-top: $navbar-height + ($navbar-height / 3);
+	}
+}
+
+.logo {
+	fill: $background-colour;
+	transition: 0.3s;
+
+	&:hover {
+		transform: rotate(var(--logo-tilt-degree)) scale(1.1);
+	}
 }
 
 .flex {

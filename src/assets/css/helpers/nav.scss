@@ -5,20 +5,13 @@
 // ==========================================================================================
 
 #nav-wrap {
-	position: fixed;
+	position: sticky;
+	top: 0;
 	width: 100%;
 	background-color: $main-colour;
 	opacity: 0.95;
 	font-family: "Open Sans", sans-serif;
 	z-index: 5;
-}
-
-nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: calc(var(--scale) * #{$navbar-height});
-	font-size: calc(var(--scale) * 22px);
 
 	.brand {
 		color: $background-colour;
@@ -28,12 +21,26 @@ nav {
 
 		.logo {
 			height: calc(var(--scale) * #{$navbar-height * 4/7});
-			fill: $background-colour;
-			transition: 0.3s;
+		}
+	}
+}
 
-			&:hover {
-				transform: rotate(var(--logo-tilt-degree)) scale(1.1);
-			}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(var(--scale) * #{$navbar-height});
+	font-size: calc(var(--scale) * 22px);
+
+	.logo {
+		display: none;
+	}
+
+	&.show-logo {
+		justify-content: space-between;
+
+		.logo {
+			display: block;
 		}
 	}
 }

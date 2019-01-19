@@ -4,6 +4,8 @@ const Nav = (function Nav() {
 	const menubtn = document.querySelector('#nav-toggle');
 	const content = [...document.querySelectorAll('.content')];
 	const navLinks = document.querySelectorAll('#nav-wrap a');
+	const headerLogo = document.querySelector('header .logo');
+	const nav = document.querySelector('nav');
 
 	// Sets the current section active
 	function activeNavSection(compare) {
@@ -29,6 +31,19 @@ const Nav = (function Nav() {
 		}
 	}
 	function init() {
+		// Create Intersection Observer to check if the user has scrolled below the nav
+		const intersectionObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.intersectionRatio > 0) {
+					nav.classList.remove('show-logo');
+				} else {
+					nav.classList.add('show-logo');
+				}
+			});
+		});
+
+		intersectionObserver.observe(headerLogo);
+
 		// Toggle Mobile navigation menu on click
 		menubtn.addEventListener('click', () => {
 			menubtn.parentNode.classList.toggle('open');
