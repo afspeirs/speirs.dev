@@ -16,7 +16,7 @@ gulp.task('files:js', ['clean:js'], () => {
 	}
 
 	return browserify(`${paths.src + paths.js}main.js`, { debug: !global.production })
-		.transform(['babelify', { presets: ['env'], sourceMaps: true }])
+		.transform(['babelify', { sourceMaps: true }])
 		.bundle().on('error', errHandle)
 		.pipe(source('main.js'))
 		.pipe(buffer())
