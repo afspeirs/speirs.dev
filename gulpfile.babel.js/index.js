@@ -29,9 +29,7 @@ const setProd = (done) => {
 // ====  Build  =============================================================================
 // ==========================================================================================
 
-// Removes html files and everything from assets folder, then compiles to build folder
-export const build = series(
-	setProd,
+const compile = series(
 	clean,
 	parallel(
 		cssFiles,
@@ -44,19 +42,23 @@ export const build = series(
 
 
 // ==========================================================================================
+// ====  Build  =============================================================================
+// ==========================================================================================
+
+// Removes html files and everything from assets folder, then compiles to build folder
+export const build = series(
+	setProd,
+	compile,
+);
+
+
+// ==========================================================================================
 // ====  default  ===========================================================================
 // ==========================================================================================
 
 export const serve = series(
 	setDev,
-	clean,
-	parallel(
-		cssFiles,
-		imgFiles,
-		jsFiles,
-		pagesFiles,
-		rootFiles,
-	),
+	compile,
 	server,
 );
 
