@@ -1,7 +1,4 @@
-import {
-	parallel,
-	series,
-} from 'gulp';
+import { parallel, series } from 'gulp';
 
 import { clean } from './tasks/clean';
 import { cssFiles } from './tasks/css';
