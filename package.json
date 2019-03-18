@@ -6,8 +6,8 @@
 	"dependencies": {
 		"@afspeirs/tab": "^1.0.0",
 		"@babel/cli": "^7.2.3",
-		"@babel/core": "^7.3.3",
-		"@babel/preset-env": "^7.3.1",
+		"@babel/core": "^7.3.4",
+		"@babel/preset-env": "^7.3.4",
 		"@babel/register": "^7.0.0",
 		"babelify": "^10.0.0",
 		"browser-sync": "^2.26.3",
@@ -23,13 +23,13 @@
 		"gulp-rename": "^1.4.0",
 		"gulp-sass": "^4.0.2",
 		"gulp-sourcemaps": "^2.6.5",
-		"gulp-uglify": "^3.0.1",
+		"gulp-uglify": "^3.0.2",
 		"handlebars-layouts": "^3.1.4",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^5.14.1",
+		"eslint": "^5.15.3",
 		"eslint-config-airbnb-base": "^13.1.0",
 		"eslint-plugin-import": "^2.16.0"
 	},
