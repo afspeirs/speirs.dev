@@ -5,17 +5,17 @@
 	"main": "gulpfile.js",
 	"dependencies": {
 		"@afspeirs/tab": "^1.0.0",
-		"@babel/cli": "^7.2.3",
-		"@babel/core": "^7.3.4",
-		"@babel/preset-env": "^7.3.4",
-		"@babel/register": "^7.0.0",
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/register": "^7.4.4",
 		"babelify": "^10.0.0",
 		"browser-sync": "^2.26.5",
 		"browserify": "^16.2.3",
 		"del": "^3.0.0",
-		"gulp": "^4.0.0",
-		"gulp-autoprefixer": "^6.0.0",
-		"gulp-clean-css": "^4.0.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^6.1.0",
+		"gulp-clean-css": "^4.2.0",
 		"gulp-hb": "^7.1.0",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-notify": "^3.2.0",
@@ -29,9 +29,9 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^5.15.3",
+		"eslint": "^5.16.0",
 		"eslint-config-airbnb-base": "^13.1.0",
-		"eslint-plugin-import": "^2.16.0"
+		"eslint-plugin-import": "^2.17.2"
 	},
 	"scripts": {
 		"serve": "gulp serve",
