@@ -10,18 +10,20 @@
 				data-index="0"
 			/>
 		</div>
-		<div class="gallery-secondary scroll">
-			{{#each gallery.images}}
-				<div class="img-wrap">
-					<img
-						src="assets/img/pages/gallery/{{this.image}}"
-						alt="{{this.name}}"
-						data-index="{{@index}}"
-						data-image="{{this.image}}"
-						data-name="{{this.name}}"
-					/>
-				</div>
-			{{/each}}
+		<div class="gallery-secondary scrollable">
+			<div class="scroller">
+				{{#each gallery.images}}
+					<div class="img-wrap">
+						<img
+							src="assets/img/pages/gallery/{{this.image}}"
+							alt="{{this.name}}"
+							data-index="{{@index}}"
+							data-image="{{this.image}}"
+							data-name="{{this.name}}"
+						/>
+					</div>
+				{{/each}}
+			</div>
 		</div>
 		<div class="scroll-fade"></div>
 	</div>
