@@ -1,0 +1,14 @@
+.move-down-up,
+.move-down-up-hover:hover {
+	animation: move-down-up 2s ease-in-out infinite;
+	position: relative;
+}
+
+@keyframes move-down-up {
+	0%, 100% {
+		bottom: 0;
+	}
+	50% {
+		bottom: -1vw;
+	}
+}

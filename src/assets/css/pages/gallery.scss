@@ -32,14 +32,17 @@
 	}
 
 	.gallery-secondary {
+		position: relative;
 		width: 100%;
 
 		.img-wrap {
 			flex: 0 0 auto;
 			cursor: pointer;
+			margin-right: 10px;
 
-			&:not(:last-child) {
-				margin-right: 10px;
+			&:last-child {
+				padding-right: 60px;
+				box-sizing: content-box;
 			}
 		}
 	}
@@ -76,27 +79,4 @@
 		padding-bottom: 80px;
 		padding-top: 25px;
 	}
-}
-
-.scroll {
-	position: relative;
-	display: flex;
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
-
-	// Hide scrollbar
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	// &-fade {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	right: -2px;
-	// 	width: 25px;
-	// 	height: 75px;
-	// 	background: linear-gradient(to right, rgba(255, 255, 255, 0.001), $background-colour);
-	// 	pointer-events: none;
-	// }
 }
