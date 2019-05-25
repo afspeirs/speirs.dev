@@ -1,4 +1,2 @@
-module.exports.register = (handlebars) => {
-	// Returns a lowercased string with no spaces
-	handlebars.registerHelper('simplify', (options) => options.toLowerCase().replace(/ /g, ''));
-};
+// Returns a lowercased string with no spaces
+module.exports = options => options.toLowerCase().replace(/ /g, '');
