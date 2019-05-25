@@ -9,7 +9,6 @@ export const paths = {
 	layout: 'templates/layout/',
 	pages: 'templates/pages/',
 	partials: 'templates/partials/',
-	sections: 'templates/sections/',
 };
 
 export const settings = {
