@@ -1,5 +1,4 @@
-# afspeirs.uk [![pipeline status](https://gitlab.com/AFSpeirs/afspeirs.gitlab.io/badges/master/pipeline.svg)](https://gitlab.com/AFSpeirs/afspeirs.gitlab.io/commits/master)
-
+# afspeirs.uk [![Netlify Status](https://api.netlify.com/api/v1/badges/3a5730bc-4386-4a96-aaeb-58ab996dabb9/deploy-status)](https://app.netlify.com/sites/afspeirs/deploys)
 
 ### Install Node Modules to the project folder
 ```
