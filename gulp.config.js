@@ -1,6 +1,6 @@
 export const paths = {
 	src: 'src/',
-	build: 'public/',
+	build: 'dist/',
 	helpers: './helpers/',
 	css: 'assets/css/',
 	data: 'assets/data/',
