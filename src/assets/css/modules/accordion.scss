@@ -7,12 +7,23 @@
 		text-align: left;
 		outline: none;
 		font-size: 1em;
-		color: #444;
 		background-color: #eee;
 		transition: background-color 0.4s ease-in;
 
 		&:hover {
 			background-color: #ccc;
+		}
+
+		&:after {
+			content: '\002B';
+			float: right;
+			font-weight: bold;
+		}
+
+		&.active {
+			&:after {
+				content: "\2212";
+			}
 		}
 	}
 
@@ -23,7 +34,6 @@
 	&-panel {
 		padding: 0 18px;
 		max-height: 0;
-		background-color: white;
 		overflow: hidden;
 		transition: max-height 0.2s ease-out;
 	}
