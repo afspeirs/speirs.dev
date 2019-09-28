@@ -35,9 +35,6 @@ $routemeImageScale: 0.5;
 .content-text-image {
 	display: flex;
 
-	p {
-		margin: 0;
-	}
 	*:not(:last-child) {
 		margin-right: 10px;
 	}

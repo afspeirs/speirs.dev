@@ -1,5 +1,6 @@
 import Tab from '@afspeirs/tab';
 
+import Accordion from './modules/accordion';
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
 import Nav from './modules/nav';
@@ -10,6 +11,7 @@ import Watchface from './modules/watchface';
 Tab.init();
 
 // local modules
+Accordion.init();
 Gallery.init();
 Modal.init();
 Nav.init();
