@@ -24,6 +24,7 @@ export const server = () => {
 			baseDir: paths.build,
 			index: settings.index,
 		},
+		injectChanges: false,
 		// Clicks, Scrolls & Form inputs on any device will be mirrored to all others.
 		ghostMode: settings.ghostMode,
 		// Force HTTPS
