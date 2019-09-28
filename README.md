@@ -1,4 +1,4 @@
-# afspeirs.uk [![Netlify Status](https://api.netlify.com/api/v1/badges/3a5730bc-4386-4a96-aaeb-58ab996dabb9/deploy-status)](https://app.netlify.com/sites/afspeirs/deploys)
+# speirs.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/3a5730bc-4386-4a96-aaeb-58ab996dabb9/deploy-status)](https://app.netlify.com/sites/afspeirs/deploys)
 
 ### Install Node Modules to the project folder
 ```
