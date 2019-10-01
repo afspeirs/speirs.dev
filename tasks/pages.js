@@ -22,3 +22,7 @@ export const pagesFiles = () => src(`${paths.src + paths.pages}*.hbs`)
 	.pipe(rename({ extname: '.html' }))
 	.pipe(htmlmin({ collapseWhitespace: true }))
 	.pipe(dest(paths.build));
+export const pagesReset = (done) => {
+	panini.refresh();
+	done();
+};

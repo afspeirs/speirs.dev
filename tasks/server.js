@@ -6,7 +6,7 @@ import browserSync from 'browser-sync';
 import { cssClean, cssFiles } from './css';
 import { imgClean, imgFiles } from './img';
 import { jsClean, jsFiles } from './js';
-import { pagesClean, pagesFiles } from './pages';
+import { pagesClean, pagesFiles, pagesReset } from './pages';
 import { rootClean, rootFiles } from './root';
 
 import { paths, settings } from '../gulp.config';
@@ -14,7 +14,7 @@ import { paths, settings } from '../gulp.config';
 const css = series(cssClean, cssFiles);
 const img = series(imgClean, imgFiles);
 const js = series(jsClean, jsFiles);
-const pages = series(pagesClean, pagesFiles);
+const pages = series(pagesReset, pagesClean, pagesFiles);
 const root = series(rootClean, rootFiles);
 
 export const server = () => {
