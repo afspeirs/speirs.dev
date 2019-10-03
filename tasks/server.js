@@ -15,7 +15,7 @@ const js = series(jsClean, jsFiles);
 const pages = series(pagesReset, pagesClean, pagesFiles);
 const root = series(rootClean, rootFiles);
 
-const server = () => {
+export const server = () => {
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
