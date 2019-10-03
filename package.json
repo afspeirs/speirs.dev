@@ -1,10 +1,9 @@
 {
-	"name": "afspeirs.uk",
+	"name": "speirs.dev",
 	"version": "0.0.1",
 	"description": "",
 	"main": "gulpfile.js",
 	"dependencies": {
-		"@afspeirs/tab": "^1.0.0",
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.5",
 		"@babel/preset-env": "^7.4.5",

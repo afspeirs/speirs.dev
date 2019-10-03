@@ -1,15 +1,12 @@
-import Tab from '@afspeirs/tab';
-
+import Accordion from './modules/accordion';
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
 import Nav from './modules/nav';
 import Screenshot from './modules/screenshot';
 import Watchface from './modules/watchface';
 
-// npm modules
-Tab.init();
-
-// local modules
+// Local modules
+Accordion.init();
 Gallery.init();
 Modal.init();
 Nav.init();
