@@ -8,7 +8,7 @@
 		margin: 30px auto;
 		width: 50%;
 		max-width: 250px;
-		fill: $font-colour;
+		fill: var(--font-color);
 		transition: 0.3s;
 
 		&:hover {

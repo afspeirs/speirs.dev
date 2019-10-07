@@ -16,8 +16,8 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background-color: $background-colour;
-	color: $font-colour;
+	background-color: var(--background-color);
+	color: var(--font-color);
 	font-family: $main-font;
 	font-size: 1em;
 	line-height: 1.2em;
@@ -40,7 +40,7 @@ header {
 	justify-content: center;
 	padding: 3rem 0 16em;
 	margin-bottom: -14em;
-	background-color: $main-colour;
+	background-color: var(--primary-color);
 
 	.logo {
 		width: 100px;
@@ -58,7 +58,7 @@ nav {
 }
 section {
 	width: 100%;
-	background: white;
+	background: var(--section-background-color);
 	padding: 32px;
 	border-radius: 24px;
 	box-shadow: 0 12px 12px 0 rgba(black, 0.15);
@@ -76,7 +76,7 @@ footer {
 }
 
 .logo {
-	fill: $background-colour;
+	fill: var(--background-color);
 	transition: 0.3s;
 
 	&:hover {
@@ -91,15 +91,16 @@ footer {
 }
 
 footer {
+	text-align: center;
 	p {
 		margin: 0;
 		line-height: $footer-height;
-		text-align: center;
 	}
 }
 
 .svg-arrow {
 	width: 3em;
+	fill: var(--font-color);
 
 	&.down {
 		padding-top: 1em;
@@ -115,7 +116,7 @@ footer {
 		right: 0;
 		height: 100%;
 		width: 60px;
-		background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,255,255,1));
+		background-image: linear-gradient(to right, rgba(255,0,0,0), var(--section-background-color));
 		pointer-events: none;
 	}
 }

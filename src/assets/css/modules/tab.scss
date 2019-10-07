@@ -17,7 +17,7 @@
 		cursor: pointer;
 
 		&.active {
-			border: 2px solid $main-colour;
+			border: 2px solid var(--primary-color);
 		}
 	}
 }

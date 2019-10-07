@@ -4,6 +4,7 @@ import Modal from './modules/modal';
 import Nav from './modules/nav';
 import Screenshot from './modules/screenshot';
 import Watchface from './modules/watchface';
+import './modules/theme';
 
 // Local modules
 Accordion.init();

@@ -6,13 +6,13 @@
 	position: sticky;
 	top: 0;
 	width: 100%;
-	background-color: $main-colour;
+	background-color: var(--primary-color);
 	opacity: 0.95;
 	font-family: $nav-font;
 	z-index: 5;
 
 	.brand {
-		color: $background-colour;
+		color: var(--background-color);
 		line-height: $navbar-height;
 		z-index: 5;
 		display: flex;
@@ -55,7 +55,7 @@ nav {
 		line-height: $navbar-height;
 		font-size: $navbar-item-font-size;
 		text-transform: uppercase;
-		color: $background-colour;
+		color: var(--background-color);
 
 		@media (min-width: $navbar-collapse-breakpoint) {
 			padding-left: round($navbar-height / 2);
@@ -81,7 +81,7 @@ nav {
 		top: $navbar-height;
 		left: 0;
 		width: 100%;
-		background-color: $main-colour;
+		background-color: var(--primary-color);
 		padding-bottom: $navbar-height / 10;
 		text-align: center;
 		z-index: 5;
@@ -98,8 +98,7 @@ nav {
 			&.active,
 			&:hover,
 			&:focus {
-				// background-color: $background-colour;
-				background-color: darken($main-colour, 20%);
+				background-color: var(--secondary-color);
 			}
 		}
 	}
@@ -128,7 +127,7 @@ nav {
 		left: 0;
 		height: 4px;
 		width: 100%;
-		background-color: $background-colour;
+		background-color: var(--background-color);
 		transition: 0.3s;
 		border-radius: 5px;
 	}
