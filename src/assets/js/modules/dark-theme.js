@@ -7,8 +7,8 @@ const DarkTheme = (function DarkTheme() {
 			document.documentElement.setAttribute('data-theme', 'dark');
 			localStorage.setItem('theme', 'dark');
 		} else {
-			document.documentElement.setAttribute('data-theme', 'light');
-			localStorage.setItem('theme', 'light');
+			document.documentElement.setAttribute('data-theme', '');
+			localStorage.removeItem('theme');
 		}
 	}
 
@@ -16,6 +16,7 @@ const DarkTheme = (function DarkTheme() {
 		if (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			currentTheme = 'dark';
 		}
+
 		if (currentTheme) {
 			document.documentElement.setAttribute('data-theme', currentTheme);
 			if (currentTheme === 'dark') {
