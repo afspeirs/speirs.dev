@@ -1,4 +1,5 @@
 import Accordion from './modules/accordion';
+import DarkTheme from './modules/dark-theme';
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
 import Nav from './modules/nav';
@@ -7,6 +8,7 @@ import Watchface from './modules/watchface';
 
 // Local modules
 Accordion.init();
+DarkTheme.init();
 Gallery.init();
 Modal.init();
 Nav.init();

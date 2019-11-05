@@ -1,3 +1,13 @@
+:root {
+	--accordion-primary-color: #ddd;
+	--accordion-hover-color: #ccc;
+}
+
+[data-theme="dark"] {
+	--accordion-primary-color: #222;
+	--accordion-hover-color: #111;
+}
+
 .accordion {
 	&-button {
 		cursor: pointer;
@@ -7,11 +17,12 @@
 		text-align: left;
 		outline: none;
 		font-size: 1em;
-		background-color: #eee;
-		transition: background-color 0.4s ease-in;
+		color: var(--font-color);
+		background-color: var(--accordion-primary-color);
+		transition: background-color 0.2s ease-in;
 
 		&:hover {
-			background-color: #ccc;
+			background-color: var(--accordion-hover-color);
 		}
 
 		&:after {
