@@ -17,3 +17,13 @@ p {
 		font-size: 12px;
 	}
 }
+
+a {
+	&,
+	&:visited {
+		color: var(--secondary-color);
+	}
+	&:active {
+		color: var(--primary-color);
+	}
+}
