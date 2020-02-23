@@ -1,13 +1,13 @@
 import { parallel, series } from 'gulp';
 
-import { clean } from './tasks/clean';
-import { cssFiles } from './tasks/css';
-import { setDev, setProd } from './tasks/env';
-import { imgFiles } from './tasks/img';
-import { jsFiles } from './tasks/js';
-import { pagesFiles } from './tasks/pages';
-import { rootFiles } from './tasks/root';
-import { server } from './tasks/server';
+import { clean } from './gulp-tasks/gulp-clean';
+import { cssFiles } from './gulp-tasks/gulp-css';
+import { setDev, setProd } from './gulp-tasks/gulp-env';
+import { imgFiles } from './gulp-tasks/gulp-img';
+import { jsFiles } from './gulp-tasks/gulp-js';
+import { pagesFiles } from './gulp-tasks/gulp-pages';
+import { rootFiles } from './gulp-tasks/gulp-root';
+import { server } from './gulp-tasks/gulp-server';
 
 // ==========================================================================================
 // ====  Compile  ===========================================================================

@@ -3,12 +3,12 @@ const Accordion = (function Accordion() {
 
 	function accordionClick() {
 		[...this.parentNode.children]
-			.forEach(element => element !== this && element.classList.remove('active'));
+			.forEach((element) => element !== this && element.classList.remove('active'));
 		this.classList.toggle('active');
 	}
 
 	function init() {
-		if (accordionButtons) accordionButtons.forEach(button => button.addEventListener('click', accordionClick, false));
+		if (accordionButtons) accordionButtons.forEach((button) => button.addEventListener('click', accordionClick, false));
 	}
 
 	return {

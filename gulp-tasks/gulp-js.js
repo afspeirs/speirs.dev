@@ -8,7 +8,7 @@ import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 
-import errorHandler from './errorHandler';
+import errorHandler from './gulp-error-handler';
 import { paths } from '../gulp.config';
 
 export const jsClean = () => del(paths.build + paths.js);

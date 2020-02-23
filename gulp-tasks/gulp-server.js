@@ -1,18 +1,18 @@
 import { series, watch } from 'gulp';
 import browserSync from 'browser-sync';
 
-import { cssClean, cssFiles } from './css';
-import { imgClean, imgFiles } from './img';
-import { jsClean, jsFiles } from './js';
-import { pagesClean, pagesFiles, pagesReset } from './pages';
-import { rootClean, rootFiles } from './root';
+import { cssClean, cssFiles } from './gulp-css';
+import { imgClean, imgFiles } from './gulp-img';
+import { jsClean, jsFiles } from './gulp-js';
+import { pagesClean, pagesFiles } from './gulp-pages';
+import { rootClean, rootFiles } from './gulp-root';
 
 import { paths, settings } from '../gulp.config';
 
 const css = series(cssClean, cssFiles);
 const img = series(imgClean, imgFiles);
 const js = series(jsClean, jsFiles);
-const pages = series(pagesReset, pagesClean, pagesFiles);
+const pages = series(pagesClean, pagesFiles);
 const root = series(rootClean, rootFiles);
 
 export const server = () => {
@@ -42,6 +42,7 @@ export const server = () => {
 	watch(`${paths.src}templates/**/*.hbs`, pages).on('change', browserSync.reload);
 	watch(`${paths.src}*.*`, root).on('change', browserSync.reload);
 	watch(`${paths.helpers}**/*.js`, pages).on('change', browserSync.reload);
+	watch('./.eleventy.js', pages).on('change', browserSync.reload);
 };
 
 export default server;

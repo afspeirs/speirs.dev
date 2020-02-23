@@ -56,7 +56,9 @@ const Nav = (function Nav() {
 		window.addEventListener('scroll', debounce(onScroll));
 	}
 
-	return { init };
+	return {
+		init,
+	};
 }());
 
 export default Nav;

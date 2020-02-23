@@ -31,16 +31,18 @@ const Watchface = (function Watchface() {
 		flipper.parentNode.classList.toggle('flip');
 	}
 	function init() {
-		watch.forEach(e => e.addEventListener('click', swapWatch));
+		watch.forEach((el) => el.addEventListener('click', swapWatch));
 
-		flipButton.forEach((e) => {
-			e.addEventListener('click', () => {
-				e.parentNode.classList.toggle('flip'); // Settings
+		flipButton.forEach((button) => {
+			button.addEventListener('click', () => {
+				button.parentNode.classList.toggle('flip'); // Settings
 			});
 		});
 	}
 
-	return { init };
+	return {
+		init,
+	};
 }());
 
 export default Watchface;
