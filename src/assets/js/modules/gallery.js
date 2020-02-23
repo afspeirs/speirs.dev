@@ -6,7 +6,7 @@ const Gallery = (function Gallery() {
 
 	function updateModalImageFromIndex(currentIndex) {
 		const newImage = imgSecondary
-			.filter(image => parseInt(image.dataset.index, 10) === currentIndex)[0];
+			.filter((image) => parseInt(image.dataset.index, 10) === currentIndex)[0];
 		const arrayModal = modalGalleryImage.src.replace(/\/([^/]*)$/, '/,$1').split(',');
 		arrayModal[1] = newImage.dataset.image;
 		modalGalleryImage.src = arrayModal.join('');
@@ -15,7 +15,7 @@ const Gallery = (function Gallery() {
 	}
 	function updateImageFromIndex(currentIndex) {
 		const newImage = imgSecondary
-			.filter(image => parseInt(image.dataset.index, 10) === currentIndex)[0];
+			.filter((image) => parseInt(image.dataset.index, 10) === currentIndex)[0];
 		imgMain.src = newImage.src;
 		imgMain.alt = newImage.dataset.name;
 		imgMain.dataset.index = newImage.dataset.index;
@@ -25,10 +25,12 @@ const Gallery = (function Gallery() {
 		updateImageFromIndex(parseInt(this.dataset.index, 10));
 	}
 	function init() {
-		imgSecondary.forEach(image => image.addEventListener('click', imageSelect));
+		imgSecondary.forEach((image) => image.addEventListener('click', imageSelect));
 	}
 
-	return { init };
+	return {
+		init,
+	};
 }());
 
 export default Gallery;

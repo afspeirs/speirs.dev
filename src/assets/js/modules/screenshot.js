@@ -29,11 +29,13 @@ const Screenshot = (function Screenshot() {
 		img.setAttribute('src', array.join(''));
 	}
 	function init() {
-		imgLeft.forEach(e => e.addEventListener('click', decrementScreenshot));
-		imgRight.forEach(e => e.addEventListener('click', incrementScreenshot));
+		imgLeft.forEach((img) => img.addEventListener('click', decrementScreenshot));
+		imgRight.forEach((img) => img.addEventListener('click', incrementScreenshot));
 	}
 
-	return { init };
+	return {
+		init,
+	};
 }());
 
 export default Screenshot;

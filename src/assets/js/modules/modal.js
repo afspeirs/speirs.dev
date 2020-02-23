@@ -6,7 +6,7 @@ const Modal = (function Modal() {
 	const allModals = [...document.querySelectorAll('.modal')];
 	const openModals = [];
 
-	const getModalFromId = idModal => allModals.filter(modal => modal.id === `modal-${idModal}`)[0];
+	const getModalFromId = (idModal) => allModals.filter((modal) => modal.id === `modal-${idModal}`)[0];
 
 	function openModal(idModal) {
 		const foundModal = getModalFromId(idModal);
@@ -32,11 +32,11 @@ const Modal = (function Modal() {
 		}
 	}
 	function init() {
-		if (dataModal) dataModal.forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal), false));
+		if (dataModal) dataModal.forEach((button) => button.addEventListener('click', () => openModal(button.dataset.modal), false));
 		// Close modal and background on click of the modal background
 		if (modalBackground) modalBackground.addEventListener('click', closeModal, false);
 		if (modalFullscreenClose) modalFullscreenClose.addEventListener('click', closeModal, false);
-		if (modalClose) modalClose.forEach(modal => modal.addEventListener('click', closeModal, false));
+		if (modalClose) modalClose.forEach((modal) => modal.addEventListener('click', closeModal, false));
 		// Close modal on keydown of esc key
 		document.addEventListener('keydown', keyPress, false);
 	}

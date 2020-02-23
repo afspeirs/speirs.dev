@@ -1,2 +1,4 @@
 // Returns the current year
-module.exports = () => new Date().getFullYear();
+module.exports = function year() {
+	return new Date().getFullYear();
+};
