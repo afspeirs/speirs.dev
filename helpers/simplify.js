@@ -1,2 +1,4 @@
 // Returns a lowercased string with no spaces
-module.exports = options => options.toLowerCase().replace(/ /g, '');
+module.exports = function simplify(options) {
+	return options.toLowerCase().replace(/ /g, '');
+};
