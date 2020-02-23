@@ -1,8 +1,8 @@
 {
-	"name": "speirs.dev",
+  "name": "speirs.dev",
   "version": "0.1.0",
   "description": "",
-	"main": "gulpfile.babel.js",
+  "main": "gulpfile.babel.js",
   "scripts": {
     "build": "NODE_ENV=prod ELEVENTY_ENV=prod npx gulp build",
     "start": "NODE_ENV=dev ELEVENTY_ENV=dev npx gulp serve"
