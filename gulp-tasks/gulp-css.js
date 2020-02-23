@@ -8,7 +8,7 @@ import rename from 'gulp-rename';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 
-import errorHandler from './errorHandler';
+import errorHandler from './gulp-error-handler';
 import { paths } from '../gulp.config';
 
 export const cssClean = () => del(paths.build + paths.css);

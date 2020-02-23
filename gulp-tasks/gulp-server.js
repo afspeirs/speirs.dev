@@ -1,11 +1,11 @@
 import { series, watch } from 'gulp';
 import browserSync from 'browser-sync';
 
-import { cssClean, cssFiles } from './css';
-import { imgClean, imgFiles } from './img';
-import { jsClean, jsFiles } from './js';
-import { pagesClean, pagesFiles } from './pages';
-import { rootClean, rootFiles } from './root';
+import { cssClean, cssFiles } from './gulp-css';
+import { imgClean, imgFiles } from './gulp-img';
+import { jsClean, jsFiles } from './gulp-js';
+import { pagesClean, pagesFiles } from './gulp-pages';
+import { rootClean, rootFiles } from './gulp-root';
 
 import { paths, settings } from '../gulp.config';
 
