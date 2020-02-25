@@ -7,7 +7,7 @@ import { jsClean, jsFiles } from './gulp-js';
 import { pagesClean, pagesFiles } from './gulp-pages';
 import { rootClean, rootFiles } from './gulp-root';
 
-import { paths, settings } from '../gulp.config';
+import { paths, settings } from './gulp.config';
 
 const css = series(cssClean, cssFiles);
 const img = series(imgClean, imgFiles);

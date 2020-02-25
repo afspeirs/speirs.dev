@@ -9,7 +9,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 
 import errorHandler from './gulp-error-handler';
-import { paths } from '../gulp.config';
+import { paths } from './gulp.config';
 
 export const jsClean = () => del(paths.build + paths.js);
 export const jsFiles = () => {

@@ -9,7 +9,7 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 
 import errorHandler from './gulp-error-handler';
-import { paths } from '../gulp.config';
+import { paths } from './gulp.config';
 
 export const cssClean = () => del(paths.build + paths.css);
 export const cssFiles = () => src(`${paths.src + paths.css}*.scss`)
