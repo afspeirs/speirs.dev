@@ -13,8 +13,10 @@ import { paths } from './gulp.config';
 
 export const jsClean = () => del(paths.build + paths.js);
 export const jsFiles = () => {
+	// TODO - Bundle all files
+	// Exclude dev.js from being moved if env === dev
 	if (global.env === 'dev') {
-		src(`${paths.src + paths.js}/modules/debug.js`)
+		src(`${paths.src + paths.js}/dev.js`)
 			.pipe(dest(paths.build + paths.js));
 	}
 

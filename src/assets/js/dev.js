@@ -22,3 +22,5 @@ function keyPress(key) {
 
 getDebugState();
 document.addEventListener('keydown', keyPress, false);
+
+// TODO - make a module
