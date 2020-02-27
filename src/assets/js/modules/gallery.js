@@ -1,4 +1,4 @@
-const Gallery = (function Gallery() {
+export default (function Gallery() {
 	const imgMain = document.querySelector('.gallery-main img');
 	const imgSecondary = [...document.querySelectorAll('.gallery-secondary .img-wrap img')];
 	const modalGalleryTitle = document.querySelector('#modal-gallery-title');
@@ -32,5 +32,3 @@ const Gallery = (function Gallery() {
 		init,
 	};
 }());
-
-export default Gallery;

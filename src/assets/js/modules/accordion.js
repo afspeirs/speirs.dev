@@ -1,4 +1,4 @@
-const Accordion = (function Accordion() {
+export default (function Accordion() {
 	const accordionButtons = [...document.querySelectorAll('.accordion-button')];
 
 	function accordionClick() {
@@ -15,5 +15,3 @@ const Accordion = (function Accordion() {
 		init,
 	};
 }());
-
-export default Accordion;
