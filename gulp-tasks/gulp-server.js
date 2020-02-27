@@ -1,25 +1,20 @@
-import { series, watch } from 'gulp';
+import { watch } from 'gulp';
 import browserSync from 'browser-sync';
 
-import { cssClean, cssFiles } from './gulp-css';
-import { imgClean, imgFiles } from './gulp-img';
-import { jsClean, jsFiles } from './gulp-js';
-import { pagesClean, pagesFiles } from './gulp-pages';
-import { rootClean, rootFiles } from './gulp-root';
+import css from './gulp-css';
+import img from './gulp-img';
+import js from './gulp-js';
+import pages from './gulp-pages';
+import root from './gulp-root';
 
 import { paths, settings } from './gulp.config';
-
-const css = series(cssClean, cssFiles);
-const img = series(imgClean, imgFiles);
-const js = series(jsClean, jsFiles);
-const pages = series(pagesClean, pagesFiles);
-const root = series(rootClean, rootFiles);
 
 export const server = () => {
 	// Serve files from the root of this project
 	browserSync.init({
 		server: {
 			baseDir: paths.build,
+			// Set the start page. Defaults to index.html
 			index: settings.index,
 		},
 		injectChanges: false,
@@ -31,17 +26,17 @@ export const server = () => {
 		notify: false,
 		// Change the port from the default
 		port: settings.port || 3000,
-		// Wait 2 seconds after a reload event before allowing more.
+		// Wait X seconds after a reload event before allowing more.
 		reloadDebounce: settings.reloadDebounce || 0,
 	});
 
-	watch(`${paths.src + paths.img}**/*`, img).on('change', browserSync.reload);
-	watch(`${paths.src + paths.js}**/*`, js).on('change', browserSync.reload);
-	watch(`${paths.src + paths.css}**/*`, css).on('change', browserSync.reload);
-	watch(`${paths.src + paths.data}**/*`, pages).on('change', browserSync.reload);
-	watch(`${paths.src}templates/**/*.hbs`, pages).on('change', browserSync.reload);
 	watch(`${paths.src}*.*`, root).on('change', browserSync.reload);
 	watch(`${paths.helpers}**/*.js`, pages).on('change', browserSync.reload);
+	watch(`${paths.src + paths.css}**/*`, css).on('change', browserSync.reload);
+	watch(`${paths.src + paths.data}**/*`, pages).on('change', browserSync.reload);
+	watch(`${paths.src + paths.img}**/*`, img).on('change', browserSync.reload);
+	watch(`${paths.src + paths.js}**/*`, js).on('change', browserSync.reload);
+	watch(`${paths.src}templates/**/*.hbs`, pages).on('change', browserSync.reload);
 	watch('./.eleventy.js', pages).on('change', browserSync.reload);
 };
 

@@ -1,4 +1,4 @@
-import { dest, src } from 'gulp';
+import { dest, series, src } from 'gulp';
 
 import browserify from 'browserify';
 import buffer from 'vinyl-buffer';
@@ -29,3 +29,5 @@ export const jsFiles = () => {
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(dest(paths.build + paths.js));
 };
+
+export default series(jsClean, jsFiles);
