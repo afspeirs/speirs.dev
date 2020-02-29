@@ -5,6 +5,7 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "build": "npx gulp build",
+    "debug": "npm start --debug",
     "start": "npx gulp serve"
   },
   "keywords": [],
