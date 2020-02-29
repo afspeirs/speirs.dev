@@ -7,8 +7,8 @@ export default (function DarkTheme() {
 			document.documentElement.setAttribute('data-theme', 'dark');
 			localStorage.setItem('theme', 'dark');
 		} else {
-			document.documentElement.removeAttribute('data-theme');
-			localStorage.removeItem('theme');
+			document.documentElement.setAttribute('data-theme', 'light');
+			localStorage.setItem('theme', 'light');
 		}
 	}
 
