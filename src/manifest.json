@@ -2,7 +2,18 @@
 	"name": "AFSpeirs",
 	"short_name": "AFSpeirs",
 	"description": "A website to showcase projects created by AFSpeirs",
+	"dir": "ltr",
+	"lang": "en",
+	"start_url": ".",
+	"theme_color": "#255abc",
+	"background_color": "#255abc",
 	"icons": [
+		{
+			"src": "/icon-maskable-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
 		{
 			"src": "/icon-192x192.png",
 			"sizes": "192x192",
@@ -13,7 +24,5 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		}
-	],
-	"theme_color": "#255abc",
-	"background_color": "#255abc"
+	]
 }
