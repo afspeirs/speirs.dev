@@ -37,11 +37,14 @@ export default (function Modal() {
 	}
 
 	function init() {
+		// Open modal with an id or the data-modal attribute
 		if (dataModal) dataModal.forEach((button) => button.addEventListener('click', () => openModal(button.dataset.modal), false));
+
 		// Close modal and background on click of the modal background
 		if (modalBackground) modalBackground.addEventListener('click', closeModal, false);
 		if (modalFullscreenClose) modalFullscreenClose.forEach((modal) => modal.addEventListener('click', closeModal, false));
 		if (modalClose) modalClose.forEach((modal) => modal.addEventListener('click', closeModal, false));
+
 		// Close modal on keydown of esc key
 		document.addEventListener('keydown', keyPress, false);
 	}
