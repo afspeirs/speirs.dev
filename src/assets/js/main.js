@@ -3,8 +3,6 @@ import DarkTheme from './modules/dark-theme';
 import Gallery from './modules/gallery';
 import Modal from './modules/modal';
 import Nav from './modules/nav';
-import Screenshot from './modules/screenshot';
-import Watchface from './modules/watchface';
 
 // Local modules
 Accordion.init();
@@ -12,8 +10,6 @@ DarkTheme.init();
 Gallery.init();
 Modal.init();
 Nav.init();
-Screenshot.init();
-Watchface.init();
 
 // Lazy load images
 [].forEach.call(document.querySelectorAll('img[data-src]'), (image) => {
