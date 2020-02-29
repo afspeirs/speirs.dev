@@ -1,7 +1,7 @@
 {
   "name": "speirs.dev",
   "version": "0.2.0",
-  "description": "",
+  "description": "A website to showcase projects created by AFSpeirs",
   "main": "gulpfile.babel.js",
   "scripts": {
     "build": "npx gulp build",
@@ -9,8 +9,8 @@
     "start": "npx gulp serve"
   },
   "keywords": [],
-  "author": "afspeirs",
-  "license": "MIT",
+  "author": "AFSpeirs",
+  "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@babel/cli": "^7.8.4",
