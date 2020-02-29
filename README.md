@@ -14,35 +14,21 @@ First install [node](http://nodejs.org), which ships with [npm](https://npmjs.co
 npm install
 ```
 
-## Usage
+## Available Scripts
 
-Start the development server with:
+In the project directory, you can run:
 
-```bash
-npm start
-```
+### `npm start`
 
-## Debug
+Runs the app in the development mode.
 
-Start the development server with more verbose logging:
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-npm start --debug
-```
+You can also pass ```--debug``` as an argument to get more verbose output in the terminal
 
-or
+### `npm run build`
 
-```bash
-npm run debug
-```
-
-## Build
-
-Build the site for production with:
-
-```bash
-npm run build
-```
+Builds the site for production to the `build` folder.
 
 ### Built using
 
