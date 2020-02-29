@@ -1,15 +1,16 @@
 {
   "name": "speirs.dev",
   "version": "0.2.0",
-  "description": "",
+  "description": "A website to showcase projects created by AFSpeirs",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "build": "NODE_ENV=prod ELEVENTY_ENV=prod npx gulp build",
-    "start": "NODE_ENV=dev ELEVENTY_ENV=dev npx gulp serve"
+    "build": "npx gulp build",
+    "debug": "npm start --debug",
+    "start": "npx gulp serve"
   },
   "keywords": [],
-  "author": "afspeirs",
-  "license": "MIT",
+  "author": "AFSpeirs",
+  "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@babel/cli": "^7.8.4",

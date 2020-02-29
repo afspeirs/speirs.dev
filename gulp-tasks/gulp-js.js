@@ -1,4 +1,4 @@
-import { dest, src } from 'gulp';
+import { dest, series, src } from 'gulp';
 
 import browserify from 'browserify';
 import buffer from 'vinyl-buffer';
@@ -13,12 +13,15 @@ import { paths } from './gulp.config';
 
 export const jsClean = () => del(paths.build + paths.js);
 export const jsFiles = () => {
-	if (global.env === 'dev') {
-		src(`${paths.src + paths.js}/modules/debug.js`)
+	const env = process.env.NODE_ENV;
+
+	// TODO - Bundle all files. Exclude dev.js from being moved if env === dev
+	if (env === 'dev') {
+		src(`${paths.src + paths.js}/dev.js`)
 			.pipe(dest(paths.build + paths.js));
 	}
 
-	return browserify(`${paths.src + paths.js}main.js`, { debug: global.env === 'dev' })
+	return browserify(`${paths.src + paths.js}main.js`, { debug: env === 'dev' })
 		.transform(['babelify', { sourceMaps: true }])
 		.bundle().on('error', errorHandler)
 		.pipe(source('main.js'))
@@ -29,3 +32,5 @@ export const jsFiles = () => {
 		.pipe(rename({ extname: '.min.js' }))
 		.pipe(dest(paths.build + paths.js));
 };
+
+export default series(jsClean, jsFiles);

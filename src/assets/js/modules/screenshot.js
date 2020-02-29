@@ -1,4 +1,4 @@
-const Screenshot = (function Screenshot() {
+export default (function Screenshot() {
 	const imgLeft = document.querySelectorAll('.screenshot .img-left');
 	const imgRight = document.querySelectorAll('.screenshot .img-right');
 
@@ -37,5 +37,3 @@ const Screenshot = (function Screenshot() {
 		init,
 	};
 }());
-
-export default Screenshot;

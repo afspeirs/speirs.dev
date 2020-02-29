@@ -1,4 +1,4 @@
-const Modal = (function Modal() {
+export default (function Modal() {
 	const modalBackground = document.querySelector('#modal-background');
 	const modalFullscreenClose = document.querySelector('.modal.fullscreen-close');
 	const modalClose = [...document.querySelectorAll('.modal-close')];
@@ -16,6 +16,7 @@ const Modal = (function Modal() {
 			modalBackground.classList.add('active');
 			openModals.push(idModal);
 		} else {
+			// eslint-disable-next-line no-console
 			console.error('modal not found');
 		}
 	}
@@ -43,9 +44,7 @@ const Modal = (function Modal() {
 
 	return {
 		init,
-		openModal,
 		closeModal,
+		openModal,
 	};
 }());
-
-export default Modal;

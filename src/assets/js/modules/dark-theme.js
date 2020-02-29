@@ -1,4 +1,4 @@
-const DarkTheme = (function DarkTheme() {
+export default (function DarkTheme() {
 	let currentTheme = localStorage.getItem('theme') || null;
 	const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
@@ -31,5 +31,3 @@ const DarkTheme = (function DarkTheme() {
 		init,
 	};
 }());
-
-export default DarkTheme;

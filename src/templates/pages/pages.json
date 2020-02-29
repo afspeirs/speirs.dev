@@ -1,4 +1,4 @@
 {
-	"layout": "default.hbs",
+	"layout": "layout.hbs",
 	"permalink": "/"
 }

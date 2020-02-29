@@ -1,4 +1,4 @@
-import { dest, src } from 'gulp';
+import { dest, series, src } from 'gulp';
 
 import cleanCSS from 'gulp-clean-css';
 import del from 'del';
@@ -21,3 +21,5 @@ export const cssFiles = () => src(`${paths.src + paths.css}*.scss`)
 	.pipe(sourcemaps.write())
 	.pipe(rename({ extname: '.min.css' }))
 	.pipe(dest(paths.build + paths.css));
+
+export default series(cssClean, cssFiles);
