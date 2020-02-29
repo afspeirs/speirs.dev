@@ -1,31 +1,23 @@
 export default (function Gallery() {
-	const imgMain = document.querySelector('.gallery-main img');
+	const imgMain = [...document.querySelectorAll('.gallery-main')];
 	const imgSecondary = [...document.querySelectorAll('.gallery-secondary .img-wrap img')];
-	const modalGalleryTitle = document.querySelector('#modal-gallery-title');
-	const modalGalleryImage = document.querySelector('#modal-gallery-image');
 
-	function updateModalImageFromIndex(currentIndex) {
-		const newImage = imgSecondary
-			.filter((image) => parseInt(image.dataset.index, 10) === currentIndex)[0];
-		const arrayModal = modalGalleryImage.src.replace(/\/([^/]*)$/, '/,$1').split(',');
-		arrayModal[1] = newImage.dataset.image;
-		modalGalleryImage.src = arrayModal.join('');
-		modalGalleryImage.alt = newImage.dataset.name;
-		modalGalleryTitle.innerHTML = newImage.dataset.name;
-	}
-	function updateImageFromIndex(currentIndex) {
-		const newImage = imgSecondary
-			.filter((image) => parseInt(image.dataset.index, 10) === currentIndex)[0];
-		imgMain.src = newImage.src;
-		imgMain.alt = newImage.dataset.name;
-		imgMain.dataset.index = newImage.dataset.index;
-		updateModalImageFromIndex(currentIndex);
-	}
 	function imageSelect() {
-		updateImageFromIndex(parseInt(this.dataset.index, 10));
+		imgMain.forEach((img) => {
+			if (img.dataset.index === this.dataset.index) {
+				img.classList.add('selected');
+			} else {
+				img.classList.remove('selected');
+			}
+		});
 	}
+
 	function init() {
-		imgSecondary.forEach((image) => image.addEventListener('click', imageSelect));
+		// Add class of selected to the first main image
+		imgMain[0].classList.add('selected');
+
+		// Update the selected main image onClick of a secondary image
+		imgSecondary.forEach((image) => image.addEventListener('click', imageSelect, false));
 	}
 
 	return {

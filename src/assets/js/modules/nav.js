@@ -11,14 +11,14 @@ export default (function Nav() {
 	function activeNavSection(compare) {
 		navLinks.forEach((a) => {
 			const id = a.href.substr(a.href.lastIndexOf('#') + 1);
-			// console.log(id);
-			a.classList.remove('active');
 			if (compare === id) {
-				// console.log(id);
 				a.classList.add('active');
+			} else {
+				a.classList.remove('active');
 			}
 		});
 	}
+
 	// Based on scroll position set the current section as active
 	function onScroll() {
 		const y = window.scrollY + 5;
@@ -30,6 +30,7 @@ export default (function Nav() {
 			}
 		}
 	}
+
 	function init() {
 		// Create Intersection Observer to check if the user has scrolled below the nav
 		const intersectionObserver = new IntersectionObserver((entries) => {
@@ -45,9 +46,7 @@ export default (function Nav() {
 		intersectionObserver.observe(headerLogo);
 
 		// Toggle Mobile navigation menu on click
-		menubtn.addEventListener('click', () => {
-			menubtn.parentNode.classList.toggle('open');
-		});
+		menubtn.addEventListener('click', () => menubtn.parentNode.classList.toggle('open'));
 
 		// Run on page load to show which section the user is at
 		activeNavSection(window.location.hash.substr(1) || content[0].id);

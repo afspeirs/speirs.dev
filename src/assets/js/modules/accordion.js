@@ -2,8 +2,7 @@ export default (function Accordion() {
 	const accordionButtons = [...document.querySelectorAll('.accordion-button')];
 
 	function accordionClick() {
-		[...this.parentNode.children]
-			.forEach((element) => element !== this && element.classList.remove('active'));
+		[...this.parentNode.children].forEach((element) => element !== this && element.classList.remove('active'));
 		this.classList.toggle('active');
 	}
 
