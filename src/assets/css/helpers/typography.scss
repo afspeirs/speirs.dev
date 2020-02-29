@@ -21,9 +21,9 @@ p {
 a {
 	&,
 	&:visited {
-		color: var(--secondary-color);
+		color: var(--color-secondary);
 	}
 	&:active {
-		color: var(--primary-color);
+		color: var(--color-primary);
 	}
 }

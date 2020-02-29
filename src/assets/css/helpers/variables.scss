@@ -1,26 +1,25 @@
-:root {
-	--primary-color: #255abc;
-	--secondary-color: #193e83;
-	--font-color: #333;
-	--background-color: #f5f5f5;
-	--section-background-color: #fff;
-}
-[data-theme="dark"] {
-	--secondary-color: #507bc9;
-	--font-color: #f5f5f5;
-	--background-color: #121212;
-	--section-background-color: #333;
-}
+$color-background-light: #f5f5f5;
+
+$font-family-main: Verdana, Arial, sans-serif;
+$font-family-nav: "Open Sans", sans-serif;
+
+$height-footer: 50px;
 
 $navbar-height: 64px;
-$navbar-collapse-breakpoint: 600px;
-
 $navbar-item-font-size: 18px;
 $navbar-item-border-width: 4px;
-$navbar-item-active-border: var(--background-color);
+$navbar-mobile-breakpoint: 600px;
 
-$title-height: $navbar-height * 3;
-$footer-height: 50px;
-
-$main-font: Verdana, Arial, sans-serif;
-$nav-font: "Open Sans", sans-serif;
+:root {
+	--color-primary: #255abc;
+	--color-secondary: #193e83;
+	--color-font: #333;
+	--color-background: #{$color-background-light};
+	--color-background-alt: #fff;
+}
+[data-theme="dark"] {
+	--color-secondary: #507bc9;
+	--color-font: #{$color-background-light};
+	--color-background: #121212;
+	--color-background-alt: #333;
+}

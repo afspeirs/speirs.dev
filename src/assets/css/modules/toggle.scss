@@ -39,7 +39,7 @@ $transition: 0.4s;
 
 
 input:checked + .slider {
-	background-color: var(--primary-color);
+	background-color: var(--color-primary);
 
 	&:before {
 		transform: translateX($size);
@@ -47,7 +47,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px var(--primary-color);
+	box-shadow: 0 0 1px var(--color-primary);
 }
 
 
