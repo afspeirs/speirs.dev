@@ -13,14 +13,15 @@ import { paths } from './gulp.config';
 
 export const jsClean = () => del(paths.build + paths.js);
 export const jsFiles = () => {
+	const env = process.env.NODE_ENV;
 	// TODO - Bundle all files
 	// Exclude dev.js from being moved if env === dev
-	if (global.env === 'dev') {
+	if (env === 'dev') {
 		src(`${paths.src + paths.js}/dev.js`)
 			.pipe(dest(paths.build + paths.js));
 	}
 
-	return browserify(`${paths.src + paths.js}main.js`, { debug: global.env === 'dev' })
+	return browserify(`${paths.src + paths.js}main.js`, { debug: env === 'dev' })
 		.transform(['babelify', { sourceMaps: true }])
 		.bundle().on('error', errorHandler)
 		.pipe(source('main.js'))

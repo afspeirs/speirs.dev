@@ -1,8 +1,8 @@
 export const setDev = (done) => {
-	global.env = 'dev';
+	process.env.NODE_ENV = 'dev';
 	done();
 };
 export const setProd = (done) => {
-	global.env = 'prod';
+	process.env.NODE_ENV = 'prod';
 	done();
 };
