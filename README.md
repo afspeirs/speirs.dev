@@ -20,15 +20,15 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.
+Runs the site in the development mode.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can also pass ```--debug``` as an argument to get more verbose output in the terminal
+You can also pass `--debug` as an argument to get more verbose output in the terminal
 
 ### `npm run build`
 
-Builds the site for production to the `build` folder.
+Builds the site for production to the `dist` folder.
 
 ### Built using
 
