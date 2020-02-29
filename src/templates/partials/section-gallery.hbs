@@ -2,15 +2,16 @@
 	<h2 class="header">Gallery</h2>
 	<noscript>For the best experience enable javascript</noscript>
 	<div class="gallery-wrap flex">
-		<div class="gallery-main img-wrap gallery-arrows">
-			<img
-				data-src="assets/img/gallery/{{gallery.images.big-ben.image}}"
-				alt="{{gallery.images.big-ben.name}}"
-				width="1024"
-				data-modal="fullscreen-image"
-				data-index="0"
-			/>
-		</div>
+		{{#each gallery.images}}
+			<div class="gallery-main img-wrap" data-index="{{@index}}">
+				<img
+					data-src="assets/img/gallery/{{this.image}}"
+					alt="{{this.name}}"
+					width="1024"
+					data-modal="fullscreen-image-{{@index}}"
+				/>
+			</div>
+		{{/each}}
 		<div class="gallery-secondary scrollable">
 			<div class="scroller">
 				{{#each gallery.images}}
@@ -20,8 +21,6 @@
 							alt="{{this.name}}"
 							width="100"
 							data-index="{{@index}}"
-							data-image="{{this.image}}"
-							data-name="{{this.name}}"
 						/>
 					</div>
 				{{/each}}
@@ -31,14 +30,14 @@
 	</div>
 </section>
 
-<div id="modal-fullscreen-image" class="modal fullscreen-close modal-gallery">
-	<img
-		id="modal-gallery-image"
-		data-src="assets/img/gallery/large/{{gallery.images.big-ben.image}}"
-		alt="{{gallery.images.big-ben.name}}"
-		width="1024"
-	/>
-	<div class="modal-gallery-metadata">
-		<h3 id="modal-gallery-title">{{gallery.images.big-ben.name}}</h3>
+{{#each gallery.images}}
+	<div id="modal-fullscreen-image-{{@index}}" class="modal fullscreen-close modal-gallery">
+		<img
+			data-src="assets/img/gallery/large/{{this.image}}"
+			alt="{{this.name}}"
+		/>
+		<div class="modal-gallery-metadata">
+			<h3 id="modal-gallery-title">{{this.name}}</h3>
+		</div>
 	</div>
-</div>
+{{/each}}
