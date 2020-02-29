@@ -1,10 +1,10 @@
 :root {
-	--accordion-primary-color: #ddd;
+	--accordion-color-primary: #ddd;
 	--accordion-hover-color: #ccc;
 }
 
 [data-theme="dark"] {
-	--accordion-primary-color: #222;
+	--accordion-color-primary: #222;
 	--accordion-hover-color: #111;
 }
 
@@ -17,8 +17,8 @@
 		text-align: left;
 		outline: none;
 		font-size: 1em;
-		color: var(--font-color);
-		background-color: var(--accordion-primary-color);
+		color: var(--color-font);
+		background-color: var(--accordion-color-primary);
 		transition: background-color 0.2s ease-in;
 
 		&:hover {

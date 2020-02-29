@@ -16,9 +16,9 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background-color: var(--background-color);
-	color: var(--font-color);
-	font-family: $main-font;
+	background-color: var(--color-background);
+	color: var(--color-font);
+	font-family: $font-family-main;
 	font-size: 1em;
 	line-height: 1.2em;
 	-webkit-font-smoothing: antialiased;
@@ -40,10 +40,11 @@ header {
 	justify-content: center;
 	padding: 3rem 0 16em;
 	margin-bottom: -14em;
-	background-color: var(--primary-color);
+	background-color: var(--color-primary);
 
 	.logo {
 		width: 100px;
+		fill: $color-background-light;
 	}
 }
 
@@ -58,7 +59,7 @@ nav {
 }
 section {
 	width: 100%;
-	background: var(--section-background-color);
+	background: var(--color-background-alt);
 	padding: 32px;
 	border-radius: 24px;
 	box-shadow: 0 12px 12px 0 rgba(black, 0.15);
@@ -76,7 +77,7 @@ footer {
 }
 
 .logo {
-	fill: var(--background-color);
+	fill: var(--color-background);
 	transition: 0.3s;
 
 	&:hover {
@@ -94,13 +95,13 @@ footer {
 	text-align: center;
 	p {
 		margin: 0;
-		line-height: $footer-height;
+		line-height: $height-footer;
 	}
 }
 
 .svg-arrow {
 	width: 3em;
-	fill: var(--font-color);
+	fill: var(--color-font);
 
 	&.down {
 		padding-top: 1em;
@@ -116,7 +117,7 @@ footer {
 		right: 0;
 		height: 100%;
 		width: 60px;
-		background-image: linear-gradient(to right, rgba(255,0,0,0), var(--section-background-color));
+		background-image: linear-gradient(to right, rgba(255,0,0,0), var(--color-background-alt));
 		pointer-events: none;
 	}
 }

@@ -17,7 +17,7 @@
 	height: 100%;
 	width: 100%;
 	z-index: 10;
-	background: var(--primary-color);
+	background: var(--color-primary);
 }
 
 .modal {
@@ -27,7 +27,7 @@
 	width: 90%;
 	height: 90%;
 	z-index: 11;
-	background: var(--background-color);
+	background: var(--color-background);
 	transform: translate(-50%, -50%);
 
 	button.modal-close {
@@ -42,7 +42,7 @@
 
 		&:before {
 			content: '\00d7';
-			color: var(--primary-color);
+			color: var(--color-primary);
 			line-height: 1em;
 			font-size: 3em;
 		}
