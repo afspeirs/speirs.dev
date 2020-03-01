@@ -1,6 +1,6 @@
 {
   "name": "speirs.dev",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A website to showcase projects created by AFSpeirs",
   "main": "gulpfile.babel.js",
   "scripts": {
