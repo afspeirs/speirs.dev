@@ -128,7 +128,7 @@ nav {
 		left: 0;
 		height: 4px;
 		width: 100%;
-		background-color: var(--color-background);
+		background-color: $color-background-light;
 		transition: 0.3s;
 		border-radius: 5px;
 	}

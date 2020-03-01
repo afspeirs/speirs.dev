@@ -64,8 +64,7 @@
 	&-metadata {
 		position: absolute;
 		bottom: 0;
-		color: var(--color-background);
-		// background: rgba(var(--color-font), 0.8);
+		color: $color-background-light;
 		background: rgba(var(--color-primary), 0.8);
 		padding: 1em;
 		width: 100%;
