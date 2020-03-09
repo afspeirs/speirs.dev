@@ -1,16 +1,16 @@
-const container = document.querySelector('#container');
+const { body } = document;
 let debug = sessionStorage.getItem('debug') || sessionStorage.setItem('debug', 'false');
 
-const getDebugState = () => (debug === 'true') && container.classList.add('debug');
+const getDebugState = () => (debug === 'true') && body.classList.add('debug');
 
 const toggleDebug = () => {
 	if (debug === 'true') {
 		sessionStorage.setItem('debug', 'false');
-		container.classList.remove('debug');
+		body.classList.remove('debug');
 		debug = 'false';
 	} else {
 		sessionStorage.setItem('debug', 'true');
-		container.classList.add('debug');
+		body.classList.add('debug');
 		debug = 'true';
 	}
 };
@@ -23,4 +23,4 @@ const handleKeyDown = (event) => {
 };
 
 getDebugState();
-document.addEventListener('keydown', handleKeyDown, false);
+document.addEventListener('keydown', handleKeyDown);
