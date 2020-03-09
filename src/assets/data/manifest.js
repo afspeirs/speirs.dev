@@ -1,5 +1,3 @@
 const manifest = require('../../manifest.json');
 
-module.exports = {
-	...manifest,
-};
+module.exports = manifest;
