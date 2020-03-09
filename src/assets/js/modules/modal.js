@@ -12,11 +12,17 @@ export default (function Modal() {
 		const foundModal = getModalFromId(id);
 
 		if (foundModal) {
+			document.body.classList.add('modal-open');
 			foundModal.classList.add('active');
 			modalBackground.classList.add('active');
 			openModals.push(id);
+
+			// Trigger modal-open event
+			const event = new CustomEvent('modal-open');
+			foundModal.dispatchEvent(event);
 		} else {
-			console.error(`No modal called "${id}" was found`); // eslint-disable-line no-console
+			// eslint-disable-next-line no-console
+			console.error(`No modal called "${id}" was found`);
 		}
 	}
 
@@ -24,11 +30,17 @@ export default (function Modal() {
 		const foundModal = getModalFromId(id);
 
 		if (foundModal) {
+			document.body.classList.remove('modal-open');
 			foundModal.classList.remove('active');
 			modalBackground.classList.remove('active');
 			openModals.pop();
+
+			// Trigger modal-close event
+			const event = new CustomEvent('modal-close');
+			foundModal.dispatchEvent(event);
 		} else {
-			console.error(`No modal called "${id}" was found`); // eslint-disable-line no-console
+			// eslint-disable-next-line no-console
+			console.error(`No modal called "${id}" was found`);
 		}
 	}
 
@@ -38,15 +50,15 @@ export default (function Modal() {
 
 	function init() {
 		// Open modal with an id or the data-modal attribute
-		if (dataModal) dataModal.forEach((button) => button.addEventListener('click', () => openModal(button.dataset.modal), false));
+		if (dataModal) dataModal.forEach((button) => button.addEventListener('click', () => openModal(button.dataset.modal)));
 
 		// Close modal and background on click of the modal background
-		if (modalBackground) modalBackground.addEventListener('click', () => closeModal(), false);
-		if (modalFullscreenClose) modalFullscreenClose.forEach((modal) => modal.addEventListener('click', () => closeModal(), false));
-		if (modalClose) modalClose.forEach((modal) => modal.addEventListener('click', () => closeModal(), false));
+		if (modalBackground) modalBackground.addEventListener('click', () => closeModal());
+		if (modalFullscreenClose) modalFullscreenClose.forEach((modal) => modal.addEventListener('click', () => closeModal()));
+		if (modalClose) modalClose.forEach((modal) => modal.addEventListener('click', () => closeModal()));
 
 		// Close modal on keydown of esc key
-		document.addEventListener('keydown', keyPress, false);
+		document.addEventListener('keydown', keyPress);
 	}
 
 	return {

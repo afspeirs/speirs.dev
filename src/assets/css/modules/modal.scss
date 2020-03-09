@@ -39,13 +39,20 @@
 		border: 0;
 		background: 0;
 		cursor: pointer;
+		color: var(--color-primary);
 
+		&.light {
+			color: $color-background-light;
+		}
 		&:before {
 			content: '\00d7';
-			color: var(--color-primary);
+			color: inherit;
 			line-height: 1em;
 			font-size: 3em;
 		}
+	}
+	&.padding {
+		padding: 25px;
 	}
 }
 
