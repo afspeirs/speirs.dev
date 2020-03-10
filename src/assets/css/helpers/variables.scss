@@ -12,13 +12,13 @@ $navbar-mobile-breakpoint: 600px;
 
 :root {
 	--color-primary: #255abc;
-	--color-secondary: #193e83;
+	--color-secondary: #{darken(#255abc, 10%)};
 	--color-font: #333;
 	--color-background: #{$color-background-light};
 	--color-background-alt: #fff;
 }
 [data-theme="dark"] {
-	--color-secondary: #507bc9;
+	--color-secondary: #{lighten(#255abc, 10%)};
 	--color-font: #{$color-background-light};
 	--color-background: #121212;
 	--color-background-alt: #333;
