@@ -10,4 +10,12 @@ body {
 	line-height: 1.3;
 	background-color: var(--clr-background);
 	color: var(--clr-dark);
+	-webkit-font-smoothing: antialiased;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }

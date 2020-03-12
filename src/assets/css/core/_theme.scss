@@ -1,0 +1,10 @@
+body > {
+	& header,
+	& footer {
+		background-color: var(--clr-primary);
+
+		a {
+			color: inherit;
+		}
+	}
+}
