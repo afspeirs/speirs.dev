@@ -1,7 +1,10 @@
 // Core
-@import './core/base';
-@import './core/theme';
-@import './core/typography';
 @import './core/variables';
+@import './core/base';
+@import './core/typography';
+@import './core/theme';
 
+// Modules
 @import './modules/footer';
+@import './modules/header';
+@import './modules/nav';

@@ -13,3 +13,13 @@ h2 {
 	color: var(--clr-secondary);
 	font-size: 1.5em;
 }
+
+a {
+	&,
+	&:visited {
+		color: var(--clr-secondary);
+	}
+	&:active {
+		color: var(--clr-primary);
+	}
+}
