@@ -10,4 +10,12 @@
 	.footer__text {
 		margin: 0;
 	}
+
+	// This assumes white icons are being used
+	a {
+		&:focus,
+		&:hover {
+			filter: brightness(80%);
+		}
+	}
 }
