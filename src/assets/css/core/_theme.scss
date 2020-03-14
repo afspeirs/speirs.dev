@@ -23,7 +23,7 @@
 
 	&:focus,
 	&:hover {
-		transform: rotate(var(--logo-tilt-degree)) scale(1.1);
+		transform: rotate(var(--logo-tilt-angle)) scale(1.1);
 	}
 }
 
