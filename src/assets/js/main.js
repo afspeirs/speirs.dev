@@ -1,3 +1,3 @@
-import Header from './modules/header';
+import Nav from './modules/nav';
 
-Header.init();
+Nav.init();

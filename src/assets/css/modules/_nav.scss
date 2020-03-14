@@ -25,9 +25,10 @@
 
 	&__list {
 		display: none;
+		list-style: none;
 		padding: 0;
 		margin: 0;
-		list-style: none;
+		height: inherit;
 	}
 	&__list-item {
 		display: flex;
@@ -37,14 +38,22 @@
 		text-transform: uppercase;
 	}
 	&__link {
+		height: inherit;
 		padding: 0 32px;
-		line-height: 64px;
+		line-height: 64 - 8px;
 		text-decoration: none;
 		transition: background-color 0.2s ease;
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
 
 		&:focus,
 		&:hover {
 			background-color: var(--clr-secondary);
+		}
+
+		&.current {
+			// border-top-color: var(--clr-background);
+			border-bottom-color: var(--clr-background);
 		}
 	}
 
@@ -63,7 +72,7 @@
 			height: 4px;
 			width: 100%;
 			background-color: var(--clr-background);
-			transition: transform 0.3s;
+			transition: transform 0.3s, top 0.3s, opacity 0.3s;
 			border-radius: 5px;
 		}
 
