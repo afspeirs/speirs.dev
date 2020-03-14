@@ -9,6 +9,18 @@ export default (function Nav() {
 		threshold: 0.55,
 	};
 
+	const highlightNavLink = (section) => {
+		navLinks.forEach((link) => {
+			if (link.hash === section) {
+				link.classList.add('current');
+			} else if (link.classList.contains('current')) {
+				link.classList.remove('current');
+			}
+		});
+	};
+
+	const handleNavLinkClick = (event) => highlightNavLink(event.target.hash);
+
 	const handleNavToggle = () => nav.classList.toggle('opened');
 
 	const handleHeaderLogoObserver = (entries) => entries.forEach((entry) => {
@@ -23,13 +35,7 @@ export default (function Nav() {
 		if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
 			const section = `#${entry.target.id}`;
 
-			navLinks.forEach((link) => {
-				if (link.hash === section) {
-					link.classList.add('current');
-				} else {
-					link.classList.remove('current');
-				}
-			});
+			highlightNavLink(section);
 		}
 	});
 
@@ -40,7 +46,7 @@ export default (function Nav() {
 		sections.forEach((section) => sectionObserver.observe(section));
 		headerLogoObserver.observe(headerLogo);
 
-		// Toggle Mobile navigation menu on click
+		navLinks.forEach((link) => link.addEventListener('click', handleNavLinkClick));
 		navToggle.addEventListener('click', handleNavToggle);
 	}
 
