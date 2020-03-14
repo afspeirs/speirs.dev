@@ -1,9 +1,26 @@
-.nav {
-	display: flex;
-	justify-content: center;
+.nav-wrapper {
 	position: sticky;
 	top: 0;
 	opacity: 0.95;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 95%;
+
+	&.scrolled {
+		justify-content: space-between;
+	}
+
+	&__logo {
+		display: none;
+
+		.scrolled & {
+			display: block;
+		}
+	}
 
 	&__list {
 		display: flex;
@@ -17,15 +34,16 @@
 		font-size: 1.5rem;
 		font-weight: var(--fw-bold);
 		text-transform: uppercase;
-		transition: background-color 0.2s ease;
-
-		&:hover {
-			background-color: var(--clr-secondary);
-		}
 	}
 	&__link {
 		padding: 0 32px;
 		line-height: 64px;
 		text-decoration: none;
+		transition: background-color 0.2s ease;
+
+		&:focus,
+		&:hover {
+			background-color: var(--clr-secondary);
+		}
 	}
 }

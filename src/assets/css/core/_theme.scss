@@ -1,5 +1,5 @@
 .header,
-.nav,
+.nav-wrapper,
 .footer {
 	background-color: var(--clr-primary);
 	color: var(--clr-background);
@@ -11,4 +11,12 @@
 
 .img-icon {
 	display: block;
+}
+
+.logo {
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: rotate(var(--logo-tilt-degree)) scale(1.1);
+	}
 }

@@ -14,16 +14,19 @@ h2 {
 	font-size: 1.5em;
 }
 
-a {
-	&,
-	&:visited,
-	&:active {
-		color: var(--clr-primary);
-	}
+main,
+footer {
+	a {
+		&,
+		&:visited,
+		&:active {
+			color: var(--clr-primary);
+		}
 
-	&:focus,
-	&:hover {
-		filter: brightness(150%);
+		&:focus,
+		&:hover {
+			filter: brightness(150%);
+		}
 	}
 }
 
