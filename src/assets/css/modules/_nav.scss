@@ -92,7 +92,7 @@
 		}
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: $mq-mobile) {
 		&__list {
 			display: flex;
 		}
