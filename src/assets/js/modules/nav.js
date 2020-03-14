@@ -19,7 +19,11 @@ export default (function Nav() {
 		});
 	};
 
-	const handleNavLinkClick = (event) => highlightNavLink(event.target.hash);
+	const handleNavLinkClick = (event) => {
+		setTimeout(() => {
+			highlightNavLink(event.target.hash);
+		}, 500);
+	};
 
 	const handleNavToggle = () => nav.classList.toggle('opened');
 
