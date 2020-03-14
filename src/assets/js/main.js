@@ -1,1 +1,3 @@
-console.log('redesign');
+import Header from './modules/header';
+
+Header.init();
