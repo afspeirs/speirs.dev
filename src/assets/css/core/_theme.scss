@@ -16,6 +16,7 @@
 .logo {
 	transition: transform 0.3s ease;
 
+	&:focus,
 	&:hover {
 		transform: rotate(var(--logo-tilt-degree)) scale(1.1);
 	}
