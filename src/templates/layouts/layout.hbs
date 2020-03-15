@@ -22,14 +22,16 @@
 </head>
 
 <body>
-	{{>header}}
-	{{>nav}}
+	<div id="container">
+		{{>header}}
+		{{>nav}}
 
-	<main>
-		{{{content}}}
-	</main>
+		<main>
+			{{{content}}}
+		</main>
 
-	{{>footer}}
+		{{>footer}}
+	</div>
 </body>
 
 </html>

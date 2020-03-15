@@ -15,13 +15,13 @@ body {
 	background-color: var(--clr-background);
 	color: var(--clr-dark);
 	-webkit-font-smoothing: antialiased;
+}
 
+#container {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 0;
-	margin: 0;
 }
 
 .nav,
