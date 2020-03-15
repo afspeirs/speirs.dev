@@ -17,7 +17,7 @@
 		}
 	}
 
-	&:hover .octo-arm {
+	.octo-arm {
 		animation: octocat-wave 560ms ease-in-out
 	}
 }
@@ -39,13 +39,13 @@
 	}
 }
 
-@media (max-width:500px) {
+@media (min-width: $mq-mobile) {
 	.github-corner {
 		.octo-arm {
-			animation: octocat-wave 560ms ease-in-out
+			animation: none
 		}
 		&:hover .octo-arm {
-			animation: none
+			animation: octocat-wave 560ms ease-in-out
 		}
 	}
 }
