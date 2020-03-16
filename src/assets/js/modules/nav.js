@@ -25,13 +25,21 @@ export default (function Nav() {
 		}, 500);
 	};
 
-	const handleNavToggle = () => nav.classList.toggle('opened');
+	const handleNavToggle = () => {
+		if (nav.classList.contains('is-expanded')) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			nav.classList.remove('is-expanded');
+		} else {
+			nav.classList.add('is-expanded');
+			navToggle.setAttribute('aria-expanded', 'true');
+		}
+	};
 
 	const handleHeaderLogoObserver = (entries) => entries.forEach((entry) => {
 		if (!entry.isIntersecting) {
-			nav.classList.add('scrolled');
+			nav.classList.add('is-scrolled');
 		} else {
-			nav.classList.remove('scrolled');
+			nav.classList.remove('is-scrolled');
 		}
 	});
 
