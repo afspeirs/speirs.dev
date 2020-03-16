@@ -12,7 +12,7 @@
 	width: 95%;
 	height: 64px;
 
-	&.is-scrolled {
+	.is-scrolled & {
 		justify-content: space-between;
 	}
 

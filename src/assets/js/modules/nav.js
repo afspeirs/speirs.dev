@@ -1,6 +1,5 @@
 export default (function Nav() {
 	const headerLogo = document.querySelector('.header__logo');
-	const nav = document.querySelector('.nav');
 	const navLinks = [...document.querySelectorAll('.nav__link')];
 	const navToggle = document.querySelector('.nav__toggle');
 	const sections = [...document.querySelectorAll('section')];
@@ -26,27 +25,26 @@ export default (function Nav() {
 	};
 
 	const handleNavToggle = () => {
-		if (nav.classList.contains('is-expanded')) {
+		if (document.body.classList.contains('is-expanded')) {
 			navToggle.setAttribute('aria-expanded', 'false');
-			nav.classList.remove('is-expanded');
+			document.body.classList.remove('is-expanded');
 		} else {
-			nav.classList.add('is-expanded');
 			navToggle.setAttribute('aria-expanded', 'true');
+			document.body.classList.add('is-expanded');
 		}
 	};
 
 	const handleHeaderLogoObserver = (entries) => entries.forEach((entry) => {
 		if (!entry.isIntersecting) {
-			nav.classList.add('is-scrolled');
+			document.body.classList.add('is-scrolled');
 		} else {
-			nav.classList.remove('is-scrolled');
+			document.body.classList.remove('is-scrolled');
 		}
 	});
 
 	const handleSectionObserver = (entries) => entries.forEach((entry) => {
 		if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
 			const section = `#${entry.target.id}`;
-
 			highlightNavLink(section);
 		}
 	});
