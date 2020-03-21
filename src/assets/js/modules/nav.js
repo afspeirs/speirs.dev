@@ -9,10 +9,14 @@ export default (function Nav() {
 	};
 
 	const highlightNavLink = (section) => {
-		navLinks.forEach((link) => {
-			if (link.hash === section) {
+		const indexOfNavLink = navLinks.findIndex((link) => link.hash === section);
+
+		if (indexOfNavLink === -1) return;
+
+		navLinks.forEach((link, index) => {
+			if (index === indexOfNavLink) {
 				link.classList.add('current');
-			} else if (link.classList.contains('current')) {
+			} else {
 				link.classList.remove('current');
 			}
 		});
