@@ -67,63 +67,10 @@
 		}
 	}
 
-	// &__list {
-	// 	position: absolute;
-	// 	top: 100%;
-	// 	left: 0;
-	// 	width: 100%;
-	// 	padding: 0;
-	// 	margin: 0;
-	// 	list-style: none;
-	// 	background-color: var(--clr-primary);
-	// 	transform: scale(1, 0);
-	// 	transform-origin: top;
-	// 	transition: transform 0.2s ease-in-out;
-
-	// 	.is-expanded & {
-	// 		transform: scale(1, 1);
-	// 	}
-	// }
-	// &__list-item {
-	// 	display: flex;
-	// 	font-family: var(--ff-heading);
-	// 	font-size: 1.5rem;
-	// 	font-weight: var(--fw-bold);
-	// 	text-transform: uppercase;
-	// }
-	// &__link {
-	// 	height: inherit;
-	// 	padding: 0 32px;
-	// 	width: 100%;
-	// 	line-height: 64px;
-	// 	text-align: center;
-	// 	text-decoration: none;
-	// 	transition: background-color 0.2s ease, opacity 0.3s ease-in-out 0.3s;
-	// 	border-left: 4px solid transparent;
-	// 	border-right: 4px solid transparent;
-	// 	opacity: 0;
-
-	// 	.is-expanded & {
-	// 		opacity: 1;
-	// 		transition: opacity 0.2s ease-in-out;
-	// 	}
-
-	// 	&:focus,
-	// 	&:hover {
-	// 		background-color: var(--clr-secondary);
-	// 	}
-
-	// 	&.current {
-	// 		border-left-color: var(--clr-background);
-	// 		border-right-color: var(--clr-background);
-	// 	}
-	// }
 	&__list {
-		display: none;
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		height: inherit;
 	}
 	&__list-item {
 		display: flex;
@@ -139,7 +86,9 @@
 		text-decoration: none;
 		transition: background-color 0.2s ease;
 		border-top: 4px solid transparent;
+		border-left: none;
 		border-bottom: 4px solid transparent;
+		border-right: none;
 
 		&:focus,
 		&:hover {
@@ -147,17 +96,57 @@
 		}
 
 		&.current {
-			// border-top-color: var(--clr-background);
 			border-bottom-color: var(--clr-background);
+		}
+
+	}
+	@media (max-width: $mq-mobile) {
+		&__list {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			visibility: hidden;
+			overflow: hidden;
+
+			.is-expanded & {
+				visibility: visible;
+			}
+		}
+		&__list-item {
+			background-color: var(--clr-primary);
+			opacity: 0;
+			transform: translateY(-100%);
+			visibility: hidden;
+			transition: all 0.2s;
+
+			.is-expanded & {
+				opacity: 1;
+				transform: translateY(0);
+				visibility: visible;
+			}
+		}
+		&__link {
+			width: 100%;
+			padding: 0 32 - 8px;
+			line-height: 64px;
+			border-top: none;
+			border-left: 4px solid transparent;
+			border-bottom: none;
+			border-right: 4px solid transparent;
+
+			&.current {
+				border-left-color: var(--clr-background);
+			}
 		}
 	}
 
 	@media (min-width: $mq-mobile) {
-		&__list {
-			display: flex;
-		}
 		&__toggle {
 			display: none;
+		}
+		&__list {
+			display: flex;
 		}
 	}
 }
