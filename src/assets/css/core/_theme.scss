@@ -54,6 +54,10 @@ article {
 }
 
 #welcome {
-	text-align: center;
 	font-size: 1.3rem;
+	text-align: center;
+
+	h1 {
+		text-transform: initial;
+	}
 }
