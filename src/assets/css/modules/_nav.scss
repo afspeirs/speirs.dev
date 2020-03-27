@@ -1,6 +1,5 @@
 .nav-wrapper {
-	position: sticky;
-	top: 0;
+	position: relative;
 	opacity: 0.95;
 	z-index: 5;
 }
@@ -110,8 +109,8 @@
 			top: 100%;
 			left: 0;
 			width: 100%;
-			visibility: hidden;
 			overflow: hidden;
+			visibility: hidden;
 
 			.is-expanded & {
 				visibility: visible;
@@ -152,5 +151,12 @@
 		&__list {
 			display: flex;
 		}
+	}
+}
+
+@media (min-height: 300px) {
+	.nav-wrapper {
+		position: sticky;
+		top: 0;
 	}
 }
