@@ -57,6 +57,10 @@
 			top: 27px;
 		}
 
+		.is-scrolled & {
+			margin-right: -4px;
+		}
+
 		.is-expanded & {
 			&:before {
 				transform: translateY(9px) rotate(50deg);
