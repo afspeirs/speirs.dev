@@ -26,32 +26,36 @@
 
 	&__toggle {
 		all: unset;
-		cursor: pointer;
 		position: relative;
-		width: 32px;
-		height: 22px;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
 
 		span,
 		&:after,
 		&:before {
-			content: ' ';
 			position: absolute;
-			left: 0;
+			left: 4px;
 			height: 4px;
-			width: 100%;
+			width: 32px;
 			background-color: var(--clr-background);
-			transition: transform 0.3s, top 0.3s, opacity 0.3s;
 			border-radius: 5px;
+			transition: transform 0.3s, top 0.3s, opacity 0.3s;
+		}
+
+		&:after,
+		&:before {
+			content: '';
 		}
 
 		&:before {
-			top: 0;
-		}
-		span {
 			top: 9px;
 		}
-		&:after {
+		span {
 			top: 18px;
+		}
+		&:after {
+			top: 27px;
 		}
 
 		.is-expanded & {
