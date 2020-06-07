@@ -1,20 +1,15 @@
 <section id="welcome">
-	<article>
-		<header>
-			<h1>AFSpeirs</h1>
-		</header>
-
-		<p>Hello and welcome</p>
-	</article>
+	{{#each collections.welcome}}
+		{{>card-contents this}}
+	{{/each}}
 </section>
 
 <section id="about">
 	<h1>About Me</h1>
 
-	<article>
-		<p>Hello there, My name is Andy.</p>
-		<p>I make things for the web, check them out below.</p>
-	</article>
+	{{#each collections.about}}
+		{{>card-contents this}}
+	{{/each}}
 </section>
 
 <section id="projects">
