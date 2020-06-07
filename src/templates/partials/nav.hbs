@@ -1,14 +1,23 @@
-<div id="nav-wrap">
-	<nav>
-		<a href="#home" class="brand">{{> svg-logo}}</a>
+<div class="nav-wrapper">
+	<nav class="nav">
+		<a class="nav__logo logo" href="#" aria-label="Home">
+			<img class="img-icon" src="../../assets/img/logo.svg" alt="" height="38">
+		</a>
 
-		<div id="nav-menu">
-			<a href="#home">Home</a>
-			<a href="#projects">Projects</a>
-			<a href="#gallery">Gallery</a>
-			{{!-- <a href="#about">About Me</a> --}}
-		</div>
+		<button class="nav__toggle" aria-controls="menu" aria-expanded="false" aria-label="Menu">
+			<span></span>
+		</button>
 
-		<div id="nav-toggle"><span></span></div>
+		<ul id="menu" class="nav__list">
+			<li class="nav__list-item">
+				<a class="nav__link" href="#about">About</a>
+			</li>
+			<li class="nav__list-item">
+				<a class="nav__link" href="#projects">Projects</a>
+			</li>
+			<li class="nav__list-item">
+				<a class="nav__link" href="#other">Other</a>
+			</li>
+		</ul>
 	</nav>
 </div>

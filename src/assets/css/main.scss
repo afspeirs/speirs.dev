@@ -1,15 +1,13 @@
-// Helpers
-@import "helpers/animations";
-@import "helpers/typography";
-@import "helpers/variables";
+// Core
+@import './core/variables';
+@import './core/base';
+@import './core/typography';
+@import './core/theme';
 
 // Modules
-@import "modules/accordion";
-@import "modules/modal";
-@import "modules/nav";
-@import "modules/theme";
-@import "modules/toggle";
+@import './modules/footer';
+@import './modules/header';
+@import './modules/nav';
 
-// Pages
-@import "pages/gallery";
-@import "pages/home";
+// Theme
+@import './theme/github-corners';

@@ -1,58 +1,67 @@
-import debounce from './debounce';
-
 export default (function Nav() {
-	const menubtn = document.querySelector('#nav-toggle');
-	const content = [...document.querySelectorAll('.content')];
-	const navLinks = document.querySelectorAll('#nav-wrap a');
-	const headerLogo = document.querySelector('header .logo');
-	const nav = document.querySelector('nav');
+	const headerLogo = document.querySelector('.header__logo');
+	const navLinks = [...document.querySelectorAll('.nav__link')];
+	const navToggle = document.querySelector('.nav__toggle');
+	const sections = [...document.querySelectorAll('section')];
 
-	// Sets the current section active
-	function activeNavSection(compare) {
-		navLinks.forEach((a) => {
-			const id = a.href.substr(a.href.lastIndexOf('#') + 1);
-			if (compare === id) {
-				a.classList.add('active');
+	const sectionObserverOptions = {
+		threshold: 0.55,
+	};
+
+	const highlightNavLink = (section) => {
+		const indexOfNavLink = navLinks.findIndex((link) => link.hash === section);
+
+		if (indexOfNavLink === -1) return;
+
+		navLinks.forEach((link, index) => {
+			if (index === indexOfNavLink) {
+				link.classList.add('current');
 			} else {
-				a.classList.remove('active');
+				link.classList.remove('current');
 			}
 		});
-	}
+	};
 
-	// Based on scroll position set the current section as active
-	function onScroll() {
-		const y = window.scrollY + 5;
+	const handleNavLinkClick = (event) => {
+		setTimeout(() => {
+			highlightNavLink(event.target.hash);
+		}, 500);
+	};
 
-		for (let i = 0; i < content.length; i++) {
-			if ((i !== content.length - 1 && content[i].offsetTop < y && content[i + 1].offsetTop > y)
-				|| (i === content.length - 1 && content[i].offsetTop < y)) {
-				activeNavSection(content[i].id);
-			}
+	const handleNavToggle = () => {
+		if (document.body.classList.contains('is-expanded')) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			document.body.classList.remove('is-expanded');
+		} else {
+			navToggle.setAttribute('aria-expanded', 'true');
+			document.body.classList.add('is-expanded');
 		}
-	}
+	};
+
+	const handleHeaderLogoObserver = (entries) => entries.forEach((entry) => {
+		if (!entry.isIntersecting) {
+			document.body.classList.add('is-scrolled');
+		} else {
+			document.body.classList.remove('is-scrolled');
+		}
+	});
+
+	const handleSectionObserver = (entries) => entries.forEach((entry) => {
+		if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+			const section = `#${entry.target.id}`;
+			highlightNavLink(section);
+		}
+	});
 
 	function init() {
-		// Create Intersection Observer to check if the user has scrolled below the nav
-		const intersectionObserver = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.intersectionRatio > 0) {
-					nav.classList.remove('show-logo');
-				} else {
-					nav.classList.add('show-logo');
-				}
-			});
-		});
+		const headerLogoObserver = new IntersectionObserver(handleHeaderLogoObserver);
+		const sectionObserver = new IntersectionObserver(handleSectionObserver, sectionObserverOptions);
 
-		intersectionObserver.observe(headerLogo);
+		sections.forEach((section) => sectionObserver.observe(section));
+		headerLogoObserver.observe(headerLogo);
 
-		// Toggle Mobile navigation menu on click
-		menubtn.addEventListener('click', () => menubtn.parentNode.classList.toggle('open'));
-
-		// Run on page load to show which section the user is at
-		activeNavSection(window.location.hash.substr(1) || content[0].id);
-
-		// Check for scroll event and add active to navigation
-		window.addEventListener('scroll', debounce(onScroll));
+		navLinks.forEach((link) => link.addEventListener('click', handleNavLinkClick));
+		navToggle.addEventListener('click', handleNavToggle);
 	}
 
 	return {

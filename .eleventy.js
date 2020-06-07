@@ -2,8 +2,8 @@ const htmlmin = require('html-minifier');
 const helpers = require('./helpers');
 
 module.exports = (eleventyConfig) => {
-	// Minify HTML files
 	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+		if (!outputPath) return;
 		if (outputPath.endsWith('.html')) {
 			const minified = htmlmin.minify(content, {
 				useShortDoctype: true,
@@ -12,13 +12,12 @@ module.exports = (eleventyConfig) => {
 			});
 			return minified;
 		}
-
 		return content;
 	});
 
+	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
 	eleventyConfig.addHandlebarsShortcode('simplify', helpers.simplify);
 	eleventyConfig.addHandlebarsShortcode('year', helpers.year);
-	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
 
 	return {
 		dir: {
@@ -28,8 +27,7 @@ module.exports = (eleventyConfig) => {
 			includes: 'templates/partials',
 			layouts: 'templates/layouts',
 		},
-		passthroughFileCopy: true,
-		templateFormats: ['hbs'],
+		templateFormats: ['hbs', 'md'],
 		htmlTemplateEngine: 'hbs',
 	}
 }

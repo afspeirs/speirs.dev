@@ -1,3 +1,29 @@
-<div class="content" id="home">{{> section-home}}</div>
-<div class="content" id="projects">{{> section-projects}}</div>
-<div class="content" id="gallery">{{> section-gallery}}</div>
+<section id="welcome">
+	{{#each collections.welcome}}
+		{{>card-contents this}}
+	{{/each}}
+</section>
+
+<section id="about">
+	<h1>About Me</h1>
+
+	{{#each collections.about}}
+		{{>card-contents this}}
+	{{/each}}
+</section>
+
+<section id="projects">
+	<h1>Projects</h1>
+
+	{{#each collections.projects}}
+		{{>card-contents this}}
+	{{/each}}
+</section>
+
+<section id="other">
+	<h1>Other</h1>
+
+	{{#each collections.other}}
+		{{>card-contents this}}
+	{{/each}}
+</section>

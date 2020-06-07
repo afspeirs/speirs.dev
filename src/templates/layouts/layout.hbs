@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title>{{manifest.name}}</title>
 	<meta name="description" content="{{manifest.description}}">
 	<meta name="theme-color" content="{{manifest.theme_color}}">
@@ -18,26 +18,18 @@
 	{{#ifeq env "dev"}}<link rel="stylesheet" type="text/css" href="assets/css/dev.min.css">{{/ifeq}}
 	<script src="assets/js/main.min.js" defer></script>
 	{{#ifeq env "dev"}}<script src="assets/js/dev.js" defer></script>{{/ifeq}}
-	<noscript><style> .jsonly { display: none !important } </style></noscript>
 </head>
 
 <body>
 	<div id="container">
-		<header>{{> svg-logo}}</header>
-		{{> nav}}
+		{{>header}}
+		{{>nav}}
 
-		{{{content}}}
+		<main>
+			{{{content}}}
+		</main>
 
-		<div id="modal-background"></div>
-
-		<footer>
-			<label class="switch" for="theme-switch-checkbox">
-				<input type="checkbox" id="theme-switch-checkbox" aria-label="Toggle theme">
-				<div class="slider round"></div>
-			</label>
-			<span>Dark Theme</span>
-			<p>&copy; Andy Speirs 2017-{{year}}</p>
-		</footer>
+		{{>footer}}
 	</div>
 </body>
 
