@@ -16,9 +16,10 @@ module.exports = (eleventyConfig) => {
 		return content;
 	});
 
+	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
+	eleventyConfig.addHandlebarsShortcode('markdownify', helpers.markdownify);
 	eleventyConfig.addHandlebarsShortcode('simplify', helpers.simplify);
 	eleventyConfig.addHandlebarsShortcode('year', helpers.year);
-	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
 
 	return {
 		dir: {

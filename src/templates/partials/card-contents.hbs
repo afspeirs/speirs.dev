@@ -1,0 +1,12 @@
+<header>
+	<h2>{{this.name}}</h2>
+</header>
+{{#if this.content}}
+	{{{markdownify this.content}}}
+{{/if}}
+{{#if this.url}}
+	<p>To view the app, visit <a href="https://{{this.url}}">{{this.url}}</a>.</p>
+{{/if}}
+{{#if this.github}}
+	{{>github-corners project="{{this.github}}"}}
+{{/if}}

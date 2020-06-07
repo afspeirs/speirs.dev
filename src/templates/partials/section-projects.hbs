@@ -3,20 +3,7 @@
 
 	{{#each projects}}
 		<article id="{{@key}}">
-			<header>
-				<h2>{{this.name}}</h2>
-			</header>
-
-			{{#each this.content}}
-				<p>{{this}}</p>
-			{{/each}}
-
-			{{#if this.url}}
-				<p>To view the app, visit <a href="https://{{this.url}}">{{this.url}}</a>.</p>
-			{{/if}}
-			{{#if this.github}}
-				{{>github-corners project="{{this.github}}"}}
-			{{/if}}
+			{{>card-contents this}}
 		</article>
 	{{/each}}
 </section>
