@@ -1,22 +1,22 @@
 <section id="other">
 	<h1>Other</h1>
 
-	<article id="simple-panel">
-		<header>
-			<h2>Simple Panel</h2>
-		</header>
-		<p>Simple Panel is a rainmeter skin designed to work with any wallpaper.</p>
-		<p>The rainmeter skin is made up of the following skins:</p>
-		<ul>
-			<li>TODO</li>
-		</ul>
-	</article>
+	{{#each projects-other}}
+		<article id="{{@key}}">
+			<header>
+				<h2>{{this.name}}</h2>
+			</header>
 
-	<article id="firefox-user-chrome">
-		<header>
-			<h2>Firefox userChrome</h2>
-		</header>
-		<p>I have created a custom firefox userChrome css</p>
-		<p>I have not updated it in a while, and it will most likely not work on the latest version of firefox</p>
-	</article>
+			{{#each this.content}}
+				<p>{{this}}</p>
+			{{/each}}
+
+			{{#if this.url}}
+				<p>To view the app, visit <a href="https://{{this.url}}">{{this.url}}</a>.</p>
+			{{/if}}
+			{{#if this.github}}
+				{{>github-corners project="{{this.github}}"}}
+			{{/if}}
+		</article>
+	{{/each}}
 </section>

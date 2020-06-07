@@ -1,52 +1,22 @@
 <section id="projects">
 	<h1>Projects</h1>
 
-	<article id="route-me">
-		<header>
-			<h2>RouteMe</h2>
-		</header>
-		<p>RouteMe is a Progressive Web App that path finds through themeparks, showing you the quickest route to take from A → B.</p>
-		<p>This project began as a Microsoft Windows application, written in C#, and has evolved to a Progressive Web App built using React and Framework7.</p>
-		<p>To view the app, visit <a href="https://routeme.speirs.dev">routeme.speirs.dev</a>.</p>
-	</article>
+	{{#each projects}}
+		<article id="{{@key}}">
+			<header>
+				<h2>{{this.name}}</h2>
+			</header>
 
-	<article id="note-me">
-		{{>github-corners project="note-me"}}
+			{{#each this.content}}
+				<p>{{this}}</p>
+			{{/each}}
 
-		<header>
-			<h2>NoteMe</h2>
-		</header>
-		<p>NoteMe is a Progressive Web App that stores your notes in Markdown.</p>
-		<p>The app stores your notes in a Firebase database. You can sign up to use the app with a Google account, which allows you to log in and edit your notes from any device.</p>
-		<p>The PWA is build using React and Material-UI.</p>
-		<p>To view the app, visit <a href="https://noteme.app">noteme.app</a>.</p>
-	</article>
-
-	<article id="weather-me">
-		<header>
-			<h2>WeatherMe</h2>
-		</header>
-		<p>WeatherMe is a Progressive Web App that demonstrates the use of using an API to fetch information about the weather.</p>
-		<p>The PWA is build using React and Material-UI.</p>
-		<p>To view the app, visit <a href="https://weatherme.speirs.dev">weatherme.speirs.dev</a>.</p>
-	</article>
-
-	<article id="count-me">
-		<header>
-			<h2>CountMe</h2>
-		</header>
-		<p>CountMe is a Progressive Web App that allows user to Create / Save / Update collections of items.</p>
-		<p>This idea was born out of travelling and counting a number of different items. I could not find a sutable app, and decided to make it myself.</p>
-		<p>The PWA is build using React and Framework7.</p>
-		<p>To view the app, visit <a href="https://countme.speirs.dev">countme.speirs.dev</a>.</p>
-	</article>
-
-	<article id="egg-wars">
-		<header>
-			<h2>Egg Wars</h2>
-		</header>
-		<p>Egg Wars presents "Eggy Leia" as you have never seen her before. Just point your camera to the provided QR like code to see her.</p>
-		<p>This site is build using AR.js</p>
-		<p>To view the app, visit <a href="https://eggwars.speirs.dev">eggwars.speirs.dev</a>.</p>
-	</article>
+			{{#if this.url}}
+				<p>To view the app, visit <a href="https://{{this.url}}">{{this.url}}</a>.</p>
+			{{/if}}
+			{{#if this.github}}
+				{{>github-corners project="{{this.github}}"}}
+			{{/if}}
+		</article>
+	{{/each}}
 </section>

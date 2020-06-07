@@ -28,8 +28,7 @@ module.exports = (eleventyConfig) => {
 			includes: 'templates/partials',
 			layouts: 'templates/layouts',
 		},
-		passthroughFileCopy: true,
-		templateFormats: ['hbs'],
+		templateFormats: ['hbs', 'md'],
 		htmlTemplateEngine: 'hbs',
 	}
 }
