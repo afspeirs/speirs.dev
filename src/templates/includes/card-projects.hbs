@@ -1,0 +1,14 @@
+<article {{#ifnotin post.data.page.fileSlug post.data.tags}}id="{{post.data.page.fileSlug}}"{{/ifnotin}}>
+	<header>
+		<h2>{{post.data.name}}</h2>
+	</header>
+	{{#if post.templateContent}}
+		{{{post.templateContent}}}
+	{{/if}}
+	{{#if post.data.url}}
+		<p>To view the app, visit <a href="https://{{post.data.url}}">{{post.data.url}}</a>.</p>
+	{{/if}}
+	{{#if post.data.github}}
+		{{> github-corners project=post.data.github}}
+	{{/if}}
+</article>

@@ -1,3 +1,4 @@
+.cache
 .DS_Store
 debug.log
 dist/

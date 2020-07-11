@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en-gb">
 
 <head>
 	<meta charset="utf-8">
@@ -14,22 +14,22 @@
 	<link rel="icon" href="/favicon.svg">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{manifest.theme_color}}">
 	<link rel="manifest" href="/manifest.json">
-	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
-	{{#ifeq env "dev"}}<link rel="stylesheet" type="text/css" href="assets/css/dev.min.css">{{/ifeq}}
-	<script src="assets/js/main.min.js" defer></script>
-	{{#ifeq env "dev"}}<script src="assets/js/dev.js" defer></script>{{/ifeq}}
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	{{#ifeq env "development"}}<link rel="stylesheet" type="text/css" href="/styles/dev.css">{{/ifeq}}
+	<script src="/scripts/main.js" defer></script>
+	{{#ifeq env "development"}}<script src="/scripts/dev.js" defer></script>{{/ifeq}}
 </head>
 
 <body>
 	<div id="container">
-		{{>header}}
-		{{>nav}}
+		{{> header}}
+		{{> nav}}
 
 		<main>
 			{{{content}}}
 		</main>
 
-		{{>footer}}
+		{{> footer}}
 	</div>
 </body>
 

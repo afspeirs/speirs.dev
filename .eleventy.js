@@ -6,7 +6,6 @@ module.exports = (eleventyConfig) => {
 		if (!outputPath) return;
 		if (outputPath.endsWith('.html')) {
 			const minified = htmlmin.minify(content, {
-				useShortDoctype: true,
 				removeComments: true,
 				collapseWhitespace: true,
 			});
@@ -15,16 +14,19 @@ module.exports = (eleventyConfig) => {
 		return content;
 	});
 
-	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
-	eleventyConfig.addHandlebarsShortcode('simplify', helpers.simplify);
-	eleventyConfig.addHandlebarsShortcode('year', helpers.year);
+	Object.keys(helpers).forEach((helper) => {
+		eleventyConfig.addHandlebarsShortcode(helper, helpers[helper]);
+	});
+
+	eleventyConfig.addPassthroughCopy('src/images');
+	eleventyConfig.addPassthroughCopy('src/*');
 
 	return {
 		dir: {
 			input: 'src',
 			output: 'dist',
-			data: 'assets/data',
-			includes: 'templates/partials',
+			data: 'data',
+			includes: 'templates/includes',
 			layouts: 'templates/layouts',
 		},
 		templateFormats: ['hbs', 'md'],

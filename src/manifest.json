@@ -4,6 +4,7 @@
 	"description": "A website to showcase projects created by AFSpeirs",
 	"dir": "ltr",
 	"lang": "en",
+	"display": "minimal-ui",
 	"start_url": ".",
 	"theme_color": "#255abc",
 	"background_color": "#255abc",
