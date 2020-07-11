@@ -1,5 +1,5 @@
 .header,
-.nav-wrapper,
+.nav,
 .footer {
 	background-color: var(--clr-primary);
 	color: var(--clr-background);
@@ -28,9 +28,9 @@
 }
 
 section {
-	padding-top: var(--section-spacing);
+	padding-bottom: var(--section-spacing);
 
-	& > h1 {
+	& > * {
 		margin-top: 0;
 	}
 }
@@ -43,13 +43,27 @@ article {
 	border-radius: 24px;
 	padding: 32px;
 
-	&:not(:first-of-type) {
-		margin-top: 32px;
+	& + article {
+		margin-top: calc(var(--section-spacing) / 2);
 	}
 
 	h1,
-	h2 {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		margin: 0;
+
+		& > a {
+			display: none;
+		}
+
+		&:hover {
+			& > a {
+				display: initial;
+			}
+		}
 	}
 }
 

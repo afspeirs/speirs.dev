@@ -1,12 +1,17 @@
 <article {{#ifnotin post.data.page.fileSlug post.data.tags}}id="{{post.data.page.fileSlug}}"{{/ifnotin}}>
 	<header>
-		<h2>{{post.data.name}}</h2>
+		<h3>
+			{{post.data.name}}
+			{{#ifnotin post.data.page.fileSlug post.data.tags}}
+				<a href="#{{post.data.page.fileSlug}}" aria-hidden="true">#</a>
+			{{/ifnotin}}
+		</h3>
 	</header>
 	{{#if post.templateContent}}
 		{{{post.templateContent}}}
 	{{/if}}
 	{{#if post.data.url}}
-		<p>To view the app, visit <a href="https://{{post.data.url}}">{{post.data.url}}</a>.</p>
+		<p>To view the app, visit <a href="https://{{post.data.url}}" target="_blank" rel="noopener noreferrer">{{post.data.url}}</a>.</p>
 	{{/if}}
 	{{#if post.data.github}}
 		{{> github-corners project=post.data.github}}

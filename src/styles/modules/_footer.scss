@@ -4,7 +4,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	height: calc(128px + env(safe-area-inset-bottom));
-	margin-top: var(--section-spacing);
+	margin-top: calc(var(--section-spacing) / 2);
 	padding-bottom: env(safe-area-inset-bottom);
 	text-align: center;
 

@@ -1,6 +1,12 @@
 .header {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	padding: 4em 0 20em;
-	margin-bottom: -16em;
+	padding: 4em 0;
+	margin-bottom: calc(var(--section-spacing) / 2);
+
+	&__logo {
+		display: flex;
+		justify-content: center;
+	}
 }
