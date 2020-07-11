@@ -18,13 +18,20 @@ module.exports = (eleventyConfig) => {
 		eleventyConfig.addHandlebarsShortcode(helper, helpers[helper]);
 	});
 
-	eleventyConfig.addPassthroughCopy('src/images');
-	eleventyConfig.addPassthroughCopy('src/*');
+	eleventyConfig.addPassthroughCopy('src/images/**/*.{png,svg}');
+	eleventyConfig.addPassthroughCopy('src/scripts/**/*.js');
+	eleventyConfig.addPassthroughCopy('src/styles/**/*.scss');
+	eleventyConfig.addPassthroughCopy({ 'src/root/*': '/' });
+
+	eleventyConfig.setBrowserSyncConfig({
+		port: 3000,
+		serveStatic: ['dist']
+	});
 
 	return {
 		dir: {
 			input: 'src',
-			output: 'dist',
+			output: '.tmp',
 			data: 'data',
 			includes: 'templates/includes',
 			layouts: 'templates/layouts',

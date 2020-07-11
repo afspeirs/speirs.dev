@@ -1,5 +1,6 @@
 .cache
 .DS_Store
+.tmp
 debug.log
 dist/
 node_modules/

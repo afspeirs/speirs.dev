@@ -1,3 +1,3 @@
-const manifest = require('../manifest.json');
+const manifest = require('../root/manifest.json');
 
 module.exports = manifest;
