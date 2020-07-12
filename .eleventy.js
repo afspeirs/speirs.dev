@@ -1,5 +1,13 @@
-const htmlmin = require('html-minifier');
 const helpers = require('./helpers');
+const htmlmin = require('html-minifier');
+
+const paths = {
+	input: 'src',
+	output: '.tmp',
+	data: 'data',
+	includes: 'templates/includes',
+	layouts: 'templates/layouts',
+};
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
@@ -29,13 +37,7 @@ module.exports = (eleventyConfig) => {
 	});
 
 	return {
-		dir: {
-			input: 'src',
-			output: '.tmp',
-			data: 'data',
-			includes: 'templates/includes',
-			layouts: 'templates/layouts',
-		},
+		dir: paths,
 		templateFormats: ['hbs', 'md'],
 		htmlTemplateEngine: 'hbs',
 	}
