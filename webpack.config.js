@@ -1,15 +1,16 @@
 const path = require('path');
+const { paths } = require('./config');
 
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
 	mode: isDev ? 'development' : 'production',
 	entry: isDev ? {
-		main: './src/scripts/main.js',
-		dev: './src/scripts/dev.js',
-	} : './src/scripts/main.js',
+		main: `./${paths.input}/scripts/main.js`,
+		dev: `./${paths.input}/scripts/dev.js`,
+	} : `./${paths.input}/scripts/main.js`,
 	output: {
-		path: path.resolve(__dirname, 'dist/scripts'),
+		path: path.resolve(__dirname, `${paths.output}/scripts`),
 		filename: '[name].js',
 	},
 	module: {

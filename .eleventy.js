@@ -1,14 +1,7 @@
 const helpers = require('./helpers');
 const htmlmin = require('html-minifier');
 const pluginSass = require('eleventy-plugin-sass');
-
-const paths = {
-	input: 'src',
-	output: 'dist',
-	data: 'data',
-	includes: 'templates/includes',
-	layouts: 'templates/layouts',
-};
+const { paths, port } = require('./config');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(pluginSass, {
@@ -37,7 +30,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget(`./${paths.input}/scripts/`);
 
 	eleventyConfig.setBrowserSyncConfig({
-		port: 3000,
+		port,
 	});
 
 	return {
