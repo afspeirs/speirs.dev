@@ -10,25 +10,28 @@
   ],
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "ELEVENTY_ENV=production run-s build:*",
+    "build": "NODE_ENV=production run-s build:*",
     "debug": "DEBUG=* npm start",
     "prestart": "npm run clean",
-    "start": "ELEVENTY_ENV=development npm-run-all --parallel develop:*",
+    "start": "NODE_ENV=development npm-run-all --parallel develop:*",
     "clean": "run-p clean:*",
     "clean:dist": "rimraf dist",
-    "clean:tmp": "rimraf .tmp",
     "build:eleventy": "npx eleventy",
-    "build:parcel": "parcel build .tmp/*.html --dist-dir dist --cache-dir .tmp/.parcel-cache",
+    "build:scripts": "webpack",
     "develop:eleventy": "npx eleventy --serve --quiet",
-    "develop:parcel": "parcel watch .tmp/*.html --dist-dir dist --cache-dir .tmp/.parcel-cache"
+    "develop:scripts": "webpack --watch"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "eleventy-plugin-sass": "^1.0.0",
     "html-minifier": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.0.0-beta.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.10"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

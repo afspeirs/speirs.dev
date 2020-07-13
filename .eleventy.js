@@ -1,15 +1,20 @@
 const helpers = require('./helpers');
 const htmlmin = require('html-minifier');
+const pluginSass = require('eleventy-plugin-sass');
 
 const paths = {
 	input: 'src',
-	output: '.tmp',
+	output: 'dist',
 	data: 'data',
 	includes: 'templates/includes',
 	layouts: 'templates/layouts',
 };
 
 module.exports = (eleventyConfig) => {
+	eleventyConfig.addPlugin(pluginSass, {
+		watch: [`${paths.input}/**/*.{scss,sass}`, '!node_modules/**'],
+	});
+
 	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
 		if (!outputPath) return;
 		if (outputPath.endsWith('.html')) {
@@ -27,13 +32,12 @@ module.exports = (eleventyConfig) => {
 	});
 
 	eleventyConfig.addPassthroughCopy('src/images/**/*.{png,svg}');
-	eleventyConfig.addPassthroughCopy('src/scripts/**/*.js');
-	eleventyConfig.addPassthroughCopy('src/styles/**/*.scss');
 	eleventyConfig.addPassthroughCopy({ 'src/root/*': '/' });
+
+	eleventyConfig.addWatchTarget(`./${paths.input}/scripts/`);
 
 	eleventyConfig.setBrowserSyncConfig({
 		port: 3000,
-		serveStatic: ['dist']
 	});
 
 	return {
