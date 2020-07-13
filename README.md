@@ -24,16 +24,14 @@ Runs the site in the development mode.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can also pass `--debug` as an argument to get more verbose output in the terminal
-
 ### `npm run build`
 
 Builds the site for production to the `dist` folder.
 
-### Built using
+## Built using
 
-[Gulp](https://gulpjs.com) as the task runner
+[Eleventy](https://www.11ty.dev) as the static site generator
 
-[Browerify](http://browserify.org) as the bundler
+[Handlebars](https://handlebarsjs.com) as the templating language
 
-[11ty](https://www.11ty.dev) using [Handlebars](https://handlebarsjs.com) as the templating language
+[Webpack](http://webpack.js.org) as the bundler
