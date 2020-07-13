@@ -1,12 +1,17 @@
-const htmlmin = require('html-minifier');
 const helpers = require('./helpers');
+const htmlmin = require('html-minifier');
+const pluginSass = require('eleventy-plugin-sass');
+const { paths, port } = require('./config');
 
 module.exports = (eleventyConfig) => {
+	eleventyConfig.addPlugin(pluginSass, {
+		watch: [`${paths.input}/**/*.{scss,sass}`, '!node_modules/**'],
+	});
+
 	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
 		if (!outputPath) return;
 		if (outputPath.endsWith('.html')) {
 			const minified = htmlmin.minify(content, {
-				useShortDoctype: true,
 				removeComments: true,
 				collapseWhitespace: true,
 			});
@@ -15,18 +20,21 @@ module.exports = (eleventyConfig) => {
 		return content;
 	});
 
-	eleventyConfig.addHandlebarsShortcode('ifeq', helpers.ifeq);
-	eleventyConfig.addHandlebarsShortcode('simplify', helpers.simplify);
-	eleventyConfig.addHandlebarsShortcode('year', helpers.year);
+	Object.keys(helpers).forEach((helper) => {
+		eleventyConfig.addHandlebarsShortcode(helper, helpers[helper]);
+	});
+
+	eleventyConfig.addPassthroughCopy('src/images/**/*.{png,svg}');
+	eleventyConfig.addPassthroughCopy({ 'src/root/*': '/' });
+
+	eleventyConfig.addWatchTarget(`./${paths.input}/scripts/`);
+
+	eleventyConfig.setBrowserSyncConfig({
+		port,
+	});
 
 	return {
-		dir: {
-			input: 'src',
-			output: 'dist',
-			data: 'assets/data',
-			includes: 'templates/partials',
-			layouts: 'templates/layouts',
-		},
+		dir: paths,
 		templateFormats: ['hbs', 'md'],
 		htmlTemplateEngine: 'hbs',
 	}

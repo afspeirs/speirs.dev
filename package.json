@@ -2,46 +2,45 @@
   "name": "speirs.dev",
   "version": "0.5.0",
   "description": "A website to showcase projects created by AFSpeirs",
-  "main": "gulpfile.babel.js",
-  "scripts": {
-    "build": "npx gulp build",
-    "debug": "npm start --debug",
-    "start": "npx gulp serve"
-  },
-  "keywords": [],
   "author": "AFSpeirs",
-  "license": "ISC",
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "parcel"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production run-s build:*",
+    "debug": "DEBUG=* npm start",
+    "prestart": "npm run clean",
+    "start": "NODE_ENV=development npm-run-all --parallel develop:*",
+    "clean": "run-p clean:*",
+    "clean:dist": "rimraf dist",
+    "build:eleventy": "npx eleventy",
+    "build:scripts": "webpack",
+    "develop:eleventy": "npx eleventy --serve --quiet",
+    "develop:scripts": "webpack --watch"
+  },
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/register": "^7.8.6",
-    "babelify": "^10.0.0",
-    "browser-sync": "^2.26.7",
-    "browserify": "^16.5.0",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
+    "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "eleventy-plugin-sass": "^1.0.0",
     "html-minifier": "^4.0.0",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afspeirs/speirs.dev/"
   }
 }

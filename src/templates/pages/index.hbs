@@ -1,29 +1,34 @@
+---
+permalink: /
+---
+<h1 class="visually-hidden">{{manifest.name}}</h1>
+
 <section id="welcome">
 	{{#each collections.welcome}}
-		{{>card-contents this}}
+		{{> card-projects post=this}}
 	{{/each}}
 </section>
 
 <section id="about">
-	<h1>About Me</h1>
+	<h2>About Me</h2>
 
 	{{#each collections.about}}
-		{{>card-contents this}}
+		{{> card-projects post=this}}
 	{{/each}}
 </section>
 
 <section id="projects">
-	<h1>Projects</h1>
+	<h2>Projects</h2>
 
 	{{#each collections.projects}}
-		{{>card-contents this}}
+		{{> card-projects post=this}}
 	{{/each}}
 </section>
 
 <section id="other">
-	<h1>Other</h1>
+	<h2>Other</h2>
 
 	{{#each collections.other}}
-		{{>card-contents this}}
+		{{> card-projects post=this}}
 	{{/each}}
 </section>

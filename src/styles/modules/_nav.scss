@@ -1,0 +1,39 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	padding-top: var(--section-spacing);
+	align-items: center;
+	width: 95%;
+
+	&__item {
+		font-family: var(--ff-heading);
+		font-size: 1.5rem;
+		font-weight: var(--fw-bold);
+		text-transform: uppercase;
+		height: inherit;
+		padding: 0 32px;
+		line-height: 64px;
+		text-decoration: none;
+		transition: background-color 0.2s ease;
+
+		&:focus,
+		&:hover {
+			background-color: var(--clr-secondary);
+		}
+
+		&.current {
+			border-bottom-color: var(--clr-background);
+		}
+	}
+}
+
+@media (max-width: $mq-mobile) {
+	.nav {
+		flex-direction: column;
+
+		&__item {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

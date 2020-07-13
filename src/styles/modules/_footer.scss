@@ -1,0 +1,22 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: calc(128px + env(safe-area-inset-bottom));
+	margin-top: calc(var(--section-spacing) / 2);
+	padding-bottom: env(safe-area-inset-bottom);
+	text-align: center;
+
+	&__text {
+		margin: 0;
+	}
+
+	// This assumes white icons are being used
+	a {
+		&:focus,
+		&:hover {
+			filter: brightness(80%);
+		}
+	}
+}
