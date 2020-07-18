@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Mada:700|Work+Sans:400,700&display=swap');
 
 $mq-mobile: 600px;
+$clr-primary: #255abc;
 
 :root {
-	--clr-primary: #255abc;
-	--clr-secondary: #3b72d7;
+	--clr-primary: #{$clr-primary};
+	--clr-secondary: #{lighten($clr-primary, 10%)};
+	--clr-tertiary: #edf2f7;
 	--clr-background: #eee;
 	--clr-dark: #0B0A0A;
 	--clr-light: #fff;

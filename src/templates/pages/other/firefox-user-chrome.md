@@ -1,5 +1,6 @@
 ---
-name: Firefox userChrome
+title: Firefox userChrome
+description: A custom userChrome css for Mozilla Firefox
 ---
 I have created a custom userChrome css for Mozilla Firefox
 

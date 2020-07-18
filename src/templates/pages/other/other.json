@@ -1,4 +1,4 @@
 {
-	"permalink": false,
+	"permalink": "/other/{{page.fileSlug}}/index.html",
 	"tags": "other"
 }

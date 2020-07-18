@@ -1,34 +1,47 @@
 ---
 permalink: /
+header-extra: true
 ---
 <h1 class="visually-hidden">{{manifest.name}}</h1>
 
 <section id="welcome">
-	{{#each collections.welcome}}
-		{{> card-projects post=this}}
-	{{/each}}
-</section>
-
-<section id="about">
-	<h2>About Me</h2>
-
-	{{#each collections.about}}
-		{{> card-projects post=this}}
-	{{/each}}
+	<div class="section-content">
+		{{#each collections.welcome}}
+			{{> section-content post=this}}
+		{{/each}}
+	</div>
 </section>
 
 <section id="projects">
 	<h2>Projects</h2>
 
-	{{#each collections.projects}}
-		{{> card-projects post=this}}
-	{{/each}}
+	<div class="section-content">
+		<ul class="project-list">
+			{{#each collections.projects}}
+				{{> project-list-item post=this}}
+			{{/each}}
+		</ul>
+	</div>
 </section>
 
 <section id="other">
 	<h2>Other</h2>
 
-	{{#each collections.other}}
-		{{> card-projects post=this}}
-	{{/each}}
+	<div class="section-content">
+		<ul class="project-list">
+			{{#each collections.other}}
+				{{> project-list-item post=this}}
+			{{/each}}
+		</ul>
+	</div>
+</section>
+
+<section id="about">
+	<h2>About Me</h2>
+
+	<div class="section-content">
+		{{#each collections.about}}
+			{{> section-content post=this}}
+		{{/each}}
+	</div>
 </section>

@@ -1,5 +1,6 @@
 ---
-name: NoteMe
+title: NoteMe
+description: A PWA made with React and Material-UI to store some notes in Markdown
 github: note-me
 url: noteme.app
 ---

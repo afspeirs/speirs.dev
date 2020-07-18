@@ -1,0 +1,13 @@
+<h1 class="visually-hidden">{{manifest.name}}</h1>
+
+<section id="other">
+	<h2>Other</h2>
+
+	<div class="section-content">
+		<ul class="project-list">
+			{{#each collections.other}}
+				{{> project-list-item post=this}}
+			{{/each}}
+		</ul>
+	</div>
+</section>

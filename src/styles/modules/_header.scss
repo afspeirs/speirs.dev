@@ -2,11 +2,17 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 4em 0 10em;
-	margin-bottom: -6em;
+	padding: 4em 0;
+	margin-bottom: calc(var(--section-spacing) / 2);
+
+	&--extra {
+		padding: 4em 0 10em;
+		margin-bottom: -6em;
+	}
 
 	&__logo {
 		display: flex;
 		justify-content: center;
 	}
+
 }
