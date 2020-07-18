@@ -1,10 +1,15 @@
 <li>
 	<a class="project-list--link" href="{{post.data.page.url}}">
 		<div class="project-list--item">
-			<h3>{{post.data.title}}</h3>
-			{{#if post.data.description}}
-				{{post.data.description}}
-			{{/if}}
+			<div class="row row--1">
+				<h3>{{post.data.title}}</h3>
+				<time datetime="{{post.date}}">{{year post.date}}</time>
+			</div>
+			<div class="row row--2">
+				{{#if post.data.description}}
+					{{post.data.description}}
+				{{/if}}
+			</div>
 		</div>
 	</a>
 </li>

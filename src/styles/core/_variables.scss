@@ -6,7 +6,7 @@ $clr-primary: #255abc;
 :root {
 	--clr-primary: #{$clr-primary};
 	--clr-secondary: #{lighten($clr-primary, 10%)};
-	--clr-tertiary: #edf2f7;
+	--clr-tertiary: #e1e4e8;
 	--clr-background: #eee;
 	--clr-dark: #0B0A0A;
 	--clr-light: #fff;
