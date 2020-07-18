@@ -1,0 +1,20 @@
+---
+layout: layout.hbs
+---
+<section>
+	<div class="section-content">
+		<h2>{{title}}</h2>
+		<p>{{description}}</p>
+		{{#if link}}
+			<p>To view the app, visit <a href="https://{{link}}" target="_blank" rel="noopener noreferrer">{{link}}</a>.</p>
+		{{/if}}
+
+		{{#if github}}{{> github-corners project=github}}{{/if}}
+	</div>
+</section>
+
+<section>
+	<div class="section-content">
+		{{{content}}}
+	</div>
+</section>

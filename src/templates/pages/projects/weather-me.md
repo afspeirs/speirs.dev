@@ -1,7 +1,7 @@
 ---
 title: WeatherMe
 description: A PWA made with React and Material-UI
-url: weatherme.speirs.dev
+link: weatherme.speirs.dev
 ---
 WeatherMe is a Progressive Web App that demonstrates the use of using an API to fetch information about the weather.
 
