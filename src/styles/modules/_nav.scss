@@ -16,6 +16,7 @@
 		text-decoration: none;
 		transition: background-color 0.2s ease;
 
+		&[aria-current],
 		&:focus,
 		&:hover {
 			background-color: var(--clr-secondary);
