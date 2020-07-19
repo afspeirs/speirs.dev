@@ -1,7 +1,7 @@
 ---
+layout: home.hbs
 title: AFSpeirs
-permalink: false
-tags: welcome
+permalink: /
 ---
 Hello there, My name is Andy Speirs.
 

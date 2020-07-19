@@ -1,6 +1,6 @@
 ---
-permalink: false
-tags: about
+layout: about.hbs
+title: About Me
 ---
 Hello there, My name is Andy Speirs.
 

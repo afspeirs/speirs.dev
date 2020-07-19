@@ -1,13 +1,16 @@
+---
+layout: default.hbs
+---
 <h1 class="visually-hidden">{{manifest.name}}</h1>
 
 <section>
 	<div class="section-content">
-		<h2>Projects</h2>
-		<p>Below are several of web projects I have created</p>
+		<h2>{{title}}</h2>
+		{{{content}}}
 	</div>
 </section>
 
-<section id="projects">
+<section>
 	<div class="section-content">
 		<ul class="project-list">
 			{{#each collections.projects}}

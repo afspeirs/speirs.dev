@@ -1,13 +1,12 @@
 ---
-permalink: /
+layout: default.hbs
 ---
 <h1 class="visually-hidden">{{manifest.name}}</h1>
 
-<section id="welcome">
+<section id="home">
 	<div class="section-content">
-		{{#each collections.welcome}}
-			{{> section-content post=this}}
-		{{/each}}
+		<h2>{{title}}</h2>
+		{{{content}}}
 	</div>
 </section>
 
@@ -35,12 +34,12 @@ permalink: /
 	</div>
 </section>
 
-<section id="about">
-	<h2>About Me</h2>
+{{#each collections.about as |post|}}
+	<section id="{{post.data.fileSlug}}">
+		<h2>{{post.data.title}}</h2>
 
-	<div class="section-content">
-		{{#each collections.about}}
-			{{> section-content post=this}}
-		{{/each}}
-	</div>
-</section>
+		<div class="section-content">
+			{{{post.templateContent}}}
+		</div>
+	</section>
+{{/each}}
