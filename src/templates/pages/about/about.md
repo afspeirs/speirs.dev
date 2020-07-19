@@ -1,3 +1,7 @@
+---
+permalink: false
+tags: about
+---
 Hello there, My name is Andy Speirs.
 
 The purpose of this website was to create something without utilising any frameworks. I have also used it to showcase all of the projects I have started.
