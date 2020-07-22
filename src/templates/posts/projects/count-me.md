@@ -3,6 +3,7 @@ title: CountMe
 date: 2019-01-06
 description: A PWA made with React and Framework7 to count items
 link: countme.speirs.dev
+tags: ['framework7', 'pwa', 'react']
 ---
 CountMe is a Progressive Web App that allows user to Create / Save / Update collections of items.
 

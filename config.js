@@ -1,4 +1,8 @@
 module.exports = {
+	collections: [
+		'other',
+		'projects',
+	],
 	paths: {
 		input: 'src',
 		output: 'dist',

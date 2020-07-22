@@ -4,6 +4,7 @@ date: 2018-05-06
 description: A PWA made with React and Material-UI to store notes in Markdown
 github: note-me
 link: noteme.app
+tags: ['material-ui', 'pwa', 'react']
 ---
 NoteMe is a Progressive Web App that stores your notes in Markdown.
 

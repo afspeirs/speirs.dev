@@ -3,6 +3,7 @@ title: RouteMe
 date: 2018-07-08
 description: A PWA made with React and Framework7 to pathfind around themeparks
 link: routeme.speirs.dev
+tags: ['framework7', 'pwa', 'react']
 ---
 RouteMe is a Progressive Web App that path finds through themeparks, showing you the quickest route to take from A → B.
 

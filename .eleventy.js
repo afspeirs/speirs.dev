@@ -1,7 +1,7 @@
 const helpers = require('./helpers');
 const htmlmin = require('html-minifier');
 const pluginSass = require('eleventy-plugin-sass');
-const { paths, port } = require('./config');
+const { collections, paths, port } = require('./config');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(pluginSass, {
@@ -22,6 +22,12 @@ module.exports = (eleventyConfig) => {
 
 	Object.keys(helpers).forEach((helper) => {
 		eleventyConfig.addHandlebarsShortcode(helper, helpers[helper]);
+	});
+
+	collections.forEach((post) => {
+		eleventyConfig.addCollection(post, function(collectionApi) {
+			return collectionApi.getFilteredByGlob(`${paths.input}/templates/posts/${post}/*.md`);
+		});
 	});
 
 	eleventyConfig.addPassthroughCopy('src/images/**/*.{png,svg}');
