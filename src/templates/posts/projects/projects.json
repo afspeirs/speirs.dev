@@ -1,5 +1,5 @@
 {
-	"layout": "post-projects.hbs",
+	"layout": "projects-post.hbs",
 	"permalink": "/projects/{{page.fileSlug}}/index.html",
 	"tags": "projects"
 }
