@@ -5,7 +5,7 @@ layout: default.hbs
 	<div class="section-content">
 		<h2>{{title}}</h2>
 
-		<small>Project Started: <time datetime="{{date}}">{{formatdate date}}</time></small>
+		<small>Project Started: <time datetime="{{date}}">{{formatDate date=date format="DD/MM/YYYY"}}</time></small>
 		<br>
 		<small class="tags">
 			{{#each tags as |tag|}}

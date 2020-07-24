@@ -3,7 +3,7 @@
 		<div class="project-list--item">
 			<div class="row row--1">
 				<h3>{{post.data.title}}</h3>
-				<time datetime="{{post.date}}">{{year post.date}}</time>
+				<time datetime="{{post.date}}">{{formatDate date=post.date format="YYYY"}}</time>
 			</div>
 			<div class="row row--2">
 				{{#if post.data.description}}
