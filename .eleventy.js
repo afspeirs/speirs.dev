@@ -1,7 +1,7 @@
 const helpers = require('./helpers');
 const htmlmin = require('html-minifier');
 const pluginSass = require('eleventy-plugin-sass');
-const { collections, paths, port } = require('./config');
+const { browserSyncConfig, collections, paths } = require('./config');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(pluginSass, {
@@ -35,9 +35,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addWatchTarget(`./${paths.input}/scripts/`);
 
-	eleventyConfig.setBrowserSyncConfig({
-		port,
-	});
+	eleventyConfig.setBrowserSyncConfig(browserSyncConfig);
 
 	return {
 		dir: paths,
