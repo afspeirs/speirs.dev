@@ -31,47 +31,28 @@ section {
 	padding-bottom: var(--section-spacing);
 
 	& > * {
-		margin-top: 0;
+		margin-bottom: 0.75em;
 	}
+}
+
+.section-content {
+	position: relative;
+	background: var(--clr-light);
+	box-shadow: 6px 8px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	overflow: hidden;
+	padding: 32px;
 }
 
 article {
 	position: relative;
-	overflow: hidden;
-	background: var(--clr-light);
-	box-shadow: 6px 8px 8px rgba(0, 0, 0, 0.25);
-	border-radius: 24px;
-	padding: 32px;
 
 	& + article {
 		margin-top: calc(var(--section-spacing) / 2);
 	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin: 0;
-
-		& > a {
-			display: none;
-		}
-
-		&:hover {
-			& > a {
-				display: initial;
-			}
-		}
-	}
 }
 
-#welcome {
+#home {
 	font-size: 1.3rem;
 	text-align: center;
-
-	h1 {
-		text-transform: initial;
-	}
 }

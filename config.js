@@ -1,4 +1,11 @@
 module.exports = {
+	browserSyncConfig: {
+		port: 3000,
+	},
+	collections: [
+		'other',
+		'projects',
+	],
 	paths: {
 		input: 'src',
 		output: 'dist',
@@ -6,5 +13,4 @@ module.exports = {
 		includes: 'templates/includes',
 		layouts: 'templates/layouts',
 	},
-	port: 3000,
 };

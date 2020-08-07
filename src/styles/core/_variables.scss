@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Mada:700|Work+Sans:400,700&display=swap');
 
 $mq-mobile: 600px;
+$clr-primary: #255abc;
 
 :root {
-	--clr-primary: #255abc;
-	--clr-secondary: #3b72d7;
+	--clr-primary: #{$clr-primary};
+	--clr-secondary: #{lighten($clr-primary, 10%)};
+	--clr-tertiary: #{lighten($clr-primary, 50%)};
 	--clr-background: #eee;
-	--clr-dark: #0B0A0A;
+	--clr-dark: #0b0a0a;
 	--clr-light: #fff;
 	--ff-main: 'Work Sans', sans-serif;
 	--ff-heading: 'Mada', sans-serif;

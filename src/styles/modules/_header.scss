@@ -5,8 +5,14 @@
 	padding: 4em 0 10em;
 	margin-bottom: -6em;
 
+	&--no-extra {
+		padding: 4em 0;
+		margin-bottom: calc(var(--section-spacing) / 2);
+	}
+
 	&__logo {
 		display: flex;
 		justify-content: center;
 	}
+
 }

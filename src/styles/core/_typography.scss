@@ -4,6 +4,7 @@ h3,
 h4,
 h5,
 h6 {
+	margin: 0;
 	font-family: var(--ff-heading);
 	font-weight: var(--fw-bold);
 	color: var(--clr-secondary);
@@ -18,23 +19,14 @@ h2 {
 	font-size: 1.7em;
 }
 h3 {
-	font-size: 1.5em;
+	font-size: 1.3em;
+}
+
+time {
+	color: var(--clr-secondary);
 }
 
 main {
-	a {
-		&,
-		&:visited,
-		&:active {
-			color: var(--clr-primary);
-		}
-
-		&:focus,
-		&:hover {
-			filter: brightness(150%);
-		}
-	}
-
 	::selection {
 		background: var(--clr-secondary);
 		color: var(--clr-background);

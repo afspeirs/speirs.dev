@@ -1,0 +1,4 @@
+{
+	"layout": "projects-post.hbs",
+	"permalink": "/other/{{page.fileSlug}}/index.html"
+}
