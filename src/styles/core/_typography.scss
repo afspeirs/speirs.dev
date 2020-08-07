@@ -27,13 +27,6 @@ time {
 }
 
 main {
-	a {
-		&,
-		&:active {
-			color: var(--clr-primary);
-		}
-	}
-
 	::selection {
 		background: var(--clr-secondary);
 		color: var(--clr-background);
