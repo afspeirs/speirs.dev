@@ -10,10 +10,10 @@
   ],
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production run-s build:*",
-    "debug": "DEBUG=* npm start",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "debug": "cross-env DEBUG=* npm start",
     "prestart": "npm run clean",
-    "start": "NODE_ENV=development run-p develop:*",
+    "start": "cross-env NODE_ENV=development run-p develop:*",
     "clean": "rimraf dist",
     "build:eleventy": "npx eleventy",
     "build:scripts": "webpack",
@@ -34,6 +34,7 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0"
