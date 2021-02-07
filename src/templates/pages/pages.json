@@ -1,4 +1,0 @@
-{
-	"layout": "default.hbs",
-	"permalink": "/{{page.fileSlug}}/index.html"
-}
