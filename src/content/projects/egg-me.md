@@ -11,8 +11,8 @@ tags:
 ---
 EggMe showcases several egg models:
 
-- 2019 | Princess Leia
-- 2020 | The Child (Baby Yoda)
+- Princess Leia
+- The Child (Baby Yoda)
 
 The plan for this project is add new models to this site each year
 
