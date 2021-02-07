@@ -28,7 +28,12 @@ const tags = [...new Set(allTags)]
 		title: tag,
 		slug: toKebabCase(tag),
 		type: 'tags',
-	}));
+	}))
+	.sort((a, b) => {
+		if (a.slug < b.slug) return -1;
+		if (a.slug > b.slug) return 1;
+		return 0;
+	});
 
 export const getPageContent = (slug) => pages.find((item) => item.slug === slug);
 export const getProjectPost = (slug) => projects.find((item) => item.slug === slug);
