@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: netlifycms
+
+site_url: https://speirs.dev
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/content/pages/home.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "home-content" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/pages/projects.md"
+        label: "Projects"
+        name: "projects"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "projects-content" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/pages/tags.md"
+        label: "Tags"
+        name: "tags"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "tags-content" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/pages/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-content" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
