@@ -2,7 +2,10 @@ backend:
   name: git-gateway
   branch: netlifycms
 
-site_url: https://speirs.dev
+media_folder: "static/images"
+public_folder: "/images"
+
+site_url: https://netlifycms.speirs.dev
 
 collections:
   - name: "pages"
