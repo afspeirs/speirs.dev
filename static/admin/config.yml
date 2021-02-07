@@ -48,12 +48,10 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Hidden", name: "hidden", widget: "boolean", default: false }
       - { label: "Github", name: "github", widget: "string" }
       - { label: "Link", name: "link", widget: "string" }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
+      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
