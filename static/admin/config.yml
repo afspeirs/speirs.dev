@@ -56,8 +56,8 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Hidden", name: "hidden", widget: "boolean", default: false }
-      - { label: "Github", name: "github", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Hidden", name: "hidden", widget: "boolean", required: false }
+      - { label: "Github", name: "github", widget: "string", required: false }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
