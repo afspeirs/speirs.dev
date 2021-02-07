@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: netlifycms
   commit_messages:
-    create: "cms: Create {{collection}} \"{{slug}}\""
-    update: "cmd: update {{collection}} \"{{slug}}\""
-    delete: "cms: delete {{collection}} \"{{slug}}\""
+    create: "cms: create \"{{slug}}\" in {{collection}}"
+    update: "cms: update \"{{slug}}\" in {{collection}}"
+    delete: "cms: delete \"{{slug}}\" in {{collection}}"
     uploadMedia: "cms: upload \"{{path}}\""
     deleteMedia: "cms: delete \"{{path}}\""
 
