@@ -34,6 +34,10 @@ Serves the built version of the site to the browser. Useful for debugging the pr
 
 Lints the whole project and returns issues if any are found.
 
+### `npm run lint:fix`
+
+The same as `npm run lint` but will also fix any auto-fixable issues
+
 ## Built using
 
 [Svelte](https://svelte.dev) as the compiler
