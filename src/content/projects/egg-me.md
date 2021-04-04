@@ -13,6 +13,7 @@ EggMe showcases several egg models:
 
 - Princess Leia
 - The Child (Baby Yoda)
+- Darth Vader
 
 The plan for this project is add new models to this site each year
 
