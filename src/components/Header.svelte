@@ -50,7 +50,7 @@
 
 	<div class="logo-wrapper">
 		<a class="logo" href="/" aria-label="Home" on:mouseout={updateTilt}>
-			<img class="img-icon" src="{logo}" alt="" width="150" height="150">
+			<img class="img-icon" src={logo} alt="" width="150" height="150">
 		</a>
 	</div>
 

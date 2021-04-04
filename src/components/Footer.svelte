@@ -33,7 +33,7 @@
 
 <footer class="footer primary-background">
 	<a href="https://github.com/afspeirs" target="_blank" rel="noopener noreferrer">
-		<img class="img-icon" src="{github}" alt="github.com/afspeirs" width="32" height="32">
+		<img class="img-icon" src={github} alt="github.com/afspeirs" width="32" height="32">
 	</a>
 	<!-- <p>
 		Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Terms of Use

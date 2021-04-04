@@ -20,7 +20,7 @@
 	}
 </style>
 
-<small>Project Started: <time datetime="{post.date}">{formatDate({ date: post.date, format: 'DD/MM/YYYY' })}</time></small>
+<small>Project Started: <time datetime={post.date}>{formatDate({ date: post.date, format: 'DD/MM/YYYY' })}</time></small>
 {#if post.tags}
 	<small class="tags">
 		{#each post.tags as tag}

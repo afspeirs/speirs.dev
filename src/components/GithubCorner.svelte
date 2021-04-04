@@ -58,7 +58,7 @@
 	aria-label="View source on GitHub"
 	class="github-corner"
 	href="https://github.com/afspeirs/{project}"
-	title="{project}"
+	title={project}
 	target="_blank"
 	rel="noopener noreferrer"
 >
