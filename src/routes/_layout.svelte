@@ -34,7 +34,7 @@
 	}
 </style>
 
-<div id="container" class="no-js">
+<div id="container">
 	<Header {segment} />
 
 	<main>
