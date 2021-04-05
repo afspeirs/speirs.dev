@@ -53,12 +53,12 @@
 <ul class="project-list">
 	{#each posts as post}
 		<li>
-			<a class="link" href="{`${post.type}/${post.slug}`}">
+			<a class="link" href={`${post.type}/${post.slug}`}>
 				<div class="item">
 					<div class="row-1">
 						<h3>{post.title}</h3>
 						{#if post.date}
-							<time datetime="{post.date}">{formatDate({ date: post.date, format: 'YYYY' })}</time>
+							<time datetime={post.date}>{formatDate({ date: post.date, format: 'YYYY' })}</time>
 						{/if}
 					</div>
 					{#if post.description}

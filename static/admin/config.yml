@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: develop
   commit_messages:
     create: "cms: create \"{{slug}}\" ({{collection}})"
     update: "cms: update \"{{slug}}\" ({{collection}})"
@@ -11,7 +11,7 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 
-site_url: https://speirs.dev
+site_url: https://develop.speirs.dev
 
 collections:
   - name: "pages"

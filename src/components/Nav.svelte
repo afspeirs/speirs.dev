@@ -78,8 +78,8 @@
 	{#each navItems as navItem}
 		<a
 			class="item"
-			href="{navItem.link}"
-			aria-current="{segment === navItem.segment ? 'page' : undefined}"
+			href={navItem.link}
+			aria-current={segment === navItem.segment ? 'page' : undefined}
 		>
 			{navItem.name}
 		</a>

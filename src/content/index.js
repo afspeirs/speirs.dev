@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { toKebabCase } from '@utils';
+import { sortFunction, toKebabCase } from '@utils';
 import allPages from './pages/*.md';
 import allProjects from './projects/*.md';
 /* eslint-enable import/no-unresolved */
@@ -14,7 +14,7 @@ const transform = (array, type) => array
 		type,
 	}))
 	.filter((item) => !item.disable)
-	.sort((a, b) => a.date - b.date);
+	.sort(sortFunction['date-created-dsc']);
 
 const pages = transform(allPages, 'pages');
 const projects = transform(allProjects, 'projects');
@@ -29,11 +29,7 @@ const tags = [...new Set(allTags)]
 		slug: toKebabCase(tag),
 		type: 'tags',
 	}))
-	.sort((a, b) => {
-		if (a.slug < b.slug) return -1;
-		if (a.slug > b.slug) return 1;
-		return 0;
-	});
+	.sort(sortFunction['slug-asc']);
 
 export const getPageContent = (slug) => pages.find((item) => item.slug === slug);
 export const getProjectPost = (slug) => projects.find((item) => item.slug === slug);

@@ -14,6 +14,7 @@
 <script>
 	import Card from '@components/Card';
 	import ProjectList from '@components/ProjectList';
+	import FilterPosts from '@components/FilterPosts';
 
 	export let page;
 	export let projects;
@@ -29,6 +30,7 @@
 
 <section>
 	<Card>
+		<FilterPosts bind:posts={projects} />
 		<ProjectList posts={projects} />
 	</Card>
 </section>
