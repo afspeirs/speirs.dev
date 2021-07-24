@@ -40,6 +40,7 @@ export default {
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.PACKAGE_VERSION': pkg.version,
 			}),
 			markdown(),
 			glob(),
@@ -94,6 +95,7 @@ export default {
 			replace({
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.PACKAGE_VERSION': pkg.version,
 			}),
 			markdown(),
 			glob(),
