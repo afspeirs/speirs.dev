@@ -1,7 +1,7 @@
 ---
 title: WeatherMe
 date: 2019-06-02
-description: A PWA made with React and Material-UI to display information about weather
+description: Display weather information based on your favourite locations
 link: weatherme.speirs.dev
 tags:
   - Material-UI

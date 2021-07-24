@@ -2,6 +2,7 @@
 	import { formatDate } from '@utils';
 
 	export const date = formatDate({ format: 'YYYY' });
+	export const version = 'process.env.PACKAGE_VERSION'; // TODO: fix this odd string
 </script>
 
 <script>
@@ -38,7 +39,7 @@
 	<!-- <p>
 		Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Terms of Use
 	</p> -->
-	<p>
+	<p title={`v${version}`}>
 		&copy; 2017 &ndash; {date} Andy Speirs
 	</p>
 </footer>

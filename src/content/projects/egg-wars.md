@@ -1,7 +1,7 @@
 ---
 title: Egg Wars
 date: 2018-12-02
-description: A web app made with AR.js to show a model egg made to look like Princess Leia
+description: View an egg model made to look like Princess Leia using AR
 link: eggwars.speirs.dev
 tags:
   - AR.js
