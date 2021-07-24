@@ -11,4 +11,4 @@ tags:
 ---
 TimeMe is a PWA that shows you the time as a CSS hex colour. It also changes the background to that very same hex colour.
 
-The PWA is build using [Svelte](https://svelte.dev/) and [Snowpack][https://www.snowpack.dev/].
+The PWA is build using [Svelte](https://svelte.dev/) and [Snowpack](https://www.snowpack.dev/).

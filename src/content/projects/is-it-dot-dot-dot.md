@@ -1,5 +1,5 @@
 ---
-title: Is it...
+title: Is it ...
 date: 2020-01-22
 description: Determine if it is a certain day or not
 github: is-it-dot-dot-dot
