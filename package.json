@@ -1,6 +1,5 @@
 {
   "name": "speirs.dev",
-  "description": "A website to showcase projects created by AFSpeirs",
   "version": "0.5.1",
   "scripts": {
     "start": "sapper dev",
