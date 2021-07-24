@@ -1,7 +1,7 @@
 ---
 title: EntityMe
 date: 2020-06-18
-description: A PWA made with Gatsby to display and copy all HTML entities
+description: View a list of all of the HTML entities, and provide an easy method of copying its contents
 github: entity-me
 link: entityme.speirs.dev
 tags:

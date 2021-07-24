@@ -1,7 +1,7 @@
 ---
 title: speirs.dev
 date: 2017-02-19
-description: A website made to showcase my different projects, and try out different web technologies
+description: A showcase all of all my different projects
 github: speirs.dev
 link: speirs.dev
 tags:

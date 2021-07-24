@@ -1,8 +1,8 @@
 ---
 title: PokedexMe
 date: 2020-06-24
-description: A PWA made with Gatsby and Material-UI to display information about Pokemon
-github: pokedex-me
+description: Display information about Pokemon
+disabled: true
 link: pokedexme.speirs.dev
 tags:
   - Gatsby

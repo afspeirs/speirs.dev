@@ -1,13 +1,14 @@
 ---
 title: EggMe
 date: 2020-04-05
-description: A PWA made made with React, Material-UI and Three.js to showcase egg models
+description: A showcase of the Star Wars inspired egg models
 link: eggme.speirs.dev
 tags:
   - Material-UI
   - PWA
   - React
   - Three.js
+  - Vite
 ---
 EggMe showcases several egg models:
 
@@ -17,4 +18,4 @@ EggMe showcases several egg models:
 
 The plan for this project is add new models to this site each year
 
-This PWA is build using [React](https://create-react-app.dev), [Material-UI](https://material-ui.com) and [Three.js](https://threejs.org/).
+This PWA is build using [React](https://reactjs.org/), [Material-UI](https://material-ui.com), [Three.js](https://threejs.org/) and [Vite](https://vitejs.dev/).
