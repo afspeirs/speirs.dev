@@ -2,7 +2,7 @@
 title: Simple Panel
 date: 2017-04-15
 description: Simple Panel is a Rainmeter skin designed to work with any wallpaper
-disable: true
+hidden: true
 tags:
   - Rainmeter
 ---

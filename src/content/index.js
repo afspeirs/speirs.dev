@@ -13,7 +13,7 @@ const transform = (array, type) => array
 		slug: filename.replace(/\.md$/, ''),
 		type,
 	}))
-	.filter((item) => !item.disable)
+	.filter((item) => !item.hidden)
 	.sort(sortFunction['date-created-dsc']);
 
 const pages = transform(allPages, 'pages');

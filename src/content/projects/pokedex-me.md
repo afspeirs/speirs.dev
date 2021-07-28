@@ -2,7 +2,7 @@
 title: PokedexMe
 date: 2020-06-24
 description: Display information about Pokemon
-disabled: true
+hidden: true
 link: pokedexme.speirs.dev
 tags:
   - Gatsby

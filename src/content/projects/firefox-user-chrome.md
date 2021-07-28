@@ -2,7 +2,7 @@
 title: Firefox userChrome
 date: 2017-11-19
 description: A custom userChrome css for Mozilla Firefox
-disable: true
+hidden: true
 tags:
   - Mozilla Firefox
   - Styles
