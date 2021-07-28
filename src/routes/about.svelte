@@ -1,5 +1,5 @@
 <script context="module">
-	import { getPageContent } from '@content';
+	import { getPageContent } from '@/content';
 
 	export function preload() {
 		const page = getPageContent('about');
@@ -9,8 +9,8 @@
 </script>
 
 <script>
-	import Card from '@components/Card';
-	import Section from '@components/Section';
+	import Card from '@/components/Card';
+	import Section from '@/components/Section';
 
 	export let page;
 </script>

@@ -1,5 +1,5 @@
 <script>
-	import Card from '@components/Card';
+	import Card from '@/components/Card';
 
 	export let status;
 	export let error;

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { sortFunction, toKebabCase } from '@utils';
+import { sortFunction, toKebabCase } from '@/utils';
 import allPages from './pages/*.md';
 import allProjects from './projects/*.md';
 /* eslint-enable import/no-unresolved */

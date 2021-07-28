@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import Footer from '@components/Footer';
-	import Header from '@components/Header';
+	import Footer from '@/components/Footer';
+	import Header from '@/components/Header';
 
 	onMount(() => {
 		// Remove no-js class as JavaScript is being used

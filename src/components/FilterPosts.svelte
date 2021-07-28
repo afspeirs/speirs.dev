@@ -1,5 +1,5 @@
 <script>
-	import { sortFunction } from '@utils';
+	import { sortFunction } from '@/utils';
 
 	export let posts;
 	export let filterBy = 'date-created-dsc';

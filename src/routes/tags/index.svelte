@@ -1,5 +1,5 @@
 <script context="module">
-	import content, { getPageContent } from '@content';
+	import content, { getPageContent } from '@/content';
 
 	export function preload() {
 		const page = getPageContent('tags');
@@ -12,9 +12,9 @@
 </script>
 
 <script>
-	import Card from '@components/Card';
-	import ProjectList from '@components/ProjectList';
-	import Section from '@components/Section';
+	import Card from '@/components/Card';
+	import ProjectList from '@/components/ProjectList';
+	import Section from '@/components/Section';
 
 	export let page;
 	export let tags;

@@ -1,6 +1,6 @@
 <script>
-	import GithubCorner from '@components/GithubCorner';
-	import { formatDate, toKebabCase } from '@utils';
+	import GithubCorner from '@/components/GithubCorner';
+	import { formatDate, toKebabCase } from '@/utils';
 
 	export let post;
 </script>
