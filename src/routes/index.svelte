@@ -1,5 +1,5 @@
 <script context="module">
-	import content, { getPageContent } from '@content';
+	import content, { getPageContent } from '@/content';
 
 	export function preload() {
 		const { projects } = content;
@@ -13,39 +13,29 @@
 </script>
 
 <script>
-	import Card from '@components/Card';
-	import ProjectList from '@components/ProjectList';
+	import Card from '@/components/Card';
+	import ProjectList from '@/components/ProjectList';
+	import Section from '@/components/Section';
 
 	export let about;
 	export let home;
 	export let projects;
 </script>
 
-<style>
-	#home {
-		font-size: 1.3rem;
-		text-align: center;
-	}
-</style>
-
 <svelte:head>
 	<title>AFSpeirs</title>
 </svelte:head>
 
-<section id="home">
+<Section id="home">
 	<Card title={home.title} content={home.html} />
-</section>
+</Section>
 
-<section id="projects">
-	<h2>Projects</h2>
-
+<Section id="projects" title="Projects">
 	<Card>
 		<ProjectList posts={projects} />
 	</Card>
-</section>
+</Section>
 
-<section id="about">
-	<h2>{about.title}</h2>
-
+<Section id="about" title={about.title}>
 	<Card content={about.html} />
-</section>
+</Section>

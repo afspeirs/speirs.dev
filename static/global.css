@@ -81,10 +81,3 @@ time {
 .img-icon {
 	display: block;
 }
-
-section {
-	padding-bottom: var(--section-spacing);
-}
-section > * {
-	margin-bottom: 0.75em;
-}

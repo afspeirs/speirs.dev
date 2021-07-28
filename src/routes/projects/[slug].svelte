@@ -1,5 +1,5 @@
 <script context="module">
-	import { getProjectPost } from '@content';
+	import { getProjectPost } from '@/content';
 
 	// Sapper calls this to load our data
 	export function preload(page) {
@@ -9,9 +9,10 @@
 </script>
 
 <script>
-	import BackButton from '@components/BackButton';
-	import Card from '@components/Card';
-	import ProjectDetails from '@components/ProjectDetails';
+	import BackButton from '@/components/BackButton';
+	import Card from '@/components/Card';
+	import ProjectDetails from '@/components/ProjectDetails';
+	import Section from '@/components/Section';
 
 	export let post;
 </script>
@@ -22,12 +23,12 @@
 
 <BackButton page="Projects" />
 
-<section>
+<Section>
 	<Card title={post.title}>
 		<ProjectDetails post={post} />
 	</Card>
-</section>
+</Section>
 
-<section>
+<Section>
 	<Card content={post.html} />
-</section>
+</Section>

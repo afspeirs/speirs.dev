@@ -1,12 +1,12 @@
 <script context="module">
-	import { formatDate } from '@utils';
+	import { formatDate } from '@/utils';
 
 	export const date = formatDate({ format: 'YYYY' });
 	export const version = 'process.env.PACKAGE_VERSION'; // TODO: fix this odd string
 </script>
 
 <script>
-	import github from '@images/github.svg';
+	import github from '@/images/github.svg';
 </script>
 
 <style>

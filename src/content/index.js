@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { sortFunction, toKebabCase } from '@utils';
+import { sortFunction, toKebabCase } from '@/utils';
 import allPages from './pages/*.md';
 import allProjects from './projects/*.md';
 /* eslint-enable import/no-unresolved */
@@ -13,7 +13,7 @@ const transform = (array, type) => array
 		slug: filename.replace(/\.md$/, ''),
 		type,
 	}))
-	.filter((item) => !item.disable)
+	.filter((item) => !item.hidden)
 	.sort(sortFunction['date-created-dsc']);
 
 const pages = transform(allPages, 'pages');

@@ -1,7 +1,7 @@
 <script>
-	import GithubCorner from '@components/GithubCorner';
-	import Nav from '@components/Nav';
-	import logo from '@images/logo.svg';
+	import GithubCorner from '@/components/GithubCorner';
+	import Nav from '@/components/Nav';
+	import logo from '@/images/logo.svg';
 
 	const maxTiltAngle = 75;
 

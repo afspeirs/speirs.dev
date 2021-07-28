@@ -24,10 +24,7 @@ const onwarn = (warning, onwarn) => (warning.code === 'MISSING_EXPORT' && /'prel
 const aliases = alias({
 	resolve: ['.js', '.svelte', '.svg'],
 	entries: [
-		{ find: '@components', replacement: `${__dirname}/src/components` },
-		{ find: '@content', replacement: `${__dirname}/src/content` },
-		{ find: '@images', replacement: `${__dirname}/src/images` },
-		{ find: '@utils', replacement: `${__dirname}/src/utils` },
+		{ find: '@', replacement: `${__dirname}/src` },
 	],
 });
 
