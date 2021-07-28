@@ -12,6 +12,7 @@
 	import BackButton from '@components/BackButton';
 	import Card from '@components/Card';
 	import ProjectDetails from '@components/ProjectDetails';
+	import Section from '@components/Section';
 
 	export let post;
 </script>
@@ -22,12 +23,12 @@
 
 <BackButton page="Projects" />
 
-<section>
+<Section>
 	<Card title={post.title}>
 		<ProjectDetails post={post} />
 	</Card>
-</section>
+</Section>
 
-<section>
+<Section>
 	<Card content={post.html} />
-</section>
+</Section>

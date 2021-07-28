@@ -14,6 +14,7 @@
 <script>
 	import Card from '@components/Card';
 	import ProjectList from '@components/ProjectList';
+	import Section from '@components/Section';
 
 	export let page;
 	export let tags;
@@ -23,12 +24,12 @@
 	<title>{page.title} | AFSpeirs</title>
 </svelte:head>
 
-<section>
+<Section>
 	<Card title={page.title} content={page.html} />
-</section>
+</Section>
 
-<section>
+<Section>
 	<Card>
 		<ProjectList posts={tags} />
 	</Card>
-</section>
+</Section>

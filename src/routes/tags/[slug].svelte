@@ -17,6 +17,7 @@
 	import BackButton from '@components/BackButton';
 	import Card from '@components/Card';
 	import ProjectList from '@components/ProjectList';
+	import Section from '@components/Section';
 
 	export let tag;
 	export let projects;
@@ -28,8 +29,8 @@
 
 <BackButton page="Tags" />
 
-<section>
+<Section>
 	<Card title={tag.title}>
 		<ProjectList posts={projects} />
 	</Card>
-</section>
+</Section>

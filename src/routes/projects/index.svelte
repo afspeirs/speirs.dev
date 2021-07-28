@@ -15,6 +15,7 @@
 	import Card from '@components/Card';
 	import ProjectList from '@components/ProjectList';
 	import FilterPosts from '@components/FilterPosts';
+	import Section from '@components/Section';
 
 	export let page;
 	export let projects;
@@ -24,13 +25,13 @@
 	<title>Projects | AFSpeirs</title>
 </svelte:head>
 
-<section>
+<Section>
 	<Card title={page.title} content={page.html} />
-</section>
+</Section>
 
-<section>
+<Section>
 	<Card>
 		<FilterPosts bind:posts={projects} />
 		<ProjectList posts={projects} />
 	</Card>
-</section>
+</Section>

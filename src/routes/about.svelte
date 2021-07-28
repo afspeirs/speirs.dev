@@ -10,6 +10,7 @@
 
 <script>
 	import Card from '@components/Card';
+	import Section from '@components/Section';
 
 	export let page;
 </script>
@@ -18,6 +19,6 @@
 	<title>About | AFSpeirs</title>
 </svelte:head>
 
-<section>
+<Section>
 	<Card title={page.title} content={page.html} />
-</section>
+</Section>

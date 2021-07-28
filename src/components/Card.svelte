@@ -12,14 +12,20 @@
 		overflow: hidden;
 		padding: 32px;
 	}
+
+	h2 {
+		margin-bottom: 1rem;
+	}
 </style>
 
 <div class="card">
 	{#if title}
 		<h2>{title}</h2>
 	{/if}
+
 	{#if content}
 		{@html content}
 	{/if}
-	<slot></slot>
+
+	<slot />
 </div>
