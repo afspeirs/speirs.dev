@@ -43,6 +43,13 @@
 	.logo:hover {
 		transform: rotate(var(--logo-tilt-angle)) scale(1.1);
 	}
+
+	.logo:focus-visible {
+		outline: none;
+		border-radius: 36px 36px 18px 18px;
+		box-shadow: 0 0 0 6px var(--clr-primary),
+		            0 0 0 10px var(--clr-background);
+	}
 </style>
 
 <header class="header primary-background" class:dense>

@@ -18,7 +18,19 @@
 		border-radius: 16px;
 		text-decoration: none;
 	}
+	.tags a:hover {
+		opacity: 0.8;
+	}
+	.tags a:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 3px var(--clr-background),
+		            0 0 0 6px var(--clr-secondary);
+	}
 </style>
+
+{#if post.github}
+	<GithubCorner project={post.github} />
+{/if}
 
 <small>Project Started: <time datetime={post.date}>{formatDate({ date: post.date, format: 'DD/MM/YYYY' })}</time></small>
 {#if post.tags}
@@ -33,8 +45,4 @@
 
 {#if post.link}
 	<p>To view the app, visit <a href="https://{post.link}" target="_blank" rel="noopener noreferrer">{post.link}</a>.</p>
-{/if}
-
-{#if post.github}
-	<GithubCorner project={post.github} />
 {/if}

@@ -1,5 +1,5 @@
 <script>
-	const onClick = () => window.history.back();
+	const handleClick = () => window.history.back();
 
 	export let page;
 </script>
@@ -14,7 +14,13 @@
 		all: unset;
 		cursor: pointer;
 	}
+	button:focus-visible {
+		outline: 2px solid var(--clr-outline, var(--clr-primary));
+		outline-offset: 4px;
+	}
+
 	.back {
+		--clr-outline: var(--clr-background);
 		text-decoration: none;
 		color: var(--clr-background);
 		line-height: 2;
@@ -33,5 +39,5 @@
 
 <div class="wrapper">
 	<a class="back" href="/{page.toLowerCase()}">&lt; {page}</a>
-	<button class="back" on:click={onClick}>&lt; Back</button>
+	<button class="back" on:click={handleClick}>&lt; Back</button>
 </div>

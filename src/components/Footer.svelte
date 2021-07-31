@@ -25,10 +25,14 @@
 		margin: 0;
 	}
 
-	/* This assumes white icons are being used */
-	a:focus,
 	a:hover {
 		filter: brightness(80%);
+	}
+	a:focus-visible {
+		outline: none;
+		border-radius: 50%;
+		box-shadow: 0 0 0 3px var(--clr-primary),
+		            0 0 0 6px var(--clr-background);
 	}
 </style>
 
