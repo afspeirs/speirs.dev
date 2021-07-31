@@ -51,6 +51,11 @@
 	.item:hover {
 		background-color: var(--clr-secondary);
 	}
+	.item:focus-visible {
+		outline: 4px solid var(--clr-tertiary);
+		outline-offset: -4px;
+	}
+
 	[aria-current] {
 		border-bottom: 4px var(--clr-background) solid;
 	}

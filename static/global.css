@@ -74,6 +74,15 @@ h3 {
 	font-size: 1.3em;
 }
 
+:focus-visible {
+	outline: 3px solid var(--clr-outline, var(--clr-secondary));
+	outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
 time {
 	color: var(--clr-secondary);
 }

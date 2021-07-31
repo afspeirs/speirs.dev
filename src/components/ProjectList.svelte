@@ -13,8 +13,10 @@
 		position: relative;
 		list-style: none;
 	}
-
-	li + li:after {
+	li + li {
+		padding-top: 1px;
+	}
+	li + li:before {
 		content: ' ';
 		position: absolute;
 		top: 0;
@@ -47,6 +49,10 @@
 	.link:focus,
 	.link:hover {
 		background-color: var(--clr-tertiary);
+	}
+	.link:focus-visible {
+		outline: 4px solid var(--clr-secondary);
+		outline-offset: -4px;
 	}
 </style>
 
