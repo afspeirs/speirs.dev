@@ -74,6 +74,13 @@ h3 {
 	font-size: 1.3em;
 }
 
+a {
+	color: var(--clr-primary);
+}
+a:hover {
+	color: var(--clr-secondary);
+}
+
 :focus-visible {
 	outline: 3px solid var(--clr-outline, var(--clr-secondary));
 	outline-offset: 3px;
