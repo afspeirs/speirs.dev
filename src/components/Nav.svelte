@@ -47,7 +47,6 @@
 		border-bottom: 4px transparent solid;
 	}
 
-	.item:focus,
 	.item:hover {
 		background-color: var(--clr-secondary);
 	}

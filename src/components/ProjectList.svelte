@@ -46,7 +46,6 @@
 		color: inherit;
 		text-decoration: inherit;
 	}
-	.link:focus,
 	.link:hover {
 		background-color: var(--clr-tertiary);
 	}
