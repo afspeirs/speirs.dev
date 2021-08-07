@@ -13,7 +13,7 @@
 		outline: none;
 	}
 	.github-corner:focus-visible .octo-background {
-		opacity: 0.8;
+		opacity: 0.9;
 	}
 	svg {
 		display: block;
@@ -27,6 +27,10 @@
 	}
 
 	.octo-arm {
+		/* animation: octocat-wave 560ms ease-in-out; */
+		transform-origin: 130px 106px;
+	}
+	:is(.github-corner:hover, .github-corner:focus) .octo-arm {
 		animation: octocat-wave 560ms ease-in-out;
 	}
 
@@ -44,16 +48,6 @@
 		40%,
 		80% {
 			transform: rotate(10deg);
-		}
-	}
-
-	@media (min-width: 600px) {
-		:is(.github-corner:hover, .github-corner:focus) .octo-arm {
-			animation: octocat-wave 560ms ease-in-out;
-		}
-		.octo-arm {
-			animation: none;
-			transform-origin: 130px 106px;
 		}
 	}
 </style>
