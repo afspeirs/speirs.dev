@@ -7,8 +7,8 @@
 	.card {
 		position: relative;
 		background: var(--clr-light);
-		box-shadow: 6px 8px 8px rgba(0, 0, 0, 0.25);
-		border-radius: 12px;
+		box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.25);
+		border-radius: 0.5rem;
 		overflow: hidden;
 		padding: 32px;
 	}
