@@ -1,6 +1,6 @@
 {
   "name": "speirs.dev",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "scripts": {
     "start": "sapper dev",
     "build": "sapper build --legacy",
@@ -16,16 +16,16 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "dayjs": "^1.10.6",
-    "polka": "^1.0.0-next.15",
-    "sirv": "^1.0.12"
+    "dayjs": "^1.10.7",
+    "polka": "^1.0.0-next.20",
+    "sirv": "^1.0.17"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
+    "@babel/core": "^7.15.5",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.9",
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.4",
     "@jackfranklin/rollup-plugin-markdown": "^0.3.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^17.1.0",
@@ -34,8 +34,8 @@
     "@rollup/plugin-url": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-svelte3": "^3.2.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-svelte3": "^3.2.1",
     "rollup": "^2.55.1",
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-glob": "^1.0.2",
