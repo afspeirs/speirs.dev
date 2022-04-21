@@ -1,36 +1,22 @@
-<script context="module">
-	import content, { getProjectByTag } from '@/content';
+<script lang="ts">
+  import type { PostInterface } from '$lib/types/post';
+  import BackButton from '$lib/components/BackButton.svelte';
+  import Card from '$lib/components/Card.svelte';
+  import ProjectList from '$lib/components/ProjectList.svelte';
+  import Section from '$lib/components/Section.svelte';
 
-	// Sapper calls this to load our data
-	export function preload(page) {
-		const currentTag = content.tags.find((tag) => tag.slug === page.params.slug);
-		const projects = getProjectByTag(page.params.slug);
-
-		return {
-			tag: currentTag,
-			projects,
-		};
-	}
-</script>
-
-<script>
-	import BackButton from '@/components/BackButton';
-	import Card from '@/components/Card';
-	import ProjectList from '@/components/ProjectList';
-	import Section from '@/components/Section';
-
-	export let tag;
-	export let projects;
+  export let post: PostInterface;
+  export let projects: PostInterface[];
 </script>
 
 <svelte:head>
-	<title>{tag.title} | Tags | AFSpeirs</title>
+  <title>{post.metadata.title} | Tags | AFSpeirs</title>
 </svelte:head>
 
-<BackButton page="Tags" />
+<BackButton />
 
 <Section>
-	<Card title={tag.title}>
-		<ProjectList posts={projects} />
-	</Card>
+  <Card title={post.metadata.title}>
+    <ProjectList posts={projects} />
+  </Card>
 </Section>
