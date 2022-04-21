@@ -2,6 +2,7 @@
 debug.log
 node_modules
 /build
+/.netlify
 /.svelte-kit
 /package
 .env
