@@ -1,14 +1,9 @@
 <script lang="ts">
-  import { toKebabCase } from '$lib/utils';
-
   const handleClick = () => window.history.back();
-
-  export let page: string;
 </script>
 
 <div class="wrapper">
-  <a class="back" href="/{toKebabCase(page)}">&lt; {page}</a>
-  <button class="back" on:click={handleClick}>&lt; Back</button>
+  <button class="back no-js--hidden" on:click={handleClick}>&lt; Back</button>
 </div>
 
 <style>
@@ -31,15 +26,5 @@
     text-decoration: none;
     color: var(--clr-background);
     line-height: 2;
-  }
-
-  a.back,
-  :global(.no-js button.back) {
-    display: none;
-    visibility: hidden;
-  }
-  :global(.no-js a.back) {
-    display: initial;
-    visibility: initial;
   }
 </style>

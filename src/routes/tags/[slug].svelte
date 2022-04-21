@@ -13,7 +13,7 @@
   <title>{post.metadata.title} | Tags | AFSpeirs</title>
 </svelte:head>
 
-<BackButton page="Tags" />
+<BackButton />
 
 <Section>
   <Card title={post.metadata.title}>

@@ -1,13 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
-
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
-
-  onMount(() => {
-    // Remove no-js class as JavaScript is being used
-    document.documentElement.classList.remove('no-js');
-  });
 </script>
 
 <div id="container">

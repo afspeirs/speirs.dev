@@ -15,7 +15,7 @@
   $: posts = posts.sort(sortFunction[filterBy]);
 </script>
 
-<div class="filter-posts">
+<div class="filter-posts no-js--hidden">
   <label for="id_select">Filter by:</label>
   <select id="id_select" bind:value={filterBy}>
     {#each sortPostsItems as item}
@@ -30,10 +30,5 @@
     justify-content: flex-end;
     gap: 0.5rem;
     margin-bottom: 16px;
-  }
-
-  :global(.no-js .filter-posts) {
-    display: none;
-    visibility: hidden;
   }
 </style>
