@@ -1,29 +1,29 @@
 {
-	"name": "AFSpeirs",
-	"short_name": "AFSpeirs",
-	"description": "A showcase all of all my different projects",
-	"dir": "ltr",
-	"lang": "en",
-	"display": "minimal-ui",
-	"start_url": ".",
-	"theme_color": "#255abc",
-	"background_color": "#255abc",
-	"icons": [
-		{
-			"src": "/icon-maskable-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "maskable"
-		},
-		{
-			"src": "/icon-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png"
-		},
-		{
-			"src": "/icon-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		}
-	]
+  "name": "AFSpeirs",
+  "short_name": "AFSpeirs",
+  "description": "A showcase all of all my different projects",
+  "dir": "ltr",
+  "lang": "en",
+  "display": "minimal-ui",
+  "start_url": ".",
+  "theme_color": "#255abc",
+  "background_color": "#255abc",
+  "icons": [
+    {
+      "src": "/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
