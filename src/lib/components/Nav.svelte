@@ -30,7 +30,7 @@
     <a
       class="item"
       href={navItem.link}
-      aria-current={path.startsWith(navItem.link) ? 'page' : undefined}
+      aria-current={path === navItem.link || path.includes(`${navItem.link}/`) ? 'page' : undefined}
     >
       {navItem.name}
     </a>
