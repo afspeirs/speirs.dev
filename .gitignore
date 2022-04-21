@@ -1,5 +1,10 @@
 .DS_Store
 debug.log
-/node_modules/
-/src/node_modules/@sapper/
-/__sapper__/
+node_modules
+/build
+/.netlify
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example

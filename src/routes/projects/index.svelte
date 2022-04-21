@@ -1,37 +1,25 @@
-<script context="module">
-	import content, { getPageContent } from '@/content';
+<script lang="ts">
+  import type { PostInterface } from '$lib/types/post';
+  import Card from '$lib/components/Card.svelte';
+  import ProjectList from '$lib/components/ProjectList.svelte';
+  import FilterPosts from '$lib/components/FilterPosts.svelte';
+  import Section from '$lib/components/Section.svelte';
 
-	export function preload() {
-		const { projects } = content;
-
-		return {
-			page: getPageContent('projects'),
-			projects,
-		};
-	}
-</script>
-
-<script>
-	import Card from '@/components/Card';
-	import ProjectList from '@/components/ProjectList';
-	import FilterPosts from '@/components/FilterPosts';
-	import Section from '@/components/Section';
-
-	export let page;
-	export let projects;
+  export let page: PostInterface;
+  export let projects: PostInterface[];
 </script>
 
 <svelte:head>
-	<title>Projects | AFSpeirs</title>
+  <title>Projects | AFSpeirs</title>
 </svelte:head>
 
 <Section>
-	<Card title={page.title} content={page.html} />
+  <Card title={page.metadata.title} content={page.html} />
 </Section>
 
 <Section>
-	<Card>
-		<FilterPosts bind:posts={projects} />
-		<ProjectList posts={projects} />
-	</Card>
+  <Card>
+    <FilterPosts bind:posts={projects} />
+    <ProjectList posts={projects} />
+  </Card>
 </Section>
