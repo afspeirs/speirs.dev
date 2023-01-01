@@ -10,7 +10,7 @@
   <GithubCorner project={post.metadata.github} />
 {/if}
 
-<small>Project Started: <time datetime={post.date?.toString()}>{formatDate({ date: post.date, format: 'DD/MM/YYYY' })}</time></small>
+<small>Project Started: <time datetime={post.metadata.date?.toString()}>{formatDate({ date: post.metadata.date, format: 'DD/MM/YYYY' })}</time></small>
 {#if post.metadata.tags}
   <small class="tags">
     {#each post.metadata.tags as tag}

@@ -5,6 +5,7 @@ export interface PostInterface {
   hidden?: boolean,
   content?: SvelteComponentTyped,
   metadata: {
+    date?: Date,
     description?: string,
     github?: string,
     hidden?: boolean,
