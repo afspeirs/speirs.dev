@@ -3,8 +3,9 @@
   import ProjectList from '$lib/components/ProjectList.svelte';
   import FilterPosts from '$lib/components/FilterPosts.svelte';
   import Section from '$lib/components/Section.svelte';
+  import type { PageData } from './$types';
 
-  export let data;
+  export let data: PageData;
 </script>
 
 <svelte:head>

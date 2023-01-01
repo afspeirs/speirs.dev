@@ -3,8 +3,9 @@
   import Card from '$lib/components/Card.svelte';
   import ProjectDetails from '$lib/components/ProjectDetails.svelte';
   import Section from '$lib/components/Section.svelte';
+  import type { PageData } from './$types';
 
-  export let data;
+  export let data: PageData;
 </script>
 
 <svelte:head>

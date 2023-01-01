@@ -1,9 +1,7 @@
-import type { SvelteComponentTyped } from "svelte";
-
 export interface PostInterface {
   date?: Date,
   hidden?: boolean,
-  content?: SvelteComponentTyped,
+  content?: ConstructorOfATypedSvelteComponent,
   metadata: {
     date?: Date,
     description?: string,
@@ -13,8 +11,8 @@ export interface PostInterface {
     tags?: string[],
     title?: string,
   },
-  path: string,
-  slug: string,
+  path?: string,
+  slug?: string,
   tags?: string[],
 }
 

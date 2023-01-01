@@ -1,6 +1,7 @@
 import { getAllContentFromGlob, getAllContentFromGlobAsObject } from '$lib/utils';
+import type { PageLoad } from './$types';
 
-export async function load({ fetch }) {
+export const load: PageLoad = async () => {
   const pageFiles = import.meta.glob('/src/content/pages/*.md');
   const pageContents = await getAllContentFromGlobAsObject(pageFiles);
 
@@ -17,4 +18,4 @@ export async function load({ fetch }) {
     },
     projects: projectContents,
   }
-}
+};
