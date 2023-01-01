@@ -9,7 +9,7 @@
     { text: 'Title (Z-A)', value: 'slug-dsc' },
   ];
 
-  export let filterBy = 'date-created-dsc';
+  export let filterBy = sortPostsItems[0].value;
   export let posts: PostInterface[];
 
   $: posts = posts.sort(sortFunction[filterBy]);

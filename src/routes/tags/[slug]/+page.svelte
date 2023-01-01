@@ -1,22 +1,20 @@
 <script lang="ts">
-  import type { PostInterface } from '$lib/types/post';
   import BackButton from '$lib/components/BackButton.svelte';
   import Card from '$lib/components/Card.svelte';
   import ProjectList from '$lib/components/ProjectList.svelte';
   import Section from '$lib/components/Section.svelte';
 
-  export let post: PostInterface;
-  export let projects: PostInterface[];
+  export let data;
 </script>
 
 <svelte:head>
-  <title>{post.metadata.title} | Tags | AFSpeirs</title>
+  <title>{data.tag.metadata.title} | Tags | AFSpeirs</title>
 </svelte:head>
 
 <BackButton />
 
 <Section>
-  <Card title={post.metadata.title}>
-    <ProjectList posts={projects} />
+  <Card title={data.tag.metadata.title}>
+    <ProjectList posts={data.projects} />
   </Card>
 </Section>

@@ -4,9 +4,9 @@
   import ProjectList from '$lib/components/ProjectList.svelte';
   import Section from '$lib/components/Section.svelte';
 
-  export let about: PostInterface;
-  export let home: PostInterface;
-  export let projects: PostInterface[];
+  export let data: PostInterface[];
+
+  // console.log(data);
 </script>
 
 <svelte:head>
@@ -14,15 +14,19 @@
 </svelte:head>
 
 <Section id="home">
-  <Card title={home.metadata.title} content={home.html} />
+  <Card title={data.page.home.metadata.title}>
+    <svelte:component this={data.page.home.content} />
+  </Card>
 </Section>
 
 <Section id="projects" title="Projects">
   <Card>
-    <ProjectList posts={projects} />
+    <ProjectList posts={data.projects} />
   </Card>
 </Section>
 
-<Section id="about" title={about.metadata.title}>
-  <Card content={about.html} />
+<Section id="about" title={data.page.about.metadata.title}>
+  <Card>
+    <svelte:component this={data.page.about.content} />
+  </Card>
 </Section>

@@ -1,12 +1,10 @@
 <script lang="ts">
-  import type { PostInterface } from '$lib/types/post';
   import Card from '$lib/components/Card.svelte';
   import ProjectList from '$lib/components/ProjectList.svelte';
   import FilterPosts from '$lib/components/FilterPosts.svelte';
   import Section from '$lib/components/Section.svelte';
 
-  export let page: PostInterface;
-  export let projects: PostInterface[];
+  export let data;
 </script>
 
 <svelte:head>
@@ -14,12 +12,14 @@
 </svelte:head>
 
 <Section>
-  <Card title={page.metadata.title} content={page.html} />
+  <Card title={data.page.metadata.title}>
+    <svelte:component this={data.page.content} />
+  </Card>
 </Section>
 
 <Section>
   <Card>
-    <FilterPosts bind:posts={projects} />
-    <ProjectList posts={projects} />
+    <FilterPosts bind:posts={data.projects} />
+    <ProjectList posts={data.projects} />
   </Card>
 </Section>

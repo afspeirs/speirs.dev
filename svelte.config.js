@@ -1,28 +1,18 @@
-import { resolve } from 'path';
-import adapter from '@sveltejs/adapter-netlify';
-import preprocess from 'svelte-preprocess';
-import packageVersion from 'vite-plugin-package-version';
-import markdown from '@jackfranklin/rollup-plugin-markdown';
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/kit/vite';
+import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Consult https://github.com/sveltejs/svelte-preprocess
-  // for more information about preprocessors
-  preprocess: preprocess(),
-
+  extensions: ['.md', '.svelte'],
+  preprocess: [
+    vitePreprocess(),
+    mdsvex({
+      extensions: ['.md']
+    })
+  ],
   kit: {
     adapter: adapter(),
-    vite: {
-      plugins: [
-        markdown(),
-        packageVersion.default(),
-      ],
-      resolve: {
-        alias: {
-          $content: resolve('./src/content'),
-        },
-      },
-    },
   },
 };
 

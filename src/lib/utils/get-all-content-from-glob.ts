@@ -1,26 +1,28 @@
 import type { PostInterface } from '$lib/types/post';
 import { sortFunction } from '$lib/utils';
 
-const getAllContentFromGlob = async (glob: object) => {
-  const allContent = await Promise.all(Object.values(glob).map(async (value) => {
-    const { default: post } = await value();
-    const pageName = post.filename.replace(/\.md$/, '');
+async function getAllContentFromGlob(glob: object) {
+  const allContent: PostInterface[] = await Promise.all(
+    Object.entries(glob).map(async ([path, resolver]) => {
+      const { default: content, metadata } = await resolver();
 
-    const page = {
-      ...post,
-      date: post.metadata.date ? new Date(post.metadata.date) : null,
-      slug: pageName,
-      path: post.path.split('content').pop().replace(/\.md$/, ''),
-    };
+      const page = {
+        content,
+        metadata,
+        date: metadata.date ? new Date(metadata.date) : undefined,
+        slug: path.replace(/\/(?:[\w-]+\/)*/gm, '').replace(/\.md$/, ''),
+        path: path.split('content').pop().replace(/\.md$/, ''),
+      };
 
-    // console.log(page);
+      // console.log(page);
 
-    return page;
-  }));
+      return page;
+    })
+  );
 
   return allContent
     .filter((item: PostInterface) => !item.metadata.hidden)
-    .sort(sortFunction['date-created-dsc']);
-};
+    .sort(sortFunction['date-created-asc']);
+}
 
 export default getAllContentFromGlob;

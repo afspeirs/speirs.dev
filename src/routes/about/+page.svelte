@@ -1,9 +1,8 @@
-<script type="ts">
-  import type { PostInterface } from '$lib/types/post';
+<script lang="ts">
   import Card from '$lib/components/Card.svelte';
   import Section from '$lib/components/Section.svelte';
 
-  export let about: PostInterface;
+  export let data;
 </script>
 
 <svelte:head>
@@ -11,5 +10,7 @@
 </svelte:head>
 
 <Section>
-  <Card title={about.metadata.title} content={about.html} />
+  <Card title={data.page.metadata.title}>
+    <svelte:component this={data.page.content} />
+  </Card>
 </Section>

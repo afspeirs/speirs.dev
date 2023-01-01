@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { PostInterface } from '$lib/types/post';
   import Card from '$lib/components/Card.svelte';
   import ProjectList from '$lib/components/ProjectList.svelte';
   import Section from '$lib/components/Section.svelte';
 
-  export let page: PostInterface;
-  export let tags: PostInterface[];
+  export let data;
 </script>
 
 <svelte:head>
-  <title>{page.metadata.title} | AFSpeirs</title>
+  <title>{data.page.metadata.title} | AFSpeirs</title>
 </svelte:head>
 
 <Section>
-  <Card title={page.metadata.title} content={page.html} />
+  <Card title={data.page.metadata.title}>
+    <svelte:component this={data.page.content} />
+  </Card>
 </Section>
 
 <Section>
   <Card>
-    <ProjectList posts={tags} />
+    <ProjectList posts={data.tags} />
   </Card>
 </Section>

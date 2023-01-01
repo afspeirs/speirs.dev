@@ -1,11 +1,8 @@
+import { json } from '@sveltejs/kit';
 import type { PostInterface, TagInterface } from '$lib/types/post';
-import {
-  getAllContentFromGlob,
-  sortFunction,
-  toKebabCase,
-} from '$lib/utils';
+import { getAllContentFromGlob, sortFunction, toKebabCase } from '$lib/utils'
 
-const getAllTags = async () => {
+export const GET = async () => {
   const projectFiles = import.meta.glob('/src/content/projects/*.md');
   const projectContents = await getAllContentFromGlob(projectFiles);
 
@@ -23,7 +20,5 @@ const getAllTags = async () => {
     }))
     .sort(sortFunction['slug-asc']);
 
-  return allTags;
-};
-
-export default getAllTags;
+  return json(allTags);
+}

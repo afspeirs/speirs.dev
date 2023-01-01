@@ -1,10 +1,7 @@
 import type { PostInterface } from '$lib/types/post';
 
-// eslint-disable-next-line no-unused-vars
-type SortFunctionInterface = (a: PostInterface, b: PostInterface) => number;
-
 interface SortFunctionsInterface {
-  [key: string]: SortFunctionInterface;
+  [key: string]: (a: PostInterface, b: PostInterface) => number,
 }
 
 const sortFunction: SortFunctionsInterface = {

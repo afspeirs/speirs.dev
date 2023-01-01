@@ -6,7 +6,7 @@ interface AllContentInterface {
 }
 
 const getAllContentFromGlobAsObject = async (glob: object) => {
-  const allContentAsArray = await getAllContentFromGlob(glob);
+  const allContentAsArray: PostInterface[] = await getAllContentFromGlob(glob);
   const allContentAsObject: AllContentInterface = {};
 
   allContentAsArray.forEach((content: PostInterface) => {
