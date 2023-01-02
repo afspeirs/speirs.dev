@@ -1,21 +1,20 @@
-import type { PostInterface } from '$lib/types/post';
-import { toKebabCase } from '$lib/utils'
+import type { PostInterface, TagInterface } from '$lib/types/post';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
-  const response = await fetch(`/api/projects`);
-  const allPosts = await response.json();
+  const responsePosts = await fetch(`/api/projects`);
+  const allPosts: PostInterface[] = await responsePosts.json();
 
-  const projects = allPosts.filter((post: PostInterface) => post.metadata.tags?.map((tag: string) => toKebabCase(tag)).includes(params.slug));
+  const responseTags = await fetch(`/api/tags`);
+  const allTags: TagInterface[] = await responseTags.json();
+
+  const currentTag = allTags.find((tag) => tag.slug === params.slug);
+  console.log(currentTag);
+
+  const projects = allPosts.filter((post) => post.metadata.tags?.includes(currentTag?.metadata.title ?? ''));
 
   return {
     projects,
-    tag: {
-      metadata: {
-        title: params.slug,
-      },
-      slug: toKebabCase(params.slug),
-      path: `tags/${toKebabCase(params.slug)}`,
-    },
+    tag: currentTag,
   }
 }
