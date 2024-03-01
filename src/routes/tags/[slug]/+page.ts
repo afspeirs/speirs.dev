@@ -8,7 +8,7 @@ export async function load({ fetch, params }) {
   try {
     const response = await fetch('../api/projects');
     const projects: Project[] = await response.json();
-    const filteredProjectsByTag = projects.filter((project) => project.tags.find(tag => tag.toLowerCase() === slug));
+    const filteredProjectsByTag = projects.filter((project) => project.tags.find((tag) => toKebabCase(tag) === toKebabCase(slug)));
 
     const tags = projects.flatMap((project) => project?.tags);
 
