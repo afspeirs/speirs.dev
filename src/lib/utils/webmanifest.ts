@@ -2,8 +2,6 @@ export function getWebmanifest(manifest: string, apple = false) {
   const webmanifest = JSON.parse(manifest);
 
   const branchName = process?.env?.HEAD || 'local';
-  console.log(branchName);
-
 
   if (branchName && branchName !== 'main') {
     webmanifest.name += ` (${branchName})`;
