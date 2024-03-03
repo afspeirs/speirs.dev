@@ -9,6 +9,9 @@ export default {
       boxShadow: {
         DEFAULT: '4px 6px 6px rgba(0, 0, 0, 0.25)',
       },
+      screens: {
+        mobile: { 'max': '600px' },
+      },
       spacing: {
         section: '4rem',
       },
