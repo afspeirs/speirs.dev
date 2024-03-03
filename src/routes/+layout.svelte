@@ -5,6 +5,7 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import '../app.css';
+  import '../webmanifest-apple';
 </script>
 
 <div class="flex flex-col absolute inset-0">
