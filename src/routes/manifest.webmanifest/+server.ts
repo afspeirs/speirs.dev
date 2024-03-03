@@ -1,4 +1,3 @@
-
 import { getWebmanifest } from '$lib/utils/webmanifest';
 import manifestRaw from './manifest.webmanifest?raw';
 
