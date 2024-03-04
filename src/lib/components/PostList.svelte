@@ -14,7 +14,7 @@
             <h3>{post.title}</h3>
             {#if post.date}
               <time datetime={post.date} class="text-secondary">
-                {formatDate({ date: post.date })}
+                {formatDate({ date: post.date, options: { year: 'numeric' } })}
               </time>
             {/if}
           </div>
