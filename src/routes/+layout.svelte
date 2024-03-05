@@ -6,6 +6,8 @@
   import Footer from '$lib/components/Footer.svelte';
   import '../app.css';
   import '../webmanifest-apple';
+
+  export let data;
 </script>
 
 <div class="flex flex-col absolute inset-0">
@@ -15,5 +17,5 @@
     <slot />
   </main>
 
-  <Footer />
+  <Footer date={data.date} />
 </div>
