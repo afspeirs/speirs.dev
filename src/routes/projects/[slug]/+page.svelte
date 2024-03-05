@@ -17,6 +17,6 @@
   <ProjectDetails post={data.metadata} />
 </Card>
 
-<Card>
+<Card class="space-y-4 [&_a]:underline [&_a]:text-primary">
   <svelte:component this={data.content} />
 </Card>
