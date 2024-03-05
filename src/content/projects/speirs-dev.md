@@ -7,6 +7,8 @@ link: speirs.dev
 tags:
   - Svelte
   - SvelteKit
+  - Tailwind
+  - TypeScript
 ---
 This website serves as a place to house links to all the personal projects I have worked on.
 
@@ -16,6 +18,7 @@ Web technologies and frameworks that have been used to make this site:
 - ~~Gulp (and Browserify)~~
 - ~~Eleventy (and Webpack)~~
 - ~~Svelte (and Sapper)~~
-- Svelte (with SvelteKit)
+- ~~Svelte (with SvelteKit)~~
+- Svelte (with SvelteKit, Tailwind and TypeScript)
 
-This site is currently made with [Svelte](https://svelte.dev), [Sapper](https://sapper.svelte.dev) and [rollup](https://rollupjs.org).
+This site is currently made with [Svelte](https://svelte.dev), [SvelteKit](https://kit.svelte.dev/), and [Tailwind](https://www.tailwind.com/) and [Typescript](https://www.typescriptlang.org/)
