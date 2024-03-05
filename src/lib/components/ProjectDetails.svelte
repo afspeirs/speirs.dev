@@ -13,10 +13,10 @@
 <small>Project Started: <time class="text-primary" datetime={post.date?.toString()}>{formatDate({ date: post.date })}</time></small>
 
 {#if post.tags}
-  <div class="block my-2 text-base">
+  <div class="flex flex-wrap gap-2 my-2 text-base">
     {#each post.tags as tag}
       <a
-        class="mr-2 px-3 py-1 bg-secondary text-white rounded-full hover:opacity-80 outline-none focus-visible:outline-primary"
+        class="px-3 py-1 bg-secondary text-white rounded-full hover:opacity-80 outline-none focus-visible:outline-primary"
         href="/tags/{toKebabCase(tag)}"
       >
         {tag}
@@ -28,5 +28,5 @@
 <p>{post.description}</p>
 
 {#if post.link}
-  <p>To view the app, visit <a class="text-primary underline" href="https://{post.link}" target="_blank" rel="noopener noreferrer">{post.link}</a>.</p>
+  <p class="mt-4">To view the app, visit <a class="text-primary underline" href="https://{post.link}" target="_blank" rel="noopener noreferrer">{post.link}</a>.</p>
 {/if}
