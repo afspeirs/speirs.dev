@@ -22,7 +22,7 @@
       on:blur={updateTilt}
       on:mouseout={updateTilt}
     >
-      <img class="img-icon" src={logo} alt="" width="150" height="150">
+      <img src={logo} alt="" width="150" height="150">
     </a>
   </div>
 
