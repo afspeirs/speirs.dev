@@ -17,28 +17,28 @@
     "update:minor": "npm run outdated:minor -- -u"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^3.0.1",
-    "@sveltejs/kit": "^2.5.2",
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@types/eslint": "^8.56.5",
-    "@types/node": "^20.11.24",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "autoprefixer": "^10.4.18",
+    "@sveltejs/adapter-static": "^3.0.2",
+    "@sveltejs/kit": "^2.5.16",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.14.2",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-plugin-svelte": "^2.35.1",
-    "mdsvex": "^0.11.0",
-    "postcss": "^8.4.35",
-    "svelte": "^4.2.12",
-    "svelte-check": "^3.6.6",
-    "tailwindcss": "^3.4.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.5"
+    "eslint-plugin-svelte": "^2.39.4",
+    "mdsvex": "^0.11.2",
+    "postcss": "^8.4.38",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.0",
+    "tailwindcss": "^3.4.4",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1"
   },
   "type": "module",
   "dependencies": {
-    "@fontsource-variable/work-sans": "^5.0.18",
-    "@fontsource/mada": "^5.0.19"
+    "@fontsource-variable/work-sans": "^5.0.19",
+    "@fontsource/mada": "^5.0.20"
   }
 }
