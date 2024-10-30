@@ -2,7 +2,11 @@
   import type { Project } from '$lib/types';
   import { formatDate } from '$lib/utils';
 
-  export let posts: Partial<Project>[];
+  type PostListProps = {
+    posts: Partial<Project>[],
+  };
+
+  let { posts }: PostListProps = $props();
 </script>
 
 <ul role="list" class="divide-y divide-tertiary">

@@ -3,7 +3,9 @@
   import Card from '$lib/components/Card.svelte';
   import ProjectDetails from '$lib/components/ProjectDetails.svelte';
 
-  export let data;
+  let { data } = $props();
+
+  const Content = $derived(data.content);
 </script>
 
 <svelte:head>
@@ -18,5 +20,5 @@
 </Card>
 
 <Card class="space-y-4 [&_a]:underline [&_a]:text-primary">
-  <svelte:component this={data.content} />
+  <Content />
 </Card>

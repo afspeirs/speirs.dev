@@ -1,6 +1,13 @@
 <script lang="ts">
-  export let project = 'speirs.dev';
-  export let primaryBackground = false;
+  type GithubCornerProps = {
+    project?: string,
+    primaryBackground?: boolean,
+  };
+
+  let {
+    project = 'speirs.dev',
+    primaryBackground = false,
+  }: GithubCornerProps = $props();
 </script>
 
 <a

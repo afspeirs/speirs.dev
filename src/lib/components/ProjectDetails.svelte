@@ -3,7 +3,11 @@
   import GithubCorner from '$lib/components/GithubCorner.svelte';
   import { formatDate, toKebabCase } from '$lib/utils';
 
-  export let post: Project;
+  type ProjectDetailsProps = {
+    post: Project,
+  };
+
+  let { post }: ProjectDetailsProps = $props();
 </script>
 
 {#if post.github}
