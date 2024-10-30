@@ -2,7 +2,7 @@ export type Post = {
   title: string,
   slug: string,
   url: string,
-}
+};
 
 export type Project = {
   date: string,

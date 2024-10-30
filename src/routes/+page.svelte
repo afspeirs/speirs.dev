@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Card from "$lib/components/Card.svelte";
-  import PostList from "$lib/components/PostList.svelte";
+  import Card from '$lib/components/Card.svelte';
+  import PostList from '$lib/components/PostList.svelte';
 
-  export let data;
+  let { data } = $props();
 </script>
 
 <section id="home">

@@ -1,11 +1,12 @@
 {
   "name": "speirs.dev",
   "version": "0.0.1",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
     "start": "vite dev",
+    "build": "vite build",
     "preview": "vite preview",
     "pwa": "npm run build && npm run preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -17,28 +18,24 @@
     "update:minor": "npm run outdated:minor -- -u"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^3.0.4",
-    "@sveltejs/kit": "^2.5.25",
-    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@fontsource-variable/work-sans": "^5.1.0",
+    "@fontsource/mada": "^5.1.0",
+    "@stylistic/eslint-plugin": "^2.10.0",
+    "@sveltejs/adapter-static": "^3.0.6",
+    "@sveltejs/kit": "^2.7.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.5.1",
-    "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "@typescript-eslint/parser": "^8.3.0",
+    "@types/node": "^22.8.4",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.1",
-    "eslint-plugin-svelte": "^2.43.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-svelte": "^2.46.0",
+    "globals": "^15.11.0",
     "mdsvex": "^0.12.3",
-    "postcss": "^8.4.41",
-    "svelte": "^4.2.19",
-    "svelte-check": "^3.8.6",
-    "tailwindcss": "^3.4.10",
-    "tslib": "^2.7.0",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2"
-  },
-  "type": "module",
-  "dependencies": {
-    "@fontsource-variable/work-sans": "^5.0.20",
-    "@fontsource/mada": "^5.0.21"
+    "svelte": "^5.1.6",
+    "svelte-check": "^4.0.5",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.2",
+    "vite": "^5.4.10"
   }
 }
