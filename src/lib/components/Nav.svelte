@@ -20,8 +20,8 @@
     },
   ] as const;
 
-  $: path = $page.url.pathname;
-  // $: console.log(path);
+  const path = $derived($page.url.pathname);
+  // $inspect(path);
 </script>
 
 <nav class="flex justify-center items-center pt-section mobile:flex-col">
