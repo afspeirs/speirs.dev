@@ -1,21 +1,10 @@
-import type { Post, Project } from '$lib/types';
-import { toKebabCase } from '$lib/utils';
+import { getTags } from '$lib/content';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ fetch }) {
-  const response = await fetch('api/projects');
-  const projects: Project[] = await response.json();
-  const tags = projects.flatMap((project) => project?.tags);
-
-  const sortedTags: Post[] = [...new Set(tags)]
-    .sort()
-    .map((tag) => ({
-      title: tag,
-      slug: toKebabCase(tag),
-      url: `tags/${toKebabCase(tag)}`,
-    }));
+export async function load() {
+  const tags = await getTags();
 
   return {
-    tags: sortedTags,
+    tags,
   };
 }
