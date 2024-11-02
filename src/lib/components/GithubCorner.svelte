@@ -1,6 +1,13 @@
 <script lang="ts">
-  export let project = 'speirs.dev';
-  export let primaryBackground = false;
+  type GithubCornerProps = {
+    project?: string,
+    primaryBackground?: boolean,
+  };
+
+  let {
+    project = 'speirs.dev',
+    primaryBackground = false,
+  }: GithubCornerProps = $props();
 </script>
 
 <a
@@ -16,7 +23,7 @@
     class="hidden absolute -top-[calc(42%-3px)] left-[calc(42%-3px)] w-1 h-36 -rotate-45 group-hover/github-corner:opacity-75 group-focus-visible/github-corner:block pointer-events-none"
     class:bg-white={primaryBackground}
     class:bg-neutral-900={!primaryBackground}
-  />
+  ></div>
   <svg
     aria-hidden="true"
     class:fill-white={primaryBackground}

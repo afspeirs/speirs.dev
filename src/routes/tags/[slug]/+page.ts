@@ -1,6 +1,13 @@
+import { getTags } from '$lib/content';
 import type { Post, Project } from '$lib/types';
 import { toKebabCase } from '$lib/utils';
-import { error } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit';
+
+/** @type {import('./$types').EntryGenerator} */
+export async function entries() {
+  const tags = await getTags();
+  return tags;
+}
 
 export async function load({ fetch, params }) {
   const { slug } = params;
@@ -26,6 +33,6 @@ export async function load({ fetch, params }) {
       projects: filteredProjectsByTag,
     };
   } catch (e) {
-    error(404, `Could not find ${slug}`)
+    return error(404, `Could not find ${slug}, ${e}`);
   }
 }

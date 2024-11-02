@@ -1,5 +1,12 @@
-import type { Project } from '$lib/types.js';
+import { getProjects } from '$lib/content';
+import type { Project } from '$lib/types';
 import { error } from '@sveltejs/kit';
+
+/** @type {import('./$types').EntryGenerator} */
+export async function entries() {
+  const projects = await getProjects();
+  return projects;
+}
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
@@ -11,6 +18,6 @@ export async function load({ params }) {
       metadata: post.metadata as Project,
     };
   } catch (e) {
-    throw error(404, `Could not find ${params.slug}`)
+    throw error(404, `Could not find ${params.slug}, ${e}`);
   }
 }

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import '@fontsource-variable/work-sans';
   import '@fontsource/mada/700.css';
 
@@ -7,14 +7,14 @@
   import '../app.css';
   import '../webmanifest-apple';
 
-  export let data;
+  let { children, data } = $props();
 </script>
 
 <div class="flex flex-col absolute inset-0">
   <Header />
 
   <main class="relative flex flex-col flex-1 gap-section px-4 mx-auto mb-section w-full max-w-4xl">
-    <slot />
+    {@render children()}
   </main>
 
   <Footer date={data.date} />

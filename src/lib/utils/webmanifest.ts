@@ -14,7 +14,7 @@ export function getWebmanifest(manifest: string, apple = false) {
         sizes: '512x512',
         type: 'image/png',
       },
-    ]
+    ];
   }
 
   return JSON.stringify(webmanifest, null, 2);

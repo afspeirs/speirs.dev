@@ -1,6 +1,6 @@
 <script lang="ts">
-  import GithubCorner from "$lib/components/GithubCorner.svelte";
-  import Nav from "$lib/components/Nav.svelte";
+  import GithubCorner from '$lib/components/GithubCorner.svelte';
+  import Nav from '$lib/components/Nav.svelte';
   import logo from '$lib/images/logo.svg';
 
   const maxTiltAngle = 75;
