@@ -18,7 +18,7 @@
       <img src={linkedin} alt="linkedin.com/afspeirs" width="32" height="32">
     </a>
   </div>
-  <p>
+  <p title={import.meta.env.APP_VERSION}>
     &copy; 2017-{date} Andrew Speirs
   </p>
 </footer>
