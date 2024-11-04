@@ -1,5 +1,4 @@
-import { getTags } from '$lib/content';
-import type { Post, Project } from '$lib/types';
+import { getProjects, getTags } from '$lib/content';
 import { toKebabCase } from '$lib/utils';
 import { error } from '@sveltejs/kit';
 
@@ -9,27 +8,17 @@ export async function entries() {
   return tags;
 }
 
-export async function load({ fetch, params }) {
+export async function load({ params }) {
   const { slug } = params;
 
   try {
-    const response = await fetch('../api/projects');
-    const projects: Project[] = await response.json();
+    const projects = await getProjects();
     const filteredProjectsByTag = projects.filter((project) => project.tags.find((tag) => toKebabCase(tag) === toKebabCase(slug)));
-
-    const tags = projects.flatMap((project) => project?.tags);
-
-    const currentTag = [...new Set(tags)]
-      .sort()
-      .map((tag) => ({
-        title: tag,
-        slug: toKebabCase(tag),
-        url: `tags/${toKebabCase(tag)}`,
-      }))
-      .find((tag) => tag.slug === slug);
+    const tags = await getTags();
+    const currentTag = tags.find((tag) => tag.slug === slug);
 
     return {
-      tag: currentTag as Post,
+      tag: currentTag,
       projects: filteredProjectsByTag,
     };
   } catch (e) {
