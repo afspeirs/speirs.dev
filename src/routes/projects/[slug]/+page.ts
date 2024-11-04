@@ -1,6 +1,7 @@
 import { getProjects } from '$lib/content';
 import type { Project } from '$lib/types';
 import { error } from '@sveltejs/kit';
+import type { Snippet } from 'svelte';
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {
@@ -14,7 +15,7 @@ export async function load({ params }) {
     const post = await import(`../../../content/projects/${params.slug}.md`);
 
     return {
-      content: post.default,
+      content: post.default as Snippet,
       metadata: post.metadata as Project,
     };
   } catch (e) {
