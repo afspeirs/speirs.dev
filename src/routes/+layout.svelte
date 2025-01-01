@@ -7,8 +7,12 @@
   import '../app.css';
   import '../webmanifest-apple';
 
-  let { children, data } = $props();
+  let { children } = $props();
 </script>
+
+<svelte:head>
+  <meta name="app-version" content={import.meta.env.APP_VERSION}>
+</svelte:head>
 
 <div class="flex flex-col absolute inset-0">
   <Header />
@@ -17,5 +21,5 @@
     {@render children()}
   </main>
 
-  <Footer date={data.date} />
+  <Footer />
 </div>
