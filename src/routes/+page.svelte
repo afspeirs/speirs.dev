@@ -5,6 +5,10 @@
   let { data } = $props();
 </script>
 
+<svelte:head>
+  <title>AFSpeirs</title>
+</svelte:head>
+
 <section id="home">
   <Card class="text-xl text-center space-y-4">
     <h2>Andrew Speirs</h2>

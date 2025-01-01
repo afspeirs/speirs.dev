@@ -17,6 +17,8 @@ export async function load({ params }) {
     const tags = await getTags();
     const currentTag = tags.find((tag) => tag.slug === slug);
 
+    if (!currentTag) throw new Error(`No tag found with a name of "${slug}"`);
+
     return {
       tag: currentTag,
       projects: filteredProjectsByTag,
