@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   const navItems = [
     {
@@ -20,7 +20,7 @@
     },
   ] as const;
 
-  const path = $derived($page.url.pathname);
+  const path = $derived(page.url.pathname);
   // $inspect(path);
 </script>
 
