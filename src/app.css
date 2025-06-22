@@ -44,6 +44,6 @@
     @apply outline-none focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
   }
   .focus-outline-white {
-    @apply outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:white;
+    @apply outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
   }
 }
