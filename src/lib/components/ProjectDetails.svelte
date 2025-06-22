@@ -20,7 +20,7 @@
   <div class="flex flex-wrap gap-2 my-2 text-base">
     {#each post.tags as tag}
       <a
-        class="px-3 py-1 bg-secondary text-white rounded-full hover:opacity-80 outline-none focus-visible:outline-primary"
+        class="px-3 py-1 bg-secondary text-white rounded-full hover:opacity-80 outline-hidden focus-visible:outline-primary"
         href="/tags/{toKebabCase(tag)}"
       >
         {tag}

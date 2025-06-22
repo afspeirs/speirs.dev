@@ -12,7 +12,7 @@
 
 <a
   aria-label="View source of {project} on GitHub"
-  class="absolute top-0 right-0 group/github-corner outline-none"
+  class="absolute top-0 right-0 group/github-corner outline-hidden"
   href="https://github.com/afspeirs/{project}"
   title="View source of {project} on GitHub"
   target="_blank"
