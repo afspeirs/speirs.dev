@@ -1,6 +1,26 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@config '../tailwind.config.ts';
+
+@utility focus-outline {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
+}
+
+@utility focus-outline-inset {
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
+}
+
+@utility focus-outline-invert {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
+}
+
+@utility focus-outline-inset-invert {
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
+}
+
+@utility focus-outline-white {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
+}
 
 @layer base {
   html {
@@ -27,23 +47,5 @@
   }
   h3 {
     @apply text-2xl;
-  }
-}
-
-@layer utilities {
-  .focus-outline {
-    @apply outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
-  }
-  .focus-outline-inset {
-    @apply outline-none focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
-  }
-  .focus-outline-invert {
-    @apply outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
-  }
-  .focus-outline-inset-invert {
-    @apply outline-none focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
-  }
-  .focus-outline-white {
-    @apply outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:white;
   }
 }

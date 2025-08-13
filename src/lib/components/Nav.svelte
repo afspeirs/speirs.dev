@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   const navItems = [
     {
@@ -20,12 +20,12 @@
     },
   ] as const;
 
-  const path = $derived($page.url.pathname);
+  const path = $derived(page.url.pathname);
   // $inspect(path);
 </script>
 
 <nav class="flex justify-center items-center pt-section mobile:flex-col">
-  {#each navItems as navItem}
+  {#each navItems as navItem (navItem.link)}
     <a
       class="px-8 font-heading font-bold text-2xl uppercase border-y-4 leading-[64px] border-transparent transition-colors duration-200 hover:bg-secondary aria-page:border-b-white focus-outline-inset-invert mobile:w-full mobile:text-center mobile:border-y-0 mobile:border-x-4 mobile:aria-page:border-x-white"
       href={navItem.link}

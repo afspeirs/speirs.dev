@@ -8,7 +8,7 @@
     <a href="https://github.com/afspeirs" target="_blank" rel="noopener noreferrer" class="hover:brightness-75 rounded-full focus-outline-invert">
       <img src={github} alt="github.com/afspeirs" width="32" height="32">
     </a>
-    <a href="https://uk.linkedin.com/in/afspeirs" target="_blank" rel="noopener noreferrer" class="hover:brightness-75 rounded-sm focus-outline-invert">
+    <a href="https://uk.linkedin.com/in/afspeirs" target="_blank" rel="noopener noreferrer" class="hover:brightness-75 rounded-xs focus-outline-invert">
       <img src={linkedin} alt="linkedin.com/afspeirs" width="32" height="32">
     </a>
   </div>

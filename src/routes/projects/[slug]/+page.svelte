@@ -19,6 +19,6 @@
   <ProjectDetails post={data.metadata} />
 </Card>
 
-<Card class="space-y-4 [&_a]:underline [&_a]:text-primary">
+<Card class="space-y-4 [&_a]:underline [&_a]:text-primary [&_a]:focus-outline">
   <Content />
 </Card>
