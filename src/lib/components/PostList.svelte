@@ -10,7 +10,7 @@
 </script>
 
 <ul role="list" class="divide-y divide-tertiary">
-  {#each posts as post}
+  {#each posts as post (post.slug)}
     <li>
       <a class="block hover:bg-tertiary focus-outline-inset" href={`/${post.url}`}>
         <div class="flex flex-col p-4">
