@@ -3,23 +3,23 @@
 @config '../tailwind.config.ts';
 
 @utility focus-outline {
-  @apply outline-hidden focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
 }
 
 @utility focus-outline-inset {
-  @apply outline-hidden focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
 }
 
 @utility focus-outline-invert {
-  @apply outline-hidden focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
 }
 
 @utility focus-outline-inset-invert {
-  @apply outline-hidden focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
 }
 
 @utility focus-outline-white {
-  @apply outline-hidden focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
 }
 
 @layer base {
