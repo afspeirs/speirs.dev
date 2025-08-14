@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@custom-variant aria-page (&[current="page"]);
+@custom-variant aria-page (&[aria-current="page"]);
 @custom-variant mobile (@media (600px >= width));
 
 @theme {
