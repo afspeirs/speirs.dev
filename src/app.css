@@ -4,9 +4,9 @@
 @custom-variant mobile (@media (600px >= width));
 
 @theme {
-  --color-primary: #255abc;
-  --color-secondary: #3b73d9;
-  --color-tertiary: #e6edfa;
+  --color-primary: hsl(219, 67%, 44%);
+  --color-secondary: hsl(219, 67%, 54%);
+  --color-tertiary: hsl(219, 67%, 94%);
 
   --font-body: "Work Sans Variable", sans-serif;
   --font-heading: "Mada", sans-serif;
