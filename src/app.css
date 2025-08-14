@@ -1,25 +1,34 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.ts';
+@custom-variant aria-page (&[current="page"]);
+@custom-variant mobile (@media (600px >= width));
 
-@utility focus-outline {
-  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
-}
+@theme {
+  --color-primary: #255abc;
+  --color-secondary: #3b73d9;
+  --color-tertiary: #e6edfa;
 
-@utility focus-outline-inset {
-  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
-}
+  --font-body: "Work Sans Variable", sans-serif;
+  --font-heading: "Mada", sans-serif;
 
-@utility focus-outline-invert {
-  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
-}
+  --shadow: 4px 6px 6px rgba(0, 0, 0, 0.25);
+  --spacing-section: 4rem;
 
-@utility focus-outline-inset-invert {
-  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
-}
-
-@utility focus-outline-white {
-  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
+  --animate-octocat-wave: octocat-wave 560ms ease-in-out;
+  @keyframes octocat-wave {
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+    20%,
+    60% {
+      transform: rotate(-25deg);
+    }
+    40%,
+    80% {
+      transform: rotate(10deg);
+    }
+  }
 }
 
 @layer base {
@@ -48,4 +57,24 @@
   h3 {
     @apply text-2xl;
   }
+}
+
+@utility focus-outline {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-secondary;
+}
+
+@utility focus-outline-inset {
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-secondary;
+}
+
+@utility focus-outline-invert {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-tertiary;
+}
+
+@utility focus-outline-inset-invert {
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-tertiary;
+}
+
+@utility focus-outline-white {
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white;
 }
