@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import type { Project } from '$lib/types';
   import GithubCorner from '$lib/components/GithubCorner.svelte';
   import { formatDate, toKebabCase } from '$lib/utils';
@@ -21,7 +22,7 @@
     {#each post.tags as tag (tag)}
       <a
         class="px-3 py-1 bg-secondary text-white rounded-full hover:opacity-80 focus-outline"
-        href="/tags/{toKebabCase(tag)}"
+        href={resolve(`/tags/${toKebabCase(tag)}`)}
       >
         {tag}
       </a>

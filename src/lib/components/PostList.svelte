@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
+  import type { Pathname } from '$app/types';
   import type { Project } from '$lib/types';
   import { formatDate } from '$lib/utils';
 
@@ -12,7 +14,7 @@
 <ul role="list" class="divide-y divide-tertiary">
   {#each posts as post (post.slug)}
     <li>
-      <a class="block hover:bg-tertiary focus-outline-inset" href={`/${post.url}`}>
+      <a class="block hover:bg-tertiary focus-outline-inset" href={resolve(`/${post.url}` as Pathname)}>
         <div class="flex flex-col p-4">
           <div class="flex justify-between items-center">
             <h3>{post.title}</h3>

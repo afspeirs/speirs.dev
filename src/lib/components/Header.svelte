@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import GithubCorner from '$lib/components/GithubCorner.svelte';
   import Nav from '$lib/components/Nav.svelte';
   import logo from '$lib/images/logo.svg';
@@ -17,7 +18,7 @@
   <div class="flex justify-center">
     <a
       class="transition-transform duration-300 hover:rotate-(--logo-tilt-angle) focus:rotate-(--logo-tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[36px] rounded-b-[18px]"
-      href="/"
+      href={resolve('/')}
       aria-label="Home"
       on:blur={updateTilt}
       on:mouseout={updateTilt}
