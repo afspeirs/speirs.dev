@@ -38,7 +38,7 @@
     "globals": "^16.4.0",
     "mdsvex": "^0.12.6",
     "semantic-release": "^24.2.7",
-    "svelte": "^5.38.8",
+    "svelte": "^5.38.10",
     "svelte-check": "^4.3.1",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
