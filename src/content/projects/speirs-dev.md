@@ -5,6 +5,7 @@ description: A showcase all of all my different projects
 github: speirs.dev
 link: speirs.dev
 tags:
+  - Cypress
   - Svelte
   - SvelteKit
   - Tailwind
