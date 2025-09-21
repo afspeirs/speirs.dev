@@ -39,6 +39,14 @@ export default tseslint.config(
     },
   },
   {
+    files: ['cypress/**/*.ts', 'cypress.config.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: ['./cypress/tsconfig.json'],
+      },
+    },
+  },
+  {
     plugins: {
       '@stylistic': stylistic,
     },

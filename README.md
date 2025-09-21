@@ -56,3 +56,17 @@ npm run check
 # Can also watch for changes to files
 npm run check:watch
 ```
+
+### test
+
+Run the end to end (e2e) test scripts
+
+```bash
+npm run test
+```
+
+To visually view the tests running
+
+```bash
+npm run test:open
+```
