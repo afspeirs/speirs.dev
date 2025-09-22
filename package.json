@@ -42,7 +42,7 @@
     "mdsvex": "^0.12.6",
     "semantic-release": "^24.2.9",
     "svelte": "^5.39.3",
-    "svelte-check": "^4.3.1",
+    "svelte-check": "^4.3.2",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.0",
