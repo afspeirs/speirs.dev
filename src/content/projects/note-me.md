@@ -3,7 +3,7 @@ title: NoteMe
 date: 2018-05-06
 description: Store and edit your notes in Markdown formatted text
 github: note-me
-link: noteme.app
+link: noteme.speirs.dev
 tags:
   - PWA
   - React
