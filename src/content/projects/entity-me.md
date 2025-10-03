@@ -6,9 +6,10 @@ github: entity-me
 link: entityme.speirs.dev
 tags:
   - PWA
-  - React
   - Tailwind
-  - Vite
+  - Svelte
+  - SvelteKit
+  - TypeScript
 ---
 EntityMe is a Progressive Web App that displays all of the HTML entities, and provide an easy method of copying its contents
 
@@ -16,4 +17,4 @@ I was scraping <https://dev.w3.org/html5/html-author/charref> to get all of the 
 
 One of the goals with this project is to have a npm package with access to all the entities for other developers to utilise.
 
-The PWA is build using [Gatsby](https://www.gatsbyjs.org/).
+This site is build using [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/).
