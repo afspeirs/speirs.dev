@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-  <meta name="app-version" content={import.meta.env.APP_VERSION}>
+  <meta name="version" content={import.meta.env.APP_VERSION}>
 </svelte:head>
 
 <div class="flex flex-col absolute inset-0">
