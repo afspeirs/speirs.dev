@@ -10,15 +10,14 @@ export async function getProjects() {
     .map(([path, file]) => {
       const slug = path.split('/').at(-1)?.replace('.md', '');
 
-      if (file?.metadata && slug) {
-        const metadata = file.metadata;
+      if (file?.metadata && slug && !file.metadata.hidden) {
         const project = {
-          ...metadata,
+          ...file.metadata,
           slug,
           url: path.replace('/src/content/', '').replace(/\.md$/, ''),
         } satisfies Project;
 
-        if (!project.hidden) return project;
+        return project;
       }
       return undefined;
     })
