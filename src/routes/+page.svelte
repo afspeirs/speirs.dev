@@ -13,7 +13,7 @@
   <Card>
     <h2 class="mb-4">Andrew Speirs</h2>
     <p>Hello there!</p>
-    <p>I mainly make things for the web, check them out below.</p>
+    <p>I make things for the web, check them out below.</p>
   </Card>
 </section>
 
