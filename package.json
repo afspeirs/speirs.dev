@@ -1,6 +1,6 @@
 {
   "name": "speirs.dev",
-  "version": "1.3.0-develop.5",
+  "version": "1.3.0-develop.6",
   "type": "module",
   "private": true,
   "scripts": {
