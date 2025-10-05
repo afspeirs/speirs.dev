@@ -3,6 +3,7 @@ title: CV
 date: 2025-10-03
 description: My CV as a website, downloadable as a PDF.
 link: cv.speirs.dev
+hidden: true
 tags:
   - Svelte
   - SvelteKit
