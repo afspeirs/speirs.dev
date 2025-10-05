@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { classNames } from '$lib/utils/classNames';
+
   type GithubCornerProps = {
     project?: string,
     primaryBackground?: boolean,
@@ -12,7 +14,7 @@
 
 <a
   aria-label="View source of {project} on GitHub"
-  class="absolute top-0 right-0 group/github-corner outline-hidden"
+  class="absolute top-0 right-0 size-23 place-items-end group/github-corner outline-hidden overflow-hidden"
   href="https://github.com/afspeirs/{project}"
   title="View source of {project} on GitHub"
   target="_blank"
@@ -20,16 +22,14 @@
 >
   <div
     aria-hidden="true"
-    class="hidden absolute -top-[calc(42%-3px)] left-[calc(42%-3px)] w-1 h-36 -rotate-45 group-hover/github-corner:opacity-75 group-focus-visible/github-corner:block pointer-events-none"
-    class:bg-white={primaryBackground}
-    class:bg-neutral-900={!primaryBackground}
+    class={classNames(
+      'hidden absolute top-0 left-0 w-1 h-34 -rotate-45 origin-top-left group-hover/github-corner:opacity-75 group-focus-visible/github-corner:block pointer-events-none',
+      primaryBackground ? 'bg-white' : 'bg-neutral-900',
+    )}
   ></div>
   <svg
     aria-hidden="true"
-    class:fill-white={primaryBackground}
-    class:fill-neutral-900={!primaryBackground}
-    class:text-primary={primaryBackground}
-    class:text-white={!primaryBackground}
+    class={primaryBackground ? 'fill-white text-primary' : 'fill-neutral-900 text-white'}
     width="80"
     height="80"
     viewBox="0 0 250 250"
