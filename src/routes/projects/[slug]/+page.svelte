@@ -14,11 +14,8 @@
 
 <BackButton />
 
-<Card>
-  <h2 class="mb-2">{data.metadata.title}</h2>
-  <ProjectDetails post={data.metadata} />
-</Card>
+<ProjectDetails post={data.metadata} />
 
-<Card class="space-y-4 [&_a]:underline [&_a]:text-primary [&_a]:focus-outline">
+<Card class="space-y-4 [&_a]:text-primary dark:[&_a]:text-tertiary [&_a]:hover:text-dark-1 dark:[&_a]:hover:text-light [&_a]:underline [&_a]:focus-outline">
   <Content />
 </Card>

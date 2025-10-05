@@ -40,6 +40,7 @@
     "eslint": "^9.36.0",
     "eslint-plugin-svelte": "^3.12.4",
     "globals": "^16.4.0",
+    "lucide-svelte": "^0.544.0",
     "mdsvex": "^0.12.6",
     "semantic-release": "^24.2.9",
     "start-server-and-test": "^2.1.2",

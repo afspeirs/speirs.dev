@@ -1,9 +1,11 @@
 <script lang="ts">
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
   import github from '$lib/images/github.svg';
   import linkedin from '$lib/images/linkedin.png';
 </script>
 
-<footer class="flex flex-col justify-evenly items-center mt-8 py-6 gap-6 text-center bg-primary text-white">
+<footer class="relative flex flex-col justify-evenly items-center mt-8 py-6 gap-6 text-center bg-primary text-white">
+  <ThemeToggle />
   <div class="flex gap-8">
     <a href="https://github.com/afspeirs" target="_blank" rel="noopener noreferrer" class="hover:brightness-75 rounded-full focus-outline-invert">
       <img src={github} alt="github.com/afspeirs" width="32" height="32">
