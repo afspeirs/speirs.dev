@@ -19,7 +19,7 @@
           <div class="flex justify-between items-center">
             <h3>{post.title}</h3>
             {#if post.date}
-              <time datetime={post.date} class="text-tertiary">
+              <time datetime={post.date} class="text-secondary dark:text-tertiary">
                 {formatDate({ date: post.date, options: { year: 'numeric' } })}
               </time>
             {/if}
