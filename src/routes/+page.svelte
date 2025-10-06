@@ -10,8 +10,8 @@
 </svelte:head>
 
 <section id="home">
-  <Card class="text-xl text-center space-y-4">
-    <h2>Andrew Speirs</h2>
+  <Card>
+    <h2 class="mb-4">Andrew Speirs</h2>
     <p>Hello there!</p>
     <p>I make things for the web, check them out below.</p>
   </Card>

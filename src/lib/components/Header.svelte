@@ -12,10 +12,10 @@
   };
 </script>
 
-<header class="py-16 pb-40 -mb-24 bg-primary text-white">
+<header class="pt-16 pb-32 -mb-24 bg-primary text-white">
   <GithubCorner primaryBackground />
 
-  <div class="flex justify-center">
+  <div class="flex justify-center pb-section">
     <a
       class="transition-transform duration-300 hover:rotate-(--logo-tilt-angle) focus:rotate-(--logo-tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[36px] rounded-b-[18px]"
       href={resolve('/')}
