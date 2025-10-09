@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite dev",
     "start": "vite dev",
-    "prebuild": "npm run semantic-release:dry",
     "build": "vite build",
     "preview": "vite preview",
     "pwa": "npm run build && npm run preview",
