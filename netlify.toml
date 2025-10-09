@@ -3,4 +3,4 @@
   publish = "build"
   # This ignore command prevents Netlify from building automatically on every Git commit.
   # The build will only proceed if it's triggered by a build hook (from GitHub Actions).
-  ignore = "echo $INCOMING_HOOK_URL; if [ -z $INCOMING_HOOK_URL ]; then exit 0; else exit 1; fi"
+  ignore = "if [ -z $INCOMING_HOOK_URL ]; then exit 0; else exit 1; fi"
