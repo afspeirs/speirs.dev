@@ -18,6 +18,10 @@ jobs:
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
+    env:
+      NETLIFY_BUILD_HOOK_MAIN: ${{secrets.NETLIFY_BUILD_HOOK_MAIN}}
+      NETLIFY_BUILD_HOOK_DEVELOP : ${{secrets.NETLIFY_BUILD_HOOK_DEVELOP}}
+      NETLIFY_BUILD_HOOK_NEXT: ${{secrets.NETLIFY_BUILD_HOOK_NEXT}}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -35,3 +39,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npx semantic-release
+      - name: Trigger Netlify build
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+            curl -X POST -d '{}' ${{env.NETLIFY_BUILD_HOOK_MAIN}}
+          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
+            curl -X POST -d '{}' ${{env.NETLIFY_BUILD_HOOK_DEVELOP}}
+          elif [[ ${{ github.ref }} == 'refs/heads/next' ]]; then
+            curl -X POST -d '{}' ${{env.NETLIFY_BUILD_HOOK_NEXT}}
+          fi
