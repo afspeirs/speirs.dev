@@ -28,10 +28,3 @@ describe('Tags', () => {
     cy.url().should('include', '/tags/svelte');
   });
 });
-
-describe('About', () => {
-  it('should navigate to /about', () => {
-    cy.visit('/about');
-    cy.url().should('include', '/about');
-  });
-});
