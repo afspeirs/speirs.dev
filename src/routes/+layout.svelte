@@ -2,6 +2,7 @@
   import '@fontsource-variable/work-sans';
   import '@fontsource/mada/700.css';
 
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import { themeSystem } from '$lib/context/theme.svelte';
@@ -19,12 +20,14 @@
   <meta name="version" content={import.meta.env.APP_VERSION}>
 </svelte:head>
 
-<div class="flex flex-col absolute inset-0">
-  <Header />
+<Header />
 
-  <main class="relative flex flex-col flex-1 gap-section px-4 pb-section mx-auto my-8 w-full max-w-4xl">
-    {@render children()}
-  </main>
+<main class="relative flex flex-col flex-1 gap-section px-4 pb-section mx-auto mb-8 w-full max-w-4xl">
+  <div id="start" class="flex sticky top-0 h-section -mb-section z-10 bg-light-1 dark:bg-black">
+    <Breadcrumbs />
+  </div>
 
-  <Footer />
-</div>
+  {@render children()}
+</main>
+
+<Footer />

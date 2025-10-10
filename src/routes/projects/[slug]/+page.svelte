@@ -1,5 +1,4 @@
 <script lang="ts">
-  import BackButton from '$lib/components/BackButton.svelte';
   import Card from '$lib/components/Card.svelte';
   import ProjectDetails from '$lib/components/ProjectDetails.svelte';
 
@@ -11,8 +10,6 @@
 <svelte:head>
   <title>{data.metadata.title} | Projects | AFSpeirs</title>
 </svelte:head>
-
-<BackButton />
 
 <ProjectDetails post={data.metadata} />
 

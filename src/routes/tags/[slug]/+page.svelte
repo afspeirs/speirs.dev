@@ -1,5 +1,4 @@
 <script lang="ts">
-  import BackButton from '$lib/components/BackButton.svelte';
   import Card from '$lib/components/Card.svelte';
   import PostList from '$lib/components/PostList.svelte';
 
@@ -7,12 +6,10 @@
 </script>
 
 <svelte:head>
-  <title>{data.tag.title} | Tags | AFSpeirs</title>
+  <title>{data.metadata.title} | Tags | AFSpeirs</title>
 </svelte:head>
 
-<BackButton />
-
 <Card>
-  <h2 class="mb-4">{data.tag.title}</h2>
+  <h2 class="mb-4">{data.metadata.title}</h2>
   <PostList posts={data.projects} />
 </Card>
