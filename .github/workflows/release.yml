@@ -27,7 +27,7 @@ jobs:
         run: npm test
 
   release:
-    name: Release
+    name: Semantic Release
     runs-on: ubuntu-latest
     needs: test
     permissions:
