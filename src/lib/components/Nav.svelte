@@ -15,10 +15,6 @@
       link: '/tags',
       name: 'Tags',
     },
-    {
-      link: '/about',
-      name: 'About',
-    },
   ] as const;
 
   const path = $derived(page.url.pathname);
