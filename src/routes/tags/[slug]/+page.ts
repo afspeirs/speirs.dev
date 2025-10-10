@@ -20,7 +20,7 @@ export async function load({ params }) {
     if (!currentTag) throw new Error(`No tag found with a name of "${slug}"`);
 
     return {
-      tag: currentTag,
+      metadata: currentTag,
       projects: filteredProjectsByTag,
     };
   } catch (e) {

@@ -6,12 +6,12 @@
     class?: string;
   };
 
-  const {
+  let {
     children,
     class: className = '',
   }: CardProps = $props();
 </script>
 
-<div class="relative bg-white dark:bg-dark-2 shadow rounded-lg overflow-hidden p-8 {className}">
+<div class="relative bg-white dark:bg-dark-1 rounded-lg overflow-hidden p-8 {className}">
   {@render children()}
 </div>

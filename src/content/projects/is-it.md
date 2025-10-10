@@ -6,9 +6,9 @@ github: is-it
 link: isit.speirs.dev
 tags:
   - PWA
-  - Tailwind
   - Svelte
   - SvelteKit
+  - Tailwind
   - TypeScript
 ---
 Is it... is a Progressive Web App that tells you if it is a certain day or not

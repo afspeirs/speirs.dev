@@ -6,9 +6,9 @@ github: entity-me
 link: entityme.speirs.dev
 tags:
   - PWA
-  - Tailwind
   - Svelte
   - SvelteKit
+  - Tailwind
   - TypeScript
 ---
 EntityMe is a Progressive Web App that displays all of the HTML entities, and provide an easy method of copying its contents
