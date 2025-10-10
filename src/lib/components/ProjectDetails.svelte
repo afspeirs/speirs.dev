@@ -37,6 +37,6 @@
   <p>{post.description}</p>
 
   {#if post.link}
-    <p class="mt-4">To view the app, visit <a class="text-primary dark:text-tertiary hover:text-dark-1 dark:hover:text-light underline focus-outline" href="https://{post.link}" target="_blank" rel="noopener noreferrer">{post.link}</a>.</p>
+    <p class="mt-4">To view the app, visit <a class="text-primary dark:text-tertiary hover:text-dark-1 dark:hover:text-light-1 underline focus-outline" href="https://{post.link}" target="_blank" rel="noopener noreferrer">{post.link}</a>.</p>
   {/if}
 </Card>

@@ -5,12 +5,14 @@
 @custom-variant mobile (@media (600px >= width));
 
 @theme {
+  /* --color-primary: #123abc; */
   --color-primary: hsl(219, 67%, 44%);
   --color-secondary: hsl(219, 67%, 54%);
   --color-tertiary: hsl(219, 67%, 67%);
   --color-dark-1: hsl(0, 0%, 7%);
-  --color-dark-2: hsl(0, 0%, 14%);
-  --color-light: hsl(219, 67%, 96%);
+  --color-dark-2: hsl(0, 0%, 16%);
+  --color-light-1: hsl(219, 67%, 96%);
+  --color-light-2: hsl(219, 67%, 92%);
 
   --font-body: "Work Sans Variable", sans-serif;
   --font-heading: "Mada", sans-serif;
@@ -49,7 +51,7 @@
   h4,
   h5,
   h6 {
-    @apply text-secondary dark:text-tertiary font-heading font-bold;
+    @apply text-secondary font-heading font-bold;
   }
 
   h1 {
@@ -72,11 +74,11 @@
 }
 
 @utility focus-outline-invert {
-  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-light;
+  @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-light-1;
 }
 
 @utility focus-outline-inset-invert {
-  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-light;
+  @apply focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-light-1;
 }
 
 @utility focus-outline-white {

@@ -12,7 +12,7 @@
   };
 </script>
 
-<header class="pt-16 pb-32 -mb-24 bg-primary text-white">
+<header class="pt-16 pb-section bg-primary text-white">
   <GithubCorner primaryBackground />
 
   <div class="flex justify-center pb-section">

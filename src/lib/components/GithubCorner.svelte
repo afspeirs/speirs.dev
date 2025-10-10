@@ -24,12 +24,12 @@
     aria-hidden="true"
     class={classNames(
       'hidden absolute top-0 left-0 w-1 h-34 -rotate-45 origin-top-left group-hover/github-corner:opacity-75 group-focus-visible/github-corner:block pointer-events-none',
-      primaryBackground ? 'bg-white' : 'bg-dark-1 dark:bg-light',
+      primaryBackground ? 'bg-white' : 'bg-dark-1 dark:bg-light-1',
     )}
   ></div>
   <svg
     aria-hidden="true"
-    class={primaryBackground ? 'fill-white text-primary' : 'fill-dark-1 text-white dark:fill-light dark:text-dark-2'}
+    class={primaryBackground ? 'fill-white text-primary' : 'fill-dark-1 text-white dark:fill-light-1 dark:text-dark-1'}
     width="80"
     height="80"
     viewBox="0 0 250 250"

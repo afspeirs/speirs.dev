@@ -4,7 +4,7 @@
   import linkedin from '$lib/images/linkedin.png';
 </script>
 
-<footer class="relative flex flex-col justify-evenly items-center mt-8 py-6 gap-6 text-center bg-primary text-white">
+<footer class="relative flex flex-col justify-evenly items-center py-6 gap-6 text-center bg-primary text-white">
   <ThemeToggle />
   <div class="flex gap-8">
     <a href="https://github.com/afspeirs" target="_blank" rel="noopener noreferrer" class="hover:brightness-75 rounded-full focus-outline-invert">

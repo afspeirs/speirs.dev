@@ -22,7 +22,7 @@
 <div class="flex flex-col absolute inset-0">
   <Header />
 
-  <main class="relative flex flex-col flex-1 gap-section px-4 mx-auto mb-section w-full max-w-4xl">
+  <main class="relative flex flex-col flex-1 gap-section px-4 pb-section mx-auto my-8 w-full max-w-4xl">
     {@render children()}
   </main>
 
