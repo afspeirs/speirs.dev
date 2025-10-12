@@ -12,7 +12,7 @@
   };
 </script>
 
-<header class="py-section bg-primary text-white">
+<header class="py-8 bg-primary text-white">
   <GithubCorner primaryBackground />
 
   <div class="flex justify-center">
@@ -23,7 +23,7 @@
       on:blur={updateTilt}
       on:mouseout={updateTilt}
     >
-      <img src={logo} alt="" width="150" height="150">
+      <img src={logo} alt="" width="96" height="96">
     </a>
   </div>
 
