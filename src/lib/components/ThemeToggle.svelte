@@ -10,7 +10,7 @@
 </script>
 
 <Button
-  class="absolute top-2 right-2 text-white flex-row-reverse"
+  class="absolute top-2 right-2 flex-row-reverse"
   icon={$themeSystem === 'dark' ? MoonIcon : SunIcon}
   iconOnly
   invert
