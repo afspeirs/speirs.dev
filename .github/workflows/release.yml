@@ -64,7 +64,6 @@ jobs:
     name: Deploy to Netlify
     runs-on: ubuntu-latest
     needs: release
-    if: needs.release.outputs.new_release_published == 'true'
     env:
       NETLIFY_BUILD_HOOK_MAIN: ${{secrets.NETLIFY_BUILD_HOOK_MAIN}}
       NETLIFY_BUILD_HOOK_DEVELOP : ${{secrets.NETLIFY_BUILD_HOOK_DEVELOP}}
