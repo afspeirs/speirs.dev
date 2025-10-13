@@ -5,19 +5,20 @@
   import logo from '$lib/images/logo.svg';
 
   const maxTiltAngle = 75;
+  let logoAnchorElement: HTMLAnchorElement;
 
   const updateTilt = () => {
-    const angle = `${Math.floor(Math.random() * (maxTiltAngle - -maxTiltAngle)) - maxTiltAngle}deg`;
-    document.documentElement.style.setProperty('--logo-tilt-angle', angle);
+    const angle = Math.floor(Math.random() * maxTiltAngle * 2) - maxTiltAngle;
+    logoAnchorElement.style.setProperty('--tilt-angle', `${angle}deg`);
   };
 </script>
 
-<header class="py-8 bg-primary text-white">
+<header class="flex flex-col place-items-center py-8 bg-primary text-white">
   <GithubCorner primaryBackground />
 
-  <div class="flex justify-center">
     <a
-      class="transition-transform duration-300 hover:rotate-(--logo-tilt-angle) focus:rotate-(--logo-tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[36px] rounded-b-[18px]"
+      bind:this={logoAnchorElement}
+      class="transition-transform duration-300 hover:rotate-(--tilt-angle) focus:rotate-(--tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[23px] rounded-b-[11px]"
       href={resolve('/')}
       aria-label="Home"
       on:blur={updateTilt}
@@ -25,7 +26,6 @@
     >
       <img src={logo} alt="" width="96" height="96">
     </a>
-  </div>
 
   <!-- <Nav /> -->
 </header>
