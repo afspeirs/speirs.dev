@@ -18,7 +18,7 @@
 
     <a
       bind:this={logoAnchorElement}
-      class="transition-transform duration-300 hover:rotate-(--tilt-angle) focus:rotate-(--tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[36px] rounded-b-[18px]"
+      class="transition-transform duration-300 hover:rotate-(--tilt-angle) focus:rotate-(--tilt-angle) hover:scale-110 focus:scale-110 focus-outline-invert rounded-t-[23px] rounded-b-[11px]"
       href={resolve('/')}
       aria-label="Home"
       on:blur={updateTilt}
