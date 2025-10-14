@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import type { Pathname } from '$app/types';
   import Button from '$lib/components/Button.svelte';
   import Card from '$lib/components/Card.svelte';
   import GithubCorner from '$lib/components/GithubCorner.svelte';
@@ -26,8 +27,10 @@
     <div class="flex flex-wrap gap-2 my-3 text-base">
       {#each post.tags as tag (tag)}
         <Button
-          class="px-3 bg-primary text-white"
-          href={resolve(`/tags/${toKebabCase(tag)}`)}
+          class="text-sm"
+          href={resolve(`/tags/${toKebabCase(tag)}`) as Pathname}
+          styleBackground="primary"
+          styleText="light"
           text={tag}
         />
       {/each}

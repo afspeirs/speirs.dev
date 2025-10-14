@@ -43,9 +43,10 @@
     <ol role="list" class="flex items-center gap-2">
       <li>
         <Button
+          href="/"
           icon={HouseIcon}
           iconOnly
-          href="/"
+          styleBackground="primaryOutline"
           text="Home"
         />
       </li>
@@ -54,9 +55,10 @@
           <div class="flex items-center gap-2">
             <ChevronRightIcon class="size-5 shrink-0" aria-hidden="true" />
             <Button
-              href={page.href}
-              current={page.current ? 'page' : undefined}
+              aria-current={page.current ? 'page' : undefined}
               class="text-sm font-medium"
+              href={page.href}
+              styleBackground="primaryOutline"
               text={page.label}
             />
           </div>

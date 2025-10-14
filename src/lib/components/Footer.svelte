@@ -9,18 +9,18 @@
   <ThemeToggle />
   <div class="flex gap-4">
     <Button
-      iconOnly
       href="https://github.com/afspeirs"
+      iconOnly
+      styleBackground="dark"
       text="Github"
-      invert
     >
       <img src={github} alt="github.com/afspeirs" width="32" height="32">
     </Button>
     <Button
-      iconOnly
       href="https://uk.linkedin.com/in/afspeirs"
+      iconOnly
+      styleBackground="dark"
       text="LinkedIn"
-      invert
     >
       <img src={linkedin} alt="linkedin.com/afspeirs" width="32" height="32">
     </Button>

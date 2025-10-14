@@ -13,7 +13,8 @@
   class="absolute top-2 right-2 flex-row-reverse"
   icon={$themeSystem === 'dark' ? MoonIcon : SunIcon}
   iconOnly
-  invert
   onclick={handleUpdateTheme}
+  styleBackground="dark"
+  styleText="light"
   text={themeUserOptions[$themeSystem]}
 />
