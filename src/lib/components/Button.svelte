@@ -1,6 +1,6 @@
 <script lang="ts" module>
   export const style = {
-    base: 'peer/button not-disabled:cursor-pointer rounded-lg select-none disabled:opacity-40 disabled:pointer-events-none focus-outline',
+    base: 'peer/button not-disabled:cursor-pointer rounded-md select-none disabled:opacity-40 disabled:pointer-events-none focus-outline',
     iconOnly: 'block p-2',
     withText: 'flex items-center gap-3 px-3 py-2',
   };
