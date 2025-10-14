@@ -10,10 +10,11 @@
 </script>
 
 <Button
-  class="absolute top-2 right-2 flex-row-reverse"
+  class="absolute top-2 right-2 flex-row-reverse focus-outline-inset-invert"
   icon={$themeSystem === 'dark' ? MoonIcon : SunIcon}
   iconOnly
-  invert
   onclick={handleUpdateTheme}
+  styleBackground="dark"
+  styleText="light"
   text={themeUserOptions[$themeSystem]}
 />
