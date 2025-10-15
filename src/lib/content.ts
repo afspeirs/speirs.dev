@@ -1,4 +1,4 @@
-import type { Post, Project } from '$lib/types';
+import type { Project, Tag } from '$lib/types';
 import { toKebabCase } from '$lib/utils';
 
 type File = { metadata: Omit<Project, 'slug' | 'url'> };
@@ -27,6 +27,7 @@ export async function getProjects({
       if (file?.metadata && slug && !file.metadata.hidden) {
         const project = {
           ...file.metadata,
+          type: 'project',
           slug,
           url: path.replace('/src/content/', '').replace(/\.md$/, ''),
         } satisfies Project;
@@ -62,10 +63,12 @@ export async function getTags() {
   const sortedTags = [...new Set(tags)]
     .sort()
     .map((tag) => ({
+      type: 'tag',
+      // count: tags.filter((t) => t === tag).length,
       title: tag,
       slug: toKebabCase(tag),
       url: `tags/${toKebabCase(tag)}`,
-    })) satisfies Post[];
+    })) satisfies Tag[];
 
   return sortedTags;
 }
