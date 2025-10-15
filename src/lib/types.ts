@@ -1,14 +1,20 @@
-export type Post = {
-  title: string,
-  slug: string,
-  url: string,
-};
+export interface Post {
+  title: string;
+  slug: string;
+  url: string;
+}
 
-export type Project = {
-  date: string,
-  description: string,
-  github?: string,
-  hidden?: boolean
-  link?: string,
-  tags: string[],
-} & Post;
+export interface Project extends Post {
+  type: 'project';
+  date: string;
+  description: string;
+  github?: string;
+  hidden?: boolean;
+  link?: string;
+  tags: string[];
+}
+
+export interface Tag extends Post {
+  type: 'tag';
+  // count: number;
+}

@@ -9,9 +9,9 @@
   <title>Projects | AFSpeirs</title>
 </svelte:head>
 
-<Card>
-  <h2 class="mb-4">Projects</h2>
-  <p>Below are several web projects I have created</p>
+<Card class="space-y-4">
+  <h2>Projects</h2>
+  <p>This collection of projects showcases my journey as a frontend developer, from creative experiments to practical, user-focused utilities. Each project represents a unique challenge I was excited to solve, with a focus on creating a clean and intuitive user experience.</p>
 </Card>
 
 <Card>

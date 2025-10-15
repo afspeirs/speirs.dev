@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { ChevronRightIcon } from 'lucide-svelte';
+
+  import Button from '$lib/components/Button.svelte';
   import Card from '$lib/components/Card.svelte';
   import PostList from '$lib/components/PostList.svelte';
 
@@ -19,9 +22,19 @@
 </section>
 
 <section id="projects">
-  <Card>
-    <h2 class="mb-4">Projects</h2>
+  <Card class="space-y-4">
+    <h2>Featured Projects</h2>
+
+    <p>Here is a selection of recent and ongoing projects that I have truly enjoyed bringing to life.</p>
 
     <PostList posts={data.projects} />
+
+    <Button
+      class="flex-row-reverse w-min"
+      href="/projects"
+      icon={ChevronRightIcon}
+      styleBackground="primary"
+      text="View All Projects"
+    />
   </Card>
 </section>

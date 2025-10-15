@@ -1,11 +1,11 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import type { Pathname } from '$app/types';
-  import type { Project } from '$lib/types';
+  import type { Project, Tag } from '$lib/types';
   import { formatDate } from '$lib/utils';
 
   type PostListProps = {
-    posts: Partial<Project>[],
+    posts: (Project | Tag)[],
   };
 
   let { posts }: PostListProps = $props();
@@ -18,13 +18,13 @@
         <div class="flex flex-col p-4">
           <div class="flex justify-between items-center">
             <h3>{post.title}</h3>
-            {#if post.date}
+            {#if post.type === 'project' && post.date}
               <time datetime={post.date} class="text-secondary dark:text-tertiary">
                 {formatDate({ date: post.date, options: { year: 'numeric' } })}
               </time>
             {/if}
           </div>
-          {#if post.description}
+          {#if post.type === 'project' && post.description}
             <div>
               {post.description}
             </div>
