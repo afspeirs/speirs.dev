@@ -34,6 +34,7 @@
       href="/projects"
       icon={ChevronRightIcon}
       styleBackground="primary"
+      styleText="light"
       text="View All Projects"
     />
   </Card>
