@@ -15,7 +15,7 @@
       styleBackground="dark"
       text="Github"
     >
-      <img src={github} alt="github.com/afspeirs" width="32" height="32">
+      <img src={github} alt="Andrew Speirs on Github" width="32" height="32">
     </Button>
     <Button
       class="focus-outline-inset-invert"
@@ -24,7 +24,7 @@
       styleBackground="dark"
       text="LinkedIn"
     >
-      <img src={linkedin} alt="linkedin.com/afspeirs" width="32" height="32">
+      <img src={linkedin} alt="Andrew Speirs on LinkedIn" width="32" height="32">
     </Button>
   </div>
   <p>&copy; 2017-2025 Andrew Speirs</p>

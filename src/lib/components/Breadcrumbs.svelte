@@ -31,11 +31,6 @@
 
     return dynamicPaths;
   });
-
-  // $inspect({
-  //   page,
-  //   pages,
-  // });
 </script>
 
 {#if pages.length >= 0}
