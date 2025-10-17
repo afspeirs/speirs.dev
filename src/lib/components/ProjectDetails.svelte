@@ -21,7 +21,7 @@
 
   <h2 class="mb-2">{post.title}</h2>
 
-  <small>Project Started: <time class="text-primary dark:text-tertiary" datetime={post.date?.toString()}>{formatDate({ date: post.date })}</time></small>
+  <small>Project Started: <time class="text-primary dark:text-tertiary" datetime={post.date}>{formatDate({ date: post.date })}</time></small>
 
   {#if post.tags}
     <div class="flex flex-wrap gap-2 my-3 text-base">
