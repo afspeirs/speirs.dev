@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ChevronRightIcon, HouseIcon } from 'lucide-svelte';
+  import { ChevronRightIcon, HouseIcon } from '@lucide/svelte';
 
   import { page } from '$app/state';
   import type { Pathname } from '$app/types';
