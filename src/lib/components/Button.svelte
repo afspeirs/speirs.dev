@@ -23,7 +23,7 @@
 </script>
 
 <script lang="ts">
-  import type { IconProps, Icon as IconType } from 'lucide-svelte';
+  import type { IconProps, Icon as IconType } from '@lucide/svelte';
   import type { Component, Snippet } from 'svelte';
   import type { ClassValue, HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 

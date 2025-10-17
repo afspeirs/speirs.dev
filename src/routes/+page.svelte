@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ChevronRightIcon } from 'lucide-svelte';
+  import { ChevronRightIcon } from '@lucide/svelte';
 
   import Button from '$lib/components/Button.svelte';
   import Card from '$lib/components/Card.svelte';
@@ -34,6 +34,7 @@
       href="/projects"
       icon={ChevronRightIcon}
       styleBackground="primary"
+      styleText="light"
       text="View All Projects"
     />
   </Card>

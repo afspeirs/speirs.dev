@@ -1,5 +1,3 @@
-import { derived, writable } from 'svelte/store';
-
 const themeOptions = {
   light: 'Light',
   dark: 'Dark',
@@ -12,19 +10,37 @@ export const themeUserOptions = {
 type ThemeUserOption = keyof typeof themeUserOptions;
 type TypeSystemOption = keyof typeof themeOptions;
 
-const initialValue = (window.localStorage.getItem('theme') as ThemeUserOption) || 'default';
-export const themeUser = writable<ThemeUserOption>(initialValue);
-export const themeMedia = writable<TypeSystemOption>(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-export const themeSystem = derived([themeUser, themeMedia], ([$themeUser, $themeMedia]) => {
-  // Prioritise user-selected theme over system theme
-  return $themeUser !== 'default' ? $themeUser : $themeMedia;
+function getInitialTheme(): ThemeUserOption {
+  if (typeof window === 'undefined') return 'default';
+  return (window.localStorage.getItem('theme') as ThemeUserOption) || 'default';
+}
+
+function getInitialMediaTheme(): TypeSystemOption {
+  if (typeof window === 'undefined') return 'light';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+export const theme = $state({
+  user: getInitialTheme(),
+  media: getInitialMediaTheme(),
+  get system(): TypeSystemOption {
+    return this.user !== 'default' ? this.user : this.media;
+  },
 });
 
-// Observe media query for system theme changes
-const mql = window.matchMedia('(prefers-color-scheme: dark)');
-mql.addEventListener('change', () => {
-  themeUser.set('default');
-  themeMedia.set(mql.matches ? 'dark' : 'light');
-});
+if (typeof window !== 'undefined') {
+  // You cannot just use an $effect inside a .svelte.ts file you need to wrap it in an $effect.root
+  $effect.root(() => {
+    $effect(() => {
+      window.localStorage.setItem('theme', theme.user);
+    });
+  });
 
-themeUser.subscribe((value) => window.localStorage.setItem('theme', value));
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const listener = () => {
+    theme.user = 'default';
+    theme.media = mql.matches ? 'dark' : 'light';
+  };
+
+  mql.addEventListener('change', listener);
+}

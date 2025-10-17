@@ -5,14 +5,14 @@
   import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
-  import { themeSystem } from '$lib/context/theme.svelte';
+  import { theme } from '$lib/context/theme.svelte';
   import '../app.css';
   import '../webmanifest-apple';
 
   let { children } = $props();
 
-  themeSystem.subscribe((theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
+  $effect(() => {
+    document.documentElement.setAttribute('data-theme', theme.system);
   });
 </script>
 
