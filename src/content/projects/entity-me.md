@@ -2,6 +2,7 @@
 title: EntityMe
 date: 2020-06-18
 description: View a list of all of the HTML entities, and provide an easy method of copying its contents
+featured: true
 github: entity-me
 link: entityme.speirs.dev
 tags:

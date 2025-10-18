@@ -8,6 +8,7 @@ export interface Project extends Post {
   type: 'project';
   date: string;
   description: string;
+  featured?: boolean;
   github?: string;
   hidden?: boolean;
   link?: string;

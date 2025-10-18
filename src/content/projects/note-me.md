@@ -2,6 +2,7 @@
 title: NoteMe
 date: 2018-05-06
 description: Store and edit your notes in Markdown formatted text
+featured: true
 github: note-me
 link: noteme.speirs.dev
 tags:
