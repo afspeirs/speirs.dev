@@ -43,7 +43,7 @@
     "mdsvex": "^0.12.6",
     "semantic-release": "^25.0.2",
     "start-server-and-test": "^2.1.2",
-    "svelte": "^5.43.6",
+    "svelte": "^5.43.8",
     "svelte-check": "^4.3.4",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
