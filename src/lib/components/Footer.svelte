@@ -27,5 +27,5 @@
       <img src={linkedin} alt="Andrew Speirs on LinkedIn" width="32" height="32">
     </Button>
   </div>
-  <p>&copy; 2017-2025 Andrew Speirs</p>
+  <p>&copy; 2017-2026 Andrew Speirs</p>
 </footer>
