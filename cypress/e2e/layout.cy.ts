@@ -19,7 +19,8 @@ describe('Layout', () => {
     });
 
     it('should display the copyright notice', () => {
-      cy.get('footer').contains('© 2017-2026 Andrew Speirs');
+      const year = new Date().getFullYear();
+      cy.get('footer').contains(`© 2017-${year} Andrew Speirs`);
     });
 
     it('should display the theme toggle button', () => {
