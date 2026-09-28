@@ -38,7 +38,7 @@ export async function getProjects({
     })
     .filter(customFilter)
     .sort((a, b) => {
-      let ascResult = 0;
+      let ascResult: number;
 
       switch (sortKey) {
         case 'title':

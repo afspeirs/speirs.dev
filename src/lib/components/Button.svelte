@@ -23,8 +23,8 @@
 </script>
 
 <script lang="ts">
-  import type { IconProps, Icon as IconType } from '@lucide/svelte';
-  import type { Component, Snippet } from 'svelte';
+  import type { LucideIcon, LucideProps } from '@lucide/svelte';
+  import type { Snippet } from 'svelte';
   import type { ClassValue, HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
   import type { ResolvedPathname } from '$app/types';
@@ -33,8 +33,8 @@
   interface ButtonBase {
     children?: Snippet;
     class?: ClassValue | null;
-    icon?: Component<IconProps> | typeof IconType;
-    iconProps?: IconProps;
+    icon?: LucideIcon;
+    iconProps?: LucideProps;
     iconOnly?: boolean;
     styleBackground?: keyof typeof styleBackgroundColour;
     styleText?: keyof typeof styleTextColour;
