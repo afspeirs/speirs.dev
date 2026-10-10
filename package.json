@@ -32,7 +32,7 @@
     "@semantic-release/git": "^11.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@sveltejs/adapter-static": "^4.0.0",
-    "@sveltejs/kit": "^3.0.0",
+    "@sveltejs/kit": "^3.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/eslint": "^9.6.1",
