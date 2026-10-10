@@ -1,7 +1,7 @@
 ---
 title: speirs.dev
 date: 2017-02-19
-description: A showcase all of all my different projects
+description: A portfolio site for showcasing my projects
 featured: true
 github: speirs.dev
 link: speirs.dev
@@ -12,9 +12,9 @@ tags:
   - Tailwind
   - TypeScript
 ---
-This website serves as a place to house links to all the personal projects I have worked on.
+This website brings together the personal projects I have built and presents them in one place.
 
-Web technologies and frameworks that have been used to make this site:
+Over time, the site has been rebuilt with a number of different tools and frameworks:
 
 - ~~Just HTML files 😭~~
 - ~~Gulp (and Browserify)~~
@@ -23,4 +23,4 @@ Web technologies and frameworks that have been used to make this site:
 - ~~Svelte (with SvelteKit)~~
 - Svelte (with SvelteKit, Tailwind and TypeScript)
 
-This site is currently made with [Svelte](https://svelte.dev), [SvelteKit](https://kit.svelte.dev/), and [Tailwind](https://www.tailwind.com/) and [Typescript](https://www.typescriptlang.org/)
+The current version is built with [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/).

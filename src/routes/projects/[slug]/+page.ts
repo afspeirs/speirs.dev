@@ -1,5 +1,5 @@
-import { getProjects } from '$lib/content';
-import type { Project } from '$lib/types';
+import { getProjects } from '#lib/content.js';
+import type { Project } from '#lib/types.js';
 import { error } from '@sveltejs/kit';
 import type { Snippet } from 'svelte';
 

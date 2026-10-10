@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { classNames } from '$lib/utils/classNames';
+  import { classNames } from '#lib/utils/classNames.js';
 
   type GithubCornerProps = {
     project?: string,

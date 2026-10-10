@@ -39,10 +39,10 @@ export default tseslint.config(
     },
   },
   {
-    files: ['cypress/**/*.ts', 'cypress.config.ts'],
+    files: ['e2e/**/*.ts', 'playwright.config.ts'],
     languageOptions: {
       parserOptions: {
-        project: ['./cypress/tsconfig.json'],
+        project: ['./e2e/tsconfig.json'],
       },
     },
   },

@@ -1,8 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { Pathname } from '$app/types';
-  import type { Project, Tag } from '$lib/types';
-  import { formatDate } from '$lib/utils';
+  import type { Project, Tag } from '#lib/types.js';
+  import { formatDate } from '#lib/utils/index.js';
 
   type PostListProps = {
     posts: (Project | Tag)[],
@@ -14,7 +13,12 @@
 <ul role="list" class="divide-y divide-light-2 dark:divide-dark-2">
   {#each posts as post (post.slug)}
     <li>
-      <a class="block hover:bg-light-2 dark:hover:bg-dark-2 focus-outline-inset" href={resolve(`/${post.url}` as Pathname)}>
+        <a
+          class="block hover:bg-light-2 dark:hover:bg-dark-2 focus-outline-inset"
+          href={post.type === 'project'
+            ? resolve('/projects/[slug]', { slug: post.slug })
+            : resolve('/tags/[slug]', { slug: post.slug })}
+        >
         <div class="flex flex-col p-4">
           <div class="flex justify-between items-center">
             <h3>{post.title}</h3>

@@ -1,21 +1,22 @@
 ---
 title: NoteMe
 date: 2018-05-06
-description: Store and edit your notes in Markdown formatted text
+description: A local-first Markdown notes app with offline support and direct folder access
 featured: true
 github: note-me
 link: noteme.speirs.dev
 tags:
+  - File System Access API
   - PWA
-  - React
-  - RxDB
-  - Supabase
+  - IndexedDB
+  - Svelte
+  - SvelteKit
   - Tailwind
   - TypeScript
   - Vite
 ---
-NoteMe is a Progressive Web App that stores your notes in Markdown format.
+NoteMe is a local-first Markdown notes app that gives users direct control over their files.
 
-The app stores your notes locally to allow you to access you notes as quickly as possible. You can then optionally sign up for an account to allow your notes to be synchronised across devices.
+It uses the File System Access API to read and write notes from a chosen folder, making them easy to organise, edit, and keep under the user's control.
 
-The PWA is build using [React](https://reactjs.org/) and [Vite](https://vitejs.dev/), styled using [Tailwind](https://tailwind.com/), local storage using [RxDB](https://rxdb.info/) and replication to a database using [Supabase](https://supabase.com/).
+The app is installable, works offline, and restores the selected folder between sessions. It is built with [SvelteKit](https://kit.svelte.dev/), [Tailwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) for fast, privacy-focused note-taking.

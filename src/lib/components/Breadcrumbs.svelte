@@ -2,8 +2,8 @@
   import { ChevronRightIcon, HouseIcon } from '@lucide/svelte';
 
   import { page } from '$app/state';
-  import type { Pathname } from '$app/types';
-  import Button from '$lib/components/Button.svelte';
+  import type { Path } from '$app/types';
+  import Button from '#lib/components/Button.svelte';
 
   type ButtonProps = {
     class?: string;
@@ -20,20 +20,18 @@
     const dynamicPaths = pathsFromPathname.map((token, index) => {
       const current = index === pathsFromPathname.length - 1;
       tokenPath += '/' + token;
-      // eslint-disable-next-line @stylistic/no-extra-parens
-      token = (current && page?.data?.metadata?.title) || token.charAt(0).toUpperCase() + token.slice(1);
-      return {
-        label: token,
-        href: tokenPath as Pathname,
-        current,
-      };
+      token = current && page?.data?.metadata?.title
+        ? page.data.metadata.title
+        : token.charAt(0).toUpperCase() + token.slice(1);
+
+      return { label: token, href: tokenPath as Path, current };
     });
 
     return dynamicPaths;
   });
 </script>
 
-{#if pages.length >= 0}
+{#if pages.length > 0}
   <nav aria-label="Breadcrumb" class="flex {className}">
     <ol role="list" class="flex items-center gap-2">
       <li>

@@ -2,9 +2,9 @@
   import { onMount } from 'svelte';
 
   import { resolve } from '$app/paths';
-  import GithubCorner from '$lib/components/GithubCorner.svelte';
-  // import Nav from '$lib/components/Nav.svelte';
-  import logo from '$lib/images/logo.svg';
+  import GithubCorner from '#lib/components/GithubCorner.svelte';
+  // import Nav from '#lib/components/Nav.svelte';
+  import logo from '#lib/images/logo.svg';
 
   const maxTiltAngle = 75;
   let logoAnchorElement: HTMLAnchorElement;

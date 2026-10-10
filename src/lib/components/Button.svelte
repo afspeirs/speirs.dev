@@ -23,18 +23,18 @@
 </script>
 
 <script lang="ts">
-  import type { IconProps, Icon as IconType } from '@lucide/svelte';
-  import type { Component, Snippet } from 'svelte';
+  import type { LucideIcon, LucideProps } from '@lucide/svelte';
+  import type { Snippet } from 'svelte';
   import type { ClassValue, HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
-  import type { ResolvedPathname } from '$app/types';
-  import { classNames } from '$lib/utils/classNames';
+  import type { Path, ResolvedPathname } from '$app/types';
+  import { classNames } from '#lib/utils/classNames.js';
 
   interface ButtonBase {
     children?: Snippet;
     class?: ClassValue | null;
-    icon?: Component<IconProps> | typeof IconType;
-    iconProps?: IconProps;
+    icon?: LucideIcon;
+    iconProps?: LucideProps;
     iconOnly?: boolean;
     styleBackground?: keyof typeof styleBackgroundColour;
     styleText?: keyof typeof styleTextColour;
@@ -47,11 +47,11 @@
   }
 
   interface LinkProps extends ButtonBase, HTMLAnchorAttributes {
-    href: ResolvedPathname | `https://${string}`;
+    href: Path | ResolvedPathname | `https://${string}`;
     onclick?: never;
   }
 
-  const {
+  let {
     children,
     class: className = '',
     href,
@@ -67,9 +67,10 @@
     ...restProps
   }: ButtonProps | LinkProps = $props();
 
-  const tag = href ? 'a' : 'button';
-  const externalHref = href?.startsWith('https://');
-  const attrs = href
+  const tag = $derived(href ? 'a' : 'button');
+  const externalHref = $derived(href?.startsWith('https://'));
+  // eslint-disable-next-line @stylistic/no-extra-parens
+  const attrs = $derived.by(() => (href
     ? {
       href,
       target: externalHref ? '_blank' : undefined,
@@ -80,15 +81,15 @@
       onclick,
       type: 'button' as const,
       ...restProps,
-    };
+    }));
 
-  const finalClass = classNames(
+  const finalClass = $derived(classNames(
     iconOnly ? style.iconOnly : style.withText,
     styleBackgroundColour[styleBackground],
     styleTextColour[styleText],
     style.base,
     className as string,
-  );
+  ));
 </script>
 
 <svelte:element
