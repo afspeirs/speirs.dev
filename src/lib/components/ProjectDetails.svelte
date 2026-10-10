@@ -1,6 +1,5 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { Path } from '$app/types';
   import Button from '#lib/components/Button.svelte';
   import Card from '#lib/components/Card.svelte';
   import GithubCorner from '#lib/components/GithubCorner.svelte';
@@ -35,7 +34,7 @@
       {#each post.tags as tag (tag)}
         <Button
           class="text-sm"
-          href={resolve(`tags/${toKebabCase(tag)}`) as Path}
+          href={resolve('/tags/[slug]', { slug: toKebabCase(tag) })}
           styleBackground="primary"
           styleText="light"
           text={tag}
