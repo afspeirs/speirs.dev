@@ -21,7 +21,7 @@
   <h2 class="mb-2">{post.title}</h2>
 
   <small>
-    Project Started: 
+    Project Started:
 
     <time
       class="text-primary dark:text-tertiary"

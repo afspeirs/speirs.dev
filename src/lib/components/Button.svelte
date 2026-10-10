@@ -69,7 +69,8 @@
 
   const tag = $derived(href ? 'a' : 'button');
   const externalHref = $derived(href?.startsWith('https://'));
-  const attrs = $derived.by(() => href
+  // eslint-disable-next-line @stylistic/no-extra-parens
+  const attrs = $derived.by(() => (href
     ? {
       href,
       target: externalHref ? '_blank' : undefined,
@@ -80,7 +81,7 @@
       onclick,
       type: 'button' as const,
       ...restProps,
-    });
+    }));
 
   const finalClass = $derived(classNames(
     iconOnly ? style.iconOnly : style.withText,

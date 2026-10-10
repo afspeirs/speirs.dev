@@ -20,8 +20,9 @@
     const dynamicPaths = pathsFromPathname.map((token, index) => {
       const current = index === pathsFromPathname.length - 1;
       tokenPath += '/' + token;
-      // eslint-disable-next-line @stylistic/no-extra-parens
-      token = current && page?.data?.metadata?.title || token.charAt(0).toUpperCase() + token.slice(1);
+      token = current && page?.data?.metadata?.title
+        ? page.data.metadata.title
+        : token.charAt(0).toUpperCase() + token.slice(1);
 
       return { label: token, href: tokenPath as Path, current };
     });
@@ -30,7 +31,7 @@
   });
 </script>
 
-{#if pages.length >= 0}
+{#if pages.length > 0}
   <nav aria-label="Breadcrumb" class="flex {className}">
     <ol role="list" class="flex items-center gap-2">
       <li>

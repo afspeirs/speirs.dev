@@ -24,6 +24,6 @@ export async function load({ params }) {
       projects: filteredProjectsByTag,
     };
   } catch (e) {
-    return error(404, `Could not find ${slug}, ${e}`);
+    throw error(404, `Could not find ${slug}, ${e}`);
   }
 }

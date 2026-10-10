@@ -1,7 +1,7 @@
 ---
 title: speirs.dev
 date: 2017-02-19
-description: A showcase all of all my different projects
+description: A showcase of all my different projects
 featured: true
 github: speirs.dev
 link: speirs.dev
