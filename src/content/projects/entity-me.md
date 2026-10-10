@@ -1,7 +1,7 @@
 ---
 title: EntityMe
 date: 2020-06-18
-description: View a list of all of the HTML entities, and provide an easy method of copying its contents
+description: Browse HTML entities and copy them quickly
 featured: true
 github: entity-me
 link: entityme.speirs.dev
@@ -12,10 +12,10 @@ tags:
   - Tailwind
   - TypeScript
 ---
-EntityMe is a Progressive Web App that displays all of the HTML entities, and provide an easy method of copying its contents
+EntityMe is a Progressive Web App that helps developers quickly browse and copy HTML entities.
 
-I was scraping <https://dev.w3.org/html5/html-author/charref> to get all of the data for the site to use. But then the page layout change and I started building my own list of entities.
+The project originally sourced its data from <https://dev.w3.org/html5/html-author/charref>, but after the page structure changed I started maintaining the entity data directly.
 
-One of the goals with this project is to have a npm package with access to all the entities for other developers to utilise.
+One long-term goal is to make the entity data available as an npm package for other developers to use.
 
-This site is build using [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/).
+The site is built with [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/).

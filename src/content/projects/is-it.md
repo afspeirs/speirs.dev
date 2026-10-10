@@ -1,7 +1,7 @@
 ---
 title: Is it ...
 date: 2020-01-22
-description: Determine if it is a certain day or not
+description: Check whether today matches a specific occasion
 github: is-it
 link: isit.speirs.dev
 tags:
@@ -11,8 +11,8 @@ tags:
   - Tailwind
   - TypeScript
 ---
-Is it... is a Progressive Web App that tells you if it is a certain day or not
+Is it... is a Progressive Web App that tells you whether today matches a specific day or occasion.
 
-I have always enjoyed the apps that told you if it was Christmas Day, or &lt;insert any holiday here&gt;, and thought I could make my own that lets the User define what days they want to check.
+It was inspired by novelty sites that answer simple holiday questions, but extends the idea by letting users define the dates they want to check.
 
-This site is build using [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/).
+The site is built with [Svelte](https://svelte.dev/), [SvelteKit](https://kit.svelte.dev/), [Tailwind](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/).
