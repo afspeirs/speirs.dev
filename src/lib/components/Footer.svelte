@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '$lib/components/Button.svelte';
-  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-  import github from '$lib/images/github.svg';
-  import linkedin from '$lib/images/linkedin.png';
+  import Button from '#lib/components/Button.svelte';
+  import ThemeToggle from '#lib/components/ThemeToggle.svelte';
+  import github from '#lib/images/github.svg';
+  import linkedin from '#lib/images/linkedin.png';
 </script>
 
 <footer class="relative flex flex-col justify-evenly items-center py-6 gap-4 text-center bg-primary text-white">

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Card from '$lib/components/Card.svelte';
-  import ProjectDetails from '$lib/components/ProjectDetails.svelte';
+  import Card from '#lib/components/Card.svelte';
+  import ProjectDetails from '#lib/components/ProjectDetails.svelte';
 
   let { data } = $props();
 

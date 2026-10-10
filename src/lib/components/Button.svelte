@@ -27,8 +27,8 @@
   import type { Snippet } from 'svelte';
   import type { ClassValue, HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
-  import type { ResolvedPathname } from '$app/types';
-  import { classNames } from '$lib/utils/classNames';
+  import type { Path, ResolvedPathname } from '$app/types';
+  import { classNames } from '#lib/utils/classNames.js';
 
   interface ButtonBase {
     children?: Snippet;
@@ -47,7 +47,7 @@
   }
 
   interface LinkProps extends ButtonBase, HTMLAnchorAttributes {
-    href: ResolvedPathname | `https://${string}`;
+    href: Path | ResolvedPathname | `https://${string}`;
     onclick?: never;
   }
 

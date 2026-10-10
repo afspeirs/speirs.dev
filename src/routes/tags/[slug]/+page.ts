@@ -1,5 +1,5 @@
-import { getProjects, getTags } from '$lib/content';
-import { toKebabCase } from '$lib/utils';
+import { getProjects, getTags } from '#lib/content.js';
+import { toKebabCase } from '#lib/utils/index.js';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').EntryGenerator} */

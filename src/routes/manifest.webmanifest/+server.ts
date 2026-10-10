@@ -1,4 +1,4 @@
-import { getWebmanifest } from '$lib/utils';
+import { getWebmanifest } from '#lib/utils/index.js';
 import manifestRaw from './manifest.webmanifest?raw';
 
 export const prerender = true;

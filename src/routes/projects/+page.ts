@@ -1,4 +1,4 @@
-import { getProjects } from '$lib/content';
+import { getProjects } from '#lib/content.js';
 
 /** @type {import('./$types').PageLoad} */
 export async function load() {

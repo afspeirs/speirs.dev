@@ -2,10 +2,10 @@
   import '@fontsource-variable/work-sans';
   import '@fontsource/mada/700.css';
 
-  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import Header from '$lib/components/Header.svelte';
-  import { theme } from '$lib/context/theme.svelte';
+  import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+  import Footer from '#lib/components/Footer.svelte';
+  import Header from '#lib/components/Header.svelte';
+  import { theme } from '#lib/context/theme.svelte.js';
   import '../app.css';
   import '../webmanifest-apple';
 

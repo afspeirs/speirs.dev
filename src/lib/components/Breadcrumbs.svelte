@@ -2,8 +2,8 @@
   import { ChevronRightIcon, HouseIcon } from '@lucide/svelte';
 
   import { page } from '$app/state';
-  import type { Pathname } from '$app/types';
-  import Button from '$lib/components/Button.svelte';
+  import type { Path } from '$app/types';
+  import Button from '#lib/components/Button.svelte';
 
   type ButtonProps = {
     class?: string;
@@ -21,12 +21,9 @@
       const current = index === pathsFromPathname.length - 1;
       tokenPath += '/' + token;
       // eslint-disable-next-line @stylistic/no-extra-parens
-      token = (current && page?.data?.metadata?.title) || token.charAt(0).toUpperCase() + token.slice(1);
-      return {
-        label: token,
-        href: tokenPath as Pathname,
-        current,
-      };
+      token = current && page?.data?.metadata?.title || token.charAt(0).toUpperCase() + token.slice(1);
+
+      return { label: token, href: tokenPath as Path, current };
     });
 
     return dynamicPaths;

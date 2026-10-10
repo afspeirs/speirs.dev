@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import Card from '$lib/components/Card.svelte';
+  import Card from '#lib/components/Card.svelte';
 </script>
 
 <svelte:head>

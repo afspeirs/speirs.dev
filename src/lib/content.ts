@@ -1,5 +1,5 @@
-import type { Project, Tag } from '$lib/types';
-import { toKebabCase } from '$lib/utils';
+import type { Project, Tag } from '#lib/types.js';
+import { toKebabCase } from '#lib/utils/index.js';
 
 type File = { metadata: Omit<Project, 'slug' | 'url'> };
 

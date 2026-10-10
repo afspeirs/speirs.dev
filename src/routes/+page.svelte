@@ -1,9 +1,9 @@
 <script lang="ts">
   import { ChevronRightIcon } from '@lucide/svelte';
 
-  import Button from '$lib/components/Button.svelte';
-  import Card from '$lib/components/Card.svelte';
-  import PostList from '$lib/components/PostList.svelte';
+  import Button from '#lib/components/Button.svelte';
+  import Card from '#lib/components/Card.svelte';
+  import PostList from '#lib/components/PostList.svelte';
 
   let { data } = $props();
 </script>
