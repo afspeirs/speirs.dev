@@ -51,7 +51,7 @@
     onclick?: never;
   }
 
-  const {
+  let {
     children,
     class: className = '',
     href,
@@ -67,9 +67,9 @@
     ...restProps
   }: ButtonProps | LinkProps = $props();
 
-  const tag = href ? 'a' : 'button';
-  const externalHref = href?.startsWith('https://');
-  const attrs = href
+  const tag = $derived(href ? 'a' : 'button');
+  const externalHref = $derived(href?.startsWith('https://'));
+  const attrs = $derived.by(() => href
     ? {
       href,
       target: externalHref ? '_blank' : undefined,
@@ -80,15 +80,15 @@
       onclick,
       type: 'button' as const,
       ...restProps,
-    };
+    });
 
-  const finalClass = classNames(
+  const finalClass = $derived(classNames(
     iconOnly ? style.iconOnly : style.withText,
     styleBackgroundColour[styleBackground],
     styleTextColour[styleText],
     style.base,
     className as string,
-  );
+  ));
 </script>
 
 <svelte:element
