@@ -30,7 +30,7 @@
     "@eslint/js": "^10.0.1",
     "@fontsource-variable/work-sans": "^5.3.0",
     "@fontsource/mada": "^5.3.0",
-    "@lucide/svelte": "^1.55.0",
+    "@lucide/svelte": "^1.66.0",
     "@playwright/test": "^1.56.0",
     "@semantic-release/git": "^11.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
