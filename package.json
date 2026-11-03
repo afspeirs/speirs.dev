@@ -32,7 +32,6 @@
     "@fontsource/mada": "^5.3.0",
     "@lucide/svelte": "^1.55.0",
     "@playwright/test": "^1.56.0",
-    "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^11.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@sveltejs/adapter-static": "^4.0.0",
