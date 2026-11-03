@@ -5,5 +5,8 @@ export const prerender = true;
 
 export function GET() {
   const newManifest = getWebmanifest(manifestRaw);
-  return new Response(newManifest);
+
+  return new Response(newManifest, {
+    headers: { 'Content-Type': 'application/manifest+json' },
+  });
 }
