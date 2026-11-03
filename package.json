@@ -12,6 +12,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "type": "npm run check",
+    "prelint": "svelte-kit sync",
     "lint": "eslint .",
     "test": "npm run test:e2e",
     "test:e2e": "playwright test --project=chromium",
