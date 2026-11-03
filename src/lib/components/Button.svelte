@@ -98,7 +98,7 @@
   {...attrs}
 >
   {#if Icon}
-    <Icon {...iconProps} aria-hidden="true" />
+    <Icon {...iconProps} />
   {/if}
 
   <span class={iconOnly ? 'sr-only' : 'truncate'}>

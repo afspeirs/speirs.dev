@@ -1,6 +1,6 @@
 {
   "name": "speirs.dev",
-  "version": "1.10.0",
+  "version": "1.10.1-develop.1",
   "type": "module",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "type": "npm run check",
+    "prelint": "svelte-kit sync",
     "lint": "eslint .",
     "test": "npm run test:e2e",
     "test:e2e": "playwright test --project=chromium",
@@ -31,7 +32,6 @@
     "@fontsource/mada": "^5.3.0",
     "@lucide/svelte": "^1.55.0",
     "@playwright/test": "^1.56.0",
-    "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^11.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@sveltejs/adapter-static": "^4.0.0",

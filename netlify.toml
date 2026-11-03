@@ -4,3 +4,11 @@
   # This ignore command prevents Netlify from building automatically on every Git commit.
   # The build will only proceed if it's triggered by a build hook (from GitHub Actions).
   ignore = "if [ -z $INCOMING_HOOK_URL ]; then exit 0; else exit 1; fi"
+
+# Netlify sniffs Content-Type from the file extension and has no entry for
+# `.webmanifest`, so the prerendered manifest ships as application/octet-stream,
+# which the Manifest spec (and therefore Chrome/Android install) does not accept.
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
